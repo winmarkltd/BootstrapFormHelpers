@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <title>Javascript · Twitter Bootstrap</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le styles -->
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
+    <link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="assets/css/docs.css" rel="stylesheet">
+    <link href="assets/js/google-code-prettify/prettify.css" rel="stylesheet">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+    <link rel="shortcut icon" href="assets/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
+
+  </head>
+
+  <body data-spy="scroll" data-target=".bs-docs-sidebar">
+
+    <!-- Navbar
+    ================================================== -->
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="brand" href="./index.html">Bootstrap Form Helpers</a>
+          <div class="nav-collapse collapse">
+            <ul class="nav">
+              <li class="">
+                <a href="./index.html">Home</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+<!-- Subhead
+================================================== -->
+<header class="jumbotron subhead">
+  <div class="container">
+    <h1>JavaScript for Bootstrap Form Helpers</h1>
+    <p class="lead">Extend Bootstrap's components—now with 3 custom jQuery plugins.
+  </p></div>
+</header>
+
+  <div class="container">
+
+    <!-- Docs nav
+    ================================================== -->
+    <div class="row">
+      <div class="span3 bs-docs-sidebar">
+        <ul class="nav nav-list bs-docs-sidenav affix-top" data-spy="affix" data-offset-top="210" data-offset-bottom="270">
+          <li><a href="#overview"><i class="icon-chevron-right"></i> Overview</a></li>
+          <li><a href="#countries"><i class="icon-chevron-right"></i> Countries</a></li>
+          <li><a href="#states"><i class="icon-chevron-right"></i> States</a></li>
+          <li><a href="#phone"><i class="icon-chevron-right"></i> Phone</a></li>
+        </ul>
+      </div>
+      <div class="span9">
+
+
+        <!-- Overview
+        ================================================== -->
+        <section id="overview">
+          <div class="page-header">
+            <h1>JavaScript for Bootstrap Form Helpers</h1>
+          </div>
+
+          <p>These form helpers are based on <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap</a></p>
+        </section>
+
+
+
+        <!-- Countries
+        ================================================== -->
+        <section id="countries">
+          <div class="page-header">
+            <h1>Countries <small>bootstrap-countries.js</small></h1>
+          </div>
+          <h3>About countries</h3>
+          <p>For adding a drop-down of countries or display country name from country code, include bootstrap-countries.js once alongside the other JS files.</p>
+          <h3>Use cases</h3>
+          
+          <p>Simple example for loading the list of countries</p>
+          <form class="bs-docs-example form-inline">
+            <select class="input-medium countries"></select>
+          </form>
+          <pre class="prettyprint">&lt;select class="input-medium countries"&gt;&lt;/select&gt;</pre>
+
+          <p>Example for loading the list of countries and selecting a default country</p>
+          <form class="bs-docs-example form-inline">
+            <select class="input-medium countries" data-country="US"></select>
+          </form>
+          <pre class="prettyprint">&lt;select class="input-medium countries" data-country="US"&gt;&lt;/select&gt;</pre>
+          
+          <p>Example for loading the list of countries in JavaScript</p>
+          <form class="bs-docs-example form-inline">
+            <button onclick="$('#countries1').countries();return false;" class="btn">Load Countries</button>
+            <select id="countries1" class="input-medium"></select>
+          </form>
+          <pre class="prettyprint">&lt;button onclick="$('#countries1').countries()" class="btn"&gt;Load Countries&lt;/button&gt;
+&lt;select id="countries1" class="input-medium"&gt;&lt;/select&gt;</pre>
+
+          <p>Example for loading the list of countries in JavaScript and selecting a default country</p>
+          <form class="bs-docs-example form-inline">
+            <button onclick="$('#countries2').countries({country: 'US'});return false;" class="btn">Load Countries</button>
+            <select id="countries2" class="input-medium"></select>
+          </form>
+          <pre class="prettyprint">&lt;button onclick="$('#countries2').countries({country: 'US'})" class="btn"&gt;Load Countries&lt;/button&gt;
+&lt;select id="countries2" class="input-medium"&gt;&lt;/select&gt;</pre>
+          
+          <p>Example for displaying the country name from a country code</p>
+          <form class="bs-docs-example form-inline">
+            <span class="countries" data-country="US"></span>
+          </form>
+          <pre class="prettyprint">&lt;span class="countries" data-country="US"&gt;&lt;/span&gt;</pre>
+          
+          <p>Example for displaying the country name from a country code in JavaScript</p>
+          <form class="bs-docs-example form-inline">
+            <button onclick="$('#countries3').countries({country: 'US'});return false;" class="btn">Show Country</button>
+            <span id="countries3"></span>
+          </form>
+          <pre class="prettyprint">&lt;button onclick="$('#countries3').countries({country: 'US'})" class="btn"&gt;Show Country&lt;/button&gt;
+&lt;span id="countries3"&gt;&lt;/span&gt;</pre>
+        </section>
+        
+        <!-- States
+        ================================================== -->
+        <section id="states">
+          <div class="page-header">
+            <h1>States <small>bootstrap-states.js</small></h1>
+          </div>
+          <h3>About states</h3>
+          <p>For adding a drop-down of states of a country or display state name from state and country code, include bootstrap-states.js once alongside the other JS files.</p>
+          <h3>Use cases</h3>
+          
+          <p>Simple example for loading the list of states for a country</p>
+          <form class="bs-docs-example form-inline">
+            <select class="input-medium states" data-country="US"></select>
+          </form>
+          <pre class="prettyprint">&lt;select class="input-medium states" data-country="US"&gt;&lt;/select&gt;</pre>
+          
+          <p>Simple example for loading the list of states for a country and selecting a default state</p>
+          <form class="bs-docs-example form-inline">
+            <select class="input-medium states" data-country="US" data-state="CA"></select>
+          </form>
+          <pre class="prettyprint">&lt;select class="input-medium states" data-country="US" data-state="CA"&gt;&lt;/select&gt;</pre>
+          
+          <p>Example for loading the list of states for a country in JavaScript</p>
+          <form class="bs-docs-example form-inline">
+            <button onclick="$('#states1').states({country: 'US'});return false;" class="btn">Load States</button>
+            <select id="states1" class="input-medium"></select>
+          </form>
+          <pre class="prettyprint">&lt;button onclick="$('#states1').states({country: 'US'})" class="btn"&gt;Load States&lt;/button&gt;
+&lt;select id="states1" class="input-medium"&gt;&lt;/select&gt;</pre>
+
+		  <p>Example for loading the list of states for a country and selecting a default state in JavaScript</p>
+          <form class="bs-docs-example form-inline">
+            <button onclick="$('#states2').states({country: 'US', state: 'CA'});return false;" class="btn">Load States</button>
+            <select id="states2" class="input-medium"></select>
+          </form>
+          <pre class="prettyprint">&lt;button onclick="$('#states2').states({country: 'US', state: 'CA'})" class="btn"&gt;Load States&lt;/button&gt;
+&lt;select id="states2" class="input-medium"&gt;&lt;/select&gt;</pre>
+
+		  <p>Example for loading the list of states based on a country selector</p>
+          <form class="bs-docs-example form-inline">
+            <select id="countries_states" class="input-medium countries" data-country="US"></select>
+            <select class="input-medium states" data-country="countries_states"></select>
+          </form>
+          <pre class="prettyprint">&lt;select id="countries_states" class="input-medium countries" data-country="US"&gt;&lt;/select&gt;
+&lt;select class="input-medium states" data-country="countries_states"&gt;&lt;/select&gt;</pre>
+
+	      <p>Example for displaying the state name from a state and country code</p>
+          <form class="bs-docs-example form-inline">
+            <span class="states" data-country="US" data-state="CA"></span>
+          </form>
+          <pre class="prettyprint">&lt;span class="states" data-country="US" data-state="CA"&gt;&lt;/span&gt;</pre>
+
+		  <p>Example for displaying the state name from a state and country code in JavaScript</p>
+          <form class="bs-docs-example form-inline">
+            <button onclick="$('#states3').states({country: 'US', state: 'CA'});return false;" class="btn">Show State</button>
+            <span id="states3"></span>
+          </form>
+          <pre class="prettyprint">&lt;button onclick="$('#states3').states({country: 'US', state: 'CA'})" class="btn"&gt;Show State&lt;/button&gt;
+&lt;span id="states3"&gt;&lt;/span&gt;</pre>
+        </section>
+        
+        <!-- Phone
+        ================================================== -->
+        <section id="phone">
+          <div class="page-header">
+            <h1>Phone <small>bootstrap-phone.js</small></h1>
+          </div>
+          <h3>About phone</h3>
+          <p>For simple formatting of phone numbers, include bootstrap-phone.js once alongside the other JS files.</p>
+          <h3>Use cases</h3>
+          
+          <p>Simple example for formatting a phone number in input text</p>
+          <form class="bs-docs-example form-inline">
+            <input type="text" class="input-medium phone" data-format="+1 (xxx) xxx-xxxx">
+          </form>
+          <pre class="prettyprint">&lt;input type="text" class="input-medium phone" data-format="+1 (xxx) xxx-xxxx"&gt;</pre>
+          
+          <p>Simple example for displaying a formatted phone number</p>
+          <form class="bs-docs-example form-inline">
+            <span class="phone" data-format="+1 (xxx) xxx-xxxx" data-number="5555555555"></span>
+          </form>
+          <pre class="prettyprint">&lt;span class="phone" data-format="+1 (xxx) xxx-xxxx" data-number="5555555555"&gt;&lt;/span&gt;</pre>
+          
+          <p>Example for formatting a phone number based on a country</p>
+          <form class="bs-docs-example form-inline">
+            <input type="text" class="input-medium phone" data-country="US">
+          </form>
+          <pre class="prettyprint">&lt;input type="text" class="input-medium phone" data-country="US"&gt;</pre>
+          
+          <p>Example for formatting a phone number based on a country selector</p>
+          <form class="bs-docs-example form-inline">
+            <select id="countries_phone" class="input-medium countries" data-country="US"></select>
+            <input type="text" class="input-medium phone" data-country="countries_phone">
+          </form>
+          <pre class="prettyprint">&lt;select id="countries_phone" class="input-medium countries" data-country="US"&gt;&lt;/select&gt;
+&lt;select class="input-medium phone" data-country="countries_phone"&gt;&lt;/select&gt;</pre>
+
+		  <p>Example for getting the unformatted phone number</p>
+          <form class="bs-docs-example form-inline">
+            <input id="phone1" type="text" class="input-medium phone" data-format="+1 (xxx) xxx-xxxx">
+            <button onclick="alert($('#phone1').data('number'));return false;" class="btn">Get Phone</button>
+          </form>
+          <pre class="prettyprint">&lt;input id="phone1" type="text" class="input-medium phone" data-format="+1 (xxx) xxx-xxxx"&gt;
+&lt;button onclick="alert($('#phone1').data('number'));return false;" class="btn"&gt;Get Phone&lt;/button&gt;</pre>
+
+        </section>
+
+      </div>
+    </div>
+
+  </div>
+
+
+
+    <!-- Footer
+    ================================================== -->
+    <footer class="footer">
+      <div class="container">
+        <p class="pull-right"><a href="#">Back to top</a></p>
+        <p>Designed and built with all the love in the world <a href="http://twitter.com/twitter" target="_blank">@twitter</a> by <a href="http://twitter.com/mdo" target="_blank">@mdo</a> and <a href="http://twitter.com/fat" target="_blank">@fat</a>.</p>
+        <p>Code licensed under the <a href="http://www.apache.org/licenses/LICENSE-2.0" target="_blank">Apache License v2.0</a>. Documentation licensed under <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.</p>
+        <p>Icons from <a href="http://glyphicons.com">Glyphicons Free</a>, licensed under <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.</p>
+        <ul class="footer-links">
+          <li><a href="http://blog.getbootstrap.com">Read the blog</a></li>
+          <li><a href="https://github.com/twitter/bootstrap/issues?state=open">Submit issues</a></li>
+          <li><a href="https://github.com/twitter/bootstrap/wiki">Roadmap and changelog</a></li>
+        </ul>
+      </div>
+    </footer>
+
+
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="assets/js/jquery.js"></script>
+    <script src="assets/js/google-code-prettify/prettify.js"></script>
+    <script src="assets/js/bootstrap-transition.js"></script>
+    <script src="assets/js/bootstrap-alert.js"></script>
+    <script src="assets/js/bootstrap-modal.js"></script>
+    <script src="assets/js/bootstrap-dropdown.js"></script>
+    <script src="assets/js/bootstrap-scrollspy.js"></script>
+    <script src="assets/js/bootstrap-tab.js"></script>
+    <script src="assets/js/bootstrap-tooltip.js"></script>
+    <script src="assets/js/bootstrap-popover.js"></script>
+    <script src="assets/js/bootstrap-button.js"></script>
+    <script src="assets/js/bootstrap-collapse.js"></script>
+    <script src="assets/js/bootstrap-carousel.js"></script>
+    <script src="assets/js/bootstrap-typeahead.js"></script>
+    <script src="assets/js/bootstrap-affix.js"></script>
+
+    <script src="assets/js/bootstrap-countries.en_US.js"></script>
+    <script src="assets/js/bootstrap-countries.js"></script>
+	<script src="assets/js/bootstrap-states.en_US.js"></script>
+    <script src="assets/js/bootstrap-states.js"></script>
+    <script src="assets/js/bootstrap-phone.format.js"></script>
+    <script src="assets/js/bootstrap-phone.js"></script>
+  
+
+</body></html>
