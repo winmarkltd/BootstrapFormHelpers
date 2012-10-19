@@ -98,7 +98,7 @@
       var $this = $(this)
       var phoneObject = e.data.phoneObject
       
-      this.options.format = PhoneFormatList[$this.val()]
+      phoneObject.options.format = PhoneFormatList[$this.val()]
       
       phoneObject.addFormatter()
   }
