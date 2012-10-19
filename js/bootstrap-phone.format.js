@@ -92,7 +92,7 @@
    'FJ': 'xxxxxxxxx',
    'FI': 'xxxxxxxxx',
    'MK': 'xxxxxxxxx',
-   'FR': '(x)x xx xx xx xx',
+   'FR': 'xx xx xx xx xx',
    'GF': 'xxxxxxxxx',
    'PF': 'xxxxxxxxx',
    'TF': 'xxxxxxxxx',
