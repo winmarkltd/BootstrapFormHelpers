@@ -140,6 +140,7 @@
    'LI': 'Liechtenstein',
    'LT': 'Lithuania',
    'LU': 'Luxembourg',
+   'ME': 'Montenegro',
    'MO': 'Macau',
    'MG': 'Madagascar',
    'MW': 'Malawi',
@@ -191,6 +192,7 @@
    'QA': 'Qatar',
    'RE': 'Réunion',
    'RO': 'Romania',
+   'RS': 'Serbia',
    'RU': 'Russia',
    'RW': 'Rwanda',
    'ST': 'São Tomé and Príncipe',
@@ -253,7 +255,6 @@
    'WF': 'Wallis and Futuna',
    'EH': 'Western Sahara',
    'YE': 'Yemen',
-   'YU': 'Yugoslavia',
    'ZM': 'Zambia',
    'ZW': 'Zimbabwe',
  }
