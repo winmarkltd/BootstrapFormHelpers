@@ -46,15 +46,6 @@
 		}
 	  }
       
-      var old_val = this.$element.val;
-	  this.$element.val = function () {
-	    if (typeof arguments[0] != "undefined") {
-	      return old_val.apply(this, arguments);
-	    } else {
-	      this.data('number')
-	    }
-	  }
-      
       this.addFormatter()
     }
     
