@@ -109,7 +109,7 @@
       e.preventDefault()
       e.stopPropagation()
       
-      if (e.keyCode != 8 && (e.keyCode < 48 || e.keyCode > 57)) return
+      if (e.keyCode != 8 && (e.keyCode < 48 || e.keyCode > 57) && (e.keyCode < 96 || e.keyCode > 105)) return
 
       $this = e.data.phoneObject
 
@@ -117,8 +117,9 @@
       
       if (!$this.$element.is(':visible')) return
       
-      if (e.keyCode >= 48 && e.keyCode <= 57) {
-        var digit = e.keyCode - 48
+      if ((e.keyCode >= 48 && e.keyCode <= 57) || (e.keyCode >= 96 && e.keyCode <= 105)) {
+        var digit = e.keyCode >= 96 ? e.keyCode - 96 : e.keyCode - 48
+
         if ($this.options.number.length < $this.options.maxChars) {
           $this.options.number += digit
           $this.addFormatter()
