@@ -4,6 +4,8 @@ BootstrapFormHelpers(http://vlamanna.github.com/BootstrapFormHelpers)
 BootstrapFormHelpers is a set of javascript to help you create user friendly forms, created and maintained by [Vincent Lamanna](http://twitter.com/vincentlamanna).
 
 
+[![endorse](http://api.coderwall.com/vlamanna/endorsecount.png)](http://coderwall.com/vlamanna)
+
 
 Quick start
 -----------
