@@ -1,5 +1,5 @@
 /* ==========================================================
- * bootstrap-formhelpers-states.js v1.1.0
+ * bootstrap-formhelpers-states.js v1.1.1
  * https://github.com/vlamanna/BootstrapFormHelpers
  * ==========================================================
  * Copyright 2012 Vincent Lamanna
@@ -90,8 +90,8 @@
         var countryObject = formObject.find('#' + country)
         
         if (countryObject.length != 0) {
-          country = countryObject.find('input:hidden').val()
-          countryObject.find('input:hidden').on('change.countries.data-api', {stateObject: this}, this.changeBootstrapCountry)
+          country = countryObject.find('input[type="hidden"]').val()
+          countryObject.find('input[type="hidden"]').on('change.countries.data-api', {stateObject: this}, this.changeBootstrapCountry)
         }
       }
       
@@ -105,7 +105,7 @@
       
       var value = this.options.state
       
-      $input = this.$element.find('input:hidden')
+      $input = this.$element.find('input[type="hidden"]')
       $toggle = this.$element.find('.selectbox-option')
       $options = this.$element.find('[role=options]')
       
