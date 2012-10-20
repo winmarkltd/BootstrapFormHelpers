@@ -1,5 +1,5 @@
 /* ==========================================================
- * bootstrap-phone.js v1.0.0
+ * bootstrap-formhelpers-phone.js v1.1.0
  * https://github.com/vlamanna/BootstrapFormHelpers
  * ==========================================================
  * Copyright 2012 Vincent Lamanna
@@ -29,7 +29,7 @@
     this.options = $.extend({}, $.fn.phone.defaults, options)
     this.$element = $(element)
     if (this.$element.is("input:text")) {
-      this.$element.on('keydown.phone.data-api', {phoneObject: this}, this.keydown)
+      this.$element.on('propertychange.phone.data-api change.phone.data-api input.phone.data-api paste.phone.data-api', {phoneObject: this}, this.change)
       
       var country = this.options.country
       
@@ -64,12 +64,17 @@
     var formattedNumber = ""
     
     var j = 0
-    this.options.maxChars = 0
     for (var i = 0; i < format.length; i++) {
-      if (format.charAt(i) != "x") {
+      if (/[0-9]/.test(format.charAt(i))) {
+        if (format.charAt(i) == phoneNumber.charAt(j)) {
+          formattedNumber += phoneNumber.charAt(j)
+          j++
+        } else {
+          formattedNumber += format.charAt(i)
+        }
+      } else if (format.charAt(i) != "d") {
         formattedNumber += format.charAt(i)
       } else {
-        this.options.maxChars++
         if (phoneNumber.charAt(j) == "") {
           formattedNumber += " "
         } else {
@@ -103,35 +108,27 @@
       phoneObject.addFormatter()
   }
   
-  , keydown: function (e) {
-      var $this
-
-      e.preventDefault()
-      e.stopPropagation()
-      
-      if (e.keyCode != 8 && (e.keyCode < 48 || e.keyCode > 57)) return
-
-      $this = e.data.phoneObject
-
-      if ($this.$element.is('.disabled, :disabled')) return
-      
-      if (!$this.$element.is(':visible')) return
-      
-      if (e.keyCode >= 48 && e.keyCode <= 57) {
-        var digit = e.keyCode - 48
-        if ($this.options.number.length < $this.options.maxChars) {
-          $this.options.number += digit
-          $this.addFormatter()
-        }
-      } else {
-        if ($this.options.number.length > 0) {
-          $this.options.number = $this.options.number.slice(0, -1)
-          $this.addFormatter()
-        }
+  , change: function(e) {
+    var $this
+    
+    $this = e.data.phoneObject
+    
+    if ($this.$element.is('.disabled, :disabled')) return
+    
+    var number = $this.$element.val()
+    var newNumber = ""
+    for (var i = 0; i < number.length; i++) {
+      if (/[0-9]/.test(number.charAt(i))) {
+        newNumber += number.charAt(i)
       }
-      
-      $this.$element.data('number', $this.options.number)
     }
+    
+    $this.options.number = newNumber
+    
+    $this.addFormatter()
+    
+    $this.$element.data('number', $this.options.number)
+  }
 
   }
 
@@ -154,8 +151,7 @@
   $.fn.phone.defaults = {
     format: "",
     number: "",
-    country: "",
-    maxChars: 0
+    country: ""
   }
 
 
@@ -163,15 +159,9 @@
   * ============== */
 
   $(window).on('load', function () {
-    $('form input:text.phone').each(function () {
+    $('form input:text.phone, span.phone').each(function () {
       var $phone = $(this)
 
-      $phone.phone($phone.data())
-    })
-    
-    $('span.phone').each(function() {
-      var $phone = $(this)
-      
       $phone.phone($phone.data())
     })
   })

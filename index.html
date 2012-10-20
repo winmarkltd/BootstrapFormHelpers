@@ -9,6 +9,8 @@
     <!-- Le styles -->
     <link href="assets/css/bootstrap.css" rel="stylesheet">
     <link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="assets/css/bootstrap-formhelpers.css" rel="stylesheet">
+    <link href="assets/css/bootstrap-formhelpers-countries.flags.css" rel="stylesheet">
     <link href="assets/css/docs.css" rel="stylesheet">
     <link href="assets/js/google-code-prettify/prettify.css" rel="stylesheet">
 
@@ -23,20 +25,6 @@
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
     <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
-
-	<script type="text/javascript">
-	
-	  var _gaq = _gaq || [];
-	  _gaq.push(['_setAccount', 'UA-35714645-1']);
-	  _gaq.push(['_trackPageview']);
-	
-	  (function() {
-		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-	  })();
-	
-	</script>
 
   </head>
 
@@ -55,7 +43,7 @@
           <a class="brand" href="./index.html">Bootstrap Form Helpers</a>
           <div class="nav-collapse collapse">
             <ul class="nav">
-              <li class="">
+              <li class="active">
                 <a href="./index.html">Home</a>
               </li>
             </ul>
@@ -64,14 +52,38 @@
       </div>
     </div>
 
-<!-- Subhead
-================================================== -->
-<header class="jumbotron subhead">
-  <div class="container">
-    <h1>JavaScript for Bootstrap Form Helpers</h1>
-    <p class="lead">Extend Bootstrap's components—now with 3 custom jQuery plugins.
-  </p></div>
-</header>
+  <!-- Subhead
+  ================================================== -->
+  <div class="jumbotron masthead">
+	<div class="container">
+	  <h1>Bootstrap Form Helpers</h1>
+	  <p class="lead">Extend Bootstrap's components—now with 4 custom jQuery plugins.</p>
+	  <p><a href="https://github.com/vlamanna/BootstrapFormHelpers/zipball/master" class="btn btn-primary btn-large">Download Bootstrap Form Helpers</a></p>
+	  <ul class="masthead-links">
+		<li><a href="http://github.com/vlamanna/BootstrapFormHelpers">GitHub project</a></li>
+		<li>Version 1.1.0</li>
+	  </ul>
+	</div>
+  </div>
+  
+  <div class="bs-docs-social">
+	<div class="container">
+	  <ul class="bs-docs-social-buttons">
+		<li>
+		  <iframe class="github-btn" src="http://ghbtns.com/github-btn.html?user=vlamanna&amp;repo=BootstrapFormHelpers&amp;type=watch&amp;count=true" allowtransparency="true" frameborder="0" scrolling="0" width="100px" height="20px"></iframe>
+		</li>
+		<li>
+		  <iframe class="github-btn" src="http://ghbtns.com/github-btn.html?user=vlamanna&amp;repo=BootstrapFormHelpers&amp;type=fork&amp;count=true" allowtransparency="true" frameborder="0" scrolling="0" width="98px" height="20px"></iframe>
+		</li>
+		<li class="follow-btn">
+		  <iframe allowtransparency="true" frameborder="0" scrolling="no" src="http://platform.twitter.com/widgets/follow_button.1347008535.html#_=1350836523114&amp;id=twitter-widget-1&amp;lang=en&amp;screen_name=vincentlamanna&amp;show_count=true&amp;show_screen_name=true&amp;size=m" class="twitter-follow-button" style="width: 236px; height: 20px; " title="Twitter Follow Button" data-twttr-rendered="true"></iframe>
+		</li>
+		<li class="tweet-btn">
+		  <iframe allowtransparency="true" frameborder="0" scrolling="no" src="http://platform.twitter.com/widgets/tweet_button.1347008535.html#_=1350836523111&amp;count=horizontal&amp;id=twitter-widget-0&amp;lang=en&amp;size=m&amp;text=Bootstrap%20Form%20Helpers&amp;url=http%3A%2F%2Fvlamanna.github.com%2FBootstrapFormHelpers%2F&amp;via=vincentlamanna" class="twitter-share-button twitter-count-horizontal" style="width: 107px; height: 20px; " title="Twitter Tweet Button" data-twttr-rendered="true"></iframe>
+		</li>
+	  </ul>
+	</div>
+  </div>
 
   <div class="container">
 
@@ -79,8 +91,9 @@
     ================================================== -->
     <div class="row">
       <div class="span3 bs-docs-sidebar">
-        <ul class="nav nav-list bs-docs-sidenav affix-top" data-spy="affix" data-offset-top="210" data-offset-bottom="270">
+        <ul class="nav nav-list bs-docs-sidenav affix-top" data-spy="affix" data-offset-top="502" data-offset-bottom="250">
           <li><a href="#overview"><i class="icon-chevron-right"></i> Overview</a></li>
+          <li><a href="#selectbox"><i class="icon-chevron-right"></i> Select Box</a></li>
           <li><a href="#countries"><i class="icon-chevron-right"></i> Countries</a></li>
           <li><a href="#states"><i class="icon-chevron-right"></i> States</a></li>
           <li><a href="#phone"><i class="icon-chevron-right"></i> Phone</a></li>
@@ -93,31 +106,148 @@
         ================================================== -->
         <section id="overview">
           <div class="page-header">
-            <h1>JavaScript for Bootstrap Form Helpers</h1>
+            <h1>Bootstrap Form Helpers</h1>
           </div>
 
-          <p>These form helpers are based on <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap</a></p>
-          
-          <p><a href="http://github.com/vlamanna/BootstrapFormHelpers">View the repository</a></p>
+          <p>These components are based on <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap</a>.</p>
+
+          <p>These components are distributed for free but you can contribute and making them better.</p>
+          <form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+		  <input type="hidden" name="cmd" value="_s-xclick">
+		  <input type="hidden" name="hosted_button_id" value="W3N9DQD54PVVQ">
+		  <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+		  <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+		  </form>
+
         </section>
 
 
+        <!-- Select Box
+        ================================================== -->
+        <section id="selectbox">
+          <div class="page-header">
+            <h1>Select Box <small>bootstrap-formhelpers-selectbox.js</small></h1>
+          </div>
+          <h3>About select box</h3>
+          <p>For adding a select box, include bootstrap-formhelpers-selectbox.js once alongside the other JS files.</p>
+          <h3>Use cases</h3>
+          
+          <p>Simple example for adding a select box</p>
+          <form class="bs-docs-example form-inline">
+			<div class="selectbox">
+			  <input type="hidden" name="selectbox1" value="">
+			  <a class="selectbox-toggle" role="button" data-toggle="selectbox" href="#">
+				<span class="selectbox-option input-medium" data-option=""></span>
+				<b class="caret"></b>
+			  </a>
+			  <ul class="selectbox-options" role="options">
+				<li><a tabindex="-1" href="#" data-option="1">Option 1</a></li>
+				<li><a tabindex="-1" href="#" data-option="2">Option 2</a></li>
+				<li><a tabindex="-1" href="#" data-option="3">Option 3</a></li>
+				<li><a tabindex="-1" href="#" data-option="4">Option 4</a></li>
+				<li><a tabindex="-1" href="#" data-option="5">Option 5</a></li>
+				<li><a tabindex="-1" href="#" data-option="6">Option 6</a></li>
+				<li><a tabindex="-1" href="#" data-option="7">Option 7</a></li>
+				<li><a tabindex="-1" href="#" data-option="8">Option 8</a></li>
+				<li><a tabindex="-1" href="#" data-option="9">Option 9</a></li>
+				<li><a tabindex="-1" href="#" data-option="10">Option 10</a></li>
+				<li><a tabindex="-1" href="#" data-option="11">Option 11</a></li>
+				<li><a tabindex="-1" href="#" data-option="12">Option 12</a></li>
+				<li><a tabindex="-1" href="#" data-option="13">Option 13</a></li>
+				<li><a tabindex="-1" href="#" data-option="14">Option 14</a></li>
+				<li><a tabindex="-1" href="#" data-option="15">Option 15</a></li>
+			  </ul>
+			</div>
+		  </form>
+		  <pre class="prettyprint">&lt;div class="selectbox"&gt;
+  &lt;input type="hidden" name="selectbox1" value=""&gt;
+  &lt;a class="selectbox-toggle" role="button" data-toggle="selectbox" href="#"&gt;
+	&lt;span class="selectbox-option input-medium" data-option=""&gt;&lt;/span&gt;
+	&lt;b class="caret"&gt;&lt;/b&gt;
+  &lt;/a&gt;
+  &lt;ul class="selectbox-options" role="options"&gt;
+	&lt;li&gt;&lt;a tabindex="-1" href="#" data-option="1"&gt;Option 1&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a tabindex="-1" href="#" data-option="2"&gt;Option 2&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a tabindex="-1" href="#" data-option="3"&gt;Option 3&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a tabindex="-1" href="#" data-option="4"&gt;Option 4&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a tabindex="-1" href="#" data-option="5"&gt;Option 5&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a tabindex="-1" href="#" data-option="6"&gt;Option 6&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a tabindex="-1" href="#" data-option="7"&gt;Option 7&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a tabindex="-1" href="#" data-option="8"&gt;Option 8&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a tabindex="-1" href="#" data-option="9"&gt;Option 9&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a tabindex="-1" href="#" data-option="10"&gt;Option 10&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a tabindex="-1" href="#" data-option="11"&gt;Option 11&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a tabindex="-1" href="#" data-option="12"&gt;Option 12&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a tabindex="-1" href="#" data-option="13"&gt;Option 13&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a tabindex="-1" href="#" data-option="14"&gt;Option 14&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a tabindex="-1" href="#" data-option="15"&gt;Option 15&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;</pre>
+		  
+		  <p>Simple example for adding a select box and selecting a default option</p>
+          <form class="bs-docs-example form-inline">
+			<div class="selectbox">
+			  <input type="hidden" name="selectbox2" value="">
+			  <a class="selectbox-toggle" role="button" data-toggle="selectbox" href="#">
+				<span class="selectbox-option input-medium" data-option="12">Option 12</span>
+				<b class="caret"></b>
+			  </a>
+			  <ul class="selectbox-options" role="options">
+				<li><a tabindex="-1" href="#" data-option="1">Option 1</a></li>
+				<li><a tabindex="-1" href="#" data-option="2">Option 2</a></li>
+				<li><a tabindex="-1" href="#" data-option="3">Option 3</a></li>
+				<li><a tabindex="-1" href="#" data-option="4">Option 4</a></li>
+				<li><a tabindex="-1" href="#" data-option="5">Option 5</a></li>
+				<li><a tabindex="-1" href="#" data-option="6">Option 6</a></li>
+				<li><a tabindex="-1" href="#" data-option="7">Option 7</a></li>
+				<li><a tabindex="-1" href="#" data-option="8">Option 8</a></li>
+				<li><a tabindex="-1" href="#" data-option="9">Option 9</a></li>
+				<li><a tabindex="-1" href="#" data-option="10">Option 10</a></li>
+				<li><a tabindex="-1" href="#" data-option="11">Option 11</a></li>
+				<li><a tabindex="-1" href="#" data-option="12">Option 12</a></li>
+				<li><a tabindex="-1" href="#" data-option="13">Option 13</a></li>
+				<li><a tabindex="-1" href="#" data-option="14">Option 14</a></li>
+				<li><a tabindex="-1" href="#" data-option="15">Option 15</a></li>
+			  </ul>
+			</div>
+		  </form>
+		  <pre class="prettyprint">&lt;div class="selectbox"&gt;
+  &lt;input type="hidden" name="selectbox2" value=""&gt;
+  &lt;a class="selectbox-toggle" role="button" data-toggle="selectbox" href="#"&gt;
+	&lt;span class="selectbox-option input-medium" data-option="12"&gt;Option 12&lt;/span&gt;
+	&lt;b class="caret"&gt;&lt;/b&gt;
+  &lt;/a&gt;
+  &lt;ul class="selectbox-options" role="options"&gt;
+	&lt;li&gt;&lt;a tabindex="-1" href="#" data-option="1"&gt;Option 1&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a tabindex="-1" href="#" data-option="2"&gt;Option 2&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a tabindex="-1" href="#" data-option="3"&gt;Option 3&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a tabindex="-1" href="#" data-option="4"&gt;Option 4&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a tabindex="-1" href="#" data-option="5"&gt;Option 5&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a tabindex="-1" href="#" data-option="6"&gt;Option 6&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a tabindex="-1" href="#" data-option="7"&gt;Option 7&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a tabindex="-1" href="#" data-option="8"&gt;Option 8&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a tabindex="-1" href="#" data-option="9"&gt;Option 9&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a tabindex="-1" href="#" data-option="10"&gt;Option 10&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a tabindex="-1" href="#" data-option="11"&gt;Option 11&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a tabindex="-1" href="#" data-option="12"&gt;Option 12&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a tabindex="-1" href="#" data-option="13"&gt;Option 13&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a tabindex="-1" href="#" data-option="14"&gt;Option 14&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a tabindex="-1" href="#" data-option="15"&gt;Option 15&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;</pre>
+        
+        </section>
 
         <!-- Countries
         ================================================== -->
         <section id="countries">
           <div class="page-header">
-            <h1>Countries <small>bootstrap-countries.js</small></h1>
+            <h1>Countries <small>bootstrap-formhelpers-countries.js</small></h1>
           </div>
           <h3>About countries</h3>
-          <p>For adding a drop-down of countries or display country name from country code, include bootstrap-countries.js once alongside the other JS files.</p>
+          <p>For adding a drop-down of countries or display country name from country code, include bootstrap-formhelpers-countries.{language}.js and bootstrap-formhelpers-countries.js once alongside the other JS files.</p>
+          <p>If you want to have access to the country flags, you can include bootstrap-formhelpers-countries.flags.css once alongside the other CSS files.</p>
           <h3>Use cases</h3>
-          
-          <p>Simple example for loading the list of countries</p>
-          <form class="bs-docs-example form-inline">
-            <select class="input-medium countries"></select>
-          </form>
-          <pre class="prettyprint">&lt;select class="input-medium countries"&gt;&lt;/select&gt;</pre>
 
           <p>Example for loading the list of countries and selecting a default country</p>
           <form class="bs-docs-example form-inline">
@@ -125,119 +255,165 @@
           </form>
           <pre class="prettyprint">&lt;select class="input-medium countries" data-country="US"&gt;&lt;/select&gt;</pre>
           
-          <p>Example for loading the list of countries in JavaScript</p>
-          <form class="bs-docs-example form-inline">
-            <button onclick="$('#countries1').countries();return false;" class="btn">Load Countries</button>
-            <select id="countries1" class="input-medium"></select>
-          </form>
-          <pre class="prettyprint">&lt;button onclick="$('#countries1').countries()" class="btn"&gt;Load Countries&lt;/button&gt;
-&lt;select id="countries1" class="input-medium"&gt;&lt;/select&gt;</pre>
-
           <p>Example for loading the list of countries in JavaScript and selecting a default country</p>
           <form class="bs-docs-example form-inline">
-            <button onclick="$('#countries2').countries({country: 'US'});return false;" class="btn">Load Countries</button>
-            <select id="countries2" class="input-medium"></select>
+            <button onclick="$('#countries1').countries({country: 'US'});return false;" class="btn">Load Countries</button>
+            <select id="countries1" class="input-medium"></select>
           </form>
-          <pre class="prettyprint">&lt;button onclick="$('#countries2').countries({country: 'US'})" class="btn"&gt;Load Countries&lt;/button&gt;
-&lt;select id="countries2" class="input-medium"&gt;&lt;/select&gt;</pre>
+          <pre class="prettyprint">&lt;button onclick="$('#countries1').countries({country: 'US'})" class="btn"&gt;Load Countries&lt;/button&gt;
+&lt;select id="countries1" class="input-medium"&gt;&lt;/select&gt;</pre>
           
-          <p>Example for displaying the country name from a country code</p>
+          <p>Example for loading the list of countries and flags using Bootstrap Form Helpers' Select Box</p>
           <form class="bs-docs-example form-inline">
-            <span class="countries" data-country="US"></span>
-          </form>
-          <pre class="prettyprint">&lt;span class="countries" data-country="US"&gt;&lt;/span&gt;</pre>
+			<div class="selectbox countries" data-country="US" data-flags="true">
+			  <input type="hidden" value="">
+			  <a class="selectbox-toggle" role="button" data-toggle="selectbox" href="#">
+				<span class="selectbox-option input-medium" data-option=""></span>
+				<b class="caret"></b>
+			  </a>
+			  <ul class="selectbox-options" role="options">
+			  </ul>
+			</div>
+		  </form>
+		  <pre class="prettyprint">&lt;div class="selectbox countries" data-country="US" data-flags="true"&gt;
+  &lt;input type="hidden" value=""&gt;
+  &lt;a class="selectbox-toggle" role="button" data-toggle="selectbox" href="#"&gt;
+	&lt;span class="selectbox-option input-medium" data-option=""&gt;&lt;/span&gt;
+	&lt;b class="caret"&gt;&lt;/b&gt;
+  &lt;/a&gt;
+  &lt;ul class="selectbox-options" role="options"&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;</pre>
           
-          <p>Example for displaying the country name from a country code in JavaScript</p>
+          <p>Example for displaying the country name and flag from a country code</p>
           <form class="bs-docs-example form-inline">
-            <button onclick="$('#countries3').countries({country: 'US'});return false;" class="btn">Show Country</button>
-            <span id="countries3"></span>
+            <span class="countries" data-country="US" data-flags="true"></span>
           </form>
-          <pre class="prettyprint">&lt;button onclick="$('#countries3').countries({country: 'US'})" class="btn"&gt;Show Country&lt;/button&gt;
-&lt;span id="countries3"&gt;&lt;/span&gt;</pre>
+          <pre class="prettyprint">&lt;span class="countries" data-country="US" data-flags="true"&gt;&lt;/span&gt;</pre>
         </section>
         
         <!-- States
         ================================================== -->
         <section id="states">
           <div class="page-header">
-            <h1>States <small>bootstrap-states.js</small></h1>
+            <h1>States <small>bootstrap-formhelpers-states.js</small></h1>
           </div>
           <h3>About states</h3>
-          <p>For adding a drop-down of states of a country or display state name from state and country code, include bootstrap-states.js once alongside the other JS files.</p>
+          <p>For adding a drop-down of states of a country or display state name from state and country code, include bootstrap-formhelpers-states.{language}.js and bootstrap-formhelpers-states.js once alongside the other JS files.</p>
           <h3>Use cases</h3>
           
-          <p>Simple example for loading the list of states for a country</p>
-          <form class="bs-docs-example form-inline">
-            <select class="input-medium states" data-country="US"></select>
-          </form>
-          <pre class="prettyprint">&lt;select class="input-medium states" data-country="US"&gt;&lt;/select&gt;</pre>
-          
-          <p>Simple example for loading the list of states for a country and selecting a default state</p>
+          <p>Example for loading the list of states for a country and selecting a default state</p>
           <form class="bs-docs-example form-inline">
             <select class="input-medium states" data-country="US" data-state="CA"></select>
           </form>
           <pre class="prettyprint">&lt;select class="input-medium states" data-country="US" data-state="CA"&gt;&lt;/select&gt;</pre>
           
-          <p>Example for loading the list of states for a country in JavaScript</p>
+          <p>Example for loading the list of states for a country and selecting a default state in JavaScript</p>
           <form class="bs-docs-example form-inline">
-            <button onclick="$('#states1').states({country: 'US'});return false;" class="btn">Load States</button>
+            <button onclick="$('#states1').states({country: 'US', state: 'CA'});return false;" class="btn">Load States</button>
             <select id="states1" class="input-medium"></select>
           </form>
-          <pre class="prettyprint">&lt;button onclick="$('#states1').states({country: 'US'})" class="btn"&gt;Load States&lt;/button&gt;
+          <pre class="prettyprint">&lt;button onclick="$('#states1').states({country: 'US', state: 'CA'})" class="btn"&gt;Load States&lt;/button&gt;
 &lt;select id="states1" class="input-medium"&gt;&lt;/select&gt;</pre>
 
-		  <p>Example for loading the list of states for a country and selecting a default state in JavaScript</p>
+          <p>Example for loading the list of states using Bootstrap Form Helpers' Select Box</p>
           <form class="bs-docs-example form-inline">
-            <button onclick="$('#states2').states({country: 'US', state: 'CA'});return false;" class="btn">Load States</button>
-            <select id="states2" class="input-medium"></select>
-          </form>
-          <pre class="prettyprint">&lt;button onclick="$('#states2').states({country: 'US', state: 'CA'})" class="btn"&gt;Load States&lt;/button&gt;
-&lt;select id="states2" class="input-medium"&gt;&lt;/select&gt;</pre>
+			<div class="selectbox states" data-country="US" data-state="CA">
+			  <input type="hidden" value="">
+			  <a class="selectbox-toggle" role="button" data-toggle="selectbox" href="#">
+				<span class="selectbox-option input-medium" data-option=""></span>
+				<b class="caret"></b>
+			  </a>
+			  <ul class="selectbox-options" role="options">
+			  </ul>
+			</div>
+		  </form>
+		  <pre class="prettyprint">&lt;div class="selectbox states" data-country="US" data-state="CA"&gt;
+  &lt;input type="hidden" value=""&gt;
+  &lt;a class="selectbox-toggle" role="button" data-toggle="selectbox" href="#"&gt;
+	&lt;span class="selectbox-option input-medium" data-option=""&gt;&lt;/span&gt;
+	&lt;b class="caret"&gt;&lt;/b&gt;
+  &lt;/a&gt;
+  &lt;ul class="selectbox-options" role="options"&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;</pre>
 
 		  <p>Example for loading the list of states based on a country selector</p>
           <form class="bs-docs-example form-inline">
-            <select id="countries_states" class="input-medium countries" data-country="US"></select>
-            <select class="input-medium states" data-country="countries_states"></select>
+            <select id="countries_states1" class="input-medium countries" data-country="US"></select>
+            <select class="input-medium states" data-country="countries_states1"></select>
           </form>
-          <pre class="prettyprint">&lt;select id="countries_states" class="input-medium countries" data-country="US"&gt;&lt;/select&gt;
-&lt;select class="input-medium states" data-country="countries_states"&gt;&lt;/select&gt;</pre>
+          <pre class="prettyprint">&lt;select id="countries_states1" class="input-medium countries" data-country="US"&gt;&lt;/select&gt;
+&lt;select class="input-medium states" data-country="countries_states1"&gt;&lt;/select&gt;</pre>
+
+          <p>Example for loading the list of states based on a country select using Bootstrap Form Helpers' Select Box</p>
+          <form class="bs-docs-example form-inline">
+            <div id="countries_states2" class="selectbox countries" data-country="US">
+			  <input type="hidden" value="">
+			  <a class="selectbox-toggle" role="button" data-toggle="selectbox" href="#">
+				<span class="selectbox-option input-medium" data-option=""></span>
+				<b class="caret"></b>
+			  </a>
+			  <ul class="selectbox-options" role="options">
+			  </ul>
+			</div>
+			<div class="selectbox states" data-country="countries_states2">
+			  <input type="hidden" value="">
+			  <a class="selectbox-toggle" role="button" data-toggle="selectbox" href="#">
+				<span class="selectbox-option input-medium" data-option=""></span>
+				<b class="caret"></b>
+			  </a>
+			  <ul class="selectbox-options" role="options">
+			  </ul>
+			</div>
+		  </form>
+		  <pre class="prettyprint">&lt;div id="countries_states2" class="selectbox countries" data-country="US"&gt;
+  &lt;input type="hidden" value=""&gt;
+  &lt;a class="selectbox-toggle" role="button" data-toggle="selectbox" href="#"&gt;
+	&lt;span class="selectbox-option input-medium" data-option=""&gt;&lt;/span&gt;
+	&lt;b class="caret"&gt;&lt;/b&gt;
+  &lt;/a&gt;
+  &lt;ul class="selectbox-options" role="options"&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="selectbox states" data-country="countries_states2"&gt;
+  &lt;input type="hidden" value=""&gt;
+  &lt;a class="selectbox-toggle" role="button" data-toggle="selectbox" href="#"&gt;
+	&lt;span class="selectbox-option input-medium" data-option=""&gt;&lt;/span&gt;
+	&lt;b class="caret"&gt;&lt;/b&gt;
+  &lt;/a&gt;
+  &lt;ul class="selectbox-options" role="options"&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;</pre>
 
 	      <p>Example for displaying the state name from a state and country code</p>
           <form class="bs-docs-example form-inline">
             <span class="states" data-country="US" data-state="CA"></span>
           </form>
           <pre class="prettyprint">&lt;span class="states" data-country="US" data-state="CA"&gt;&lt;/span&gt;</pre>
-
-		  <p>Example for displaying the state name from a state and country code in JavaScript</p>
-          <form class="bs-docs-example form-inline">
-            <button onclick="$('#states3').states({country: 'US', state: 'CA'});return false;" class="btn">Show State</button>
-            <span id="states3"></span>
-          </form>
-          <pre class="prettyprint">&lt;button onclick="$('#states3').states({country: 'US', state: 'CA'})" class="btn"&gt;Show State&lt;/button&gt;
-&lt;span id="states3"&gt;&lt;/span&gt;</pre>
         </section>
         
         <!-- Phone
         ================================================== -->
         <section id="phone">
           <div class="page-header">
-            <h1>Phone <small>bootstrap-phone.js</small></h1>
+            <h1>Phone <small>bootstrap-formhelpers-phone.js</small></h1>
           </div>
           <h3>About phone</h3>
-          <p>For simple formatting of phone numbers, include bootstrap-phone.js once alongside the other JS files.</p>
+          <p>For simple formatting of phone numbers, include bootstrap-formhelpers-phone.format.js and bootstrap-formhelpers-phone.js once alongside the other JS files.</p>
           <h3>Use cases</h3>
           
           <p>Simple example for formatting a phone number in input text</p>
           <form class="bs-docs-example form-inline">
-            <input type="text" class="input-medium phone" data-format="+1 (xxx) xxx-xxxx">
+            <input type="text" class="input-medium phone" data-format="+1 (ddd) ddd-dddd">
           </form>
-          <pre class="prettyprint">&lt;input type="text" class="input-medium phone" data-format="+1 (xxx) xxx-xxxx"&gt;</pre>
+          <pre class="prettyprint">&lt;input type="text" class="input-medium phone" data-format="+1 (ddd) ddd-dddd"&gt;</pre>
           
           <p>Simple example for displaying a formatted phone number</p>
           <form class="bs-docs-example form-inline">
-            <span class="phone" data-format="+1 (xxx) xxx-xxxx" data-number="5555555555"></span>
+            <span class="phone" data-format="+1 (ddd) ddd-dddd" data-number="15555555555"></span>
           </form>
-          <pre class="prettyprint">&lt;span class="phone" data-format="+1 (xxx) xxx-xxxx" data-number="5555555555"&gt;&lt;/span&gt;</pre>
+          <pre class="prettyprint">&lt;span class="phone" data-format="+1 (ddd) ddd-dddd" data-number="15555555555"&gt;&lt;/span&gt;</pre>
           
           <p>Example for formatting a phone number based on a country</p>
           <form class="bs-docs-example form-inline">
@@ -255,10 +431,10 @@
 
 		  <p>Example for getting the unformatted phone number</p>
           <form class="bs-docs-example form-inline">
-            <input id="phone1" type="text" class="input-medium phone" data-format="+1 (xxx) xxx-xxxx">
+            <input id="phone1" type="text" class="input-medium phone" data-format="+1 (ddd) ddd-dddd">
             <button onclick="alert($('#phone1').data('number'));return false;" class="btn">Get Phone</button>
           </form>
-          <pre class="prettyprint">&lt;input id="phone1" type="text" class="input-medium phone" data-format="+1 (xxx) xxx-xxxx"&gt;
+          <pre class="prettyprint">&lt;input id="phone1" type="text" class="input-medium phone" data-format="+1 (ddd) ddd-dddd"&gt;
 &lt;button onclick="alert($('#phone1').data('number'));return false;" class="btn"&gt;Get Phone&lt;/button&gt;</pre>
 
         </section>
@@ -278,6 +454,7 @@
         <p>Designed and built by <a href="http://twitter.com/vincentlamanna" target="_blank">@vincentlamanna</a>.</p>
         <p>Code licensed under the <a href="http://www.apache.org/licenses/LICENSE-2.0" target="_blank">Apache License v2.0</a>. Documentation licensed under <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.</p>
         <p>Icons from <a href="http://glyphicons.com">Glyphicons Free</a>, licensed under <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.</p>
+        <p>Flags from <a href="http://www.gosquared.com">GoSquared</a>, licensed under <a href="assets/img/bootstrap-formhelpers-countries.flags-LICENSE.txt">GoSquared</a>.</p>
       </div>
     </footer>
 
@@ -286,6 +463,7 @@
     <!-- Le javascript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
+    <script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
     <script src="assets/js/jquery.js"></script>
     <script src="assets/js/google-code-prettify/prettify.js"></script>
     <script src="assets/js/bootstrap-transition.js"></script>
@@ -302,11 +480,13 @@
     <script src="assets/js/bootstrap-typeahead.js"></script>
     <script src="assets/js/bootstrap-affix.js"></script>
 
-    <script src="assets/js/bootstrap-countries.en_US.js"></script>
-    <script src="assets/js/bootstrap-countries.js"></script>
-	<script src="assets/js/bootstrap-states.en_US.js"></script>
-    <script src="assets/js/bootstrap-states.js"></script>
-    <script src="assets/js/bootstrap-phone.format.js"></script>
-    <script src="assets/js/bootstrap-phone.js"></script>
+    <script src="assets/js/bootstrap-formhelpers-countries.en_US.js"></script>
+    <script src="assets/js/bootstrap-formhelpers-countries.js"></script>
+	<script src="assets/js/bootstrap-formhelpers-states.en_US.js"></script>
+    <script src="assets/js/bootstrap-formhelpers-states.js"></script>
+    <script src="assets/js/bootstrap-formhelpers-phone.format.js"></script>
+    <script src="assets/js/bootstrap-formhelpers-phone.js"></script>
+    <script src="assets/js/bootstrap-formhelpers-selectbox.js"></script>
+  
 
 </body></html>
