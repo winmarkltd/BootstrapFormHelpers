@@ -1,5 +1,5 @@
 /* ==========================================================
- * bootstrap-states.js v1.0.0
+ * bootstrap-formhelpers-states.js v1.1.0
  * https://github.com/vlamanna/BootstrapFormHelpers
  * ==========================================================
  * Copyright 2012 Vincent Lamanna
@@ -30,21 +30,15 @@
     this.$element = $(element)
     
     if (this.$element.is("select")) {
-      var country = this.options.country
-      
-      var formObject = this.$element.closest('form')
-      var countryObject = formObject.find('#' + country)
-      
-      if (countryObject.length != 0) {
-        this.options.country = countryObject.val()
-        countryObject.on('change.countries.data-api', {stateObject: this}, this.changeCountry)
-      }
-      
       this.addStates()
     }
     
     if (this.$element.is("span")) {
       this.displayState()
+    }
+    
+    if (this.$element.hasClass("selectbox")) {
+      this.addBootstrapStates()
     }
   }
 
@@ -54,6 +48,16 @@
 
     , addStates: function () {
       var country = this.options.country
+      
+      if (country != "") {
+		var formObject = this.$element.closest('form')
+		var countryObject = formObject.find('#' + country)
+		
+		if (countryObject.length != 0) {
+		  country = countryObject.val()
+		  countryObject.on('change.countries.data-api', {stateObject: this}, this.changeCountry)
+		}
+	  }
       
       this.loadStates(country)
     }
@@ -76,6 +80,57 @@
         var country = $this.val()
         
         stateObject.loadStates(country)
+    }
+    
+    , addBootstrapStates: function() {
+      var country = this.options.country
+      
+      if (country != "") {
+        var formObject = this.$element.closest('form')
+        var countryObject = formObject.find('#' + country)
+        
+        if (countryObject.length != 0) {
+          country = countryObject.find('input:hidden').val()
+          countryObject.find('input:hidden').on('change.countries.data-api', {stateObject: this}, this.changeBootstrapCountry)
+        }
+      }
+      
+      this.loadBootstrapStates(country)
+    }
+    
+    , loadBootstrapStates: function(country) {
+      var $input
+      , $toggle
+      , $options
+      
+      var value = this.options.state
+      
+      $input = this.$element.find('input:hidden')
+      $toggle = this.$element.find('.selectbox-option')
+      $options = this.$element.find('[role=options]')
+      
+      $options.html('')
+      $options.append('<li><a tabindex="-1" href="#" data-option=""></a></li>')
+      for (var state in StatesList[country]) {
+        $options.append('<li><a tabindex="-1" href="#" data-option="' + state + '">' + StatesList[country][state] + '</a></li>')
+      }
+      
+      $toggle.data('option', value)
+      if (typeof StatesList[country][value] == "undefined") {
+        $toggle.html('')
+      } else {
+        $toggle.html(StatesList[country][value])
+      }
+      
+      $input.val(value)
+    }
+    
+    , changeBootstrapCountry: function (e) {
+        var $this = $(this)
+        var stateObject = e.data.stateObject
+        var country = $this.val()
+        
+        stateObject.loadBootstrapStates(country)
     }
     
     , displayState: function () {
@@ -114,13 +169,7 @@
   * ============== */
 
   $(window).on('load', function () {
-    $('form select.states').each(function () {
-      var $states = $(this)
-
-      $states.states($states.data())
-    })
-    
-    $('span.states').each(function () {
+    $('form select.states, span.states, div.states').each(function () {
       var $states = $(this)
 
       $states.states($states.data())

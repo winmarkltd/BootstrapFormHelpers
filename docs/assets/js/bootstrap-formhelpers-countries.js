@@ -1,5 +1,5 @@
 /* ==========================================================
- * bootstrap-countries.js v1.0.0
+ * bootstrap-formhelpers-countries.js v1.1.0
  * https://github.com/vlamanna/BootstrapFormHelpers
  * ==========================================================
  * Copyright 2012 Vincent Lamanna
@@ -36,6 +36,10 @@
     if (this.$element.is("span")) {
       this.displayCountry()
     }
+    
+    if (this.$element.hasClass("selectbox")) {
+      this.addBootstrapCountries()
+    }
   }
 
   Countries.prototype = {
@@ -54,10 +58,45 @@
       this.$element.val(value)
     }
     
+    , addBootstrapCountries: function() {
+      var $input
+      , $toggle
+      , $options
+      
+      var value = this.options.country
+      
+      $input = this.$element.find('input:hidden')
+      $toggle = this.$element.find('.selectbox-option')
+      $options = this.$element.find('[role=options]')
+      
+      $options.html('')
+      $options.append('<li><a tabindex="-1" href="#" data-option=""></a></li>')
+      for (var country in CountriesList) {
+        if (this.options.flags == true) {
+          $options.append('<li><a tabindex="-1" href="#" data-option="' + country + '"><i class="icon-flag-' + country + '"></i>' + CountriesList[country] + '</a></li>')
+        } else {
+          $options.append('<li><a tabindex="-1" href="#" data-option="' + country + '">' + CountriesList[country] + '</a></li>')
+        }
+      }
+      
+      $toggle.data('option', value)
+      if (this.options.flags == true) {
+        $toggle.html('<i class="icon-flag-' + value + '"></i> ' + CountriesList[value])
+      } else {
+        $toggle.html(CountriesList[value])
+      }
+      
+      $input.val(value)
+    }
+    
     , displayCountry: function () {
       var value = this.options.country
       
-      this.$element.html(CountriesList[value])
+      if (this.options.flags == true) {
+        this.$element.html('<i class="icon-flag-' + value + '"></i> ' + CountriesList[value])
+      } else {
+        this.$element.html(CountriesList[value])
+      }
     }
 
   }
@@ -80,7 +119,8 @@
   $.fn.countries.Constructor = Countries
 
   $.fn.countries.defaults = {
-    country: ""
+    country: "",
+    flags: false
   }
   
 
@@ -88,13 +128,7 @@
   * ============== */
 
   $(window).on('load', function () {
-    $('form select.countries').each(function () {
-      var $countries = $(this)
-
-      $countries.countries($countries.data())
-    })
-    
-    $('span.countries').each(function () {
+    $('form select.countries, span.countries, div.countries').each(function () {
       var $countries = $(this)
 
       $countries.countries($countries.data())
