@@ -1,5 +1,5 @@
 /* ==========================================================
- * bootstrap-formhelpers-selectbox.js v1.1.1
+ * bootstrap-formhelpers-selectbox.js v1.1.2
  * https://github.com/vlamanna/BootstrapFormHelpers
  * ==========================================================
  * Copyright 2012 Vincent Lamanna
@@ -206,14 +206,14 @@
 
   $(function () {
     $('html')
-      .on('click.selectbox.data-api touchstart.selectbox.data-api', clearMenus)
+      .on('click.selectbox.data-api', clearMenus)
     $('body')
       .on('click.selectbox.data-api touchstart.selectbox.data-api'  , toggle, SelectBox.prototype.toggle)
       .on('keydown.selectbox.data-api', toggle + ', [role=options]' , SelectBox.prototype.keydown)
       .on('scroll.selectbox.data-api', '[role=options]', SelectBox.prototype.scroll)
       .on('mouseenter.selectbox.data-api', '[role=options] > li > a', SelectBox.prototype.mouseenter)
       .on('click.selectbox.data-api', '[role=options] > li > a', SelectBox.prototype.select)  
-      .on('click.selectbox.data-api touchstart.selectbox.data-api', '.selectbox-filter', function (e) { return false })
+      .on('click.selectbox.data-api', '.selectbox-filter', function (e) { return false })
       .on('propertychange.selectbox.data-api change.selectbox.data-api input.selectbox.data-api paste.selectbox.data-api', '.selectbox-filter', SelectBox.prototype.filter)
   })
 
