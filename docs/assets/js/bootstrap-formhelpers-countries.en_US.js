@@ -1,5 +1,5 @@
 /* ==========================================================
- * bootstrap-formhelpers-countries.en_US.js v1.1.0
+ * bootstrap-formhelpers-countries.en_US.js v1.1.1
  * https://github.com/vlamanna/BootstrapFormHelpers
  * ==========================================================
  * Copyright 2012 Vincent Lamanna
@@ -129,7 +129,6 @@
    'LI': 'Liechtenstein',
    'LT': 'Lithuania',
    'LU': 'Luxembourg',
-   'ME': 'Montenegro',
    'MO': 'Macau',
    'MG': 'Madagascar',
    'MW': 'Malawi',
@@ -145,6 +144,7 @@
    'MD': 'Moldova',
    'MC': 'Monaco',
    'MN': 'Mongolia',
+   'ME': 'Montenegro',
    'MS': 'Montserrat',
    'MA': 'Morocco',
    'MZ': 'Mozambique',
@@ -176,7 +176,6 @@
    'PR': 'Puerto Rico',
    'QA': 'Qatar',
    'RO': 'Romania',
-   'RS': 'Serbia',
    'RU': 'Russia',
    'RW': 'Rwanda',
    'ST': 'São Tomé and Príncipe',
@@ -188,6 +187,7 @@
    'SM': 'San Marino',
    'SA': 'Saudi Arabia',
    'SN': 'Senegal',
+   'RS': 'Serbia',
    'SC': 'Seychelles',
    'SL': 'Sierra Leone',
    'SG': 'Singapore',

@@ -1,5 +1,5 @@
 /* ==========================================================
- * bootstrap-formhelpers-countries.js v1.1.0
+ * bootstrap-formhelpers-countries.js v1.1.1
  * https://github.com/vlamanna/BootstrapFormHelpers
  * ==========================================================
  * Copyright 2012 Vincent Lamanna
@@ -65,7 +65,7 @@
       
       var value = this.options.country
       
-      $input = this.$element.find('input:hidden')
+      $input = this.$element.find('input[type="hidden"]')
       $toggle = this.$element.find('.selectbox-option')
       $options = this.$element.find('[role=options]')
       

@@ -1,5 +1,5 @@
 /* ==========================================================
- * bootstrap-formhelpers-selectbox.js v1.1.0
+ * bootstrap-formhelpers-selectbox.js v1.1.1
  * https://github.com/vlamanna/BootstrapFormHelpers
  * ==========================================================
  * Copyright 2012 Vincent Lamanna
@@ -28,10 +28,7 @@
 
   var toggle = '[data-toggle=selectbox]'
     , SelectBox = function (element) {
-        var $el = $(element).on('click.selectbox.data-api', this.toggle)
-        $('html').on('click.selectbox.data-api', function () {
-          $el.parent().removeClass('open')
-        })
+        var $el = $(element)
       }
 
   SelectBox.prototype = {
@@ -60,6 +57,22 @@
       return false
     }
 
+  , filter: function(e) {
+    var $this
+      , $parent
+      , $items
+      
+    $this = $(this)
+    
+    $parent = $this.closest('.selectbox')
+    
+    $items = $('[role=options] li a', $parent)
+    
+    $items.hide()
+    
+    $items.filter(function() { return ($(this).text().toUpperCase().indexOf($this.val().toUpperCase()) != -1) }).show()
+  }
+  
   , keydown: function (e) {
       var $this
         , $items
@@ -83,10 +96,12 @@
 
       if (!isActive || (isActive && e.keyCode == 27)) return $this.click()
 
-      $items = $('[role=options] li a', $parent)
+      $items = $('[role=options] li a', $parent).filter(':visible')
 
       if (!$items.length) return
 
+      $('body').off('mouseenter.selectbox.data-api', '.selectbox > [role=options] > li > a', SelectBox.prototype.mouseenter)
+      
       index = $items.index($items.filter(':focus'))
 
       if (e.keyCode == 38 && index > 0) index--                                        // up
@@ -130,7 +145,7 @@
       
       $parent = $this.closest('.selectbox')
       $toggle = $parent.find('.selectbox-option')
-      $input = $parent.find('input:hidden')
+      $input = $parent.find('input[type="hidden"]')
       
       $toggle.data('option', $this.data('option'))
       $toggle.html($this.html())
@@ -139,6 +154,13 @@
       $input.change()
       
       clearMenus()
+    }
+    
+    , scroll: function (e) {
+      $('body')
+        .off('mouseenter.selectbox.data-api', '.selectbox > [role=options]', SelectBox.prototype.scroll)
+        .delay(250)
+        .on('mouseenter.selectbox.data-api', '.selectbox > [role=options]', SelectBox.prototype.scroll)
     }
 
   }
@@ -187,9 +209,12 @@
       .on('click.selectbox.data-api touchstart.selectbox.data-api', clearMenus)
     $('body')
       .on('click.selectbox.data-api touchstart.selectbox.data-api'  , toggle, SelectBox.prototype.toggle)
-      .on('keydown.selectbox.data-api touchstart.selectbox.data-api', toggle + ', [role=options]' , SelectBox.prototype.keydown)
-      .on('mouseenter.selectbox.data-api touchstart.selectbox.data-api', '.selectbox > [role=options] > li > a', SelectBox.prototype.mouseenter)
-      .on('click.selectbox.data-api touchstart.selectbox.data-api', '.selectbox > [role=options] > li > a', SelectBox.prototype.select)
+      .on('keydown.selectbox.data-api', toggle + ', [role=options]' , SelectBox.prototype.keydown)
+      .on('scroll.selectbox.data-api', '[role=options]', SelectBox.prototype.scroll)
+      .on('mouseenter.selectbox.data-api', '[role=options] > li > a', SelectBox.prototype.mouseenter)
+      .on('click.selectbox.data-api', '[role=options] > li > a', SelectBox.prototype.select)  
+      .on('click.selectbox.data-api touchstart.selectbox.data-api', '.selectbox-filter', function (e) { return false })
+      .on('propertychange.selectbox.data-api change.selectbox.data-api input.selectbox.data-api paste.selectbox.data-api', '.selectbox-filter', SelectBox.prototype.filter)
   })
 
 }(window.jQuery);

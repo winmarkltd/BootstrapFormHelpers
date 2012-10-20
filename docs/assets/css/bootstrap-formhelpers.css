@@ -1,5 +1,5 @@
 /*!
- * Bootstrap Form Helpers v1.1.0
+ * Bootstrap Form Helpers v1.1.1
  *
  * Copyright 2012 Vincent Lamanna, Inc
  * Licensed under the Apache License v2.0
@@ -43,7 +43,6 @@
   min-width: 160px;
   padding: 5px 0;
   margin: 2px 0 0;
-  list-style: none;
   background-color: #ffffff;
   border: 1px solid #ccc;
   border: 1px solid rgba(0, 0, 0, 0.2);
@@ -58,6 +57,10 @@
   -webkit-background-clip: padding-box;
      -moz-background-clip: padding;
           background-clip: padding-box;
+}
+
+.selectbox-options ul {
+  list-style: none;
 }
 
 .selectbox-options.pull-right {
@@ -138,9 +141,15 @@
   border-radius: 6px;
 }
 
-.selectbox > .selectbox-options {
+.selectbox-options ul {
   max-height: 200px;
   overflow: auto;
+  margin: 5px 0 0 0;
+  width: 240px;
+}
+
+.selectbox-filter {
+  margin: 0 10px;
 }
 
 .selectbox > .selectbox-toggle > .selectbox-option {
