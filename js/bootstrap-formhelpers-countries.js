@@ -80,10 +80,13 @@
       }
       
       $toggle.data('option', value)
-      if (this.options.flags == true) {
-        $toggle.html('<i class="icon-flag-' + value + '"></i> ' + CountriesList[value])
-      } else {
-        $toggle.html(CountriesList[value])
+      
+      if (value) {
+        if (this.options.flags == true) {
+          $toggle.html('<i class="icon-flag-' + value + '"></i> ' + CountriesList[value])
+        } else {
+          $toggle.html(CountriesList[value])
+        }
       }
       
       $input.val(value)
