@@ -1,5 +1,5 @@
 /* ==========================================================
- * bootstrap-formhelpers-states.js v1.1.2
+ * bootstrap-formhelpers-states.js v1.2.0
  * https://github.com/vlamanna/BootstrapFormHelpers
  * ==========================================================
  * Copyright 2012 Vincent Lamanna
@@ -143,7 +143,7 @@
   }
 
 
- /* STATES PLUGIN DEFINITION
+ /* COUNTRY PLUGIN DEFINITION
   * ======================= */
 
   $.fn.states = function (option) {
@@ -165,7 +165,7 @@
   }
   
 
- /* STATES DATA-API
+ /* COUNTRY DATA-API
   * ============== */
 
   $(window).on('load', function () {

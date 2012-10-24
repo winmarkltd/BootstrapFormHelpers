@@ -67,11 +67,11 @@
   <div class="jumbotron masthead">
 	<div class="container">
 	  <h1>Bootstrap Form Helpers</h1>
-	  <p class="lead">Extend Bootstrap's components—now with 4 custom jQuery plugins.</p>
+	  <p class="lead">Extend Bootstrap's components—now with 5 custom jQuery plugins.</p>
 	  <p><a href="https://github.com/vlamanna/BootstrapFormHelpers/zipball/master" class="btn btn-primary btn-large">Download Bootstrap Form Helpers</a></p>
 	  <ul class="masthead-links">
 		<li><a href="http://github.com/vlamanna/BootstrapFormHelpers">GitHub project</a></li>
-		<li>Version 1.1.2</li>
+		<li>Version 1.2.0</li>
 	  </ul>
 	</div>
   </div>
@@ -107,6 +107,7 @@
           <li><a href="#countries"><i class="icon-chevron-right"></i> Countries</a></li>
           <li><a href="#states"><i class="icon-chevron-right"></i> States</a></li>
           <li><a href="#phone"><i class="icon-chevron-right"></i> Phone</a></li>
+          <li><a href="#languages"><i class="icon-chevron-right"></i> Languages</a></li>
         </ul>
       </div>
       <div class="span9">
@@ -533,6 +534,65 @@
 
         </section>
 
+        
+        <!-- Languages
+        ================================================== -->
+        <section id="languages">
+          <div class="page-header">
+            <h1>Languages <small>bootstrap-formhelpers-languages.js</small></h1>
+          </div>
+          <h3>About Languages</h3>
+          <p>For adding a drop-down of languages or display languages name from language code, include bootstrap-formhelpers-languages.codes.js and bootstrap-formhelpers-languages.js once alongside the other JS files.</p>
+          <p>If you want to have access to the country names, you can include bootstrap-formhelpers-countries.{language}.js</p>
+          <p>If you want to have access to the country flags, you can include bootstrap-formhelpers-countries.flags.css once alongside the other CSS files.</p>
+          <h3>Use cases</h3>
+
+          <p>Example for loading the list of languages and selecting a default language</p>
+          <form class="bs-docs-example form-inline">
+            <select class="input-medium languages" data-language="en"></select>
+          </form>
+          <pre class="prettyprint">&lt;select class="input-medium languages" data-language="en"&gt;&lt;/select&gt;</pre>
+          
+          <p>Example for loading the list of languages with country names</p>
+          <form class="bs-docs-example form-inline">
+            <select class="input-medium languages" data-language="en_US" data-available="en_US,fr_CA,es_MX"></select>
+          </form>
+          <pre class="prettyprint">&lt;select class="input-medium languages" data-language="en_US" data-available="en_US,fr_CA,es_MX"&gt;&lt;/select&gt;</pre>
+          
+          <p>Example for loading the list of languages and flags using Bootstrap Form Helpers' Select Box</p>
+          <form class="bs-docs-example form-inline">
+			<div class="selectbox languages" data-language="en_US" data-available="en_US,fr_CA,es_MX" data-flags="true">
+			  <input type="hidden" value="">
+			  <a class="selectbox-toggle" role="button" data-toggle="selectbox" href="#">
+				<span class="selectbox-option input-medium" data-option=""></span>
+				<b class="caret"></b>
+			  </a>
+			  <div class="selectbox-options">
+			    <ul role="options">
+			    </ul>
+			  </div>
+			</div>
+		  </form>
+		  <pre class="prettyprint">&lt;div class="selectbox languages" data-language="en_US" data-available="en_US,fr_CA,es_MX" data-flags="true"&gt;
+  &lt;input type="hidden" value=""&gt;
+  &lt;a class="selectbox-toggle" role="button" data-toggle="selectbox" href="#"&gt;
+    &lt;span class="selectbox-option input-medium" data-option=""&gt;&lt;/span&gt;
+    &lt;b class="caret"&gt;&lt;/b&gt;
+  &lt;/a&gt;
+  &lt;div class="selectbox-options"&gt
+    &lt;ul class="selectbox-options" role="options"&gt;
+    &lt;/ul&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</pre>
+
+          <p>Example for displaying the language name and flag from language code</p>
+          <form class="bs-docs-example form-inline">
+            <span class="languages" data-language="en_US" data-flags="true"></span>
+          </form>
+          <pre class="prettyprint">&lt;span class="languages" data-language="en_US" data-flags="true"&gt;&lt;/span&gt;</pre>
+        </section>
+        
+        
       </div>
     </div>
 
@@ -581,6 +641,8 @@
     <script src="assets/js/bootstrap-formhelpers-phone.format.js"></script>
     <script src="assets/js/bootstrap-formhelpers-phone.js"></script>
     <script src="assets/js/bootstrap-formhelpers-selectbox.js"></script>
+    <script src="assets/js/bootstrap-formhelpers-languages.codes.js"></script>
+    <script src="assets/js/bootstrap-formhelpers-languages.js"></script>
   
 
 </body></html>

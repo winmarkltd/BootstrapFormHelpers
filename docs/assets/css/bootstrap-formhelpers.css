@@ -1,11 +1,11 @@
 /*!
- * Bootstrap Form Helpers v1.1.2
+ * Bootstrap Form Helpers v1.2.0
  *
  * Copyright 2012 Vincent Lamanna, Inc
  * Licensed under the Apache License v2.0
  * http://www.apache.org/licenses/LICENSE-2.0
  *
- * Designed and built by @vincentlamanna.
+ * Designed and built by @vincent lamanna.
  */
 
 .selectbox {
@@ -143,7 +143,8 @@
 
 .selectbox-options ul {
   max-height: 200px;
-  overflow: auto;
+  overflow-x: hidden;
+  overflow-y: auto;
   margin: 5px 0 0 0;
   width: 240px;
 }
