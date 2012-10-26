@@ -1,5 +1,5 @@
 /* ==========================================================
- * bootstrap-formhelpers-phone.js v1.2.1
+ * bootstrap-formhelpers-phone.js v1.3.0
  * https://github.com/vlamanna/BootstrapFormHelpers
  * ==========================================================
  * Copyright 2012 Vincent Lamanna
@@ -62,6 +62,14 @@
     var format = this.options.format
     var phoneNumber = new String(this.options.number)
     var formattedNumber = ""
+    
+    var newNumber = ""
+    for (var i = 0; i < phoneNumber.length; i++) {
+      if (/[0-9]/.test(phoneNumber.charAt(i))) {
+        newNumber += phoneNumber.charAt(i)
+      }
+    }
+    phoneNumber = newNumber
     
     var j = 0
     for (var i = 0; i < format.length; i++) {

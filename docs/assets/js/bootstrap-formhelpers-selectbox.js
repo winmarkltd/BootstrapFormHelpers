@@ -1,5 +1,5 @@
 /* ==========================================================
- * bootstrap-formhelpers-selectbox.js v1.2.1
+ * bootstrap-formhelpers-selectbox.js v1.3.0
  * https://github.com/vlamanna/BootstrapFormHelpers
  * ==========================================================
  * Copyright 2012 Vincent Lamanna
@@ -28,7 +28,6 @@
 
   var toggle = '[data-toggle=selectbox]'
     , SelectBox = function (element) {
-        var $el = $(element)
       }
 
   SelectBox.prototype = {
@@ -51,7 +50,7 @@
       if (!isActive) {
         $parent.toggleClass('open')
         
-        $parent.find('[role=options] > li > [data-option=' + $this.find('.selectbox-option').data('option') + ']').focus()
+        $parent.find('[role=options] > li > [data-option="' + $this.find('.selectbox-option').data('option') + '"]').focus()
       }
 
       return false
@@ -90,7 +89,7 @@
 
       if ($this.is('.disabled, :disabled')) return
 
-      $parent = getParent($this)
+      $parent = $this.closest('.selectbox')
 
       isActive = $parent.hasClass('open')
 
@@ -100,7 +99,7 @@
 
       if (!$items.length) return
 
-      $('body').off('mouseenter.selectbox.data-api', '.selectbox > [role=options] > li > a', SelectBox.prototype.mouseenter)
+      $('body').off('mouseenter.selectbox.data-api', '[role=options] > li > a', SelectBox.prototype.mouseenter)
       
       index = $items.index($items.filter(':focus'))
 
@@ -118,6 +117,8 @@
       $items
         .eq(index)
         .focus()
+        
+      $('body').on('mouseenter.selectbox.data-api', '[role=options] > li > a', SelectBox.prototype.mouseenter)
     }
     
     , mouseenter: function (e) {
@@ -154,13 +155,6 @@
       $input.change()
       
       clearMenus()
-    }
-    
-    , scroll: function (e) {
-      $('body')
-        .off('mouseenter.selectbox.data-api', '.selectbox > [role=options]', SelectBox.prototype.scroll)
-        .delay(250)
-        .on('mouseenter.selectbox.data-api', '.selectbox > [role=options]', SelectBox.prototype.scroll)
     }
 
   }
@@ -210,7 +204,6 @@
     $('body')
       .on('click.selectbox.data-api touchstart.selectbox.data-api'  , toggle, SelectBox.prototype.toggle)
       .on('keydown.selectbox.data-api', toggle + ', [role=options]' , SelectBox.prototype.keydown)
-      .on('scroll.selectbox.data-api', '[role=options]', SelectBox.prototype.scroll)
       .on('mouseenter.selectbox.data-api', '[role=options] > li > a', SelectBox.prototype.mouseenter)
       .on('click.selectbox.data-api', '[role=options] > li > a', SelectBox.prototype.select)  
       .on('click.selectbox.data-api', '.selectbox-filter', function (e) { return false })

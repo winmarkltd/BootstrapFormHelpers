@@ -1,5 +1,5 @@
 /* ==========================================================
- * bootstrap-formhelpers-languages.js v1.2.1
+ * bootstrap-formhelpers-languages.js v1.3.0
  * https://github.com/vlamanna/BootstrapFormHelpers
  * ==========================================================
  * Copyright 2012 Vincent Lamanna
