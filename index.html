@@ -67,11 +67,11 @@
   <div class="jumbotron masthead">
 	<div class="container">
 	  <h1>Bootstrap Form Helpers</h1>
-	  <p class="lead">Extend Bootstrap's components—now with 5 custom jQuery plugins.</p>
+	  <p class="lead">Extend Bootstrap's components—now with 6 custom jQuery plugins.</p>
 	  <p><a href="https://github.com/vlamanna/BootstrapFormHelpers/zipball/master" class="btn btn-primary btn-large">Download Bootstrap Form Helpers</a></p>
 	  <ul class="masthead-links">
 		<li><a href="http://github.com/vlamanna/BootstrapFormHelpers">GitHub project</a></li>
-		<li>Version 1.2.1</li>
+		<li>Version 1.3.0</li>
 	  </ul>
 	</div>
   </div>
@@ -108,6 +108,7 @@
           <li><a href="#states"><i class="icon-chevron-right"></i> States</a></li>
           <li><a href="#phone"><i class="icon-chevron-right"></i> Phone</a></li>
           <li><a href="#languages"><i class="icon-chevron-right"></i> Languages</a></li>
+          <li><a href="#timezones"><i class="icon-chevron-right"></i> Timezones</a></li>
         </ul>
       </div>
       <div class="span9">
@@ -592,6 +593,114 @@
           <pre class="prettyprint">&lt;span class="languages" data-language="en_US" data-flags="true"&gt;&lt;/span&gt;</pre>
         </section>
         
+        <!-- Timezones
+        ================================================== -->
+        <section id="timezones">
+          <div class="page-header">
+            <h1>Timezones <small>bootstrap-formhelpers-timezones.js</small></h1>
+          </div>
+          <h3>About timezones</h3>
+          <p>For adding a drop-down of timezones of a country from country code, include bootstrap-formhelpers-timezones.codes.js and bootstrap-formhelpers-timezones.js once alongside the other JS files.</p>
+          <h3>Use cases</h3>
+          
+          <p>Example for loading the list of timezones for a country</p>
+          <form class="bs-docs-example form-inline">
+            <select class="input-medium timezones" data-country="US"></select>
+          </form>
+          <pre class="prettyprint">&lt;select class="input-medium timezones" data-country="US"&gt;&lt;/select&gt;</pre>
+          
+          <p>Example for loading the list of timezones for a country in JavaScript</p>
+          <form class="bs-docs-example form-inline">
+            <button onclick="$('#timezones1').timezones({country: 'US'});return false;" class="btn">Load Timezones</button>
+            <select id="timezones1" class="input-medium"></select>
+          </form>
+          <pre class="prettyprint">&lt;button onclick="$('#timezones1').timezones({country: 'US'})" class="btn"&gt;Load Timezones&lt;/button&gt;
+&lt;select id="timezones1" class="input-medium"&gt;&lt;/select&gt;</pre>
+
+          <p>Example for loading the list of timezones using Bootstrap Form Helpers' Select Box</p>
+          <form class="bs-docs-example form-inline">
+			<div class="selectbox timezones" data-country="US">
+			  <input type="hidden" value="">
+			  <a class="selectbox-toggle" role="button" data-toggle="selectbox" href="#">
+				<span class="selectbox-option input-medium" data-option=""></span>
+				<b class="caret"></b>
+			  </a>
+			  <div class="selectbox-options">
+			    <ul role="options">
+			    </ul>
+			  </div>
+			</div>
+		  </form>
+		  <pre class="prettyprint">&lt;div class="selectbox timezones" data-country="US"&gt;
+  &lt;input type="hidden" value=""&gt;
+  &lt;a class="selectbox-toggle" role="button" data-toggle="selectbox" href="#"&gt;
+    &lt;span class="selectbox-option input-medium" data-option=""&gt;&lt;/span&gt;
+    &lt;b class="caret"&gt;&lt;/b&gt;
+  &lt;/a&gt;
+  &lt;div class="selectbox-options"&gt
+    &lt;ul class="selectbox-options" role="options"&gt;
+    &lt;/ul&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</pre>
+
+		  <p>Example for loading the list of timezones based on a country selector</p>
+          <form class="bs-docs-example form-inline">
+            <select id="countries_timezones1" class="input-medium countries" data-country="US"></select>
+            <select class="input-medium timezones" data-country="countries_timezones1"></select>
+          </form>
+          <pre class="prettyprint">&lt;select id="countries_timezones1" class="input-medium countries" data-country="US"&gt;&lt;/select&gt;
+&lt;select class="input-medium timezones" data-country="countries_timezones1"&gt;&lt;/select&gt;</pre>
+
+          <p>Example for loading the list of timezones based on a country select using Bootstrap Form Helpers' Select Box</p>
+          <form class="bs-docs-example form-inline">
+            <div id="countries_timezones2" class="selectbox countries" data-country="US">
+			  <input type="hidden" value="">
+			  <a class="selectbox-toggle" role="button" data-toggle="selectbox" href="#">
+				<span class="selectbox-option input-medium" data-option=""></span>
+				<b class="caret"></b>
+			  </a>
+			  <div class="selectbox-options">
+			    <ul role="options">
+			    </ul>
+			  </div>
+			</div>
+			<div class="selectbox timezones" data-country="countries_timezones2">
+			  <input type="hidden" value="">
+			  <a class="selectbox-toggle" role="button" data-toggle="selectbox" href="#">
+				<span class="selectbox-option input-medium" data-option=""></span>
+				<b class="caret"></b>
+			  </a>
+			  <div class="selectbox-options">
+			    <ul role="options">
+			    </ul>
+			  </div>
+			</div>
+		  </form>
+		  <pre class="prettyprint">&lt;div id="countries_timezones2" class="selectbox countries" data-country="US"&gt;
+  &lt;input type="hidden" value=""&gt;
+  &lt;a class="selectbox-toggle" role="button" data-toggle="selectbox" href="#"&gt;
+    &lt;span class="selectbox-option input-medium" data-option=""&gt;&lt;/span&gt;
+    &lt;b class="caret"&gt;&lt;/b&gt;
+  &lt;/a&gt;
+  &lt;div class="selectbox-options"&gt
+    &lt;ul class="selectbox-options" role="options"&gt;
+    &lt;/ul&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="selectbox timezones" data-country="countries_timezones2"&gt;
+  &lt;input type="hidden" value=""&gt;
+  &lt;a class="selectbox-toggle" role="button" data-toggle="selectbox" href="#"&gt;
+    &lt;span class="selectbox-option input-medium" data-option=""&gt;&lt;/span&gt;
+    &lt;b class="caret"&gt;&lt;/b&gt;
+  &lt;/a&gt;
+  &lt;div class="selectbox-options"&gt
+    &lt;ul class="selectbox-options" role="options"&gt;
+    &lt;/ul&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</pre>
+
+        </section>
+        
         
       </div>
     </div>
@@ -643,6 +752,8 @@
     <script src="assets/js/bootstrap-formhelpers-selectbox.js"></script>
     <script src="assets/js/bootstrap-formhelpers-languages.codes.js"></script>
     <script src="assets/js/bootstrap-formhelpers-languages.js"></script>
+    <script src="assets/js/bootstrap-formhelpers-timezones.codes.js"></script>
+    <script src="assets/js/bootstrap-formhelpers-timezones.js"></script>
   
 
 </body></html>

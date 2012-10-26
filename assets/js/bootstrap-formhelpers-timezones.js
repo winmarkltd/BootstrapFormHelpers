@@ -1,5 +1,5 @@
 /* ==========================================================
- * bootstrap-formhelpers-states.js v1.3.0
+ * bootstrap-formhelpers-timezones.js v1.3.0
  * https://github.com/vlamanna/BootstrapFormHelpers
  * ==========================================================
  * Copyright 2012 Vincent Lamanna
@@ -22,31 +22,27 @@
   "use strict"; // jshint ;_;
 
 
- /* STATES CLASS DEFINITION
+ /* TIMEZONES CLASS DEFINITION
   * ====================== */
 
-  var States = function (element, options) {
-    this.options = $.extend({}, $.fn.states.defaults, options)
+  var Timezones = function (element, options) {
+    this.options = $.extend({}, $.fn.timezones.defaults, options)
     this.$element = $(element)
     
     if (this.$element.is("select")) {
-      this.addStates()
-    }
-    
-    if (this.$element.is("span")) {
-      this.displayState()
+      this.addTimezones()
     }
     
     if (this.$element.hasClass("selectbox")) {
-      this.addBootstrapStates()
+      this.addBootstrapTimezones()
     }
   }
 
-  States.prototype = {
+  Timezones.prototype = {
 
-    constructor: States
+    constructor: Timezones
 
-    , addStates: function () {
+    , addTimezones: function () {
       var country = this.options.country
       
       if (country != "") {
@@ -55,20 +51,20 @@
 		
 		if (countryObject.length != 0) {
 		  country = countryObject.val()
-		  countryObject.on('change.countries.data-api', {stateObject: this}, this.changeCountry)
+		  countryObject.on('change.countries.data-api', {timezoneObject: this}, this.changeCountry)
 		}
 	  }
       
-      this.loadStates(country)
+      this.loadTimezones(country)
     }
     
-    , loadStates: function (country) {
-      var value = this.options.state
+    , loadTimezones: function (country) {
+      var value = this.options.timezone
       
       this.$element.html('')
       this.$element.append('<option value=""></option>')
-      for (var state in StatesList[country]) {
-        this.$element.append('<option value="' + state + '">' + StatesList[country][state] + '</option>')
+      for (var timezone in TimezonesList[country]) {
+        this.$element.append('<option value="' + timezone + '">' + TimezonesList[country][timezone] + '</option>')
       }
       
       this.$element.val(value)
@@ -76,13 +72,13 @@
     
     , changeCountry: function (e) {
         var $this = $(this)
-        var stateObject = e.data.stateObject
+        var timezoneObject = e.data.timezoneObject
         var country = $this.val()
         
-        stateObject.loadStates(country)
+        timezoneObject.loadTimezones(country)
     }
     
-    , addBootstrapStates: function() {
+    , addBootstrapTimezones: function() {
       var country = this.options.country
       
       if (country != "") {
@@ -91,19 +87,19 @@
         
         if (countryObject.length != 0) {
           country = countryObject.find('input[type="hidden"]').val()
-          countryObject.find('input[type="hidden"]').on('change.countries.data-api', {stateObject: this}, this.changeBootstrapCountry)
+          countryObject.find('input[type="hidden"]').on('change.countries.data-api', {timezoneObject: this}, this.changeBootstrapCountry)
         }
       }
       
-      this.loadBootstrapStates(country)
+      this.loadBootstrapTimezones(country)
     }
     
-    , loadBootstrapStates: function(country) {
+    , loadBootstrapTimezones: function(country) {
       var $input
       , $toggle
       , $options
       
-      var value = this.options.state
+      var value = this.options.timezone
       
       $input = this.$element.find('input[type="hidden"]')
       $toggle = this.$element.find('.selectbox-option')
@@ -111,15 +107,15 @@
       
       $options.html('')
       $options.append('<li><a tabindex="-1" href="#" data-option=""></a></li>')
-      for (var state in StatesList[country]) {
-        $options.append('<li><a tabindex="-1" href="#" data-option="' + state + '">' + StatesList[country][state] + '</a></li>')
+      for (var timezone in TimezonesList[country]) {
+        $options.append('<li><a tabindex="-1" href="#" data-option="' + timezone + '">' + TimezonesList[country][timezone] + '</a></li>')
       }
       
       $toggle.data('option', value)
-      if (typeof StatesList[country][value] == "undefined") {
+      if (typeof TimezonesList[country][value] == "undefined") {
         $toggle.html('')
       } else {
-        $toggle.html(StatesList[country][value])
+        $toggle.html(value)
       }
       
       $input.val(value)
@@ -127,52 +123,45 @@
     
     , changeBootstrapCountry: function (e) {
         var $this = $(this)
-        var stateObject = e.data.stateObject
+        var timezoneObject = e.data.timezoneObject
         var country = $this.val()
         
-        stateObject.loadBootstrapStates(country)
-    }
-    
-    , displayState: function () {
-      var country = this.options.country
-      var value = this.options.state
-      
-      this.$element.html(StatesList[country][value])
+        timezoneObject.loadBootstrapTimezones(country)
     }
 
   }
 
 
- /* STATES PLUGIN DEFINITION
+ /* TIMEZONES PLUGIN DEFINITION
   * ======================= */
 
-  $.fn.states = function (option) {
+  $.fn.timezones = function (option) {
     return this.each(function () {
       var $this = $(this)
-        , data = $this.data('states')
+        , data = $this.data('timezones')
         , options = typeof option == 'object' && option
         
-      if (!data) $this.data('states', (data = new States(this, options)))
+      if (!data) $this.data('timezones', (data = new Timezones(this, options)))
       if (typeof option == 'string') data[option]()
     })
   }
 
-  $.fn.states.Constructor = States
+  $.fn.timezones.Constructor = Timezones
 
-  $.fn.states.defaults = {
+  $.fn.timezones.defaults = {
     country: "",
-    state: ""
+    timezone: ""
   }
   
 
- /* STATES DATA-API
+ /* TIMEZONES DATA-API
   * ============== */
 
   $(window).on('load', function () {
-    $('form select.states, span.states, div.states').each(function () {
-      var $states = $(this)
+    $('form select.timezones, div.timezones').each(function () {
+      var $timezones = $(this)
 
-      $states.states($states.data())
+      $timezones.timezones($timezones.data())
     })
   })
 
