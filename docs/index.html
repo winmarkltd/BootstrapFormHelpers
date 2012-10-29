@@ -333,6 +333,12 @@
           </form>
           <pre class="prettyprint">&lt;select class="input-medium countries" data-country="US"&gt;&lt;/select&gt;</pre>
           
+          <p>Example for loading the list of countries, limited to a specific list of countries</p>
+          <form class="bs-docs-example form-inline">
+            <select class="input-medium countries" data-countryList="US,AG,AU"></select>
+          </form>
+          <pre class="prettyprint">&lt;select class="input-medium countries" data-countryList="US,AG,AU"&gt;&lt;/select&gt;</pre>
+          
           <p>Example for loading the list of countries in JavaScript and selecting a default country</p>
           <form class="bs-docs-example form-inline">
             <button onclick="$('#countries1').countries({country: 'US'});return false;" class="btn">Load Countries</button>
