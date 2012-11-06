@@ -1,5 +1,5 @@
 /* ==========================================================
- * bootstrap-formhelpers-countries.js v1.3.0
+ * bootstrap-formhelpers-countries.js v1.3.1
  * https://github.com/vlamanna/BootstrapFormHelpers
  * ==========================================================
  * Copyright 2012 Vincent Lamanna
@@ -29,6 +29,18 @@
     this.options = $.extend({}, $.fn.countries.defaults, options)
     this.$element = $(element)
     
+	if (this.options.countrylist) {
+		this.countryList = []
+		this.options.countrylist = this.options.countrylist.split(',')
+        for (var country in CountriesList) {
+			if ($.inArray(country, this.options.countrylist) >= 0) {
+				this.countryList[country] = CountriesList[country]
+			}
+		}
+	} else {
+		this.countryList = CountriesList
+	}
+
     if (this.$element.is("select")) {
       this.addCountries()
     }
@@ -51,8 +63,8 @@
       
       this.$element.html('')
       this.$element.append('<option value=""></option>')
-      for (var country in CountriesList) {
-        this.$element.append('<option value="' + country + '">' + CountriesList[country] + '</option>')
+      for (var country in this.countryList) {
+        this.$element.append('<option value="' + country + '">' + this.countryList[country] + '</option>')
       }
       
       this.$element.val(value)
@@ -71,11 +83,11 @@
       
       $options.html('')
       $options.append('<li><a tabindex="-1" href="#" data-option=""></a></li>')
-      for (var country in CountriesList) {
+      for (var country in this.countryList) {
         if (this.options.flags == true) {
-          $options.append('<li><a tabindex="-1" href="#" data-option="' + country + '"><i class="icon-flag-' + country + '"></i>' + CountriesList[country] + '</a></li>')
+          $options.append('<li><a tabindex="-1" href="#" data-option="' + country + '"><i class="icon-flag-' + country + '"></i>' + this.countryList[country] + '</a></li>')
         } else {
-          $options.append('<li><a tabindex="-1" href="#" data-option="' + country + '">' + CountriesList[country] + '</a></li>')
+          $options.append('<li><a tabindex="-1" href="#" data-option="' + country + '">' + this.countryList[country] + '</a></li>')
         }
       }
       
@@ -83,9 +95,9 @@
       
       if (value) {
         if (this.options.flags == true) {
-          $toggle.html('<i class="icon-flag-' + value + '"></i> ' + CountriesList[value])
+          $toggle.html('<i class="icon-flag-' + value + '"></i> ' + this.countryList[value])
         } else {
-          $toggle.html(CountriesList[value])
+          $toggle.html(this.countryList[value])
         }
       }
       
@@ -96,9 +108,9 @@
       var value = this.options.country
       
       if (this.options.flags == true) {
-        this.$element.html('<i class="icon-flag-' + value + '"></i> ' + CountriesList[value])
+        this.$element.html('<i class="icon-flag-' + value + '"></i> ' + this.countryList[value])
       } else {
-        this.$element.html(CountriesList[value])
+        this.$element.html(this.countryList[value])
       }
     }
 
@@ -123,6 +135,7 @@
 
   $.fn.countries.defaults = {
     country: "",
+	countryList: "",
     flags: false
   }
   

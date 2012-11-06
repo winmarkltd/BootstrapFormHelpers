@@ -1,5 +1,5 @@
 /* ==========================================================
- * bootstrap-formhelpers-timezones.js v1.3.0
+ * bootstrap-formhelpers-timezones.js v1.3.1
  * https://github.com/vlamanna/BootstrapFormHelpers
  * ==========================================================
  * Copyright 2012 Vincent Lamanna

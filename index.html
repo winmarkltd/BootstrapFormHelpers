@@ -71,7 +71,7 @@
 	  <p><a href="https://github.com/vlamanna/BootstrapFormHelpers/zipball/master" class="btn btn-primary btn-large">Download Bootstrap Form Helpers</a></p>
 	  <ul class="masthead-links">
 		<li><a href="http://github.com/vlamanna/BootstrapFormHelpers">GitHub project</a></li>
-		<li>Version 1.3.0</li>
+		<li>Version 1.3.1</li>
 	  </ul>
 	</div>
   </div>
@@ -332,6 +332,12 @@
             <select class="input-medium countries" data-country="US"></select>
           </form>
           <pre class="prettyprint">&lt;select class="input-medium countries" data-country="US"&gt;&lt;/select&gt;</pre>
+          
+          <p>Example for loading the list of countries, limited to a specific list of countries</p>
+          <form class="bs-docs-example form-inline">
+            <select class="input-medium countries" data-countryList="US,AG,AU"></select>
+          </form>
+          <pre class="prettyprint">&lt;select class="input-medium countries" data-countryList="US,AG,AU"&gt;&lt;/select&gt;</pre>
           
           <p>Example for loading the list of countries in JavaScript and selecting a default country</p>
           <form class="bs-docs-example form-inline">
