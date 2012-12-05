@@ -29,14 +29,14 @@
   var GoogleFonts = function (element, options) {
     this.options = $.extend({}, $.fn.googlefonts.defaults, options)
     this.$element = $(element)
-    this.fontList = {}
+    this.familyList = {}
       
     if (this.options.families) {
       this.options.families = this.options.families.split(',')
       for (var i in GoogleFontsList.items) {
         var font = GoogleFontsList.items[i];
         if ($.inArray(font.family, this.options.families) >= 0) {
-          this.fontList[font.family] = {
+          this.familyList[font.family] = {
             'font': GoogleFontsList.items[i],
             'i': parseInt(i)
           };
@@ -45,7 +45,7 @@
     } else {
       for (var i in GoogleFontsList.items) {
         var font = GoogleFontsList.items[i];
-        this.fontList[font.family] = {
+        this.familyList[font.family] = {
           'font': GoogleFontsList.items[i],
           'i': parseInt(i)
         };
@@ -74,8 +74,8 @@
       
       this.$element.html('')
       this.$element.append('<option value=""></option>')
-      for (var f in this.fontList) {
-        var entry = this.fontList[f];
+      for (var f in this.familyList) {
+        var entry = this.familyList[f];
         this.$element.append('<option value="' + entry.font.family + '">' + entry.font.family + '</option>')
       }
       
@@ -95,15 +95,15 @@
       
       $options.html('')
       $options.append('<li><a tabindex="-1" href="#" data-option="" style="background-image: none;"></a></li>')
-      for (var f in this.fontList) {
-        var entry = this.fontList[f];
+      for (var f in this.familyList) {
+        var entry = this.familyList[f];
         $options.append('<li><a tabindex="-1" href="#" style="background-position: 0 -' + ((entry.i * 30) - 2) + 'px;" data-option="' + entry.font.family + '">' + entry.font.family + '</a></li>')
       }
       
       $toggle.data('option', value)
       
       if (value) {
-        $toggle.html(this.fontList[value].font.family)
+        $toggle.html(this.familyList[value].font.family)
       }
       
       $input.val(value)
@@ -112,7 +112,7 @@
     , displayFont: function () {
       var value = this.options.family
       
-      this.$element.html(this.fontList[font].font.family)
+      this.$element.html(this.familyList[font].font.family)
     }
 
   }
