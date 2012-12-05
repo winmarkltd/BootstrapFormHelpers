@@ -80,6 +80,12 @@
   text-decoration: none;
 }
 
+.googlefonts .selectbox-options a {
+  height: 30px;
+  text-indent: -9999px;
+  background-image: url(../img/bootstrap-formhelpers-googlefonts.png);
+}
+
 .selectbox-options li > a:focus {
   color: #ffffff;
   text-decoration: none;
@@ -92,6 +98,15 @@
   background-image: linear-gradient(to bottom, #0088cc, #0077b3);
   background-repeat: repeat-x;
   filter: progid:dximagetransform.microsoft.gradient(startColorstr='#ff0088cc', endColorstr='#ff0077b3', GradientType=0);
+}
+
+.googlefonts .selectbox-options li > a:focus {
+  background-image: url(../img/bootstrap-formhelpers-googlefonts.png);
+  background-repeat: no-repeat;
+  filter: none;
+  background-color: transparent;
+  filter: none;
+  outline: none;
 }
 
 .selectbox-options .active > a,
@@ -108,6 +123,15 @@
   background-repeat: repeat-x;
   outline: 0;
   filter: progid:dximagetransform.microsoft.gradient(startColorstr='#ff0088cc', endColorstr='#ff0077b3', GradientType=0);
+}
+
+.googlefonts .selectbox-options .active > a,
+.googlefonts .selectbox-options .active > a:hover {
+  background-image: url(../img/bootstrap-formhelpers-googlefonts.png);
+  background-repeat: no-repeat;
+  filter: none;
+  background-color: transparent;
+  filter: none;
 }
 
 .selectbox-options .disabled > a,
