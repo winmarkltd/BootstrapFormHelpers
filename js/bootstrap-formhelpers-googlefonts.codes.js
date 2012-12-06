@@ -1,5 +1,5 @@
 /* ==========================================================
- * bootstrap-formhelpers-googlefonts.codes.js v1.3.1
+ * bootstrap-formhelpers-googlefonts.codes.js
  * https://github.com/vlamanna/BootstrapFormHelpers
  * ==========================================================
  * Copyright 2012 Vincent Lamanna

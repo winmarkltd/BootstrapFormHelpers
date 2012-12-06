@@ -1,5 +1,5 @@
 /* ==========================================================
- * bootstrap-formhelpers-states.js v1.3.1
+ * bootstrap-formhelpers-states.js
  * https://github.com/vlamanna/BootstrapFormHelpers
  * ==========================================================
  * Copyright 2012 Vincent Lamanna

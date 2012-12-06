@@ -1,5 +1,5 @@
 /* ==========================================================
- * bootstrap-formhelpers-languages.codes.js v1.3.1
+ * bootstrap-formhelpers-languages.codes.js
  * https://github.com/vlamanna/BootstrapFormHelpers
  * ==========================================================
  * Copyright 2012 Vincent Lamanna
@@ -200,5 +200,5 @@
    'zh': '中文 (Zhōngwén)',
    'ja': '日本語 (にほんご)',
    'ii': 'ꆈꌠ꒿ Nuosuhxop',
-   'ko': '한국어 (韓國語)',
+   'ko': '한국어 (韓國語)'
  }
