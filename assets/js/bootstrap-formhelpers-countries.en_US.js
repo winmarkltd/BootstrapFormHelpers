@@ -1,5 +1,5 @@
 /* ==========================================================
- * bootstrap-formhelpers-countries.en_US.js v1.3.1
+ * bootstrap-formhelpers-countries.en_US.js
  * https://github.com/vlamanna/BootstrapFormHelpers
  * ==========================================================
  * Copyright 2012 Vincent Lamanna
@@ -235,5 +235,5 @@
    'EH': 'Western Sahara',
    'YE': 'Yemen',
    'ZM': 'Zambia',
-   'ZW': 'Zimbabwe',
+   'ZW': 'Zimbabwe'
  }

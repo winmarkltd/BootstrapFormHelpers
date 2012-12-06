@@ -1,5 +1,5 @@
 /* ==========================================================
- * bootstrap-formhelpers-phone.js v1.3.1
+ * bootstrap-formhelpers-phone.js
  * https://github.com/vlamanna/BootstrapFormHelpers
  * ==========================================================
  * Copyright 2012 Vincent Lamanna

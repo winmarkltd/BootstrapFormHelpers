@@ -1,5 +1,5 @@
 /* ==========================================================
- * bootstrap-formhelpers-timezones.codes.js v1.3.1
+ * bootstrap-formhelpers-timezones.codes.js
  * https://github.com/vlamanna/BootstrapFormHelpers
  * ==========================================================
  * Copyright 2012 Vincent Lamanna
@@ -19,25 +19,25 @@
  
  var TimezonesList = {
   'AF': {
-    'Asia/Kabul': 'Kabul',
+    'Asia/Kabul': 'Kabul'
   },
   'AL': {
-    'Europe/Tirane': 'Tirane',
+    'Europe/Tirane': 'Tirane'
   },
   'DZ': {
-    'Africa/Algiers': 'Algiers',
+    'Africa/Algiers': 'Algiers'
   },
   'AS': {
-    'Pacific/Pago_Pago': 'Pago Pago',
+    'Pacific/Pago_Pago': 'Pago Pago'
   },
   'AD': {
-    'Europe/Andorra': 'Andorra',
+    'Europe/Andorra': 'Andorra'
   },
   'AO': {
-    'Africa/Luanda': 'Luanda',
+    'Africa/Luanda': 'Luanda'
   },
   'AI': {
-    'America/Anguilla': 'Anguilla',
+    'America/Anguilla': 'Anguilla'
   },
   'AQ': {
     'Antarctica/Casey': 'Casey',
@@ -50,10 +50,10 @@
     'Antarctica/Rothera': 'Rothera',
     'Antarctica/South_Pole': 'South Pole',
     'Antarctica/Syowa': 'Syowa',
-    'Antarctica/Vostok': 'Vostok',
+    'Antarctica/Vostok': 'Vostok'
   },
   'AG': {
-    'America/Antigua': 'Antigua',
+    'America/Antigua': 'Antigua'
   },
   'AR': {
     'America/Argentina/Buenos_Aires': 'Argentina / Buenos Aires',
@@ -67,13 +67,13 @@
     'America/Argentina/San_Juan': 'Argentina / San Juan',
     'America/Argentina/San_Luis': 'Argentina / San Luis',
     'America/Argentina/Tucuman': 'Argentina / Tucuman',
-    'America/Argentina/Ushuaia': 'Argentina / Ushuaia',
+    'America/Argentina/Ushuaia': 'Argentina / Ushuaia'
   },
   'AM': {
-    'Asia/Yerevan': 'Yerevan',
+    'Asia/Yerevan': 'Yerevan'
   },
   'AW': {
-    'America/Aruba': 'Aruba',
+    'America/Aruba': 'Aruba'
   },
   'AU': {
     'Australia/Adelaide': 'Adelaide',
@@ -87,49 +87,49 @@
     'Australia/Lord_Howe': 'Lord Howe',
     'Australia/Melbourne': 'Melbourne',
     'Australia/Perth': 'Perth',
-    'Australia/Sydney': 'Sydney',
+    'Australia/Sydney': 'Sydney'
   },
   'AT': {
-    'Europe/Vienna': 'Vienna',
+    'Europe/Vienna': 'Vienna'
   },
   'AZ': {
-    'Asia/Baku': 'Baku',
+    'Asia/Baku': 'Baku'
   },
   'BH': {
-    'Asia/Bahrain': 'Bahrain',
+    'Asia/Bahrain': 'Bahrain'
   },
   'BD': {
-    'Asia/Dhaka': 'Dhaka',
+    'Asia/Dhaka': 'Dhaka'
   },
   'BB': {
-    'America/Barbados': 'Barbados',
+    'America/Barbados': 'Barbados'
   },
   'BY': {
-    'Europe/Minsk': 'Minsk',
+    'Europe/Minsk': 'Minsk'
   },
   'BE': {
-    'Europe/Brussels': 'Brussels',
+    'Europe/Brussels': 'Brussels'
   },
   'BZ': {
-    'America/Belize': 'Belize',
+    'America/Belize': 'Belize'
   },
   'BJ': {
-    'Africa/Porto-Novo': 'Porto-Novo',
+    'Africa/Porto-Novo': 'Porto-Novo'
   },
   'BM': {
-    'Atlantic/Bermuda': 'Bermuda',
+    'Atlantic/Bermuda': 'Bermuda'
   },
   'BT': {
-    'Asia/Thimphu': 'Thimphu',
+    'Asia/Thimphu': 'Thimphu'
   },
   'BO': {
-    'America/La_Paz': 'La Paz',
+    'America/La_Paz': 'La Paz'
   },
   'BA': {
-    'Europe/Sarajevo': 'Sarajevo',
+    'Europe/Sarajevo': 'Sarajevo'
   },
   'BW': {
-    'Africa/Gaborone': 'Gaborone',
+    'Africa/Gaborone': 'Gaborone'
   },
   'BR': {
     'America/Araguaina': 'Araguaina',
@@ -147,31 +147,31 @@
     'America/Recife': 'Recife',
     'America/Rio_Branco': 'Rio Branco',
     'America/Santarem': 'Santarem',
-    'America/Sao_Paulo': 'Sao Paulo',
+    'America/Sao_Paulo': 'Sao Paulo'
   },
   'VG': {
-    'America/Tortola': 'Tortola',
+    'America/Tortola': 'Tortola'
   },
   'BN': {
-    'Asia/Brunei': 'Brunei',
+    'Asia/Brunei': 'Brunei'
   },
   'BG': {
-    'Europe/Sofia': 'Sofia',
+    'Europe/Sofia': 'Sofia'
   },
   'BF': {
-    'Africa/Ouagadougou': 'Ouagadougou',
+    'Africa/Ouagadougou': 'Ouagadougou'
   },
   'BI': {
-    'Africa/Bujumbura': 'Bujumbura',
+    'Africa/Bujumbura': 'Bujumbura'
   },
   'CI': {
-    'Africa/Abidjan': 'Abidjan',
+    'Africa/Abidjan': 'Abidjan'
   },
   'KH': {
-    'Asia/Phnom_Penh': 'Phnom Penh',
+    'Asia/Phnom_Penh': 'Phnom Penh'
   },
   'CM': {
-    'Africa/Douala': 'Douala',
+    'Africa/Douala': 'Douala'
   },
   'CA': {
     'America/Atikokan': 'Atikokan',
@@ -201,279 +201,279 @@
     'America/Vancouver': 'Vancouver',
     'America/Whitehorse': 'Whitehorse',
     'America/Winnipeg': 'Winnipeg',
-    'America/Yellowknife': 'Yellowknife',
+    'America/Yellowknife': 'Yellowknife'
   },
   'CV': {
-    'Atlantic/Cape_Verde': 'Cape Verde',
+    'Atlantic/Cape_Verde': 'Cape Verde'
   },
   'KY': {
-    'America/Cayman': 'Cayman',
+    'America/Cayman': 'Cayman'
   },
   'CF': {
-    'Africa/Bangui': 'Bangui',
+    'Africa/Bangui': 'Bangui'
   },
   'TD': {
-    'Africa/Ndjamena': 'Ndjamena',
+    'Africa/Ndjamena': 'Ndjamena'
   },
   'CL': {
     'America/Santiago': 'Santiago',
-    'Pacific/Easter': 'Easter',
+    'Pacific/Easter': 'Easter'
   },
   'CN': {
     'Asia/Chongqing': 'Chongqing',
     'Asia/Harbin': 'Harbin',
     'Asia/Kashgar': 'Kashgar',
     'Asia/Shanghai': 'Shanghai',
-    'Asia/Urumqi': 'Urumqi',
+    'Asia/Urumqi': 'Urumqi'
   },
   'CO': {
-    'America/Bogota': 'Bogota',
+    'America/Bogota': 'Bogota'
   },
   'KM': {
-    'Indian/Comoro': 'Comoro',
+    'Indian/Comoro': 'Comoro'
   },
   'CG': {
-    'Africa/Brazzaville': 'Brazzaville',
+    'Africa/Brazzaville': 'Brazzaville'
   },
   'CR': {
-    'America/Costa_Rica': 'Costa Rica',
+    'America/Costa_Rica': 'Costa Rica'
   },
   'HR': {
-    'Europe/Zagreb': 'Zagreb',
+    'Europe/Zagreb': 'Zagreb'
   },
   'CU': {
-    'America/Havana': 'Havana',
+    'America/Havana': 'Havana'
   },
   'CY': {
-    'Asia/Nicosia': 'Nicosia',
+    'Asia/Nicosia': 'Nicosia'
   },
   'CZ': {
-    'Europe/Prague': 'Prague',
+    'Europe/Prague': 'Prague'
   },
   'CD': {
     'Africa/Kinshasa': 'Kinshasa',
-    'Africa/Lubumbashi': 'Lubumbashi',
+    'Africa/Lubumbashi': 'Lubumbashi'
   },
   'DK': {
-    'Europe/Copenhagen': 'Copenhagen',
+    'Europe/Copenhagen': 'Copenhagen'
   },
   'DJ': {
-    'Africa/Djibouti': 'Djibouti',
+    'Africa/Djibouti': 'Djibouti'
   },
   'DM': {
-    'America/Dominica': 'Dominica',
+    'America/Dominica': 'Dominica'
   },
   'DO': {
-    'America/Santo_Domingo': 'Santo Domingo',
+    'America/Santo_Domingo': 'Santo Domingo'
   },
   'TP': {
   },
   'EC': {
     'America/Guayaquil': 'Guayaquil',
-    'Pacific/Galapagos': 'Galapagos',
+    'Pacific/Galapagos': 'Galapagos'
   },
   'EG': {
-    'Africa/Cairo': 'Cairo',
+    'Africa/Cairo': 'Cairo'
   },
   'SV': {
-    'America/El_Salvador': 'El Salvador',
+    'America/El_Salvador': 'El Salvador'
   },
   'GQ': {
-    'Africa/Malabo': 'Malabo',
+    'Africa/Malabo': 'Malabo'
   },
   'ER': {
-    'Africa/Asmara': 'Asmara',
+    'Africa/Asmara': 'Asmara'
   },
   'EE': {
-    'Europe/Tallinn': 'Tallinn',
+    'Europe/Tallinn': 'Tallinn'
   },
   'ET': {
-    'Africa/Addis_Ababa': 'Addis Ababa',
+    'Africa/Addis_Ababa': 'Addis Ababa'
   },
   'FO': {
-    'Atlantic/Faroe': 'Faroe',
+    'Atlantic/Faroe': 'Faroe'
   },
   'FK': {
-    'Atlantic/Stanley': 'Stanley',
+    'Atlantic/Stanley': 'Stanley'
   },
   'FJ': {
-    'Pacific/Fiji': 'Fiji',
+    'Pacific/Fiji': 'Fiji'
   },
   'FI': {
-    'Europe/Helsinki': 'Helsinki',
+    'Europe/Helsinki': 'Helsinki'
   },
   'MK': {
-    'Europe/Skopje': 'Skopje',
+    'Europe/Skopje': 'Skopje'
   },
   'FR': {
-    'Europe/Paris': 'Paris',
+    'Europe/Paris': 'Paris'
   },
   'GA': {
-    'Africa/Libreville': 'Libreville',
+    'Africa/Libreville': 'Libreville'
   },
   'GE': {
-    'Asia/Tbilisi': 'Tbilisi',
+    'Asia/Tbilisi': 'Tbilisi'
   },
   'DE': {
-    'Europe/Berlin': 'Berlin',
+    'Europe/Berlin': 'Berlin'
   },
   'GH': {
-    'Africa/Accra': 'Accra',
+    'Africa/Accra': 'Accra'
   },
   'GR': {
-    'Europe/Athens': 'Athens',
+    'Europe/Athens': 'Athens'
   },
   'GL': {
     'America/Danmarkshavn': 'Danmarkshavn',
     'America/Godthab': 'Godthab',
     'America/Scoresbysund': 'Scoresbysund',
-    'America/Thule': 'Thule',
+    'America/Thule': 'Thule'
   },
   'GD': {
-    'America/Grenada': 'Grenada',
+    'America/Grenada': 'Grenada'
   },
   'GU': {
-    'Pacific/Guam': 'Guam',
+    'Pacific/Guam': 'Guam'
   },
   'GT': {
-    'America/Guatemala': 'Guatemala',
+    'America/Guatemala': 'Guatemala'
   },
   'GN': {
-    'Africa/Conakry': 'Conakry',
+    'Africa/Conakry': 'Conakry'
   },
   'GW': {
-    'Africa/Bissau': 'Bissau',
+    'Africa/Bissau': 'Bissau'
   },
   'GY': {
-    'America/Guyana': 'Guyana',
+    'America/Guyana': 'Guyana'
   },
   'HT': {
-    'America/Port-au-Prince': 'Port-au-Prince',
+    'America/Port-au-Prince': 'Port-au-Prince'
   },
   'HN': {
-    'America/Tegucigalpa': 'Tegucigalpa',
+    'America/Tegucigalpa': 'Tegucigalpa'
   },
   'HK': {
-    'Asia/Hong_Kong': 'Hong Kong',
+    'Asia/Hong_Kong': 'Hong Kong'
   },
   'HU': {
-    'Europe/Budapest': 'Budapest',
+    'Europe/Budapest': 'Budapest'
   },
   'IS': {
-    'Atlantic/Reykjavik': 'Reykjavik',
+    'Atlantic/Reykjavik': 'Reykjavik'
   },
   'IN': {
-    'Asia/Kolkata': 'Kolkata',
+    'Asia/Kolkata': 'Kolkata'
   },
   'ID': {
     'Asia/Jakarta': 'Jakarta',
     'Asia/Jayapura': 'Jayapura',
     'Asia/Makassar': 'Makassar',
-    'Asia/Pontianak': 'Pontianak',
+    'Asia/Pontianak': 'Pontianak'
   },
   'IR': {
-    'Asia/Tehran': 'Tehran',
+    'Asia/Tehran': 'Tehran'
   },
   'IQ': {
-    'Asia/Baghdad': 'Baghdad',
+    'Asia/Baghdad': 'Baghdad'
   },
   'IE': {
-    'Europe/Dublin': 'Dublin',
+    'Europe/Dublin': 'Dublin'
   },
   'IL': {
-    'Asia/Jerusalem': 'Jerusalem',
+    'Asia/Jerusalem': 'Jerusalem'
   },
   'IT': {
-    'Europe/Rome': 'Rome',
+    'Europe/Rome': 'Rome'
   },
   'JM': {
-    'America/Jamaica': 'Jamaica',
+    'America/Jamaica': 'Jamaica'
   },
   'JP': {
-    'Asia/Tokyo': 'Tokyo',
+    'Asia/Tokyo': 'Tokyo'
   },
   'JO': {
-    'Asia/Amman': 'Amman',
+    'Asia/Amman': 'Amman'
   },
   'KZ': {
     'Asia/Almaty': 'Almaty',
     'Asia/Aqtau': 'Aqtau',
     'Asia/Aqtobe': 'Aqtobe',
     'Asia/Oral': 'Oral',
-    'Asia/Qyzylorda': 'Qyzylorda',
+    'Asia/Qyzylorda': 'Qyzylorda'
   },
   'KE': {
-    'Africa/Nairobi': 'Nairobi',
+    'Africa/Nairobi': 'Nairobi'
   },
   'KI': {
     'Pacific/Enderbury': 'Enderbury',
     'Pacific/Kiritimati': 'Kiritimati',
-    'Pacific/Tarawa': 'Tarawa',
+    'Pacific/Tarawa': 'Tarawa'
   },
   'KW': {
-    'Asia/Kuwait': 'Kuwait',
+    'Asia/Kuwait': 'Kuwait'
   },
   'KG': {
-    'Asia/Bishkek': 'Bishkek',
+    'Asia/Bishkek': 'Bishkek'
   },
   'LA': {
-    'Asia/Vientiane': 'Vientiane',
+    'Asia/Vientiane': 'Vientiane'
   },
   'LV': {
-    'Europe/Riga': 'Riga',
+    'Europe/Riga': 'Riga'
   },
   'LB': {
-    'Asia/Beirut': 'Beirut',
+    'Asia/Beirut': 'Beirut'
   },
   'LS': {
-    'Africa/Maseru': 'Maseru',
+    'Africa/Maseru': 'Maseru'
   },
   'LR': {
-    'Africa/Monrovia': 'Monrovia',
+    'Africa/Monrovia': 'Monrovia'
   },
   'LY': {
-    'Africa/Tripoli': 'Tripoli',
+    'Africa/Tripoli': 'Tripoli'
   },
   'LI': {
-    'Europe/Vaduz': 'Vaduz',
+    'Europe/Vaduz': 'Vaduz'
   },
   'LT': {
-    'Europe/Vilnius': 'Vilnius',
+    'Europe/Vilnius': 'Vilnius'
   },
   'LU': {
-    'Europe/Luxembourg': 'Luxembourg',
+    'Europe/Luxembourg': 'Luxembourg'
   },
   'MO': {
-    'Asia/Macau': 'Macau',
+    'Asia/Macau': 'Macau'
   },
   'MG': {
-    'Indian/Antananarivo': 'Antananarivo',
+    'Indian/Antananarivo': 'Antananarivo'
   },
   'MW': {
-    'Africa/Blantyre': 'Blantyre',
+    'Africa/Blantyre': 'Blantyre'
   },
   'MY': {
     'Asia/Kuala_Lumpur': 'Kuala Lumpur',
-    'Asia/Kuching': 'Kuching',
+    'Asia/Kuching': 'Kuching'
   },
   'MV': {
-    'Indian/Maldives': 'Maldives',
+    'Indian/Maldives': 'Maldives'
   },
   'ML': {
-    'Africa/Bamako': 'Bamako',
+    'Africa/Bamako': 'Bamako'
   },
   'MT': {
-    'Europe/Malta': 'Malta',
+    'Europe/Malta': 'Malta'
   },
   'MH': {
     'Pacific/Kwajalein': 'Kwajalein',
-    'Pacific/Majuro': 'Majuro',
+    'Pacific/Majuro': 'Majuro'
   },
   'MR': {
-    'Africa/Nouakchott': 'Nouakchott',
+    'Africa/Nouakchott': 'Nouakchott'
   },
   'MU': {
-    'Indian/Mauritius': 'Mauritius',
+    'Indian/Mauritius': 'Mauritius'
   },
   'MX': {
     'America/Bahia_Banderas': 'Bahia Banderas',
@@ -487,121 +487,121 @@
     'America/Monterrey': 'Monterrey',
     'America/Ojinaga': 'Ojinaga',
     'America/Santa_Isabel': 'Santa Isabel',
-    'America/Tijuana': 'Tijuana',
+    'America/Tijuana': 'Tijuana'
   },
   'FM': {
     'Pacific/Chuuk': 'Chuuk',
     'Pacific/Kosrae': 'Kosrae',
-    'Pacific/Pohnpei': 'Pohnpei',
+    'Pacific/Pohnpei': 'Pohnpei'
   },
   'MD': {
-    'Europe/Chisinau': 'Chisinau',
+    'Europe/Chisinau': 'Chisinau'
   },
   'MC': {
-    'Europe/Monaco': 'Monaco',
+    'Europe/Monaco': 'Monaco'
   },
   'MN': {
     'Asia/Choibalsan': 'Choibalsan',
     'Asia/Hovd': 'Hovd',
-    'Asia/Ulaanbaatar': 'Ulaanbaatar',
+    'Asia/Ulaanbaatar': 'Ulaanbaatar'
   },
   'ME': {
-    'Europe/Podgorica': 'Podgorica',
+    'Europe/Podgorica': 'Podgorica'
   },
   'MS': {
-    'America/Montserrat': 'Montserrat',
+    'America/Montserrat': 'Montserrat'
   },
   'MA': {
-    'Africa/Casablanca': 'Casablanca',
+    'Africa/Casablanca': 'Casablanca'
   },
   'MZ': {
-    'Africa/Maputo': 'Maputo',
+    'Africa/Maputo': 'Maputo'
   },
   'MM': {
-    'Asia/Rangoon': 'Rangoon',
+    'Asia/Rangoon': 'Rangoon'
   },
   'NA': {
-    'Africa/Windhoek': 'Windhoek',
+    'Africa/Windhoek': 'Windhoek'
   },
   'NR': {
-    'Pacific/Nauru': 'Nauru',
+    'Pacific/Nauru': 'Nauru'
   },
   'NP': {
-    'Asia/Kathmandu': 'Kathmandu',
+    'Asia/Kathmandu': 'Kathmandu'
   },
   'NL': {
-    'Europe/Amsterdam': 'Amsterdam',
+    'Europe/Amsterdam': 'Amsterdam'
   },
   'AN': {
   },
   'NZ': {
     'Pacific/Auckland': 'Auckland',
-    'Pacific/Chatham': 'Chatham',
+    'Pacific/Chatham': 'Chatham'
   },
   'NI': {
-    'America/Managua': 'Managua',
+    'America/Managua': 'Managua'
   },
   'NE': {
-    'Africa/Niamey': 'Niamey',
+    'Africa/Niamey': 'Niamey'
   },
   'NG': {
-    'Africa/Lagos': 'Lagos',
+    'Africa/Lagos': 'Lagos'
   },
   'NF': {
-    'Pacific/Norfolk': 'Norfolk',
+    'Pacific/Norfolk': 'Norfolk'
   },
   'KP': {
-    'Asia/Pyongyang': 'Pyongyang',
+    'Asia/Pyongyang': 'Pyongyang'
   },
   'MP': {
-    'Pacific/Saipan': 'Saipan',
+    'Pacific/Saipan': 'Saipan'
   },
   'NO': {
-    'Europe/Oslo': 'Oslo',
+    'Europe/Oslo': 'Oslo'
   },
   'OM': {
-    'Asia/Muscat': 'Muscat',
+    'Asia/Muscat': 'Muscat'
   },
   'PK': {
-    'Asia/Karachi': 'Karachi',
+    'Asia/Karachi': 'Karachi'
   },
   'PW': {
-    'Pacific/Palau': 'Palau',
+    'Pacific/Palau': 'Palau'
   },
   'PA': {
-    'America/Panama': 'Panama',
+    'America/Panama': 'Panama'
   },
   'PG': {
-    'Pacific/Port_Moresby': 'Port Moresby',
+    'Pacific/Port_Moresby': 'Port Moresby'
   },
   'PY': {
-    'America/Asuncion': 'Asuncion',
+    'America/Asuncion': 'Asuncion'
   },
   'PE': {
-    'America/Lima': 'Lima',
+    'America/Lima': 'Lima'
   },
   'PH': {
-    'Asia/Manila': 'Manila',
+    'Asia/Manila': 'Manila'
   },
   'PN': {
-    'Pacific/Pitcairn': 'Pitcairn',
+    'Pacific/Pitcairn': 'Pitcairn'
   },
   'PL': {
-    'Europe/Warsaw': 'Warsaw',
+    'Europe/Warsaw': 'Warsaw'
   },
   'PT': {
     'Atlantic/Azores': 'Azores',
     'Atlantic/Madeira': 'Madeira',
-    'Europe/Lisbon': 'Lisbon',
+    'Europe/Lisbon': 'Lisbon'
   },
   'PR': {
-    'America/Puerto_Rico': 'Puerto Rico',
+    'America/Puerto_Rico': 'Puerto Rico'
   },
   'QA': {
-    'Asia/Qatar': 'Qatar',
+    'Asia/Qatar': 'Qatar'
   },
   'RO': {
-    'Europe/Bucharest': 'Bucharest',
+    'Europe/Bucharest': 'Bucharest'
   },
   'RU': {
     'Asia/Anadyr': 'Anadyr',
@@ -619,156 +619,156 @@
     'Europe/Kaliningrad': 'Kaliningrad',
     'Europe/Moscow': 'Moscow',
     'Europe/Samara': 'Samara',
-    'Europe/Volgograd': 'Volgograd',
+    'Europe/Volgograd': 'Volgograd'
   },
   'RW': {
-    'Africa/Kigali': 'Kigali',
+    'Africa/Kigali': 'Kigali'
   },
   'ST': {
-    'Africa/Sao_Tome': 'Sao Tome',
+    'Africa/Sao_Tome': 'Sao Tome'
   },
   'SH': {
-    'Atlantic/St_Helena': 'St Helena',
+    'Atlantic/St_Helena': 'St Helena'
   },
   'KN': {
-    'America/St_Kitts': 'St Kitts',
+    'America/St_Kitts': 'St Kitts'
   },
   'LC': {
-    'America/St_Lucia': 'St Lucia',
+    'America/St_Lucia': 'St Lucia'
   },
   'VC': {
-    'America/St_Vincent': 'St Vincent',
+    'America/St_Vincent': 'St Vincent'
   },
   'WS': {
-    'Pacific/Apia': 'Apia',
+    'Pacific/Apia': 'Apia'
   },
   'SM': {
-    'Europe/San_Marino': 'San Marino',
+    'Europe/San_Marino': 'San Marino'
   },
   'SA': {
-    'Asia/Riyadh': 'Riyadh',
+    'Asia/Riyadh': 'Riyadh'
   },
   'SN': {
-    'Africa/Dakar': 'Dakar',
+    'Africa/Dakar': 'Dakar'
   },
   'RS': {
-    'Europe/Belgrade': 'Belgrade',
+    'Europe/Belgrade': 'Belgrade'
   },
   'SC': {
-    'Indian/Mahe': 'Mahe',
+    'Indian/Mahe': 'Mahe'
   },
   'SL': {
-    'Africa/Freetown': 'Freetown',
+    'Africa/Freetown': 'Freetown'
   },
   'SG': {
-    'Asia/Singapore': 'Singapore',
+    'Asia/Singapore': 'Singapore'
   },
   'SK': {
-    'Europe/Bratislava': 'Bratislava',
+    'Europe/Bratislava': 'Bratislava'
   },
   'SI': {
-    'Europe/Ljubljana': 'Ljubljana',
+    'Europe/Ljubljana': 'Ljubljana'
   },
   'SB': {
-    'Pacific/Guadalcanal': 'Guadalcanal',
+    'Pacific/Guadalcanal': 'Guadalcanal'
   },
   'SO': {
-    'Africa/Mogadishu': 'Mogadishu',
+    'Africa/Mogadishu': 'Mogadishu'
   },
   'ZA': {
-    'Africa/Johannesburg': 'Johannesburg',
+    'Africa/Johannesburg': 'Johannesburg'
   },
   'GS': {
-    'Atlantic/South_Georgia': 'South Georgia',
+    'Atlantic/South_Georgia': 'South Georgia'
   },
   'KR': {
-    'Asia/Seoul': 'Seoul',
+    'Asia/Seoul': 'Seoul'
   },
   'ES': {
     'Africa/Ceuta': 'Ceuta',
     'Atlantic/Canary': 'Canary',
-    'Europe/Madrid': 'Madrid',
+    'Europe/Madrid': 'Madrid'
   },
   'LK': {
-    'Asia/Colombo': 'Colombo',
+    'Asia/Colombo': 'Colombo'
   },
   'SD': {
-    'Africa/Khartoum': 'Khartoum',
+    'Africa/Khartoum': 'Khartoum'
   },
   'SR': {
-    'America/Paramaribo': 'Paramaribo',
+    'America/Paramaribo': 'Paramaribo'
   },
   'SZ': {
-    'Africa/Mbabane': 'Mbabane',
+    'Africa/Mbabane': 'Mbabane'
   },
   'SE': {
-    'Europe/Stockholm': 'Stockholm',
+    'Europe/Stockholm': 'Stockholm'
   },
   'CH': {
-    'Europe/Zurich': 'Zurich',
+    'Europe/Zurich': 'Zurich'
   },
   'SY': {
-    'Asia/Damascus': 'Damascus',
+    'Asia/Damascus': 'Damascus'
   },
   'TW': {
-    'Asia/Taipei': 'Taipei',
+    'Asia/Taipei': 'Taipei'
   },
   'TJ': {
-    'Asia/Dushanbe': 'Dushanbe',
+    'Asia/Dushanbe': 'Dushanbe'
   },
   'TZ': {
-    'Africa/Dar_es_Salaam': 'Dar es Salaam',
+    'Africa/Dar_es_Salaam': 'Dar es Salaam'
   },
   'TH': {
-    'Asia/Bangkok': 'Bangkok',
+    'Asia/Bangkok': 'Bangkok'
   },
   'BS': {
-    'America/Nassau': 'Nassau',
+    'America/Nassau': 'Nassau'
   },
   'GM': {
-    'Africa/Banjul': 'Banjul',
+    'Africa/Banjul': 'Banjul'
   },
   'TG': {
-    'Africa/Lome': 'Lome',
+    'Africa/Lome': 'Lome'
   },
   'TO': {
-    'Pacific/Tongatapu': 'Tongatapu',
+    'Pacific/Tongatapu': 'Tongatapu'
   },
   'TT': {
-    'America/Port_of_Spain': 'Port of Spain',
+    'America/Port_of_Spain': 'Port of Spain'
   },
   'TN': {
-    'Africa/Tunis': 'Tunis',
+    'Africa/Tunis': 'Tunis'
   },
   'TR': {
-    'Europe/Istanbul': 'Istanbul',
+    'Europe/Istanbul': 'Istanbul'
   },
   'TM': {
-    'Asia/Ashgabat': 'Ashgabat',
+    'Asia/Ashgabat': 'Ashgabat'
   },
   'TC': {
-    'America/Grand_Turk': 'Grand Turk',
+    'America/Grand_Turk': 'Grand Turk'
   },
   'TV': {
-    'Pacific/Funafuti': 'Funafuti',
+    'Pacific/Funafuti': 'Funafuti'
   },
   'VI': {
-    'America/St_Thomas': 'St Thomas',
+    'America/St_Thomas': 'St Thomas'
   },
   'UG': {
-    'Africa/Kampala': 'Kampala',
+    'Africa/Kampala': 'Kampala'
   },
   'UA': {
     'Europe/Kiev': 'Kiev',
     'Europe/Simferopol': 'Simferopol',
     'Europe/Uzhgorod': 'Uzhgorod',
-    'Europe/Zaporozhye': 'Zaporozhye',
+    'Europe/Zaporozhye': 'Zaporozhye'
   },
   'AE': {
-    'Asia/Dubai': 'Dubai',
+    'Asia/Dubai': 'Dubai'
   },
   'GB': {
-    'Europe/London': 'London',
+    'Europe/London': 'London'
   },
   'US': {
     'America/Adak': 'Adak',
@@ -800,37 +800,37 @@
     'America/Shiprock': 'Shiprock',
     'America/Sitka': 'Sitka',
     'America/Yakutat': 'Yakutat',
-    'Pacific/Honolulu': 'Honolulu',
+    'Pacific/Honolulu': 'Honolulu'
   },
   'UY': {
-    'America/Montevideo': 'Montevideo',
+    'America/Montevideo': 'Montevideo'
   },
   'UZ': {
     'Asia/Samarkand': 'Samarkand',
-    'Asia/Tashkent': 'Tashkent',
+    'Asia/Tashkent': 'Tashkent'
   },
   'VU': {
-    'Pacific/Efate': 'Efate',
+    'Pacific/Efate': 'Efate'
   },
   'VA': {
-    'Europe/Vatican': 'Vatican',
+    'Europe/Vatican': 'Vatican'
   },
   'VE': {
-    'America/Caracas': 'Caracas',
+    'America/Caracas': 'Caracas'
   },
   'VN': {
-    'Asia/Ho_Chi_Minh': 'Ho Chi Minh',
+    'Asia/Ho_Chi_Minh': 'Ho Chi Minh'
   },
   'EH': {
-    'Africa/El_Aaiun': 'El Aaiun',
+    'Africa/El_Aaiun': 'El Aaiun'
   },
   'YE': {
-    'Asia/Aden': 'Aden',
+    'Asia/Aden': 'Aden'
   },
   'ZM': {
-    'Africa/Lusaka': 'Lusaka',
+    'Africa/Lusaka': 'Lusaka'
   },
   'ZW': {
-    'Africa/Harare': 'Harare',
-  },
+    'Africa/Harare': 'Harare'
+  }
 }

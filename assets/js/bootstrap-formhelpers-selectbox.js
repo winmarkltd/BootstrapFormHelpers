@@ -1,5 +1,5 @@
 /* ==========================================================
- * bootstrap-formhelpers-selectbox.js v1.3.1
+ * bootstrap-formhelpers-selectbox.js
  * https://github.com/vlamanna/BootstrapFormHelpers
  * ==========================================================
  * Copyright 2012 Vincent Lamanna
@@ -187,6 +187,7 @@
     return this.each(function () {
       var $this = $(this)
         , data = $this.data('selectbox')
+      this.type = 'selectbox';
       if (!data) $this.data('selectbox', (data = new SelectBox(this)))
       if (typeof option == 'string') data[option].call($this)
     })
@@ -194,6 +195,16 @@
 
   $.fn.selectbox.Constructor = SelectBox
 
+  $.valHooks.selectbox = {
+    get: function(el) {
+      return $(el).find('input[type="hidden"]').val();
+    },
+    set: function(el, val) {
+      var $el = $(el);
+      $el.find('input[type="hidden"]').val(val);
+      $el.find('.selectbox-option').text(val);
+    }
+  }
 
   /* APPLY TO STANDARD SELECTBOX ELEMENTS
    * =================================== */
