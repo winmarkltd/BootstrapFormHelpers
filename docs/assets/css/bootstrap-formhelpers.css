@@ -196,21 +196,28 @@ table.calendar {
 table.calendar .months-header > th {
   text-align: center;
   font-size: 12px;
+}
+
+table.calendar .months-header > th.month > span {
   width: 100px;
+  display: inline-block;
+}
+
+table.calendar .months-header > th.year > span {
+  width: 50px;
+  display: inline-block;
 }
 
 table.calendar .days-header > th {
   text-align: center;
   font-size: 11px;
   line-height: 12px;
-  width: 100px;
 }
 
 table.calendar > tbody > tr > td {
   text-align: center;
   font-size: 11px;
   line-height: 12px;
-  width: 100px;
 }
 
 table.calendar > tbody > tr > td.today {
@@ -266,3 +273,58 @@ table.calendar > tbody > tr > td.off {
   filter: progid:dximagetransform.microsoft.gradient(startColorstr='#ff0088cc', endColorstr='#ff0077b3', GradientType=0);
 }
 
+table.timepicker-table {
+  width: 180px;
+  margin: 0;
+}
+
+table.timepicker-table > tbody > tr > td {
+  text-align: center;
+  border: 0;
+}
+
+table.timepicker-table > tbody > tr > td.separator {
+  line-height: 65px;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+table.timepicker-table > tbody > tr > td > input {
+  margin: 0;
+  text-align: center;
+}
+
+.timepicker {
+  position: relative;
+}
+
+.timepicker-toggle {
+  *margin-bottom: -3px;
+}
+
+.timepicker-popover {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1000;
+  display: none;
+  float: left;
+  min-width: 160px;
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  *border-right-width: 2px;
+  *border-bottom-width: 2px;
+  -webkit-border-radius: 6px;
+     -moz-border-radius: 6px;
+          border-radius: 6px;
+}
+
+.timepicker-popover.pull-right {
+  right: 0;
+  left: auto;
+}
+
+.open > .timepicker-popover {
+  display: block;
+}

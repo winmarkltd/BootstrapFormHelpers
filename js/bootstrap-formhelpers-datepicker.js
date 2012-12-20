@@ -23,7 +23,7 @@
   "use strict"; // jshint ;_;
 
 
- /* SELECTBOX CLASS DEFINITION
+ /* DATEPICKER CLASS DEFINITION
   * ========================= */
 
   var toggle = '[data-toggle=datepicker]'
@@ -119,7 +119,8 @@
     
     $calendar = this.$element.find('.datepicker-calendar')
     
-    $calendar.find('table > thead > tr > th.month').text(MonthsList[month] + " " + year)
+    $calendar.find('table > thead > tr > th.month > span').text(MonthsList[month])
+    $calendar.find('table > thead > tr > th.year > span').text(year)
     $daysHeader = $calendar.find('table > thead > tr.days-header')
     $daysHeader.html('')
     for (var i=0; i < DaysList.length; i++) {
@@ -172,7 +173,7 @@
     }
   }
   
-  , previous: function (e) {
+  , previousMonth: function (e) {
     var $this = $(this)
       , $parent
       , $datePicker
@@ -192,7 +193,7 @@
     return false;
   }
   
-  , next: function (e) {
+  , nextMonth: function (e) {
     var $this = $(this)
       , $parent
       , $datePicker
@@ -205,6 +206,36 @@
     } else {
     	$parent.data('month', new Number($parent.data('month')) + 1)
     }
+    
+    $datePicker = $parent.data('datepicker')
+    $datePicker.updateCalendar()
+    
+    return false;
+  }
+  
+  , previousYear: function (e) {
+    var $this = $(this)
+      , $parent
+      , $datePicker
+      
+    $parent = $this.closest('.datepicker')
+    
+    $parent.data('year', new Number($parent.data('year')) - 1)
+    
+    $datePicker = $parent.data('datepicker')
+    $datePicker.updateCalendar()
+    
+    return false;
+  }
+  
+  , nextYear: function (e) {
+    var $this = $(this)
+      , $parent
+      , $datePicker
+      
+    $parent = $this.closest('.datepicker')
+    
+    $parent.data('year', new Number($parent.data('year')) + 1)
     
     $datePicker = $parent.data('datepicker')
     $datePicker.updateCalendar()
@@ -274,7 +305,7 @@
   }
 
 
-  /* SELECTBOX PLUGIN DEFINITION
+  /* DATEPICKER PLUGIN DEFINITION
    * ========================== */
 
   $.fn.datepicker = function (option) {
@@ -295,7 +326,7 @@
     date: ""
   }
   
-  /* APPLY TO STANDARD SELECTBOX ELEMENTS
+  /* APPLY TO STANDARD DATEPICKER ELEMENTS
    * =================================== */
 
   $(window).on('load', function () {
@@ -311,8 +342,10 @@
       .on('click.datepicker.data-api', clearMenus)
     $('body')
       .on('click.datepicker.data-api touchstart.datepicker.data-api', toggle, DatePicker.prototype.toggle)
-      .on('click.datepicker.data-api touchstart.datepicker.data-api', 'table.calendar .previous', DatePicker.prototype.previous)
-      .on('click.datepicker.data-api touchstart.datepicker.data-api', 'table.calendar .next', DatePicker.prototype.next)
+      .on('click.datepicker.data-api touchstart.datepicker.data-api', 'table.calendar .month > .previous', DatePicker.prototype.previousMonth)
+      .on('click.datepicker.data-api touchstart.datepicker.data-api', 'table.calendar .month > .next', DatePicker.prototype.nextMonth)
+      .on('click.datepicker.data-api touchstart.datepicker.data-api', 'table.calendar .year > .previous', DatePicker.prototype.previousYear)
+      .on('click.datepicker.data-api touchstart.datepicker.data-api', 'table.calendar .year > .next', DatePicker.prototype.nextYear)
       .on('click.datepicker.data-api touchstart.datepicker.data-api', 'table.calendar td:not[.off]', DatePicker.prototype.select)
   })
 

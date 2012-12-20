@@ -56,11 +56,11 @@
   <div class="jumbotron masthead">
     <div class="container">
       <h1>Bootstrap Form Helpers</h1>
-      <p class="lead">Extend Bootstrap's components—now with 8 custom jQuery plugins.</p>
+      <p class="lead">Extend Bootstrap's components—now with 9 custom jQuery plugins.</p>
       <p><a href="https://github.com/vlamanna/BootstrapFormHelpers/zipball/master" class="btn btn-primary btn-large">Download Bootstrap Form Helpers</a></p>
       <ul class="masthead-links">
         <li><a href="http://github.com/vlamanna/BootstrapFormHelpers">GitHub project</a></li>
-        <li>Version 1.5.0</li>
+        <li>Version 1.6.0</li>
       </ul>
     </div>
   </div>
@@ -100,6 +100,7 @@
           <li><a href="#timezones"><i class="icon-chevron-right"></i> Timezones</a></li>
           <li><a href="#googlefonts"><i class="icon-chevron-right"></i> Google Fonts</a></li>
           <li><a href="#datepicker"><i class="icon-chevron-right"></i> Date Picker</a></li>
+          <li><a href="#timepicker"><i class="icon-chevron-right"></i> Time Picker</a></li>
         </ul>
       </div>
       <div class="span9">
@@ -778,16 +779,15 @@
                 <table class="calendar table table-bordered">
                   <thead>
                     <tr class="months-header">
-                      <th class="previous">
-                        <a class="btn btn-mini" href="#">
-                          <i class="icon-chevron-left"></i>
-                        </a>
+                      <th class="month" colspan="4">
+                        <a class="previous" href="#"><i class="icon-chevron-left"></i></a>
+                        <span></span>
+                        <a class="next" href="#"><i class="icon-chevron-right"></i></a>
                       </th>
-                      <th class="month" colspan="5"></th>
-                      <th class="next">
-                        <a class="btn btn-mini" href="#">
-                          <i class="icon-chevron-right"></i>
-                        </a>
+                      <th class="year" colspan="3">
+                        <a class="previous" href="#"><i class="icon-chevron-left"></i></a>
+                        <span></span>
+                        <a class="next" href="#"><i class="icon-chevron-right"></i></a>
                       </th>
                     </tr>
                     <tr class="days-header">
@@ -805,16 +805,15 @@
     &lt;table class="calendar table table-bordered"&gt;
       &lt;thead&gt;
         &lt;tr class="months-header"&gt;
-          &lt;th class="previous"&gt;
-            &lt;a class="btn btn-mini" href="#"&gt;
-              &lt;i class="icon-chevron-left"&gt;&lt;/i&gt;
-            &lt;/a&gt;
+          &lt;th class="month" colspan="4"&gt;
+            &lt;a class="previous" href="#"&gt;&lt;i class="icon-chevron-left"&gt;&lt;/i&gt;&lt;/a&gt;
+            &lt;span&gt;&lt;/span&gt;
+            &lt;a class="next" href="#"&gt;&lt;i class="icon-chevron-right"&gt;&lt;/i&gt;&lt;/a&gt;
           &lt;/th&gt;
-          &lt;th class="month" colspan="5"&gt;&lt;/th&gt;
-          &lt;th class="next"&gt;
-            &lt;a class="btn btn-mini" href="#"&gt;
-              &lt;i class="icon-chevron-right"&gt;&lt;/i&gt;
-            &lt;/a&gt;
+          &lt;th class="year" colspan="3"&gt;
+            &lt;a class="previous" href="#"&gt;&lt;i class="icon-chevron-left"&gt;&lt;/i&gt;&lt;/a&gt;
+            &lt;span&gt;&lt;/span&gt;
+            &lt;a class="next" href="#"&gt;&lt;i class="icon-chevron-right"&gt;&lt;/i&gt;&lt;/a&gt;
           &lt;/th&gt;
         &lt;/tr&gt;
         &lt;tr class="days-header"&gt;
@@ -834,16 +833,15 @@
                 <table class="calendar table table-bordered">
                   <thead>
                     <tr class="months-header">
-                      <th class="previous">
-                        <a class="btn btn-mini" href="#">
-                          <i class="icon-chevron-left"></i>
-                        </a>
+                      <th class="month" colspan="4">
+                        <a class="previous" href="#"><i class="icon-chevron-left"></i></a>
+                        <span></span>
+                        <a class="next" href="#"><i class="icon-chevron-right"></i></a>
                       </th>
-                      <th class="month" colspan="5"></th>
-                      <th class="next">
-                        <a class="btn btn-mini" href="#">
-                          <i class="icon-chevron-right"></i>
-                        </a>
+                      <th class="year" colspan="3">
+                        <a class="previous" href="#"><i class="icon-chevron-left"></i></a>
+                        <span></span>
+                        <a class="next" href="#"><i class="icon-chevron-right"></i></a>
                       </th>
                     </tr>
                     <tr class="days-header">
@@ -861,22 +859,129 @@
     &lt;table class="calendar table table-bordered"&gt;
       &lt;thead&gt;
         &lt;tr class="months-header"&gt;
-          &lt;th class="previous"&gt;
-            &lt;a class="btn btn-mini" href="#"&gt;
-              &lt;i class="icon-chevron-left"&gt;&lt;/i&gt;
-            &lt;/a&gt;
+          &lt;th class="month" colspan="4"&gt;
+            &lt;a class="previous" href="#"&gt;&lt;i class="icon-chevron-left"&gt;&lt;/i&gt;&lt;/a&gt;
+            &lt;span&gt;&lt;/span&gt;
+            &lt;a class="next" href="#"&gt;&lt;i class="icon-chevron-right"&gt;&lt;/i&gt;&lt;/a&gt;
           &lt;/th&gt;
-          &lt;th class="month" colspan="5"&gt;&lt;/th&gt;
-          &lt;th class="next"&gt;
-            &lt;a class="btn btn-mini" href="#"&gt;
-              &lt;i class="icon-chevron-right"&gt;&lt;/i&gt;
-            &lt;/a&gt;
+          &lt;th class="year" colspan="3"&gt;
+            &lt;a class="previous" href="#"&gt;&lt;i class="icon-chevron-left"&gt;&lt;/i&gt;&lt;/a&gt;
+            &lt;span&gt;&lt;/span&gt;
+            &lt;a class="next" href="#"&gt;&lt;i class="icon-chevron-right"&gt;&lt;/i&gt;&lt;/a&gt;
           &lt;/th&gt;
         &lt;/tr&gt;
         &lt;tr class="days-header"&gt;
         &lt;/tr&gt;
       &lt;/thead&gt;
       &lt;tbody&gt;
+      &lt;/tbody&gt;
+    &lt;/table&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</pre>
+
+        </section> 
+        
+        <!-- Time Picker
+        ================================================== -->
+        <section id="timepicker">
+          <div class="page-header">
+            <h1>Time Picker <small>bootstrap-formhelpers-timepicker.js</small></h1>
+          </div>
+          <h3>About Time Picker</h3>
+          <p>For adding a time picker, include bootstrap-formhelpers-timepicker.js once alongside the other JS files.</p>
+          <h3>Use cases</h3>
+          
+          <p>Simplest example.</p>
+          <form class="bs-docs-example form-inline">
+            <div class="timepicker">
+              <input type="text" class="input-medium timepicker-toggle" data-toggle="timepicker" readonly>
+              <div class="timepicker-popover">
+                <table class="timepicker-table table">
+                  <tbody>
+                    <tr>
+                      <td class="hour">
+                        <a class="next" href="#"><i class="icon-chevron-up"></i></a><br>
+                        <input type="text" class="input-mini" readonly><br>
+                        <a class="previous" href="#"><i class="icon-chevron-down"></i></a>
+                      </td>
+                      <td class="separator">:</td>
+                      <td class="minute">
+                        <a class="next" href="#"><i class="icon-chevron-up"></i></a><br>
+                        <input type="text" class="input-mini" readonly><br>
+                        <a class="previous" href="#"><i class="icon-chevron-down"></i></a>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </form>
+          <pre class="prettyprint">&lt;div class="timepicker"&gt;
+  &lt;input type="text" class="input-medium timepicker-toggle" data-toggle="timepicker" readonly&gt;
+  &lt;div class="timepicker-popover"&gt;
+    &lt;table class="timepicker-table table"&gt;
+      &lt;tbody&gt;
+        &lt;tr&gt;
+          &lt;td class="hour"&gt;
+            &lt;a class="next" href="#"&gt;&lt;i class="icon-chevron-up"&gt;&lt;/i&gt;&lt;/a&gt;&lt;br&gt;
+            &lt;input type="text" class="input-mini" readonly&gt;&lt;br&gt;
+            &lt;a class="previous" href="#"&gt;&lt;i class="icon-chevron-down"&gt;&lt;/i&gt;&lt;/a&gt;
+          &lt;/td&gt;
+          &lt;td class="separator"&gt;:&lt;/td&gt;
+          &lt;td class="minute"&gt;
+            &lt;a class="next" href="#"&gt;&lt;i class="icon-chevron-up"&gt;&lt;/i&gt;&lt;/a&gt;&lt;br&gt;
+            &lt;input type="text" class="input-mini" readonly&gt;&lt;br&gt;
+            &lt;a class="previous" href="#"&gt;&lt;i class="icon-chevron-down"&gt;&lt;/i&gt;&lt;/a&gt;
+          &lt;/td&gt;
+        &lt;/tr&gt;
+      &lt;/tbody&gt;
+    &lt;/table&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</pre>
+
+          <p>Example showing how to set a default time.</p>
+          <form class="bs-docs-example form-inline">
+            <div class="timepicker" data-time="08:00">
+              <input type="text" class="input-medium timepicker-toggle" data-toggle="timepicker" readonly>
+              <div class="timepicker-popover">
+                <table class="timepicker-table table">
+                  <tbody>
+                    <tr>
+                      <td class="hour">
+                        <a class="next" href="#"><i class="icon-chevron-up"></i></a><br>
+                        <input type="text" class="input-mini" readonly><br>
+                        <a class="previous" href="#"><i class="icon-chevron-down"></i></a>
+                      </td>
+                      <td class="separator">:</td>
+                      <td class="minute">
+                        <a class="next" href="#"><i class="icon-chevron-up"></i></a><br>
+                        <input type="text" class="input-mini" readonly><br>
+                        <a class="previous" href="#"><i class="icon-chevron-down"></i></a>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </form>
+          <pre class="prettyprint">&lt;div class="timepicker" data-time="08:00"&gt;
+  &lt;input type="text" class="input-medium timepicker-toggle" data-toggle="timepicker" readonly&gt;
+  &lt;div class="timepicker-popover"&gt;
+    &lt;table class="timepicker-table table"&gt;
+      &lt;tbody&gt;
+        &lt;tr&gt;
+          &lt;td class="hour"&gt;
+            &lt;a class="next" href="#"&gt;&lt;i class="icon-chevron-up"&gt;&lt;/i&gt;&lt;/a&gt;&lt;br&gt;
+            &lt;input type="text" class="input-mini" readonly&gt;&lt;br&gt;
+            &lt;a class="previous" href="#"&gt;&lt;i class="icon-chevron-down"&gt;&lt;/i&gt;&lt;/a&gt;
+          &lt;/td&gt;
+          &lt;td class="separator"&gt;:&lt;/td&gt;
+          &lt;td class="minute"&gt;
+            &lt;a class="next" href="#"&gt;&lt;i class="icon-chevron-up"&gt;&lt;/i&gt;&lt;/a&gt;&lt;br&gt;
+            &lt;input type="text" class="input-mini" readonly&gt;&lt;br&gt;
+            &lt;a class="previous" href="#"&gt;&lt;i class="icon-chevron-down"&gt;&lt;/i&gt;&lt;/a&gt;
+          &lt;/td&gt;
+        &lt;/tr&gt;
       &lt;/tbody&gt;
     &lt;/table&gt;
   &lt;/div&gt;
@@ -940,5 +1045,6 @@
     <script src="assets/js/bootstrap-formhelpers-googlefonts.js"></script>
     <script src="assets/js/bootstrap-formhelpers-datepicker.en_US.js"></script>
     <script src="assets/js/bootstrap-formhelpers-datepicker.js"></script>
+    <script src="assets/js/bootstrap-formhelpers-timepicker.js"></script>
     
 </body></html>
