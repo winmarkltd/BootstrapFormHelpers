@@ -195,14 +195,30 @@
 
   $.fn.selectbox.Constructor = SelectBox
 
-  $.valHooks.selectbox = {
+var origHook;
+  // There might already be valhooks for the "text" type
+  if ($.valHooks.div){
+      // Preserve the original valhook function
+      origHook = $.valHooks.div
+  }
+  $.valHooks.div = {
     get: function(el) {
-      return $(el).find('input[type="hidden"]').val();
+      if($(el).hasClass("selectbox")){
+        return $(el).find('input[type="hidden"]').val();
+      }else{
+        return origHook.get(el);
+      }
     },
     set: function(el, val) {
-      var $el = $(el);
-      $el.find('input[type="hidden"]').val(val);
-      $el.find('.selectbox-option').text(val);
+      if($(el).hasClass("selectbox")){
+          var $el = $(el)
+            , text = $el.find("li a[data-option='"+val+"']").text();
+          $el.find('input[type="hidden"]').val(val);
+
+          $el.find('.selectbox-option').text(text);
+      }else{
+        return origHook.set(el,val);
+      }
     }
   }
 
