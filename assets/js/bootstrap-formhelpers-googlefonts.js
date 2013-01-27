@@ -26,27 +26,38 @@
  /* FONTS CLASS DEFINITION
   * ====================== */
 
-  var GoogleFonts = function (element, options) {
-    this.options = $.extend({}, $.fn.googlefonts.defaults, options)
+  var BFHGoogleFonts = function (element, options) {
+    this.options = $.extend({}, $.fn.bfhgooglefonts.defaults, options)
     this.$element = $(element)
     this.familyList = {}
-      
-    if (this.options.families) {
+    
+    if (this.options.subsets) {
+      this.options.subsets = this.options.subsets.split(',')
+      for (var i in BFHGoogleFontsList.items) {
+        var font = BFHGoogleFontsList.items[i];
+        if ($.inArray(font.subsets[0], this.options.subsets) >= 0) {
+          this.familyList[font.family] = {
+            'font': BFHGoogleFontsList.items[i],
+            'i': parseInt(i)
+          };
+        }
+      }
+    } else if (this.options.families) {
       this.options.families = this.options.families.split(',')
-      for (var i in GoogleFontsList.items) {
-        var font = GoogleFontsList.items[i];
+      for (var i in BFHGoogleFontsList.items) {
+        var font = BFHGoogleFontsList.items[i];
         if ($.inArray(font.family, this.options.families) >= 0) {
           this.familyList[font.family] = {
-            'font': GoogleFontsList.items[i],
+            'font': BFHGoogleFontsList.items[i],
             'i': parseInt(i)
           };
         }
       }
     } else {
-      for (var i in GoogleFontsList.items) {
-        var font = GoogleFontsList.items[i];
+      for (var i in BFHGoogleFontsList.items) {
+        var font = BFHGoogleFontsList.items[i];
         this.familyList[font.family] = {
-          'font': GoogleFontsList.items[i],
+          'font': BFHGoogleFontsList.items[i],
           'i': parseInt(i)
         };
       }
@@ -60,14 +71,14 @@
       this.displayFont()
     }
     
-    if (this.$element.hasClass("selectbox")) {
+    if (this.$element.hasClass("bfh-selectbox")) {
       this.addBootstrapFonts()
     }
   }
 
-  GoogleFonts.prototype = {
+  BFHGoogleFonts.prototype = {
 
-    constructor: GoogleFonts
+    constructor: BFHGoogleFonts
 
     , addFonts: function () {
       var value = this.options.family
@@ -90,7 +101,7 @@
       var value = this.options.family
       
       $input = this.$element.find('input[type="hidden"]')
-      $toggle = this.$element.find('.selectbox-option')
+      $toggle = this.$element.find('.bfh-selectbox-option')
       $options = this.$element.find('[role=options]')
       
       $options.html('')
@@ -112,7 +123,7 @@
     , displayFont: function () {
       var value = this.options.family
       
-      this.$element.html(this.familyList[font].font.family)
+      this.$element.html(this.familyList[value].font.family)
     }
 
   }
@@ -121,33 +132,23 @@
  /* FONTS PLUGIN DEFINITION
   * ======================= */
 
-  $.fn.googlefonts = function (option) {
+  $.fn.bfhgooglefonts = function (option) {
     return this.each(function () {
       var $this = $(this)
-        , data = $this.data('googlefonts')
+        , data = $this.data('bfhgooglefonts')
         , options = typeof option == 'object' && option
-      this.type = 'googlefonts';
-      if (!data) $this.data('googlefonts', (data = new GoogleFonts(this, options)))
+      this.type = 'bfhgooglefonts';
+      if (!data) $this.data('bfhgooglefonts', (data = new BFHGoogleFonts(this, options)))
       if (typeof option == 'string') data[option]()
     })
   }
 
-  $.valHooks.googlefonts = {
-    get: function(el) {
-      return $(el).find('input[type="hidden"]').val();
-    },
-    set: function(el, val) {
-      var $el = $(el);
-      $el.find('input[type="hidden"]').val(val);
-      $el.find('.selectbox-option').text(val);
-    }
-  }
+  $.fn.bfhgooglefonts.Constructor = BFHGoogleFonts
 
-  $.fn.googlefonts.Constructor = GoogleFonts
-
-  $.fn.googlefonts.defaults = {
+  $.fn.bfhgooglefonts.defaults = {
     family: "",
-    families: ""
+    families: "",
+    subsets: ""
   }
   
 
@@ -155,10 +156,10 @@
   * ============== */
 
   $(window).on('load', function () {
-    $('form select.googlefonts, span.googlefonts, div.googlefonts').each(function () {
+    $('form select.bfh-googlefonts, span.bfh-googlefonts, div.bfh-googlefonts').each(function () {
       var $googlefonts = $(this)
 
-      $googlefonts.googlefonts($googlefonts.data())
+      $googlefonts.bfhgooglefonts($googlefonts.data())
     })
   })
 

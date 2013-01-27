@@ -17,7 +17,7 @@
  * limitations under the License.
  * ========================================================== */
  
- var LanguagesList = {
+ var BFHLanguagesList = {
    'om': 'Afaan Oromoo',
    'aa': 'Afaraf',
    'af': 'Afrikaans',

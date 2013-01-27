@@ -25,20 +25,20 @@
  /* COUNTRIES CLASS DEFINITION
   * ====================== */
 
-  var Countries = function (element, options) {
-    this.options = $.extend({}, $.fn.countries.defaults, options)
+  var BFHCountries = function (element, options) {
+    this.options = $.extend({}, $.fn.bfhcountries.defaults, options)
     this.$element = $(element)
     
 	if (this.options.countrylist) {
 		this.countryList = []
 		this.options.countrylist = this.options.countrylist.split(',')
-        for (var country in CountriesList) {
+        for (var country in BFHCountriesList) {
 			if ($.inArray(country, this.options.countrylist) >= 0) {
-				this.countryList[country] = CountriesList[country]
+				this.countryList[country] = BFHCountriesList[country]
 			}
 		}
 	} else {
-		this.countryList = CountriesList
+		this.countryList = BFHCountriesList
 	}
 
     if (this.$element.is("select")) {
@@ -49,14 +49,14 @@
       this.displayCountry()
     }
     
-    if (this.$element.hasClass("selectbox")) {
+    if (this.$element.hasClass("bfh-selectbox")) {
       this.addBootstrapCountries()
     }
   }
 
-  Countries.prototype = {
+  BFHCountries.prototype = {
 
-    constructor: Countries
+    constructor: BFHCountries
 
     , addCountries: function () {
       var value = this.options.country
@@ -78,7 +78,7 @@
       var value = this.options.country
       
       $input = this.$element.find('input[type="hidden"]')
-      $toggle = this.$element.find('.selectbox-option')
+      $toggle = this.$element.find('.bfh-selectbox-option')
       $options = this.$element.find('[role=options]')
       
       $options.html('')
@@ -120,20 +120,20 @@
  /* COUNTRY PLUGIN DEFINITION
   * ======================= */
 
-  $.fn.countries = function (option) {
+  $.fn.bfhcountries = function (option) {
     return this.each(function () {
       var $this = $(this)
-        , data = $this.data('countries')
+        , data = $this.data('bfhcountries')
         , options = typeof option == 'object' && option
         
-      if (!data) $this.data('countries', (data = new Countries(this, options)))
+      if (!data) $this.data('bfhcountries', (data = new BFHCountries(this, options)))
       if (typeof option == 'string') data[option]()
     })
   }
 
-  $.fn.countries.Constructor = Countries
+  $.fn.bfhcountries.Constructor = BFHCountries
 
-  $.fn.countries.defaults = {
+  $.fn.bfhcountries.defaults = {
     country: "",
 	countryList: "",
     flags: false
@@ -144,10 +144,10 @@
   * ============== */
 
   $(window).on('load', function () {
-    $('form select.countries, span.countries, div.countries').each(function () {
+    $('form select.bfh-countries, span.bfh-countries, div.bfh-countries').each(function () {
       var $countries = $(this)
 
-      $countries.countries($countries.data())
+      $countries.bfhcountries($countries.data())
     })
   })
 

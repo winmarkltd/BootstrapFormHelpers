@@ -26,13 +26,13 @@
  /* SELECTBOX CLASS DEFINITION
   * ========================= */
 
-  var toggle = '[data-toggle=selectbox]'
-    , SelectBox = function (element) {
+  var toggle = '[data-toggle=bfh-selectbox]'
+    , BFHSelectBox = function (element) {
       }
 
-  SelectBox.prototype = {
+  BFHSelectBox.prototype = {
 
-    constructor: SelectBox
+    constructor: BFHSelectBox
 
   , toggle: function (e) {
       var $this = $(this)
@@ -50,7 +50,7 @@
       if (!isActive) {
         $parent.toggleClass('open')
         
-        $parent.find('[role=options] > li > [data-option="' + $this.find('.selectbox-option').data('option') + '"]').focus()
+        $parent.find('[role=options] > li > [data-option="' + $this.find('.bfh-selectbox-option').data('option') + '"]').focus()
       }
 
       return false
@@ -63,7 +63,7 @@
       
     $this = $(this)
     
-    $parent = $this.closest('.selectbox')
+    $parent = $this.closest('.bfh-selectbox')
     
     $items = $('[role=options] li a', $parent)
     
@@ -89,7 +89,7 @@
 
       if ($this.is('.disabled, :disabled')) return
 
-      $parent = $this.closest('.selectbox')
+      $parent = $this.closest('.bfh-selectbox')
 
       isActive = $parent.hasClass('open')
 
@@ -99,7 +99,7 @@
 
       if (!$items.length) return
 
-      $('body').off('mouseenter.selectbox.data-api', '[role=options] > li > a', SelectBox.prototype.mouseenter)
+      $('body').off('mouseenter.bfh-selectbox.data-api', '[role=options] > li > a', BFHSelectBox.prototype.mouseenter)
       
       index = $items.index($items.filter(':focus'))
 
@@ -118,7 +118,7 @@
         .eq(index)
         .focus()
         
-      $('body').on('mouseenter.selectbox.data-api', '[role=options] > li > a', SelectBox.prototype.mouseenter)
+      $('body').on('mouseenter.bfh-selectbox.data-api', '[role=options] > li > a', BFHSelectBox.prototype.mouseenter)
     }
     
     , mouseenter: function (e) {
@@ -144,8 +144,8 @@
       
       if ($this.is('.disabled, :disabled')) return
       
-      $parent = $this.closest('.selectbox')
-      $toggle = $parent.find('.selectbox-option')
+      $parent = $this.closest('.bfh-selectbox')
+      $toggle = $parent.find('.bfh-selectbox-option')
       $input = $parent.find('input[type="hidden"]')
       
       $toggle.data('option', $this.data('option'))
@@ -183,26 +183,42 @@
   /* SELECTBOX PLUGIN DEFINITION
    * ========================== */
 
-  $.fn.selectbox = function (option) {
+  $.fn.bfhselectbox = function (option) {
     return this.each(function () {
       var $this = $(this)
-        , data = $this.data('selectbox')
-      this.type = 'selectbox';
-      if (!data) $this.data('selectbox', (data = new SelectBox(this)))
+        , data = $this.data('bfhselectbox')
+      this.type = 'bfhselectbox';
+      if (!data) $this.data('bfhselectbox', (data = new BFHSelectBox(this)))
       if (typeof option == 'string') data[option].call($this)
     })
   }
 
-  $.fn.selectbox.Constructor = SelectBox
+  $.fn.bfhselectbox.Constructor = BFHSelectBox
 
-  $.valHooks.selectbox = {
+  var origHook
+  // There might already be valhooks for the "text" type
+  if ($.valHooks.div){
+    // Preserve the original valhook function
+    origHook = $.valHooks.div
+  }
+  $.valHooks.div = {
     get: function(el) {
-      return $(el).find('input[type="hidden"]').val();
+      if($(el).hasClass("bfh-selectbox")){
+        return $(el).find('input[type="hidden"]').val()
+      }else if (origHook){
+        return origHook.get(el)
+      }
     },
     set: function(el, val) {
-      var $el = $(el);
-      $el.find('input[type="hidden"]').val(val);
-      $el.find('.selectbox-option').text(val);
+      if($(el).hasClass("bfh-selectbox")){
+        var $el = $(el)
+          , text = $el.find("li a[data-option='"+val+"']").text()
+        $el.find('input[type="hidden"]').val(val)
+
+        $el.find('.bfh-selectbox-option').text(text)
+      }else if (origHook){
+        return origHook.set(el,val)
+      }
     }
   }
 
@@ -211,14 +227,14 @@
 
   $(function () {
     $('html')
-      .on('click.selectbox.data-api', clearMenus)
+      .on('click.bfhselectbox.data-api', clearMenus)
     $('body')
-      .on('click.selectbox.data-api touchstart.selectbox.data-api'  , toggle, SelectBox.prototype.toggle)
-      .on('keydown.selectbox.data-api', toggle + ', [role=options]' , SelectBox.prototype.keydown)
-      .on('mouseenter.selectbox.data-api', '[role=options] > li > a', SelectBox.prototype.mouseenter)
-      .on('click.selectbox.data-api', '[role=options] > li > a', SelectBox.prototype.select)  
-      .on('click.selectbox.data-api', '.selectbox-filter', function (e) { return false })
-      .on('propertychange.selectbox.data-api change.selectbox.data-api input.selectbox.data-api paste.selectbox.data-api', '.selectbox-filter', SelectBox.prototype.filter)
+      .on('click.bfhselectbox.data-api touchstart.bfhselectbox.data-api'  , toggle, BFHSelectBox.prototype.toggle)
+      .on('keydown.bfhselectbox.data-api', toggle + ', [role=options]' , BFHSelectBox.prototype.keydown)
+      .on('mouseenter.bfhselectbox.data-api', '[role=options] > li > a', BFHSelectBox.prototype.mouseenter)
+      .on('click.bfhselectbox.data-api', '[role=options] > li > a', BFHSelectBox.prototype.select)  
+      .on('click.bfhselectbox.data-api', '.bfh-selectbox-filter', function (e) { return false })
+      .on('propertychange.bfhselectbox.data-api change.bfhselectbox.data-api input.bfhselectbox.data-api paste.bfhselectbox.data-api', '.bfh-selectbox-filter', BFHSelectBox.prototype.filter)
   })
 
 }(window.jQuery);

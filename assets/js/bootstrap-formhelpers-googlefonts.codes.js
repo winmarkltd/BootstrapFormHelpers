@@ -18,7 +18,7 @@
  * limitations under the License.
  * ========================================================== */
 
-var GoogleFontsList = {
+var BFHGoogleFontsList = {
  "kind": "webfonts#webfontList",
  "items": [
   {

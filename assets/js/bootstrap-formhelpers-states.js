@@ -25,8 +25,8 @@
  /* STATES CLASS DEFINITION
   * ====================== */
 
-  var States = function (element, options) {
-    this.options = $.extend({}, $.fn.states.defaults, options)
+  var BFHStates = function (element, options) {
+    this.options = $.extend({}, $.fn.bfhstates.defaults, options)
     this.$element = $(element)
     
     if (this.$element.is("select")) {
@@ -37,14 +37,14 @@
       this.displayState()
     }
     
-    if (this.$element.hasClass("selectbox")) {
+    if (this.$element.hasClass("bfh-selectbox")) {
       this.addBootstrapStates()
     }
   }
 
-  States.prototype = {
+  BFHStates.prototype = {
 
-    constructor: States
+    constructor: BFHStates
 
     , addStates: function () {
       var country = this.options.country
@@ -55,7 +55,7 @@
 		
 		if (countryObject.length != 0) {
 		  country = countryObject.val()
-		  countryObject.on('change.countries.data-api', {stateObject: this}, this.changeCountry)
+		  countryObject.on('change.bfhcountries.data-api', {stateObject: this}, this.changeCountry)
 		}
 	  }
       
@@ -67,8 +67,8 @@
       
       this.$element.html('')
       this.$element.append('<option value=""></option>')
-      for (var state in StatesList[country]) {
-        this.$element.append('<option value="' + state + '">' + StatesList[country][state] + '</option>')
+      for (var state in BFHStatesList[country]) {
+        this.$element.append('<option value="' + state + '">' + BFHStatesList[country][state] + '</option>')
       }
       
       this.$element.val(value)
@@ -91,7 +91,7 @@
         
         if (countryObject.length != 0) {
           country = countryObject.find('input[type="hidden"]').val()
-          countryObject.find('input[type="hidden"]').on('change.countries.data-api', {stateObject: this}, this.changeBootstrapCountry)
+          countryObject.find('input[type="hidden"]').on('change.bfhcountries.data-api', {stateObject: this}, this.changeBootstrapCountry)
         }
       }
       
@@ -106,20 +106,20 @@
       var value = this.options.state
       
       $input = this.$element.find('input[type="hidden"]')
-      $toggle = this.$element.find('.selectbox-option')
+      $toggle = this.$element.find('.bfh-selectbox-option')
       $options = this.$element.find('[role=options]')
       
       $options.html('')
       $options.append('<li><a tabindex="-1" href="#" data-option=""></a></li>')
-      for (var state in StatesList[country]) {
-        $options.append('<li><a tabindex="-1" href="#" data-option="' + state + '">' + StatesList[country][state] + '</a></li>')
+      for (var state in BFHStatesList[country]) {
+        $options.append('<li><a tabindex="-1" href="#" data-option="' + state + '">' + BFHStatesList[country][state] + '</a></li>')
       }
       
       $toggle.data('option', value)
-      if (typeof StatesList[country][value] == "undefined") {
+      if (typeof BFHStatesList[country][value] == "undefined") {
         $toggle.html('')
       } else {
-        $toggle.html(StatesList[country][value])
+        $toggle.html(BFHStatesList[country][value])
       }
       
       $input.val(value)
@@ -137,7 +137,7 @@
       var country = this.options.country
       var value = this.options.state
       
-      this.$element.html(StatesList[country][value])
+      this.$element.html(BFHStatesList[country][value])
     }
 
   }
@@ -146,20 +146,20 @@
  /* STATES PLUGIN DEFINITION
   * ======================= */
 
-  $.fn.states = function (option) {
+  $.fn.bfhstates = function (option) {
     return this.each(function () {
       var $this = $(this)
-        , data = $this.data('states')
+        , data = $this.data('bfhstates')
         , options = typeof option == 'object' && option
         
-      if (!data) $this.data('states', (data = new States(this, options)))
+      if (!data) $this.data('bfhstates', (data = new BFHStates(this, options)))
       if (typeof option == 'string') data[option]()
     })
   }
 
-  $.fn.states.Constructor = States
+  $.fn.bfhstates.Constructor = BFHStates
 
-  $.fn.states.defaults = {
+  $.fn.bfhstates.defaults = {
     country: "",
     state: ""
   }
@@ -169,10 +169,10 @@
   * ============== */
 
   $(window).on('load', function () {
-    $('form select.states, span.states, div.states').each(function () {
+    $('form select.bfh-states, span.bfh-states, div.bfh-states').each(function () {
       var $states = $(this)
 
-      $states.states($states.data())
+      $states.bfhstates($states.data())
     })
   })
 

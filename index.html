@@ -67,11 +67,11 @@
   <div class="jumbotron masthead">
     <div class="container">
       <h1>Bootstrap Form Helpers</h1>
-      <p class="lead">Extend Bootstrap's components—now with 9 custom jQuery plugins.</p>
+      <p class="lead">Extend Bootstrap's components—now with 11 custom jQuery plugins.</p>
       <p><a href="https://github.com/vlamanna/BootstrapFormHelpers/zipball/master" class="btn btn-primary btn-large">Download Bootstrap Form Helpers</a></p>
       <ul class="masthead-links">
         <li><a href="http://github.com/vlamanna/BootstrapFormHelpers">GitHub project</a></li>
-        <li>Version 1.6.0</li>
+        <li>Version 1.7.0</li>
       </ul>
     </div>
   </div>
@@ -112,6 +112,8 @@
           <li><a href="#googlefonts"><i class="icon-chevron-right"></i> Google Fonts</a></li>
           <li><a href="#datepicker"><i class="icon-chevron-right"></i> Date Picker</a></li>
           <li><a href="#timepicker"><i class="icon-chevron-right"></i> Time Picker</a></li>
+          <li><a href="#fonts"><i class="icon-chevron-right"></i> Fonts</a></li>
+          <li><a href="#fontsizes"><i class="icon-chevron-right"></i> Font Sizes</a></li>
         </ul>
       </div>
       <div class="span9">
@@ -155,13 +157,13 @@
           
           <p>Simple example for adding a select box</p>
           <form class="bs-docs-example form-inline">
-            <div class="selectbox">
+            <div class="bfh-selectbox">
               <input type="hidden" name="selectbox1" value="">
-              <a class="selectbox-toggle" role="button" data-toggle="selectbox" href="#">
-                <span class="selectbox-option input-medium" data-option=""></span>
+              <a class="bfh-selectbox-toggle" role="button" data-toggle="bfh-selectbox" href="#">
+                <span class="bfh-selectbox-option input-medium" data-option=""></span>
                 <b class="caret"></b>
               </a>
-              <div class="selectbox-options">
+              <div class="bfh-selectbox-options">
                 <ul role="options">
                   <li><a tabindex="-1" href="#" data-option="1">Option 1</a></li>
                   <li><a tabindex="-1" href="#" data-option="2">Option 2</a></li>
@@ -182,13 +184,13 @@
               </div>
             </div>
           </form>
-          <pre class="prettyprint">&lt;div class="selectbox"&gt;
+          <pre class="prettyprint">&lt;div class="bfh-selectbox"&gt;
   &lt;input type="hidden" name="selectbox1" value=""&gt;
-  &lt;a class="selectbox-toggle" role="button" data-toggle="selectbox" href="#"&gt;
-    &lt;span class="selectbox-option input-medium" data-option="12"&gt;Option 12&lt;/span&gt;
+  &lt;a class="bfh-selectbox-toggle" role="button" data-toggle="bfh-selectbox" href="#"&gt;
+    &lt;span class="bfh-selectbox-option input-medium" data-option="12"&gt;Option 12&lt;/span&gt;
     &lt;b class="caret"&gt;&lt;/b&gt;
   &lt;/a&gt;
-  &lt;div class="selectbox-options"&gt;
+  &lt;div class="bfh-selectbox-options"&gt;
     &lt;ul role="options"&gt;
       &lt;li&gt;&lt;a tabindex="-1" href="#" data-option="1"&gt;Option 1&lt;/a&gt;&lt;/li&gt;
       &lt;li&gt;&lt;a tabindex="-1" href="#" data-option="2"&gt;Option 2&lt;/a&gt;&lt;/li&gt;
@@ -211,13 +213,13 @@
           
           <p>Simple example for adding a select box and selecting a default option</p>
           <form class="bs-docs-example form-inline">
-            <div class="selectbox">
+            <div class="bfh-selectbox">
               <input type="hidden" name="selectbox2" value="">
-              <a class="selectbox-toggle" role="button" data-toggle="selectbox" href="#">
-                <span class="selectbox-option input-medium" data-option="12">Option 12</span>
+              <a class="bfh-selectbox-toggle" role="button" data-toggle="bfh-selectbox" href="#">
+                <span class="bfh-selectbox-option input-medium" data-option="12">Option 12</span>
                 <b class="caret"></b>
               </a>
-              <div class="selectbox-options">
+              <div class="bfh-selectbox-options">
                 <ul role="options">
                   <li><a tabindex="-1" href="#" data-option="1">Option 1</a></li>
                   <li><a tabindex="-1" href="#" data-option="2">Option 2</a></li>
@@ -238,13 +240,13 @@
               </div>
             </div>
           </form>
-          <pre class="prettyprint">&lt;div class="selectbox"&gt;
+          <pre class="prettyprint">&lt;div class="bfh-selectbox"&gt;
   &lt;input type="hidden" name="selectbox2" value=""&gt;
-  &lt;a class="selectbox-toggle" role="button" data-toggle="selectbox" href="#"&gt;
-    &lt;span class="selectbox-option input-medium" data-option="12"&gt;Option 12&lt;/span&gt;
+  &lt;a class="bfh-selectbox-toggle" role="button" data-toggle="bfh-selectbox" href="#"&gt;
+    &lt;span class="bfh-selectbox-option input-medium" data-option="12"&gt;Option 12&lt;/span&gt;
     &lt;b class="caret"&gt;&lt;/b&gt;
   &lt;/a&gt;
-  &lt;div class="selectbox-options"&gt;
+  &lt;div class="bfh-selectbox-options"&gt;
     &lt;ul role="options"&gt;
       &lt;li&gt;&lt;a tabindex="-1" href="#" data-option="1"&gt;Option 1&lt;/a&gt;&lt;/li&gt;
       &lt;li&gt;&lt;a tabindex="-1" href="#" data-option="2"&gt;Option 2&lt;/a&gt;&lt;/li&gt;
@@ -267,14 +269,14 @@
 
           <p>Simple example for adding a select box with a filter</p>
           <form class="bs-docs-example form-inline">
-            <div class="selectbox">
+            <div class="bfh-selectbox">
               <input type="hidden" name="selectbox3" value="">
-              <a class="selectbox-toggle" role="button" data-toggle="selectbox" href="#">
-                <span class="selectbox-option input-medium" data-option="12">Option 12</span>
+              <a class="bfh-selectbox-toggle" role="button" data-toggle="bfh-selectbox" href="#">
+                <span class="bfh-selectbox-option input-medium" data-option="12">Option 12</span>
                 <b class="caret"></b>
               </a>
-              <div class="selectbox-options">
-                <input type="text" class="selectbox-filter">
+              <div class="bfh-selectbox-options">
+                <input type="text" class="bfh-selectbox-filter">
                 <ul role="options">
                   <li><a tabindex="-1" href="#" data-option="1">Option 1</a></li>
                   <li><a tabindex="-1" href="#" data-option="2">Option 2</a></li>
@@ -295,14 +297,14 @@
               </div>
             </div>
           </form>
-          <pre class="prettyprint">&lt;div class="selectbox"&gt;
-  &lt;input type="hidden" name="selectbox2" value=""&gt;
-  &lt;a class="selectbox-toggle" role="button" data-toggle="selectbox" href="#"&gt;
-    &lt;span class="selectbox-option input-medium" data-option="12"&gt;Option 12&lt;/span&gt;
+          <pre class="prettyprint">&lt;div class="bfh-selectbox"&gt;
+  &lt;input type="hidden" name="selectbox3" value=""&gt;
+  &lt;a class="bfh-selectbox-toggle" role="button" data-toggle="bfh-selectbox" href="#"&gt;
+    &lt;span class="bfh-selectbox-option input-medium" data-option="12"&gt;Option 12&lt;/span&gt;
     &lt;b class="caret"&gt;&lt;/b&gt;
   &lt;/a&gt;
-  &lt;div class="selectbox-options"&gt;
-    &lt;input type="text" class="selectbox-filter"&gt;
+  &lt;div class="bfh-selectbox-options"&gt;
+    &lt;input type="text" class="bfh-selectbox-filter"&gt;
     &lt;ul role="options"&gt;
       &lt;li&gt;&lt;a tabindex="-1" href="#" data-option="1"&gt;Option 1&lt;/a&gt;&lt;/li&gt;
       &lt;li&gt;&lt;a tabindex="-1" href="#" data-option="2"&gt;Option 2&lt;/a&gt;&lt;/li&gt;
@@ -338,57 +340,57 @@
 
           <p>Example for loading the list of countries and selecting a default country</p>
           <form class="bs-docs-example form-inline">
-            <select class="input-medium countries" data-country="US"></select>
+            <select class="input-medium bfh-countries" data-country="US"></select>
           </form>
-          <pre class="prettyprint">&lt;select class="input-medium countries" data-country="US"&gt;&lt;/select&gt;</pre>
+          <pre class="prettyprint">&lt;select class="input-medium bfh-countries" data-country="US"&gt;&lt;/select&gt;</pre>
           
           <p>Example for loading the list of countries, limited to a specific list of countries</p>
           <form class="bs-docs-example form-inline">
-            <select class="input-medium countries" data-countryList="US,AG,AU"></select>
+            <select class="input-medium bfh-countries" data-countryList="US,AG,AU"></select>
           </form>
-          <pre class="prettyprint">&lt;select class="input-medium countries" data-countryList="US,AG,AU"&gt;&lt;/select&gt;</pre>
+          <pre class="prettyprint">&lt;select class="input-medium bfh-countries" data-countryList="US,AG,AU"&gt;&lt;/select&gt;</pre>
           
           <p>Example for loading the list of countries in JavaScript and selecting a default country</p>
           <form class="bs-docs-example form-inline">
-            <button onclick="$('#countries1').countries({country: 'US'});return false;" class="btn">Load Countries</button>
+            <button onclick="$('#countries1').bfhcountries({country: 'US'});return false;" class="btn">Load Countries</button>
             <select id="countries1" class="input-medium"></select>
           </form>
-          <pre class="prettyprint">&lt;button onclick="$('#countries1').countries({country: 'US'})" class="btn"&gt;Load Countries&lt;/button&gt;
+          <pre class="prettyprint">&lt;button onclick="$('#countries1').bfhcountries({country: 'US'})" class="btn"&gt;Load Countries&lt;/button&gt;
 &lt;select id="countries1" class="input-medium"&gt;&lt;/select&gt;</pre>
           
           <p>Example for loading the list of countries and flags using Bootstrap Form Helpers' Select Box</p>
           <form class="bs-docs-example form-inline">
-            <div class="selectbox countries" data-country="US" data-flags="true">
+            <div class="bfh-selectbox bfh-countries" data-country="US" data-flags="true">
               <input type="hidden" value="">
-              <a class="selectbox-toggle" role="button" data-toggle="selectbox" href="#">
-                <span class="selectbox-option input-medium" data-option=""></span>
+              <a class="bfh-selectbox-toggle" role="button" data-toggle="bfh-selectbox" href="#">
+                <span class="bfh-selectbox-option input-medium" data-option=""></span>
                 <b class="caret"></b>
               </a>
-              <div class="selectbox-options">
-                <input type="text" class="selectbox-filter">
+              <div class="bfh-selectbox-options">
+                <input type="text" class="bfh-selectbox-filter">
                 <ul role="options">
                 </ul>
               </div>
             </div>
           </form>
-          <pre class="prettyprint">&lt;div class="selectbox countries" data-country="US" data-flags="true"&gt;
+          <pre class="prettyprint">&lt;div class="bfh-selectbox bfh-countries" data-country="US" data-flags="true"&gt;
   &lt;input type="hidden" value=""&gt;
-  &lt;a class="selectbox-toggle" role="button" data-toggle="selectbox" href="#"&gt;
-    &lt;span class="selectbox-option input-medium" data-option=""&gt;&lt;/span&gt;
+  &lt;a class="bfh-selectbox-toggle" role="button" data-toggle="bfh-selectbox" href="#"&gt;
+    &lt;span class="bfh-selectbox-option input-medium" data-option=""&gt;&lt;/span&gt;
     &lt;b class="caret"&gt;&lt;/b&gt;
   &lt;/a&gt;
-  &lt;div class="selectbox-options"&gt
-    &lt;input type="text" class="selectbox-filter"&gt;
-    &lt;ul class="selectbox-options" role="options"&gt;
+  &lt;div class="bfh-selectbox-options"&gt
+    &lt;input type="text" class="bfh-selectbox-filter"&gt;
+    &lt;ul role="options"&gt;
     &lt;/ul&gt;
   &lt;/div&gt;
 &lt;/div&gt;</pre>
           
           <p>Example for displaying the country name and flag from a country code</p>
           <form class="bs-docs-example form-inline">
-            <span class="countries" data-country="US" data-flags="true"></span>
+            <span class="bfh-countries" data-country="US" data-flags="true"></span>
           </form>
-          <pre class="prettyprint">&lt;span class="countries" data-country="US" data-flags="true"&gt;&lt;/span&gt;</pre>
+          <pre class="prettyprint">&lt;span class="bfh-countries" data-country="US" data-flags="true"&gt;&lt;/span&gt;</pre>
         </section>
         
         <!-- States
@@ -403,105 +405,105 @@
           
           <p>Example for loading the list of states for a country and selecting a default state</p>
           <form class="bs-docs-example form-inline">
-            <select class="input-medium states" data-country="US" data-state="CA"></select>
+            <select class="input-medium bfh-states" data-country="US" data-state="CA"></select>
           </form>
-          <pre class="prettyprint">&lt;select class="input-medium states" data-country="US" data-state="CA"&gt;&lt;/select&gt;</pre>
+          <pre class="prettyprint">&lt;select class="input-medium bfh-states" data-country="US" data-state="CA"&gt;&lt;/select&gt;</pre>
           
           <p>Example for loading the list of states for a country and selecting a default state in JavaScript</p>
           <form class="bs-docs-example form-inline">
-            <button onclick="$('#states1').states({country: 'US', state: 'CA'});return false;" class="btn">Load States</button>
+            <button onclick="$('#states1').bfhstates({country: 'US', state: 'CA'});return false;" class="btn">Load States</button>
             <select id="states1" class="input-medium"></select>
           </form>
-          <pre class="prettyprint">&lt;button onclick="$('#states1').states({country: 'US', state: 'CA'})" class="btn"&gt;Load States&lt;/button&gt;
+          <pre class="prettyprint">&lt;button onclick="$('#states1').bfhstates({country: 'US', state: 'CA'})" class="btn"&gt;Load States&lt;/button&gt;
 &lt;select id="states1" class="input-medium"&gt;&lt;/select&gt;</pre>
 
           <p>Example for loading the list of states using Bootstrap Form Helpers' Select Box</p>
           <form class="bs-docs-example form-inline">
-            <div class="selectbox states" data-country="US" data-state="CA">
+            <div class="bfh-selectbox bfh-states" data-country="US" data-state="CA">
               <input type="hidden" value="">
-              <a class="selectbox-toggle" role="button" data-toggle="selectbox" href="#">
-                <span class="selectbox-option input-medium" data-option=""></span>
+              <a class="bfh-selectbox-toggle" role="button" data-toggle="bfh-selectbox" href="#">
+                <span class="bfh-selectbox-option input-medium" data-option=""></span>
                 <b class="caret"></b>
               </a>
-              <div class="selectbox-options">
+              <div class="bfh-selectbox-options">
                 <ul role="options">
                 </ul>
               </div>
             </div>
           </form>
-          <pre class="prettyprint">&lt;div class="selectbox states" data-country="US" data-state="CA"&gt;
+          <pre class="prettyprint">&lt;div class="bfh-selectbox bfh-states" data-country="US" data-state="CA"&gt;
   &lt;input type="hidden" value=""&gt;
-  &lt;a class="selectbox-toggle" role="button" data-toggle="selectbox" href="#"&gt;
-    &lt;span class="selectbox-option input-medium" data-option=""&gt;&lt;/span&gt;
+  &lt;a class="bfh-selectbox-toggle" role="button" data-toggle="bfh-selectbox" href="#"&gt;
+    &lt;span class="bfh-selectbox-option input-medium" data-option=""&gt;&lt;/span&gt;
     &lt;b class="caret"&gt;&lt;/b&gt;
   &lt;/a&gt;
-  &lt;div class="selectbox-options"&gt
-    &lt;ul class="selectbox-options" role="options"&gt;
+  &lt;div class="bfh-selectbox-options"&gt
+    &lt;ul role="options"&gt;
     &lt;/ul&gt;
   &lt;/div&gt;
 &lt;/div&gt;</pre>
 
           <p>Example for loading the list of states based on a country selector</p>
           <form class="bs-docs-example form-inline">
-            <select id="countries_states1" class="input-medium countries" data-country="US"></select>
-            <select class="input-medium states" data-country="countries_states1"></select>
+            <select id="countries_states1" class="input-medium bfh-countries" data-country="US"></select>
+            <select class="input-medium bfh-states" data-country="countries_states1"></select>
           </form>
-          <pre class="prettyprint">&lt;select id="countries_states1" class="input-medium countries" data-country="US"&gt;&lt;/select&gt;
-&lt;select class="input-medium states" data-country="countries_states1"&gt;&lt;/select&gt;</pre>
+          <pre class="prettyprint">&lt;select id="countries_states1" class="input-medium bfh-countries" data-country="US"&gt;&lt;/select&gt;
+&lt;select class="input-medium bfh-states" data-country="countries_states1"&gt;&lt;/select&gt;</pre>
 
           <p>Example for loading the list of states based on a country select using Bootstrap Form Helpers' Select Box</p>
           <form class="bs-docs-example form-inline">
-            <div id="countries_states2" class="selectbox countries" data-country="US">
+            <div id="countries_states2" class="bfh-selectbox bfh-countries" data-country="US">
               <input type="hidden" value="">
-              <a class="selectbox-toggle" role="button" data-toggle="selectbox" href="#">
-                <span class="selectbox-option input-medium" data-option=""></span>
+              <a class="bfh-selectbox-toggle" role="button" data-toggle="bfh-selectbox" href="#">
+                <span class="bfh-selectbox-option input-medium" data-option=""></span>
                 <b class="caret"></b>
               </a>
-              <div class="selectbox-options">
+              <div class="bfh-selectbox-options">
                 <ul role="options">
                 </ul>
               </div>
             </div>
-            <div class="selectbox states" data-country="countries_states2">
+            <div class="bfh-selectbox bfh-states" data-country="countries_states2">
               <input type="hidden" value="">
-              <a class="selectbox-toggle" role="button" data-toggle="selectbox" href="#">
-                <span class="selectbox-option input-medium" data-option=""></span>
+              <a class="bfh-selectbox-toggle" role="button" data-toggle="bfh-selectbox" href="#">
+                <span class="bfh-selectbox-option input-medium" data-option=""></span>
                 <b class="caret"></b>
               </a>
-              <div class="selectbox-options">
+              <div class="bfh-selectbox-options">
                 <ul role="options">
                 </ul>
               </div>
             </div>
           </form>
-          <pre class="prettyprint">&lt;div id="countries_states2" class="selectbox countries" data-country="US"&gt;
+          <pre class="prettyprint">&lt;div id="countries_states2" class="bfh-selectbox bfh-countries" data-country="US"&gt;
   &lt;input type="hidden" value=""&gt;
-  &lt;a class="selectbox-toggle" role="button" data-toggle="selectbox" href="#"&gt;
-    &lt;span class="selectbox-option input-medium" data-option=""&gt;&lt;/span&gt;
+  &lt;a class="bfh-selectbox-toggle" role="button" data-toggle="bfh-selectbox" href="#"&gt;
+    &lt;span class="bfh-selectbox-option input-medium" data-option=""&gt;&lt;/span&gt;
     &lt;b class="caret"&gt;&lt;/b&gt;
   &lt;/a&gt;
-  &lt;div class="selectbox-options"&gt
-    &lt;ul class="selectbox-options" role="options"&gt;
+  &lt;div class="bfh-selectbox-options"&gt
+    &lt;ul role="options"&gt;
     &lt;/ul&gt;
   &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class="selectbox states" data-country="countries_states2"&gt;
+&lt;div class="bfh-selectbox bfh-states" data-country="countries_states2"&gt;
   &lt;input type="hidden" value=""&gt;
-  &lt;a class="selectbox-toggle" role="button" data-toggle="selectbox" href="#"&gt;
-    &lt;span class="selectbox-option input-medium" data-option=""&gt;&lt;/span&gt;
+  &lt;a class="bfh-selectbox-toggle" role="button" data-toggle="bfh-selectbox" href="#"&gt;
+    &lt;span class="bfh-selectbox-option input-medium" data-option=""&gt;&lt;/span&gt;
     &lt;b class="caret"&gt;&lt;/b&gt;
   &lt;/a&gt;
-  &lt;div class="selectbox-options"&gt
-    &lt;ul class="selectbox-options" role="options"&gt;
+  &lt;div class="bfh-selectbox-options"&gt
+    &lt;ul role="options"&gt;
     &lt;/ul&gt;
   &lt;/div&gt;
 &lt;/div&gt;</pre>
 
           <p>Example for displaying the state name from a state and country code</p>
           <form class="bs-docs-example form-inline">
-            <span class="states" data-country="US" data-state="CA"></span>
+            <span class="bfh-states" data-country="US" data-state="CA"></span>
           </form>
-          <pre class="prettyprint">&lt;span class="states" data-country="US" data-state="CA"&gt;&lt;/span&gt;</pre>
+          <pre class="prettyprint">&lt;span class="bfh-states" data-country="US" data-state="CA"&gt;&lt;/span&gt;</pre>
         </section>
         
         <!-- Phone
@@ -516,36 +518,36 @@
           
           <p>Simple example for formatting a phone number in input text</p>
           <form class="bs-docs-example form-inline">
-            <input type="text" class="input-medium phone" data-format="+1 (ddd) ddd-dddd">
+            <input type="text" class="input-medium bfh-phone" data-format="+1 (ddd) ddd-dddd">
           </form>
-          <pre class="prettyprint">&lt;input type="text" class="input-medium phone" data-format="+1 (ddd) ddd-dddd"&gt;</pre>
+          <pre class="prettyprint">&lt;input type="text" class="input-medium bfh-phone" data-format="+1 (ddd) ddd-dddd"&gt;</pre>
           
           <p>Simple example for displaying a formatted phone number</p>
           <form class="bs-docs-example form-inline">
-            <span class="phone" data-format="+1 (ddd) ddd-dddd" data-number="15555555555"></span>
+            <span class="bfh-phone" data-format="+1 (ddd) ddd-dddd" data-number="15555555555"></span>
           </form>
-          <pre class="prettyprint">&lt;span class="phone" data-format="+1 (ddd) ddd-dddd" data-number="15555555555"&gt;&lt;/span&gt;</pre>
+          <pre class="prettyprint">&lt;span class="bfh-phone" data-format="+1 (ddd) ddd-dddd" data-number="15555555555"&gt;&lt;/span&gt;</pre>
           
           <p>Example for formatting a phone number based on a country</p>
           <form class="bs-docs-example form-inline">
-            <input type="text" class="input-medium phone" data-country="US">
+            <input type="text" class="input-medium bfh-phone" data-country="US">
           </form>
-          <pre class="prettyprint">&lt;input type="text" class="input-medium phone" data-country="US"&gt;</pre>
+          <pre class="prettyprint">&lt;input type="text" class="input-medium bfh-phone" data-country="US"&gt;</pre>
           
           <p>Example for formatting a phone number based on a country selector</p>
           <form class="bs-docs-example form-inline">
-            <select id="countries_phone" class="input-medium countries" data-country="US"></select>
-            <input type="text" class="input-medium phone" data-country="countries_phone">
+            <select id="countries_phone" class="input-medium bfh-countries" data-country="US"></select>
+            <input type="text" class="input-medium bfh-phone" data-country="countries_phone">
           </form>
-          <pre class="prettyprint">&lt;select id="countries_phone" class="input-medium countries" data-country="US"&gt;&lt;/select&gt;
-&lt;select class="input-medium phone" data-country="countries_phone"&gt;&lt;/select&gt;</pre>
+          <pre class="prettyprint">&lt;select id="countries_phone" class="input-medium bfh-countries" data-country="US"&gt;&lt;/select&gt;
+&lt;select class="input-medium bfh-phone" data-country="countries_phone"&gt;&lt;/select&gt;</pre>
 
           <p>Example for getting the unformatted phone number</p>
           <form class="bs-docs-example form-inline">
-            <input id="phone1" type="text" class="input-medium phone" data-format="+1 (ddd) ddd-dddd">
+            <input id="phone1" type="text" class="input-medium bfh-phone" data-format="+1 (ddd) ddd-dddd">
             <button onclick="alert($('#phone1').data('number'));return false;" class="btn">Get Phone</button>
           </form>
-          <pre class="prettyprint">&lt;input id="phone1" type="text" class="input-medium phone" data-format="+1 (ddd) ddd-dddd"&gt;
+          <pre class="prettyprint">&lt;input id="phone1" type="text" class="input-medium bfh-phone" data-format="+1 (ddd) ddd-dddd"&gt;
 &lt;button onclick="alert($('#phone1').data('number'));return false;" class="btn"&gt;Get Phone&lt;/button&gt;</pre>
 
         </section>
@@ -565,47 +567,47 @@
 
           <p>Example for loading the list of languages and selecting a default language</p>
           <form class="bs-docs-example form-inline">
-            <select class="input-medium languages" data-language="en"></select>
+            <select class="input-medium bfh-languages" data-language="en"></select>
           </form>
-          <pre class="prettyprint">&lt;select class="input-medium languages" data-language="en"&gt;&lt;/select&gt;</pre>
+          <pre class="prettyprint">&lt;select class="input-medium bfh-languages" data-language="en"&gt;&lt;/select&gt;</pre>
           
           <p>Example for loading the list of languages with country names</p>
           <form class="bs-docs-example form-inline">
-            <select class="input-medium languages" data-language="en_US" data-available="en_US,fr_CA,es_MX"></select>
+            <select class="input-medium bfh-languages" data-language="en_US" data-available="en_US,fr_CA,es_MX"></select>
           </form>
-          <pre class="prettyprint">&lt;select class="input-medium languages" data-language="en_US" data-available="en_US,fr_CA,es_MX"&gt;&lt;/select&gt;</pre>
+          <pre class="prettyprint">&lt;select class="input-medium bfh-languages" data-language="en_US" data-available="en_US,fr_CA,es_MX"&gt;&lt;/select&gt;</pre>
           
           <p>Example for loading the list of languages and flags using Bootstrap Form Helpers' Select Box</p>
           <form class="bs-docs-example form-inline">
-            <div class="selectbox languages" data-language="en_US" data-available="en_US,fr_CA,es_MX" data-flags="true">
+            <div class="bfh-selectbox bfh-languages" data-language="en_US" data-available="en_US,fr_CA,es_MX" data-flags="true">
               <input type="hidden" value="">
-              <a class="selectbox-toggle" role="button" data-toggle="selectbox" href="#">
-                <span class="selectbox-option input-medium" data-option=""></span>
+              <a class="bfh-selectbox-toggle" role="button" data-toggle="bfh-selectbox" href="#">
+                <span class="bfh-selectbox-option input-medium" data-option=""></span>
                 <b class="caret"></b>
               </a>
-              <div class="selectbox-options">
+              <div class="bfh-selectbox-options">
                 <ul role="options">
                 </ul>
               </div>
             </div>
           </form>
-          <pre class="prettyprint">&lt;div class="selectbox languages" data-language="en_US" data-available="en_US,fr_CA,es_MX" data-flags="true"&gt;
+          <pre class="prettyprint">&lt;div class="bfh-selectbox bfh-languages" data-language="en_US" data-available="en_US,fr_CA,es_MX" data-flags="true"&gt;
   &lt;input type="hidden" value=""&gt;
-  &lt;a class="selectbox-toggle" role="button" data-toggle="selectbox" href="#"&gt;
-    &lt;span class="selectbox-option input-medium" data-option=""&gt;&lt;/span&gt;
+  &lt;a class="bfh-selectbox-toggle" role="button" data-toggle="bfh-selectbox" href="#"&gt;
+    &lt;span class="bfh-selectbox-option input-medium" data-option=""&gt;&lt;/span&gt;
     &lt;b class="caret"&gt;&lt;/b&gt;
   &lt;/a&gt;
-  &lt;div class="selectbox-options"&gt
-    &lt;ul class="selectbox-options" role="options"&gt;
+  &lt;div class="bfh-selectbox-options"&gt
+    &lt;ul role="options"&gt;
     &lt;/ul&gt;
   &lt;/div&gt;
 &lt;/div&gt;</pre>
 
           <p>Example for displaying the language name and flag from language code</p>
           <form class="bs-docs-example form-inline">
-            <span class="languages" data-language="en_US" data-flags="true"></span>
+            <span class="bfh-languages" data-language="en_US" data-flags="true"></span>
           </form>
-          <pre class="prettyprint">&lt;span class="languages" data-language="en_US" data-flags="true"&gt;&lt;/span&gt;</pre>
+          <pre class="prettyprint">&lt;span class="bfh-languages" data-language="en_US" data-flags="true"&gt;&lt;/span&gt;</pre>
         </section>
         
         <!-- Timezones
@@ -620,96 +622,96 @@
           
           <p>Example for loading the list of timezones for a country</p>
           <form class="bs-docs-example form-inline">
-            <select class="input-medium timezones" data-country="US"></select>
+            <select class="input-medium bfh-timezones" data-country="US"></select>
           </form>
-          <pre class="prettyprint">&lt;select class="input-medium timezones" data-country="US"&gt;&lt;/select&gt;</pre>
+          <pre class="prettyprint">&lt;select class="input-medium bfh-timezones" data-country="US"&gt;&lt;/select&gt;</pre>
           
           <p>Example for loading the list of timezones for a country in JavaScript</p>
           <form class="bs-docs-example form-inline">
-            <button onclick="$('#timezones1').timezones({country: 'US'});return false;" class="btn">Load Timezones</button>
+            <button onclick="$('#timezones1').bfhtimezones({country: 'US'});return false;" class="btn">Load Timezones</button>
             <select id="timezones1" class="input-medium"></select>
           </form>
-          <pre class="prettyprint">&lt;button onclick="$('#timezones1').timezones({country: 'US'})" class="btn"&gt;Load Timezones&lt;/button&gt;
+          <pre class="prettyprint">&lt;button onclick="$('#timezones1').bfhtimezones({country: 'US'})" class="btn"&gt;Load Timezones&lt;/button&gt;
 &lt;select id="timezones1" class="input-medium"&gt;&lt;/select&gt;</pre>
 
           <p>Example for loading the list of timezones using Bootstrap Form Helpers' Select Box</p>
           <form class="bs-docs-example form-inline">
-            <div class="selectbox timezones" data-country="US">
+            <div class="bfh-selectbox bfh-timezones" data-country="US">
               <input type="hidden" value="">
-              <a class="selectbox-toggle" role="button" data-toggle="selectbox" href="#">
-                <span class="selectbox-option input-medium" data-option=""></span>
+              <a class="bfh-selectbox-toggle" role="button" data-toggle="bfh-selectbox" href="#">
+                <span class="bfh-selectbox-option input-medium" data-option=""></span>
                 <b class="caret"></b>
               </a>
-              <div class="selectbox-options">
+              <div class="bfh-selectbox-options">
                 <ul role="options">
                 </ul>
               </div>
             </div>
           </form>
-          <pre class="prettyprint">&lt;div class="selectbox timezones" data-country="US"&gt;
+          <pre class="prettyprint">&lt;div class="bfh-selectbox bfh-timezones" data-country="US"&gt;
   &lt;input type="hidden" value=""&gt;
-  &lt;a class="selectbox-toggle" role="button" data-toggle="selectbox" href="#"&gt;
-    &lt;span class="selectbox-option input-medium" data-option=""&gt;&lt;/span&gt;
+  &lt;a class="bfh-selectbox-toggle" role="button" data-toggle="bfh-selectbox" href="#"&gt;
+    &lt;span class="bfh-selectbox-option input-medium" data-option=""&gt;&lt;/span&gt;
     &lt;b class="caret"&gt;&lt;/b&gt;
   &lt;/a&gt;
-  &lt;div class="selectbox-options"&gt
-    &lt;ul class="selectbox-options" role="options"&gt;
+  &lt;div class="bfh-selectbox-options"&gt
+    &lt;ul role="options"&gt;
     &lt;/ul&gt;
   &lt;/div&gt;
 &lt;/div&gt;</pre>
 
           <p>Example for loading the list of timezones based on a country selector</p>
           <form class="bs-docs-example form-inline">
-            <select id="countries_timezones1" class="input-medium countries" data-country="US"></select>
-            <select class="input-medium timezones" data-country="countries_timezones1"></select>
+            <select id="countries_timezones1" class="input-medium bfh-countries" data-country="US"></select>
+            <select class="input-medium bfh-timezones" data-country="countries_timezones1"></select>
           </form>
-          <pre class="prettyprint">&lt;select id="countries_timezones1" class="input-medium countries" data-country="US"&gt;&lt;/select&gt;
-&lt;select class="input-medium timezones" data-country="countries_timezones1"&gt;&lt;/select&gt;</pre>
+          <pre class="prettyprint">&lt;select id="countries_timezones1" class="input-medium bfh-countries" data-country="US"&gt;&lt;/select&gt;
+&lt;select class="input-medium bfh-timezones" data-country="countries_timezones1"&gt;&lt;/select&gt;</pre>
 
           <p>Example for loading the list of timezones based on a country select using Bootstrap Form Helpers' Select Box</p>
           <form class="bs-docs-example form-inline">
-            <div id="countries_timezones2" class="selectbox countries" data-country="US">
+            <div id="countries_timezones2" class="bfh-selectbox bfh-countries" data-country="US">
               <input type="hidden" value="">
-              <a class="selectbox-toggle" role="button" data-toggle="selectbox" href="#">
-                <span class="selectbox-option input-medium" data-option=""></span>
+              <a class="bfh-selectbox-toggle" role="button" data-toggle="bfh-selectbox" href="#">
+                <span class="bfh-selectbox-option input-medium" data-option=""></span>
                 <b class="caret"></b>
               </a>
-              <div class="selectbox-options">
+              <div class="bfh-selectbox-options">
                 <ul role="options">
                 </ul>
               </div>
             </div>
-            <div class="selectbox timezones" data-country="countries_timezones2">
+            <div class="bfh-selectbox bfh-timezones" data-country="countries_timezones2">
               <input type="hidden" value="">
-              <a class="selectbox-toggle" role="button" data-toggle="selectbox" href="#">
-                <span class="selectbox-option input-medium" data-option=""></span>
+              <a class="bfh-selectbox-toggle" role="button" data-toggle="bfh-selectbox" href="#">
+                <span class="bfh-selectbox-option input-medium" data-option=""></span>
                 <b class="caret"></b>
               </a>
-              <div class="selectbox-options">
+              <div class="bfh-selectbox-options">
                 <ul role="options">
                 </ul>
               </div>
             </div>
           </form>
-          <pre class="prettyprint">&lt;div id="countries_timezones2" class="selectbox countries" data-country="US"&gt;
+          <pre class="prettyprint">&lt;div id="countries_timezones2" class="bfh-selectbox bfh-countries" data-country="US"&gt;
   &lt;input type="hidden" value=""&gt;
-  &lt;a class="selectbox-toggle" role="button" data-toggle="selectbox" href="#"&gt;
-    &lt;span class="selectbox-option input-medium" data-option=""&gt;&lt;/span&gt;
+  &lt;a class="bfh-selectbox-toggle" role="button" data-toggle="bfh-selectbox" href="#"&gt;
+    &lt;span class="bfh-selectbox-option input-medium" data-option=""&gt;&lt;/span&gt;
     &lt;b class="caret"&gt;&lt;/b&gt;
   &lt;/a&gt;
-  &lt;div class="selectbox-options"&gt
-    &lt;ul class="selectbox-options" role="options"&gt;
+  &lt;div class="bfh-selectbox-options"&gt
+    &lt;ul role="options"&gt;
     &lt;/ul&gt;
   &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class="selectbox timezones" data-country="countries_timezones2"&gt;
+&lt;div class="bfh-selectbox bfh-timezones" data-country="countries_timezones2"&gt;
   &lt;input type="hidden" value=""&gt;
-  &lt;a class="selectbox-toggle" role="button" data-toggle="selectbox" href="#"&gt;
-    &lt;span class="selectbox-option input-medium" data-option=""&gt;&lt;/span&gt;
+  &lt;a class="bfh-selectbox-toggle" role="button" data-toggle="bfh-selectbox" href="#"&gt;
+    &lt;span class="bfh-selectbox-option input-medium" data-option=""&gt;&lt;/span&gt;
     &lt;b class="caret"&gt;&lt;/b&gt;
   &lt;/a&gt;
-  &lt;div class="selectbox-options"&gt
-    &lt;ul class="selectbox-options" role="options"&gt;
+  &lt;div class="bfh-selectbox-options"&gt
+    &lt;ul role="options"&gt;
     &lt;/ul&gt;
   &lt;/div&gt;
 &lt;/div&gt;</pre>
@@ -728,59 +730,87 @@
           
           <p>Simplest example, with default selected value.</p>
           <form class="bs-docs-example form-inline">
-          <div id="font" class="selectbox googlefonts" data-family="Lato">
+          <div class="bfh-selectbox bfh-googlefonts" data-family="Lato">
             <input type="hidden" value="">
-            <a class="selectbox-toggle" role="button" data-toggle="selectbox" href="#">
-            <span class="selectbox-option input-large" data-option=""></span>
+            <a class="bfh-selectbox-toggle" role="button" data-toggle="bfh-selectbox" href="#">
+            <span class="bfh-selectbox-option input-large" data-option=""></span>
             <b class="caret"></b>
             </a>
-            <div class="selectbox-options">
-              <input type="text" class="selectbox-filter">
+            <div class="bfh-selectbox-options">
+              <input type="text" class="bfh-selectbox-filter">
               <ul role="options">
               </ul>
             </div>
           </div>
           </form>
-          <pre class="prettyprint">&lt;div class="selectbox googlefonts" data-family="Lato"&gt;
+          <pre class="prettyprint">&lt;div class="bfh-selectbox bfh-googlefonts" data-family="Lato"&gt;
   &lt;input type="hidden" value=""&gt;
-  &lt;a class="selectbox-toggle" role="button" data-toggle="selectbox" href="#"&gt;
-    &lt;span class="selectbox-option input-large" data-option=""&gt;&lt;/span&gt;
+  &lt;a class="bfh-selectbox-toggle" role="button" data-toggle="bfh-selectbox" href="#"&gt;
+    &lt;span class="bfh-selectbox-option input-large" data-option=""&gt;&lt;/span&gt;
     &lt;b class="caret"&gt;&lt;/b&gt;
   &lt;/a&gt;
-  &lt;div class="selectbox-options"&gt
-    &lt;input type="text" class="selectbox-filter"&gt;
-    &lt;ul class="selectbox-options" role="options"&gt;
+  &lt;div class="bfh-selectbox-options"&gt
+    &lt;input type="text" class="bfh-selectbox-filter"&gt;
+    &lt;ul role="options"&gt;
     &lt;/ul&gt;
   &lt;/div&gt;
 &lt;/div&gt;</pre>  
 
-           <p>Limit font choices.</p>
+          <p>Display a subset.</p>
           <form class="bs-docs-example form-inline">
-          <div id="font" class="selectbox googlefonts" data-family="Lato" data-families="Open Sans,Josefin Slab,Avro,Lato,Vollkorn,Abril Fatface,Ubuntu,PT Sans,PT Serif,Old Standard TT,Droid Sans">
+          <div class="bfh-selectbox bfh-googlefonts" data-subsets="latin-ext">
             <input type="hidden" value="">
-            <a class="selectbox-toggle" role="button" data-toggle="selectbox" href="#">
-            <span class="selectbox-option input-large" data-option=""></span>
+            <a class="bfh-selectbox-toggle" role="button" data-toggle="bfh-selectbox" href="#">
+            <span class="bfh-selectbox-option input-large" data-option=""></span>
             <b class="caret"></b>
             </a>
-            <div class="selectbox-options">
-              <input type="text" class="selectbox-filter">
+            <div class="bfh-selectbox-options">
+              <input type="text" class="bfh-selectbox-filter">
               <ul role="options">
               </ul>
             </div>
           </div>
           </form>
-          <pre class="prettyprint">&lt;div class="selectbox googlefonts" data-families="Open Sans,Josefin Slab,Avro,Lato,Vollkorn,Abril Fatface,Ubuntu,PT Sans,PT Serif,Old Standard TT,Droid Sans"&gt;
+          <pre class="prettyprint">&lt;div class="bfh-selectbox bfh-googlefonts" data-subsets="latin-ext"&gt;
   &lt;input type="hidden" value=""&gt;
-  &lt;a class="selectbox-toggle" role="button" data-toggle="selectbox" href="#"&gt;
-    &lt;span class="selectbox-option input-large" data-option=""&gt;&lt;/span&gt;
+  &lt;a class="bfh-selectbox-toggle" role="button" data-toggle="bfh-selectbox" href="#"&gt;
+    &lt;span class="bfh-selectbox-option input-large" data-option=""&gt;&lt;/span&gt;
     &lt;b class="caret"&gt;&lt;/b&gt;
   &lt;/a&gt;
-  &lt;div class="selectbox-options"&gt
-    &lt;input type="text" class="selectbox-filter"&gt;
-    &lt;ul class="selectbox-options" role="options"&gt;
+  &lt;div class="bfh-selectbox-options"&gt
+    &lt;input type="text" class="bfh-selectbox-filter"&gt;
+    &lt;ul role="options"&gt;
     &lt;/ul&gt;
   &lt;/div&gt;
-&lt;/div&gt;</pre>    
+&lt;/div&gt;</pre>
+
+          <p>Limit font choices.</p>
+          <form class="bs-docs-example form-inline">
+          <div class="bfh-selectbox bfh-googlefonts" data-family="Lato" data-families="Open Sans,Josefin Slab,Avro,Lato,Vollkorn,Abril Fatface,Ubuntu,PT Sans,PT Serif,Old Standard TT,Droid Sans">
+            <input type="hidden" value="">
+            <a class="bfh-selectbox-toggle" role="button" data-toggle="bfh-selectbox" href="#">
+            <span class="bfh-selectbox-option input-large" data-option=""></span>
+            <b class="caret"></b>
+            </a>
+            <div class="bfh-selectbox-options">
+              <input type="text" class="bfh-selectbox-filter">
+              <ul role="options">
+              </ul>
+            </div>
+          </div>
+          </form>
+          <pre class="prettyprint">&lt;div class="bfh-selectbox bfh-googlefonts" data-families="Open Sans,Josefin Slab,Avro,Lato,Vollkorn,Abril Fatface,Ubuntu,PT Sans,PT Serif,Old Standard TT,Droid Sans"&gt;
+  &lt;input type="hidden" value=""&gt;
+  &lt;a class="bfh-selectbox-toggle" role="button" data-toggle="bfh-selectbox" href="#"&gt;
+    &lt;span class="bfh-selectbox-option input-large" data-option=""&gt;&lt;/span&gt;
+    &lt;b class="caret"&gt;&lt;/b&gt;
+  &lt;/a&gt;
+  &lt;div class="bfh-selectbox-options"&gt
+    &lt;input type="text" class="bfh-selectbox-filter"&gt;
+    &lt;ul role="options"&gt;
+    &lt;/ul&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</pre>  
 
         </section> 
         
@@ -796,9 +826,12 @@
           
           <p>Simplest example.</p>
           <form class="bs-docs-example form-inline">
-            <div class="datepicker">
-              <input type="text" class="input-medium datepicker-toggle" data-toggle="datepicker" readonly>
-              <div class="datepicker-calendar">
+            <div class="bfh-datepicker">
+              <div class="input-prepend bfh-datepicker-toggle" data-toggle="bfh-datepicker">
+                <span class="add-on"><i class="icon-calendar"></i></span>
+                <input type="text" class="input-medium" readonly>
+              </div>
+              <div class="bfh-datepicker-calendar">
                 <table class="calendar table table-bordered">
                   <thead>
                     <tr class="months-header">
@@ -822,9 +855,12 @@
               </div>
             </div>
           </form>
-          <pre class="prettyprint">&lt;div class="datepicker"&gt;
-  &lt;input type="text" class="input-medium datepicker-toggle" data-toggle="datepicker" readonly&gt;
-  &lt;div class="datepicker-calendar"&gt;
+          <pre class="prettyprint">&lt;div class="bfh-datepicker"&gt;
+  &lt;div class="input-prepend bfh-datepicker-toggle" data-toggle="bfh-datepicker"&gt;
+    &lt;span class="add-on"&gt;&lt;i class="icon-calendar"&gt;&lt;/i&gt;&lt;/span&gt;
+    &lt;input type="text" class="input-medium" readonly&gt;
+  &lt;/div&gt;
+  &lt;div class="bfh-datepicker-calendar"&gt;
     &lt;table class="calendar table table-bordered"&gt;
       &lt;thead&gt;
         &lt;tr class="months-header"&gt;
@@ -850,9 +886,12 @@
 
           <p>Example showing how to set a default date and format.</p>
           <form class="bs-docs-example form-inline">
-            <div class="datepicker" data-format="y-m-d" data-date="2000-01-01">
-              <input type="text" class="input-medium datepicker-toggle" data-toggle="datepicker" readonly>
-              <div class="datepicker-calendar">
+            <div class="bfh-datepicker" data-format="y-m-d" data-date="2000-01-01">
+              <div class="input-prepend bfh-datepicker-toggle" data-toggle="bfh-datepicker">
+                <span class="add-on"><i class="icon-calendar"></i></span>
+                <input type="text" class="input-medium" readonly>
+              </div>
+              <div class="bfh-datepicker-calendar">
                 <table class="calendar table table-bordered">
                   <thead>
                     <tr class="months-header">
@@ -876,9 +915,12 @@
               </div>
             </div>
           </form>
-          <pre class="prettyprint">&lt;div class="datepicker" data-format="y-m-d" data-date="2000-01-01"&gt;
-  &lt;input type="text" class="input-medium datepicker-toggle" data-toggle="datepicker" readonly&gt;
-  &lt;div class="datepicker-calendar"&gt;
+          <pre class="prettyprint">&lt;div class="bfh-datepicker" data-format="y-m-d" data-date="2000-01-01"&gt;
+  &lt;div class="input-prepend bfh-datepicker-toggle" data-toggle="bfh-datepicker"&gt;
+    &lt;span class="add-on"&gt;&lt;i class="icon-calendar"&gt;&lt;/i&gt;&lt;/span&gt;
+    &lt;input type="text" class="input-medium" readonly&gt;
+  &lt;/div&gt;
+  &lt;div class="bfh-datepicker-calendar"&gt;
     &lt;table class="calendar table table-bordered"&gt;
       &lt;thead&gt;
         &lt;tr class="months-header"&gt;
@@ -916,10 +958,13 @@
           
           <p>Simplest example.</p>
           <form class="bs-docs-example form-inline">
-            <div class="timepicker">
-              <input type="text" class="input-medium timepicker-toggle" data-toggle="timepicker" readonly>
-              <div class="timepicker-popover">
-                <table class="timepicker-table table">
+            <div class="bfh-timepicker">
+              <div class="input-prepend bfh-timepicker-toggle" data-toggle="bfh-timepicker">
+                <span class="add-on"><i class="icon-time"></i></span>
+                <input type="text" class="input-medium" readonly>
+              </div>
+              <div class="bfh-timepicker-popover">
+                <table class="table">
                   <tbody>
                     <tr>
                       <td class="hour">
@@ -939,10 +984,13 @@
               </div>
             </div>
           </form>
-          <pre class="prettyprint">&lt;div class="timepicker"&gt;
-  &lt;input type="text" class="input-medium timepicker-toggle" data-toggle="timepicker" readonly&gt;
-  &lt;div class="timepicker-popover"&gt;
-    &lt;table class="timepicker-table table"&gt;
+          <pre class="prettyprint">&lt;div class="bfh-timepicker"&gt;
+  &lt;div class="input-prepend bfh-timepicker-toggle" data-toggle="bfh-timepicker"&gt;
+    &lt;span class="add-on"&gt;&lt;i class="icon-time"&gt;&lt;/i&gt;&lt;/span&gt;
+    &lt;input type="text" class="input-medium" readonly&gt;
+  &lt;/div&gt;
+  &lt;div class="bfh-timepicker-popover"&gt;
+    &lt;table class="table"&gt;
       &lt;tbody&gt;
         &lt;tr&gt;
           &lt;td class="hour"&gt;
@@ -964,10 +1012,13 @@
 
           <p>Example showing how to set a default time.</p>
           <form class="bs-docs-example form-inline">
-            <div class="timepicker" data-time="08:00">
-              <input type="text" class="input-medium timepicker-toggle" data-toggle="timepicker" readonly>
-              <div class="timepicker-popover">
-                <table class="timepicker-table table">
+            <div class="bfh-timepicker" data-time="08:00">
+              <div class="input-prepend bfh-timepicker-toggle" data-toggle="bfh-timepicker">
+                <span class="add-on"><i class="icon-time"></i></span>
+                <input type="text" class="input-medium" readonly>
+              </div>
+              <div class="bfh-timepicker-popover">
+                <table class="table">
                   <tbody>
                     <tr>
                       <td class="hour">
@@ -987,10 +1038,13 @@
               </div>
             </div>
           </form>
-          <pre class="prettyprint">&lt;div class="timepicker" data-time="08:00"&gt;
-  &lt;input type="text" class="input-medium timepicker-toggle" data-toggle="timepicker" readonly&gt;
-  &lt;div class="timepicker-popover"&gt;
-    &lt;table class="timepicker-table table"&gt;
+          <pre class="prettyprint">&lt;div class="bfh-timepicker" data-time="08:00"&gt;
+  &lt;div class="input-prepend bfh-timepicker-toggle" data-toggle="bfh-timepicker"&gt;
+    &lt;span class="add-on"&gt;&lt;i class="icon-time"&gt;&lt;/i&gt;&lt;/span&gt;
+    &lt;input type="text" class="input-medium" readonly&gt;
+  &lt;/div&gt;
+  &lt;div class="bfh-timepicker-popover"&gt;
+    &lt;table class="table"&gt;
       &lt;tbody&gt;
         &lt;tr&gt;
           &lt;td class="hour"&gt;
@@ -1009,6 +1063,86 @@
     &lt;/table&gt;
   &lt;/div&gt;
 &lt;/div&gt;</pre>
+
+        </section> 
+        
+        <!-- Fonts
+        ================================================== -->
+        <section id="fonts">
+          <div class="page-header">
+            <h1>Fonts <small>bootstrap-formhelpers-fonts.js</small></h1>
+          </div>
+          <h3>About Fonts</h3>
+          <p>For adding a drop-down of Fonts, include bootstrap-formhelpers-fonts.codes.js and bootstrap-formhelpers-fonts.js once alongside the other JS files.</p>
+          <h3>Use cases</h3>
+          
+          <p>Simplest example, with default selected value.</p>
+          <form class="bs-docs-example form-inline">
+          <div class="bfh-selectbox bfh-fonts" data-family="Helvetica">
+            <input type="hidden" value="">
+            <a class="bfh-selectbox-toggle" role="button" data-toggle="bfh-selectbox" href="#">
+            <span class="bfh-selectbox-option input-large" data-option=""></span>
+            <b class="caret"></b>
+            </a>
+            <div class="bfh-selectbox-options">
+              <input type="text" class="bfh-selectbox-filter">
+              <ul role="options">
+              </ul>
+            </div>
+          </div>
+          </form>
+          <pre class="prettyprint">&lt;div class="bfh-selectbox bfh-fonts" data-family="Helvetica"&gt;
+  &lt;input type="hidden" value=""&gt;
+  &lt;a class="bfh-selectbox-toggle" role="button" data-toggle="bfh-selectbox" href="#"&gt;
+    &lt;span class="bfh-selectbox-option input-large" data-option=""&gt;&lt;/span&gt;
+    &lt;b class="caret"&gt;&lt;/b&gt;
+  &lt;/a&gt;
+  &lt;div class="bfh-selectbox-options"&gt
+    &lt;input type="text" class="bfh-selectbox-filter"&gt;
+    &lt;ul role="options"&gt;
+    &lt;/ul&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</pre>  
+
+        </section> 
+        
+        <!-- Font Sizes
+        ================================================== -->
+        <section id="fontsizes">
+          <div class="page-header">
+            <h1>Font Sizes <small>bootstrap-formhelpers-fontsizes.js</small></h1>
+          </div>
+          <h3>About Font Sizes</h3>
+          <p>For adding a drop-down of Font Sizes, include bootstrap-formhelpers-fontsizes.codes.js and bootstrap-formhelpers-fontsizes.js once alongside the other JS files.</p>
+          <h3>Use cases</h3>
+          
+          <p>Simplest example, with default selected value.</p>
+          <form class="bs-docs-example form-inline">
+          <div class="bfh-selectbox bfh-fontsizes" data-size="14">
+            <input type="hidden" value="">
+            <a class="bfh-selectbox-toggle" role="button" data-toggle="bfh-selectbox" href="#">
+            <span class="bfh-selectbox-option input-large" data-option=""></span>
+            <b class="caret"></b>
+            </a>
+            <div class="bfh-selectbox-options">
+              <input type="text" class="bfh-selectbox-filter">
+              <ul role="options">
+              </ul>
+            </div>
+          </div>
+          </form>
+          <pre class="prettyprint">&lt;div class="bfh-selectbox bfh-fontsizes" data-size="14"&gt;
+  &lt;input type="hidden" value=""&gt;
+  &lt;a class="bfh-selectbox-toggle" role="button" data-toggle="bfh-selectbox" href="#"&gt;
+    &lt;span class="bfh-selectbox-option input-large" data-option=""&gt;&lt;/span&gt;
+    &lt;b class="caret"&gt;&lt;/b&gt;
+  &lt;/a&gt;
+  &lt;div class="bfh-selectbox-options"&gt
+    &lt;input type="text" class="bfh-selectbox-filter"&gt;
+    &lt;ul role="options"&gt;
+    &lt;/ul&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</pre>  
 
         </section> 
         
@@ -1037,7 +1171,7 @@
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
-    <script src="assets/js/jquery.js"></script>
+    <script src="http://code.jquery.com/jquery-1.9.0.min.js"></script>
     <script src="assets/js/google-code-prettify/prettify.js"></script>
     <script src="assets/js/bootstrap-transition.js"></script>
     <script src="assets/js/bootstrap-alert.js"></script>
@@ -1069,5 +1203,9 @@
     <script src="assets/js/bootstrap-formhelpers-datepicker.en_US.js"></script>
     <script src="assets/js/bootstrap-formhelpers-datepicker.js"></script>
     <script src="assets/js/bootstrap-formhelpers-timepicker.js"></script>
+    <script src="assets/js/bootstrap-formhelpers-fonts.codes.js"></script>
+    <script src="assets/js/bootstrap-formhelpers-fonts.js"></script>
+    <script src="assets/js/bootstrap-formhelpers-fontsizes.codes.js"></script>
+    <script src="assets/js/bootstrap-formhelpers-fontsizes.js"></script>
     
 </body></html>

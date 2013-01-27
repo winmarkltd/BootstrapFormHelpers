@@ -8,32 +8,32 @@
  * Designed and built by @vincent lamanna.
  */
 
-.selectbox {
+.bfh-selectbox {
   height: 30px;
   position: relative;
   display: inline-block;
 }
 
-.selectbox-toggle {
+.bfh-selectbox-toggle {
   *margin-bottom: -3px;
 }
 
-.selectbox-toggle:active,
-.open .selectbox-toggle {
+.bfh-selectbox-toggle:active,
+.open .bfh-selectbox-toggle {
   outline: 0;
 }
 
-.selectbox .caret {
+.bfh-selectbox .caret {
   margin-top: 8px;
   margin-left: 2px;
   height: 8px;
 }
 
-.selectbox > .selectbox-toggle > .caret {
+.bfh-selectbox > .bfh-selectbox-toggle > .caret {
   float: right;
 }
 
-.selectbox-options {
+.bfh-selectbox-options {
   position: absolute;
   top: 100%;
   left: 0;
@@ -59,16 +59,16 @@
           background-clip: padding-box;
 }
 
-.selectbox-options ul {
+.bfh-selectbox-options ul {
   list-style: none;
 }
 
-.selectbox-options.pull-right {
+.bfh-selectbox-options.pull-right {
   right: 0;
   left: auto;
 }
 
-.selectbox-options a {
+.bfh-selectbox-options a {
   display: block;
   padding: 3px 20px;
   clear: both;
@@ -80,13 +80,13 @@
   text-decoration: none;
 }
 
-.googlefonts .selectbox-options a {
+.bfh-googlefonts .bfh-selectbox-options a {
   height: 30px;
   text-indent: -9999px;
   background-image: url(../img/bootstrap-formhelpers-googlefonts.png);
 }
 
-.selectbox-options li > a:focus {
+.bfh-selectbox-options li > a:focus {
   color: #ffffff;
   text-decoration: none;
   background-color: #0088cc;
@@ -100,7 +100,7 @@
   filter: progid:dximagetransform.microsoft.gradient(startColorstr='#ff0088cc', endColorstr='#ff0077b3', GradientType=0);
 }
 
-.googlefonts .selectbox-options li > a:focus {
+.bfh-googlefonts .bfh-selectbox-options li > a:focus {
   background-image: url(../img/bootstrap-formhelpers-googlefonts.png);
   background-repeat: no-repeat;
   filter: none;
@@ -109,8 +109,8 @@
   outline: none;
 }
 
-.selectbox-options .active > a,
-.selectbox-options .active > a:hover {
+.bfh-selectbox-options .active > a,
+.bfh-selectbox-options .active > a:hover {
   color: #ffffff;
   text-decoration: none;
   background-color: #0088cc;
@@ -125,8 +125,8 @@
   filter: progid:dximagetransform.microsoft.gradient(startColorstr='#ff0088cc', endColorstr='#ff0077b3', GradientType=0);
 }
 
-.googlefonts .selectbox-options .active > a,
-.googlefonts .selectbox-options .active > a:hover {
+.bfh-googlefonts .bfh-selectbox-options .active > a,
+.bfh-googlefonts .bfh-selectbox-options .active > a:hover {
   background-image: url(../img/bootstrap-formhelpers-googlefonts.png);
   background-repeat: no-repeat;
   filter: none;
@@ -134,8 +134,8 @@
   filter: none;
 }
 
-.selectbox-options .disabled > a,
-.selectbox-options .disabled > a:hover {
+.bfh-selectbox-options .disabled > a,
+.bfh-selectbox-options .disabled > a:hover {
   color: #999999;
 }
 
@@ -143,16 +143,16 @@
   *z-index: 1000;
 }
 
-.open > .selectbox-options {
+.open > .bfh-selectbox-options {
   display: block;
 }
 
-.pull-right > .selectbox-options {
+.pull-right > .bfh-selectbox-options {
   right: 0;
   left: auto;
 }
 
-.selectbox > .selectbox-toggle {
+.bfh-selectbox > .bfh-selectbox-toggle {
   color: #000;
   padding: 4px;
   display: inline-block;
@@ -165,7 +165,7 @@
   border-radius: 6px;
 }
 
-.selectbox-options ul {
+.bfh-selectbox-options ul {
   max-height: 200px;
   overflow-x: hidden;
   overflow-y: auto;
@@ -173,72 +173,72 @@
   width: 240px;
 }
 
-.selectbox-filter {
+.bfh-selectbox-filter {
   margin: 0 10px;
 }
 
-.selectbox > .selectbox-toggle > .selectbox-option {
+.bfh-selectbox > .bfh-selectbox-toggle > .bfh-selectbox-option {
   display: inline-block;
   float: left;
   height: 20px;
   overflow: hidden;
 }
 
-span.countries {
+span.bfh-countries {
   line-height: 18px;
 }
 
-table.calendar {
+.bfh-datepicker-calendar > table.calendar {
   width: 376px;
   background: #fff;
 }
 
-table.calendar .months-header > th {
+.bfh-datepicker-calendar > table.calendar .months-header > th {
   text-align: center;
   font-size: 12px;
 }
 
-table.calendar .months-header > th.month > span {
+.bfh-datepicker-calendar > table.calendar .months-header > th.month > span {
   width: 100px;
   display: inline-block;
 }
 
-table.calendar .months-header > th.year > span {
+.bfh-datepicker-calendar > table.calendar .months-header > th.year > span {
   width: 50px;
   display: inline-block;
 }
 
-table.calendar .days-header > th {
+.bfh-datepicker-calendar > table.calendar .days-header > th {
   text-align: center;
   font-size: 11px;
   line-height: 12px;
 }
 
-table.calendar > tbody > tr > td {
+.bfh-datepicker-calendar > table.calendar > tbody > tr > td {
   text-align: center;
   font-size: 11px;
   line-height: 12px;
 }
 
-table.calendar > tbody > tr > td.today {
+.bfh-datepicker-calendar > table.calendar > tbody > tr > td.today {
 	background-color: #999;
 	color: #fff;
 	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
 }
 
-table.calendar > tbody > tr > td.off {
+.bfh-datepicker-calendar > table.calendar > tbody > tr > td.off {
 	color: #aaa;
 }
 
-.datepicker {
+.bfh-datepicker {
   position: relative;
 }
 
-.datepicker-toggle {
+.bfh-datepicker-toggle {
   *margin-bottom: -3px;
 }
 
-.datepicker-calendar {
+.bfh-datepicker-calendar {
   position: absolute;
   top: 100%;
   left: 0;
@@ -248,16 +248,16 @@ table.calendar > tbody > tr > td.off {
   min-width: 160px;
 }
 
-.datepicker-calendar.pull-right {
+.bfh-datepicker-calendar.pull-right {
   right: 0;
   left: auto;
 }
 
-.open > .datepicker-calendar {
+.open > .bfh-datepicker-calendar {
   display: block;
 }
 
-.datepicker-calendar > table > tbody > tr > td:not(.off):hover {
+.bfh-datepicker-calendar > table > tbody > tr > td:not(.off):hover {
   cursor: pointer;
   color: #ffffff;
   text-decoration: none;
@@ -273,36 +273,36 @@ table.calendar > tbody > tr > td.off {
   filter: progid:dximagetransform.microsoft.gradient(startColorstr='#ff0088cc', endColorstr='#ff0077b3', GradientType=0);
 }
 
-table.timepicker-table {
+.bfh-timepicker-popover > table {
   width: 180px;
   margin: 0;
 }
 
-table.timepicker-table > tbody > tr > td {
+.bfh-timepicker-popover > table > tbody > tr > td {
   text-align: center;
   border: 0;
 }
 
-table.timepicker-table > tbody > tr > td.separator {
+.bfh-timepicker-popover > table > tbody > tr > td.separator {
   line-height: 65px;
   font-weight: bold;
   font-size: 20px;
 }
 
-table.timepicker-table > tbody > tr > td > input {
+.bfh-timepicker-popover > table > tbody > tr > td > input {
   margin: 0;
   text-align: center;
 }
 
-.timepicker {
+.bfh-timepicker {
   position: relative;
 }
 
-.timepicker-toggle {
+.bfh-timepicker-toggle {
   *margin-bottom: -3px;
 }
 
-.timepicker-popover {
+.bfh-timepicker-popover {
   position: absolute;
   top: 100%;
   left: 0;
@@ -320,11 +320,11 @@ table.timepicker-table > tbody > tr > td > input {
           border-radius: 6px;
 }
 
-.timepicker-popover.pull-right {
+.bfh-timepicker-popover.pull-right {
   right: 0;
   left: auto;
 }
 
-.open > .timepicker-popover {
+.open > .bfh-timepicker-popover {
   display: block;
 }
