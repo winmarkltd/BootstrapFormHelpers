@@ -26,16 +26,16 @@
  /* TIMEPICKER CLASS DEFINITION
   * ========================= */
 
-  var toggle = '[data-toggle=timepicker]'
-    , TimePicker = function (element, options) {
-        this.options = $.extend({}, $.fn.timepicker.defaults, options)
+  var toggle = '[data-toggle=bfh-timepicker]'
+    , BFHTimePicker = function (element, options) {
+        this.options = $.extend({}, $.fn.bfhtimepicker.defaults, options)
     	this.$element = $(element)
         this.initPopover()
       }
 
-  TimePicker.prototype = {
+  BFHTimePicker.prototype = {
 
-    constructor: TimePicker
+    constructor: BFHTimePicker
   
   , initPopover: function() {
     var time = this.options.time
@@ -46,7 +46,7 @@
       this.$element.data('hour', today.getHours())
       this.$element.data('minute', today.getMinutes())
     } else {
-      this.$element.find('.timepicker-toggle').val(time)
+      this.$element.find('.bfh-timepicker-toggle').val(time)
       var timeParts = new String(time).split(":")
       this.$element.data('hour', timeParts[0])
       this.$element.data('minute', timeParts[1])
@@ -71,7 +71,7 @@
     
     this.$element.find('.hour > input[type=text]').val(hour)
     this.$element.find('.minute > input[type=text]').val(minute)
-    this.$element.find('.timepicker-toggle').val(hour + ":" + minute)
+    this.$element.find('.bfh-timepicker-toggle > input[type=text]').val(hour + ":" + minute)
   }
   
   , previousHour: function (e) {
@@ -79,7 +79,7 @@
       , $parent
       , $timePicker
       
-    $parent = $this.closest('.timepicker')
+    $parent = $this.closest('.bfh-timepicker')
     
     if ($parent.data('hour') == 0) {
       $parent.data('hour', 23)
@@ -87,7 +87,7 @@
       $parent.data('hour', new Number($parent.data('hour')) - 1)
     }
     
-    $timePicker = $parent.data('timepicker')
+    $timePicker = $parent.data('bfhtimepicker')
     $timePicker.updatePopover()
     
     return false;
@@ -98,7 +98,7 @@
       , $parent
       , $timePicker
       
-    $parent = $this.closest('.timepicker')
+    $parent = $this.closest('.bfh-timepicker')
     
     if ($parent.data('hour') == 23) {
       $parent.data('hour', 0)
@@ -106,7 +106,7 @@
       $parent.data('hour', new Number($parent.data('hour')) + 1)
     }
     
-    $timePicker = $parent.data('timepicker')
+    $timePicker = $parent.data('bfhtimepicker')
     $timePicker.updatePopover()
     
     return false;
@@ -117,7 +117,7 @@
       , $parent
       , $timePicker
       
-    $parent = $this.closest('.timepicker')
+    $parent = $this.closest('.bfh-timepicker')
     
     if ($parent.data('minute') == 0) {
       $parent.data('minute', 59)
@@ -125,7 +125,7 @@
       $parent.data('minute', new Number($parent.data('minute')) - 1)
     }
     
-    $timePicker = $parent.data('timepicker')
+    $timePicker = $parent.data('bfhtimepicker')
     $timePicker.updatePopover()
     
     return false;
@@ -136,7 +136,7 @@
       , $parent
       , $timePicker
       
-    $parent = $this.closest('.timepicker')
+    $parent = $this.closest('.bfh-timepicker')
     
     if ($parent.data('minute') == 59) {
       $parent.data('minute', 0)
@@ -144,7 +144,7 @@
       $parent.data('minute', new Number($parent.data('minute')) + 1)
     }
     
-    $timePicker = $parent.data('timepicker')
+    $timePicker = $parent.data('bfhtimepicker')
     $timePicker.updatePopover()
     
     return false;
@@ -195,20 +195,20 @@
   /* TIMEPICKER PLUGIN DEFINITION
    * ========================== */
 
-  $.fn.timepicker = function (option) {
+  $.fn.bfhtimepicker = function (option) {
     return this.each(function () {
       var $this = $(this)
-        , data = $this.data('timepicker')
+        , data = $this.data('bfhtimepicker')
         , options = typeof option == 'object' && option
         
-      if (!data) $this.data('timepicker', (data = new TimePicker(this, options)))
+      if (!data) $this.data('bfhtimepicker', (data = new BFHTimePicker(this, options)))
       if (typeof option == 'string') data[option]()
     })
   }
 
-  $.fn.timepicker.Constructor = TimePicker
+  $.fn.bfhtimepicker.Constructor = BFHTimePicker
 
-  $.fn.timepicker.defaults = {
+  $.fn.bfhtimepicker.defaults = {
     time: ""
   }
   
@@ -216,22 +216,23 @@
    * =================================== */
 
   $(window).on('load', function () {
-    $('div.timepicker').each(function () {
+    $('div.bfh-timepicker').each(function () {
       var $timepicker = $(this)
 
-      $timepicker.timepicker($timepicker.data())
+      $timepicker.bfhtimepicker($timepicker.data())
     })
   })
   
   $(function () {
     $('html')
-      .on('click.timepicker.data-api', clearMenus)
+      .on('click.bfhtimepicker.data-api', clearMenus)
     $('body')
-      .on('click.timepicker.data-api touchstart.timepicker.data-api', toggle, TimePicker.prototype.toggle)
-      .on('click.timepicker.data-api touchstart.timepicker.data-api', 'table.timepicker-table .hour > .previous', TimePicker.prototype.previousHour)
-      .on('click.timepicker.data-api touchstart.timepicker.data-api', 'table.timepicker-table .hour > .next', TimePicker.prototype.nextHour)
-      .on('click.timepicker.data-api touchstart.timepicker.data-api', 'table.timepicker-table .minute > .previous', TimePicker.prototype.previousMinute)
-      .on('click.timepicker.data-api touchstart.timepicker.data-api', 'table.timepicker-table .minute > .next', TimePicker.prototype.nextMinute)
+      .on('click.bfhtimepicker.data-api touchstart.bfhtimepicker.data-api', toggle, BFHTimePicker.prototype.toggle)
+      .on('click.bfhtimepicker.data-api touchstart.bfhtimepicker.data-api', '.bfh-timepicker-popover > table .hour > .previous', BFHTimePicker.prototype.previousHour)
+      .on('click.bfhtimepicker.data-api touchstart.bfhtimepicker.data-api', '.bfh-timepicker-popover > table .hour > .next', BFHTimePicker.prototype.nextHour)
+      .on('click.bfhtimepicker.data-api touchstart.bfhtimepicker.data-api', '.bfh-timepicker-popover > table .minute > .previous', BFHTimePicker.prototype.previousMinute)
+      .on('click.bfhtimepicker.data-api touchstart.bfhtimepicker.data-api', '.bfh-timepicker-popover > table .minute > .next', BFHTimePicker.prototype.nextMinute)
+      .on('click.bfhtimepicker.data-api touchstart.bfhtimepicker.data-api', '.bfh-timepicker-popover > table', function() { return false })
   })
 
 }(window.jQuery);

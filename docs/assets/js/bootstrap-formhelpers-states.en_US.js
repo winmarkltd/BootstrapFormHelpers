@@ -17,7 +17,7 @@
  * limitations under the License.
  * ========================================================== */
 
- var StatesList = {
+ var BFHStatesList = {
    'AD': {
      '02': 'Canillo',
      '03': 'Encamp',

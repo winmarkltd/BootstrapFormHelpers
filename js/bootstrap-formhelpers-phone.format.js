@@ -17,7 +17,7 @@
  * limitations under the License.
  * ========================================================== */
  
- var PhoneFormatList = {
+ var BFHPhoneFormatList = {
    'AF': '0dd ddd dddd',
    'AL': '0dd ddd ddd',
    'DZ': '0ddd dd dd dd',

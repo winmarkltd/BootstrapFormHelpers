@@ -25,22 +25,22 @@
  /* TIMEZONES CLASS DEFINITION
   * ====================== */
 
-  var Timezones = function (element, options) {
-    this.options = $.extend({}, $.fn.timezones.defaults, options)
+  var BFHTimezones = function (element, options) {
+    this.options = $.extend({}, $.fn.bfhtimezones.defaults, options)
     this.$element = $(element)
     
     if (this.$element.is("select")) {
       this.addTimezones()
     }
     
-    if (this.$element.hasClass("selectbox")) {
+    if (this.$element.hasClass("bfh-selectbox")) {
       this.addBootstrapTimezones()
     }
   }
 
-  Timezones.prototype = {
+  BFHTimezones.prototype = {
 
-    constructor: Timezones
+    constructor: BFHTimezones
 
     , addTimezones: function () {
       var country = this.options.country
@@ -51,7 +51,7 @@
 		
 		if (countryObject.length != 0) {
 		  country = countryObject.val()
-		  countryObject.on('change.countries.data-api', {timezoneObject: this}, this.changeCountry)
+		  countryObject.on('change.bfhcountries.data-api', {timezoneObject: this}, this.changeCountry)
 		}
 	  }
       
@@ -63,8 +63,8 @@
       
       this.$element.html('')
       this.$element.append('<option value=""></option>')
-      for (var timezone in TimezonesList[country]) {
-        this.$element.append('<option value="' + timezone + '">' + TimezonesList[country][timezone] + '</option>')
+      for (var timezone in BFHTimezonesList[country]) {
+        this.$element.append('<option value="' + timezone + '">' + BFHTimezonesList[country][timezone] + '</option>')
       }
       
       this.$element.val(value)
@@ -87,7 +87,7 @@
         
         if (countryObject.length != 0) {
           country = countryObject.find('input[type="hidden"]').val()
-          countryObject.find('input[type="hidden"]').on('change.countries.data-api', {timezoneObject: this}, this.changeBootstrapCountry)
+          countryObject.find('input[type="hidden"]').on('change.bfhcountries.data-api', {timezoneObject: this}, this.changeBootstrapCountry)
         }
       }
       
@@ -102,17 +102,17 @@
       var value = this.options.timezone
       
       $input = this.$element.find('input[type="hidden"]')
-      $toggle = this.$element.find('.selectbox-option')
+      $toggle = this.$element.find('.bfh-selectbox-option')
       $options = this.$element.find('[role=options]')
       
       $options.html('')
       $options.append('<li><a tabindex="-1" href="#" data-option=""></a></li>')
-      for (var timezone in TimezonesList[country]) {
-        $options.append('<li><a tabindex="-1" href="#" data-option="' + timezone + '">' + TimezonesList[country][timezone] + '</a></li>')
+      for (var timezone in BFHTimezonesList[country]) {
+        $options.append('<li><a tabindex="-1" href="#" data-option="' + timezone + '">' + BFHTimezonesList[country][timezone] + '</a></li>')
       }
       
       $toggle.data('option', value)
-      if (typeof TimezonesList[country][value] == "undefined") {
+      if (typeof BFHTimezonesList[country][value] == "undefined") {
         $toggle.html('')
       } else {
         $toggle.html(value)
@@ -135,20 +135,20 @@
  /* TIMEZONES PLUGIN DEFINITION
   * ======================= */
 
-  $.fn.timezones = function (option) {
+  $.fn.bfhtimezones = function (option) {
     return this.each(function () {
       var $this = $(this)
-        , data = $this.data('timezones')
+        , data = $this.data('bfhtimezones')
         , options = typeof option == 'object' && option
         
-      if (!data) $this.data('timezones', (data = new Timezones(this, options)))
+      if (!data) $this.data('bfhtimezones', (data = new BFHTimezones(this, options)))
       if (typeof option == 'string') data[option]()
     })
   }
 
-  $.fn.timezones.Constructor = Timezones
+  $.fn.bfhtimezones.Constructor = BFHTimezones
 
-  $.fn.timezones.defaults = {
+  $.fn.bfhtimezones.defaults = {
     country: "",
     timezone: ""
   }
@@ -158,10 +158,10 @@
   * ============== */
 
   $(window).on('load', function () {
-    $('form select.timezones, div.timezones').each(function () {
+    $('form select.bfh-timezones, div.bfh-timezones').each(function () {
       var $timezones = $(this)
 
-      $timezones.timezones($timezones.data())
+      $timezones.bfhtimezones($timezones.data())
     })
   })
 

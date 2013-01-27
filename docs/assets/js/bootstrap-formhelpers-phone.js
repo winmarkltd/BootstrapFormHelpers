@@ -25,11 +25,11 @@
  /* PHONE CLASS DEFINITION
   * ====================== */
 
-  var Phone = function (element, options) {
-    this.options = $.extend({}, $.fn.phone.defaults, options)
+  var BFHPhone = function (element, options) {
+    this.options = $.extend({}, $.fn.bfhphone.defaults, options)
     this.$element = $(element)
     if (this.$element.is("input:text")) {
-      this.$element.on('propertychange.phone.data-api change.phone.data-api input.phone.data-api paste.phone.data-api', {phoneObject: this}, this.change)
+      this.$element.on('propertychange.bfhphone.data-api change.bfhphone.data-api input.bfhphone.data-api paste.bfhphone.data-api', {phoneObject: this}, this.change)
       
       var country = this.options.country
       
@@ -39,10 +39,10 @@
 		var countryObject = formObject.find('#' + country)
 		
 		if (countryObject.length != 0) {
-		  this.options.format = PhoneFormatList[countryObject.val()]
-		  countryObject.on('change.phone.data-api', {phoneObject: this}, this.changeCountry)
+		  this.options.format = BFHPhoneFormatList[countryObject.val()]
+		  countryObject.on('change.bfhphone.data-api', {phoneObject: this}, this.changeCountry)
 		} else {
-		  this.options.format = PhoneFormatList[country]
+		  this.options.format = BFHPhoneFormatList[country]
 		}
 	  }
       
@@ -54,9 +54,9 @@
     }
   }
 
-  Phone.prototype = {
+  BFHPhone.prototype = {
 
-    constructor: Phone
+    constructor: BFHPhone
 
   , getFormattedNumber: function() {
     var format = this.options.format
@@ -111,7 +111,7 @@
       var $this = $(this)
       var phoneObject = e.data.phoneObject
       
-      phoneObject.options.format = PhoneFormatList[$this.val()]
+      phoneObject.options.format = BFHPhoneFormatList[$this.val()]
       
       phoneObject.addFormatter()
   }
@@ -144,19 +144,19 @@
  /* PHONE PLUGIN DEFINITION
   * ======================= */
 
-  $.fn.phone = function (option) {
+  $.fn.bfhphone = function (option) {
     return this.each(function () {
       var $this = $(this)
-        , data = $this.data('phone')
+        , data = $this.data('bfhphone')
         , options = typeof option == 'object' && option
-      if (!data) $this.data('phone', (data = new Phone(this, options)))
+      if (!data) $this.data('bfhphone', (data = new BFHPhone(this, options)))
       if (typeof option == 'string') data[option]()
     })
   }
 
-  $.fn.phone.Constructor = Phone
+  $.fn.bfhphone.Constructor = BFHPhone
 
-  $.fn.phone.defaults = {
+  $.fn.bfhphone.defaults = {
     format: "",
     number: "",
     country: ""
@@ -167,10 +167,10 @@
   * ============== */
 
   $(window).on('load', function () {
-    $('form input:text.phone, span.phone').each(function () {
+    $('form input:text.bfh-phone, span.bfh-phone').each(function () {
       var $phone = $(this)
 
-      $phone.phone($phone.data())
+      $phone.bfhphone($phone.data())
     })
   })
 

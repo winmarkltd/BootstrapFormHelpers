@@ -23,19 +23,19 @@
   "use strict"; // jshint ;_;
 
 
- /* DATEPICKER CLASS DEFINITION
+ /* BFHDATEPICKER CLASS DEFINITION
   * ========================= */
 
-  var toggle = '[data-toggle=datepicker]'
-    , DatePicker = function (element, options) {
-        this.options = $.extend({}, $.fn.datepicker.defaults, options)
+  var toggle = '[data-toggle=bfh-datepicker]'
+    , BFHDatePicker = function (element, options) {
+        this.options = $.extend({}, $.fn.bfhdatepicker.defaults, options)
     	this.$element = $(element)
         this.initCalendar()
       }
 
-  DatePicker.prototype = {
+  BFHDatePicker.prototype = {
 
-    constructor: DatePicker
+    constructor: BFHDatePicker
 
   , daysInMonth: function(month, year) {
     return new Date(year, month, 0).getDate()
@@ -117,14 +117,14 @@
     month = this.$element.data('month')
     year = this.$element.data('year')
     
-    $calendar = this.$element.find('.datepicker-calendar')
+    $calendar = this.$element.find('.bfh-datepicker-calendar')
     
-    $calendar.find('table > thead > tr > th.month > span').text(MonthsList[month])
+    $calendar.find('table > thead > tr > th.month > span').text(BFHMonthsList[month])
     $calendar.find('table > thead > tr > th.year > span').text(year)
     $daysHeader = $calendar.find('table > thead > tr.days-header')
     $daysHeader.html('')
-    for (var i=0; i < DaysList.length; i++) {
-      $daysHeader.append('<th>' + DaysList[i] + '</th>')
+    for (var i=0; i < BFHDaysList.length; i++) {
+      $daysHeader.append('<th>' + BFHDaysList[i] + '</th>')
     }
     $days = $calendar.find('table > tbody')
     $days.html('')
@@ -178,7 +178,7 @@
       , $parent
       , $datePicker
       
-    $parent = $this.closest('.datepicker')
+    $parent = $this.closest('.bfh-datepicker')
     
     if ($parent.data('month') == 0) {
     	$parent.data('month', 11)
@@ -187,7 +187,7 @@
     	$parent.data('month', new Number($parent.data('month')) - 1)
     }
     
-    $datePicker = $parent.data('datepicker')
+    $datePicker = $parent.data('bfhdatepicker')
     $datePicker.updateCalendar()
     
     return false;
@@ -198,7 +198,7 @@
       , $parent
       , $datePicker
       
-    $parent = $this.closest('.datepicker')
+    $parent = $this.closest('.bfh-datepicker')
     
     if ($parent.data('month') == 11) {
     	$parent.data('month', 0)
@@ -207,7 +207,7 @@
     	$parent.data('month', new Number($parent.data('month')) + 1)
     }
     
-    $datePicker = $parent.data('datepicker')
+    $datePicker = $parent.data('bfhdatepicker')
     $datePicker.updateCalendar()
     
     return false;
@@ -218,11 +218,11 @@
       , $parent
       , $datePicker
       
-    $parent = $this.closest('.datepicker')
+    $parent = $this.closest('.bfh-datepicker')
     
     $parent.data('year', new Number($parent.data('year')) - 1)
     
-    $datePicker = $parent.data('datepicker')
+    $datePicker = $parent.data('bfhdatepicker')
     $datePicker.updateCalendar()
     
     return false;
@@ -233,11 +233,11 @@
       , $parent
       , $datePicker
       
-    $parent = $this.closest('.datepicker')
+    $parent = $this.closest('.bfh-datepicker')
     
     $parent.data('year', new Number($parent.data('year')) + 1)
     
-    $datePicker = $parent.data('datepicker')
+    $datePicker = $parent.data('bfhdatepicker')
     $datePicker.updateCalendar()
     
     return false;
@@ -248,17 +248,15 @@
     , $parent
     , $datePicker
     
-    $parent = $this.closest('.datepicker')
+    $parent = $this.closest('.bfh-datepicker')
     
     var month = $parent.data('month')
     var year = $parent.data('year')
     var day = $this.data('day')
     
-    $datePicker = $parent.data('datepicker')
+    $datePicker = $parent.data('bfhdatepicker')
     
     $parent.find('input[type=text]').val($datePicker.formatDate(month, year, day))
-    
-    clearMenus()
     
     return false;
   }
@@ -308,20 +306,20 @@
   /* DATEPICKER PLUGIN DEFINITION
    * ========================== */
 
-  $.fn.datepicker = function (option) {
+  $.fn.bfhdatepicker = function (option) {
     return this.each(function () {
       var $this = $(this)
-        , data = $this.data('datepicker')
+        , data = $this.data('bfhdatepicker')
         , options = typeof option == 'object' && option
         
-      if (!data) $this.data('datepicker', (data = new DatePicker(this, options)))
+      if (!data) $this.data('bfhdatepicker', (data = new BFHDatePicker(this, options)))
       if (typeof option == 'string') data[option]()
     })
   }
 
-  $.fn.datepicker.Constructor = DatePicker
+  $.fn.bfhdatepicker.Constructor = BFHDatePicker
 
-  $.fn.datepicker.defaults = {
+  $.fn.bfhdatepicker.defaults = {
     format: "m/d/y",
     date: ""
   }
@@ -330,23 +328,24 @@
    * =================================== */
 
   $(window).on('load', function () {
-    $('div.datepicker').each(function () {
+    $('div.bfh-datepicker').each(function () {
       var $datepicker = $(this)
 
-      $datepicker.datepicker($datepicker.data())
+      $datepicker.bfhdatepicker($datepicker.data())
     })
   })
   
   $(function () {
     $('html')
-      .on('click.datepicker.data-api', clearMenus)
+      .on('click.bfhdatepicker.data-api', clearMenus)
     $('body')
-      .on('click.datepicker.data-api touchstart.datepicker.data-api', toggle, DatePicker.prototype.toggle)
-      .on('click.datepicker.data-api touchstart.datepicker.data-api', 'table.calendar .month > .previous', DatePicker.prototype.previousMonth)
-      .on('click.datepicker.data-api touchstart.datepicker.data-api', 'table.calendar .month > .next', DatePicker.prototype.nextMonth)
-      .on('click.datepicker.data-api touchstart.datepicker.data-api', 'table.calendar .year > .previous', DatePicker.prototype.previousYear)
-      .on('click.datepicker.data-api touchstart.datepicker.data-api', 'table.calendar .year > .next', DatePicker.prototype.nextYear)
-      .on('click.datepicker.data-api touchstart.datepicker.data-api', 'table.calendar td:not[.off]', DatePicker.prototype.select)
+      .on('click.bfhdatepicker.data-api touchstart.bfhdatepicker.data-api', toggle, BFHDatePicker.prototype.toggle)
+      .on('click.bfhdatepicker.data-api touchstart.bfhdatepicker.data-api', '.bfh-datepicker-calendar > table.calendar .month > .previous', BFHDatePicker.prototype.previousMonth)
+      .on('click.bfhdatepicker.data-api touchstart.bfhdatepicker.data-api', '.bfh-datepicker-calendar > table.calendar .month > .next', BFHDatePicker.prototype.nextMonth)
+      .on('click.bfhdatepicker.data-api touchstart.bfhdatepicker.data-api', '.bfh-datepicker-calendar > table.calendar .year > .previous', BFHDatePicker.prototype.previousYear)
+      .on('click.bfhdatepicker.data-api touchstart.bfhdatepicker.data-api', '.bfh-datepicker-calendar > table.calendar .year > .next', BFHDatePicker.prototype.nextYear)
+      .on('click.bfhdatepicker.data-api touchstart.bfhdatepicker.data-api', '.bfh-datepicker-calendar > table.calendar td:not(.off)', BFHDatePicker.prototype.select)
+      .on('click.bfhdatepicker.data-api touchstart.bfhdatepicker.data-api', '.bfh-datepicker-calendar > table.calendar', function() { return false })
   })
 
 }(window.jQuery);

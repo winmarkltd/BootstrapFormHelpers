@@ -17,7 +17,7 @@
  * limitations under the License.
  * ========================================================== */
  
- var MonthsList = [
+ var BFHMonthsList = [
  	'January',
  	'February',
  	'March',
@@ -32,7 +32,7 @@
  	'December'
  ]
  
- var DaysList = [
+ var BFHDaysList = [
  	"SUN",
  	"MON",
  	"TUE",

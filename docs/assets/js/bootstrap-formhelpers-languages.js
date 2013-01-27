@@ -25,8 +25,8 @@
  /* LANGUAGES CLASS DEFINITION
   * ====================== */
 
-  var Languages = function (element, options) {
-    this.options = $.extend({}, $.fn.languages.defaults, options)
+  var BFHLanguages = function (element, options) {
+    this.options = $.extend({}, $.fn.bfhlanguages.defaults, options)
     this.$element = $(element)
     
     if (this.$element.is("select")) {
@@ -37,14 +37,14 @@
       this.displayLanguage()
     }
     
-    if (this.$element.hasClass("selectbox")) {
+    if (this.$element.hasClass("bfh-selectbox")) {
       this.addBootstrapLanguages()
     }
   }
 
-  Languages.prototype = {
+  BFHLanguages.prototype = {
 
-    constructor: Languages
+    constructor: BFHLanguages
 
     , addLanguages: function () {
       var value = this.options.language
@@ -58,14 +58,14 @@
           var language = languages[i]
           if (language.indexOf("_") != -1) {
             var languageArr = language.split("_")
-            this.$element.append('<option value="' + language + '">' + LanguagesList[languageArr[0]].toProperCase() + ' (' + CountriesList[languageArr[1]] + ')</option>')
+            this.$element.append('<option value="' + language + '">' + BFHLanguagesList[languageArr[0]].toProperCase() + ' (' + BFHCountriesList[languageArr[1]] + ')</option>')
           } else {
-            this.$element.append('<option value="' + language + '">' + LanguagesList[language].toProperCase() + '</option>')
+            this.$element.append('<option value="' + language + '">' + BFHLanguagesList[language].toProperCase() + '</option>')
           }
         }
       } else {
-		for (var language in LanguagesList) {
-		  this.$element.append('<option value="' + language + '">' + LanguagesList[language].toProperCase() + '</option>')
+		for (var language in BFHLanguagesList) {
+		  this.$element.append('<option value="' + language + '">' + BFHLanguagesList[language].toProperCase() + '</option>')
 		}
 	  }
       
@@ -81,7 +81,7 @@
       var available = this.options.available
       
       $input = this.$element.find('input[type="hidden"]')
-      $toggle = this.$element.find('.selectbox-option')
+      $toggle = this.$element.find('.bfh-selectbox-option')
       $options = this.$element.find('[role=options]')
       
       $options.html('')
@@ -93,17 +93,17 @@
           if (language.indexOf("_") != -1) {
             var languageArr = language.split("_")
             if (this.options.flags == true) {
-              $options.append('<li><a tabindex="-1" href="#" data-option="' + language + '"><i class="icon-flag-' + languageArr[1] + '"></i>' + LanguagesList[languageArr[0]].toProperCase() + '</a></li>')
+              $options.append('<li><a tabindex="-1" href="#" data-option="' + language + '"><i class="icon-flag-' + languageArr[1] + '"></i>' + BFHLanguagesList[languageArr[0]].toProperCase() + '</a></li>')
             } else {
-              $options.append('<li><a tabindex="-1" href="#" data-option="' + language + '">' + LanguagesList[languageArr[0]].toProperCase() + ' (' + CountriesList[languageArr[1]] + ')</a></li>')
+              $options.append('<li><a tabindex="-1" href="#" data-option="' + language + '">' + BFHLanguagesList[languageArr[0]].toProperCase() + ' (' + BFHCountriesList[languageArr[1]] + ')</a></li>')
             }
           } else {
-            this.$element.append('<option value="' + language + '">' + LanguagesList[language].toProperCase() + '</option>')
+            this.$element.append('<option value="' + language + '">' + BFHLanguagesList[language].toProperCase() + '</option>')
           }
         }
       } else {
-		for (var language in LanguagesList) {
-		  $options.append('<li><a tabindex="-1" href="#" data-option="' + language + '">' + LanguagesList[language].toProperCase() + '</a></li>')
+		for (var language in BFHLanguagesList) {
+		  $options.append('<li><a tabindex="-1" href="#" data-option="' + language + '">' + BFHLanguagesList[language].toProperCase() + '</a></li>')
 		}
 	  }
       
@@ -111,12 +111,12 @@
       if (value.indexOf("_") != -1) {
         var languageArr = value.split("_")
         if (this.options.flags == true) {
-          $toggle.html('<i class="icon-flag-' + languageArr[1] + '"></i> ' + LanguagesList[languageArr[0]])
+          $toggle.html('<i class="icon-flag-' + languageArr[1] + '"></i> ' + BFHLanguagesList[languageArr[0]])
         } else {
-          $toggle.html(LanguagesList[languageArr[0]] + ' (' + CountriesList[languageArr[1]] + ')')
+          $toggle.html(BFHLanguagesList[languageArr[0]] + ' (' + BFHCountriesList[languageArr[1]] + ')')
         }
       } else {
-        $toggle.html(LanguagesList[value])
+        $toggle.html(BFHLanguagesList[value])
       }
       
       $input.val(value)
@@ -128,12 +128,12 @@
       if (value.indexOf("_") != -1) {
         var languageArr = value.split("_")
         if (this.options.flags == true) {
-          this.$element.html('<i class="icon-flag-' + languageArr[1] + '"></i> ' + LanguagesList[languageArr[0]])
+          this.$element.html('<i class="icon-flag-' + languageArr[1] + '"></i> ' + BFHLanguagesList[languageArr[0]])
         } else {
-          this.$element.html(LanguagesList[languageArr[0]] + ' (' + CountriesList[languageArr[1]] + ')')
+          this.$element.html(BFHLanguagesList[languageArr[0]] + ' (' + BFHCountriesList[languageArr[1]] + ')')
         }
       } else {
-        this.$element.html(LanguagesList[value])
+        this.$element.html(BFHLanguagesList[value])
       }
     }
 
@@ -143,20 +143,20 @@
  /* LANGUAGES PLUGIN DEFINITION
   * ======================= */
 
-  $.fn.languages = function (option) {
+  $.fn.bfhlanguages = function (option) {
     return this.each(function () {
       var $this = $(this)
-        , data = $this.data('languages')
+        , data = $this.data('bfhlanguages')
         , options = typeof option == 'object' && option
         
-      if (!data) $this.data('languages', (data = new Languages(this, options)))
+      if (!data) $this.data('bfhlanguages', (data = new BFHLanguages(this, options)))
       if (typeof option == 'string') data[option]()
     })
   }
 
-  $.fn.languages.Constructor = Languages
+  $.fn.bfhlanguages.Constructor = BFHLanguages
 
-  $.fn.languages.defaults = {
+  $.fn.bfhlanguages.defaults = {
     language: "",
     available: "",
     flags: false
@@ -167,10 +167,10 @@
   * ============== */
 
   $(window).on('load', function () {
-    $('form select.languages, span.languages, div.languages').each(function () {
+    $('form select.bfh-languages, span.bfh-languages, div.bfh-languages').each(function () {
       var $languages = $(this)
 
-      $languages.languages($languages.data())
+      $languages.bfhlanguages($languages.data())
     })
   })
   
