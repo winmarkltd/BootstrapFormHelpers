@@ -150,8 +150,12 @@
       
       $toggle.data('option', $this.data('option'))
       $toggle.html($this.html())
-      
-      $input.val($this.data('option'))
+           
+	  $input.removeData()
+	  $input.val($this.data('option'))
+	  $.each($this.data(), function(i,e) {
+		  $input.data(i,e);	
+	  });
       $input.change()
       
       clearMenus()
