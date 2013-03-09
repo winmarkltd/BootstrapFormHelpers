@@ -81,10 +81,12 @@
           formattedNumber += format.charAt(i)
         }
       } else if (format.charAt(i) != "d") {
-        formattedNumber += format.charAt(i)
+        if (phoneNumber.charAt(j) != "" || format.charAt(i) == "+") {
+          formattedNumber += format.charAt(i)
+        }
       } else {
         if (phoneNumber.charAt(j) == "") {
-          formattedNumber += " "
+          formattedNumber += ""
         } else {
           formattedNumber += phoneNumber.charAt(j)
           j++

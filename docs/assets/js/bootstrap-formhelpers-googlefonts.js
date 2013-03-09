@@ -35,11 +35,14 @@
       this.options.subsets = this.options.subsets.split(',')
       for (var i in BFHGoogleFontsList.items) {
         var font = BFHGoogleFontsList.items[i];
-        if ($.inArray(font.subsets[0], this.options.subsets) >= 0) {
-          this.familyList[font.family] = {
-            'font': BFHGoogleFontsList.items[i],
-            'i': parseInt(i)
-          };
+        for (var f = 0, allhave = true; f <= this.options.subsets.length; f++){
+            if ($.inArray(this.options.subsets[f], font.subsets) == -1) {allhave = false;}
+            if (f == this.options.subsets.length-1 && allhave == true){
+              this.familyList[font.family] = {
+                'font': BFHGoogleFontsList.items[i],
+                'i': parseInt(i)
+              };
+            }
         }
       }
     } else if (this.options.families) {
@@ -102,7 +105,7 @@
       
       $input = this.$element.find('input[type="hidden"]')
       $toggle = this.$element.find('.bfh-selectbox-option')
-      $options = this.$element.find('[role=options]')
+      $options = this.$element.find('[role=option]')
       
       $options.html('')
       $options.append('<li><a tabindex="-1" href="#" data-option="" style="background-image: none;"></a></li>')
