@@ -82,7 +82,7 @@
       
       $input = this.$element.find('input[type="hidden"]')
       $toggle = this.$element.find('.bfh-selectbox-option')
-      $options = this.$element.find('[role=options]')
+      $options = this.$element.find('[role=option]')
       
       $options.html('')
       $options.append('<li><a tabindex="-1" href="#" data-option=""></a></li>')
