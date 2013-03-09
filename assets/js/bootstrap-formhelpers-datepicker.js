@@ -256,7 +256,7 @@
     
     $datePicker = $parent.data('bfhdatepicker')
     
-    $parent.find('input[type=text]').val($datePicker.formatDate(month, year, day))
+    $parent.find('input[type=text]').val($datePicker.formatDate(month, year, day)).trigger('change')
     
     return false;
   }
