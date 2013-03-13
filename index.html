@@ -11,6 +11,7 @@
     <link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
     <link href="assets/css/bootstrap-formhelpers.css" rel="stylesheet">
     <link href="assets/css/bootstrap-formhelpers-countries.flags.css" rel="stylesheet">
+    <link href="assets/css/bootstrap-formhelpers-currencies.flags.css" rel="stylesheet">
     <link href="assets/css/docs.css" rel="stylesheet">
     <link href="assets/js/google-code-prettify/prettify.css" rel="stylesheet">
 
@@ -26,11 +27,11 @@
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
     <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
 
-    <script type="text/javascript">    
-      var _gaq = _gaq || [];    
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
       _gaq.push(['_setAccount', 'UA-35714645-1']);
       _gaq.push(['_trackPageview']);
-      (function() {      
+      (function() {
       var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
       ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
       var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
@@ -71,11 +72,11 @@
       <p><a href="https://github.com/vlamanna/BootstrapFormHelpers/zipball/master" class="btn btn-primary btn-large">Download Bootstrap Form Helpers</a></p>
       <ul class="masthead-links">
         <li><a href="http://github.com/vlamanna/BootstrapFormHelpers">GitHub project</a></li>
-        <li>Version 1.7.0</li>
+        <li>Version 1.7.1</li>
       </ul>
     </div>
   </div>
-  
+
   <div class="bs-docs-social">
     <div class="container">
       <ul class="bs-docs-social-buttons">
@@ -106,6 +107,7 @@
           <li><a href="#selectbox"><i class="icon-chevron-right"></i> Select Box</a></li>
           <li><a href="#countries"><i class="icon-chevron-right"></i> Countries</a></li>
           <li><a href="#states"><i class="icon-chevron-right"></i> States</a></li>
+          <li><a href="#currencies"><i class="icon-chevron-right"></i> Currencies</a></li>
           <li><a href="#phone"><i class="icon-chevron-right"></i> Phone</a></li>
           <li><a href="#languages"><i class="icon-chevron-right"></i> Languages</a></li>
           <li><a href="#timezones"><i class="icon-chevron-right"></i> Timezones</a></li>
@@ -129,7 +131,7 @@
           <p>These components are based on <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap</a>.</p>
 
           <p>These components are distributed for free but you can contribute and make them better.</p>
-          
+
           <script type="text/javascript"><!--
           google_ad_client = "ca-pub-1024496565678366";
           /* BootstrapFormHelpers */
@@ -154,7 +156,7 @@
           <h3>About select box</h3>
           <p>For adding a select box, include bootstrap-formhelpers-selectbox.js once alongside the other JS files.</p>
           <h3>Use cases</h3>
-          
+
           <p>Simple example for adding a select box</p>
           <form class="bs-docs-example form-inline">
             <div class="bfh-selectbox">
@@ -214,7 +216,7 @@
     &lt;/div&gt;
   &lt;/div&gt;
 &lt;/div&gt;</pre>
-          
+
           <p>Simple example for adding a select box and selecting a default option</p>
           <form class="bs-docs-example form-inline">
             <div class="bfh-selectbox">
@@ -336,7 +338,7 @@
   &lt;/div&gt;
   &lt;/div&gt;
 &lt;/div&gt;</pre>
-        
+
         </section>
 
         <!-- Countries
@@ -355,13 +357,13 @@
             <select class="input-medium bfh-countries" data-country="US"></select>
           </form>
           <pre class="prettyprint">&lt;select class="input-medium bfh-countries" data-country="US"&gt;&lt;/select&gt;</pre>
-          
+
           <p>Example for loading the list of countries, limited to a specific list of countries</p>
           <form class="bs-docs-example form-inline">
             <select class="input-medium bfh-countries" data-countryList="US,AG,AU"></select>
           </form>
           <pre class="prettyprint">&lt;select class="input-medium bfh-countries" data-countryList="US,AG,AU"&gt;&lt;/select&gt;</pre>
-          
+
           <p>Example for loading the list of countries in JavaScript and selecting a default country</p>
           <form class="bs-docs-example form-inline">
             <button onclick="$('#countries1').bfhcountries({country: 'US'});return false;" class="btn">Load Countries</button>
@@ -369,7 +371,7 @@
           </form>
           <pre class="prettyprint">&lt;button onclick="$('#countries1').bfhcountries({country: 'US'})" class="btn"&gt;Load Countries&lt;/button&gt;
 &lt;select id="countries1" class="input-medium"&gt;&lt;/select&gt;</pre>
-          
+
           <p>Example for loading the list of countries and flags using Bootstrap Form Helpers' Select Box</p>
           <form class="bs-docs-example form-inline">
             <div class="bfh-selectbox bfh-countries" data-country="US" data-flags="true">
@@ -401,14 +403,14 @@
     &lt;/div&gt;
   &lt;/div&gt;
 &lt;/div&gt;</pre>
-          
+
           <p>Example for displaying the country name and flag from a country code</p>
           <form class="bs-docs-example form-inline">
             <span class="bfh-countries" data-country="US" data-flags="true"></span>
           </form>
           <pre class="prettyprint">&lt;span class="bfh-countries" data-country="US" data-flags="true"&gt;&lt;/span&gt;</pre>
         </section>
-        
+
         <!-- States
         ================================================== -->
         <section id="states">
@@ -418,13 +420,13 @@
           <h3>About states</h3>
           <p>For adding a drop-down of states of a country or display state name from state and country code, include bootstrap-formhelpers-states.{language}.js and bootstrap-formhelpers-states.js once alongside the other JS files.</p>
           <h3>Use cases</h3>
-          
+
           <p>Example for loading the list of states for a country and selecting a default state</p>
           <form class="bs-docs-example form-inline">
             <select class="input-medium bfh-states" data-country="US" data-state="CA"></select>
           </form>
           <pre class="prettyprint">&lt;select class="input-medium bfh-states" data-country="US" data-state="CA"&gt;&lt;/select&gt;</pre>
-          
+
           <p>Example for loading the list of states for a country and selecting a default state in JavaScript</p>
           <form class="bs-docs-example form-inline">
             <button onclick="$('#states1').bfhstates({country: 'US', state: 'CA'});return false;" class="btn">Load States</button>
@@ -533,7 +535,81 @@
           </form>
           <pre class="prettyprint">&lt;span class="bfh-states" data-country="US" data-state="CA"&gt;&lt;/span&gt;</pre>
         </section>
-        
+
+        <!-- Currencies
+        ================================================== -->
+        <section id="currencies">
+            <div class="page-header">
+                <h1>Currencies <small>bootstrap-formhelpers-currencies.js</small></h1>
+            </div>
+          <h3>About currencies</h3>
+          <p>For adding a drop-down of currencies or display currency name from country code, include bootstrap-formhelpers-currencies.{language}.js and bootstrap-formhelpers-currencies.js once alongside the other JS files.</p>
+          <p>If you want to have access to the country flags, you can include bootstrap-formhelpers-countries.flags.css once alongside the other CSS files.</p>
+          <h3>Use cases</h3>
+
+          <p>Example for loading the list of currencies and selecting a default currency</p>
+          <form class="bs-docs-example form-inline">
+            <select class="input-medium bfh-currencies" data-currency="EUR"></select>
+          </form>
+          <pre class="prettyprint">&lt;select class="input-medium bfh-currencies" data-currency="EUR"&gt;&lt;/select&gt;</pre>
+
+          <p>Example for loading the list of currencies, limited to a specific list of currencies</p>
+          <form class="bs-docs-example form-inline">
+            <select class="input-medium bfh-currencies" data-currencyList="USD,AUD,EUR"></select>
+          </form>
+          <pre class="prettyprint">&lt;select class="input-medium bfh-currencies" data-currencyList="USD,AUD,EUR"&gt;&lt;/select&gt;</pre>
+
+          <p>Example for loading the list of currencies in JavaScript and selecting a default currency</p>
+          <form class="bs-docs-example form-inline">
+            <button onclick="$('#currencies1').bfhcurrencies({currency: 'USD'});return false;" class="btn">Load Currencies</button>
+            <select id="currencies1" class="input-medium"></select>
+          </form>
+          <pre class="prettyprint">&lt;button onclick="$('#currencies1').bfhcurrencies({currency: 'USD'})" class="btn"&gt;Load Currencies&lt;/button&gt;
+&lt;select id="currencies1" class="input-medium"&gt;&lt;/select&gt;</pre>
+
+          <p>Example for loading the list of currencies and currencies flags using Bootstrap Form Helpers' Select Box</p>
+          <form class="bs-docs-example form-inline">
+            <div class="bfh-selectbox bfh-currencies" data-currency="EUR" data-flags="true">
+              <input type="hidden" value="">
+              <a class="bfh-selectbox-toggle" role="button" data-toggle="bfh-selectbox" href="#">
+                <span class="bfh-selectbox-option input-medium" data-option=""></span>
+                <b class="caret"></b>
+              </a>
+              <div class="bfh-selectbox-options">
+                <input type="text" class="bfh-selectbox-filter">
+                <div role="listbox">
+                  <ul role="option">
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </form>
+          <pre class="prettyprint">&lt;div class="bfh-selectbox bfh-currencies" data-currency="EUR" data-flags="true"&gt;
+  &lt;input type="hidden" value=""&gt;
+  &lt;a class="bfh-selectbox-toggle" role="button" data-toggle="bfh-selectbox" href="#"&gt;
+    &lt;span class="bfh-selectbox-option input-medium" data-option=""&gt;&lt;/span&gt;
+    &lt;b class="caret"&gt;&lt;/b&gt;
+  &lt;/a&gt;
+  &lt;div class="bfh-selectbox-options"&gt;
+    &lt;input type="text" class="bfh-selectbox-filter"&gt;
+    &lt;div role="listbox"&gt;
+    &lt;ul role="option"&gt;
+    &lt;/ul&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</pre>
+
+
+
+          <p>Example for displaying the currency name and currency flag from a currency code</p>
+          <form class="bs-docs-example form-inline">
+              <span class="bfh-currencies" data-currency="XCD" data-flags="true"></span>
+          </form>
+          <pre class="prettyprint">&lt;span class="bfh-currencies" data-currency="XCD" data-flags="true"&gt;&lt;/span&gt;</pre>
+       </section>
+
+
+
         <!-- Phone
         ================================================== -->
         <section id="phone">
@@ -543,25 +619,25 @@
           <h3>About phone</h3>
           <p>For simple formatting of phone numbers, include bootstrap-formhelpers-phone.format.js and bootstrap-formhelpers-phone.js once alongside the other JS files.</p>
           <h3>Use cases</h3>
-          
+
           <p>Simple example for formatting a phone number in input text</p>
           <form class="bs-docs-example form-inline">
             <input type="text" class="input-medium bfh-phone" data-format="+1 (ddd) ddd-dddd">
           </form>
           <pre class="prettyprint">&lt;input type="text" class="input-medium bfh-phone" data-format="+1 (ddd) ddd-dddd"&gt;</pre>
-          
+
           <p>Simple example for displaying a formatted phone number</p>
           <form class="bs-docs-example form-inline">
             <span class="bfh-phone" data-format="+1 (ddd) ddd-dddd" data-number="15555555555"></span>
           </form>
           <pre class="prettyprint">&lt;span class="bfh-phone" data-format="+1 (ddd) ddd-dddd" data-number="15555555555"&gt;&lt;/span&gt;</pre>
-          
+
           <p>Example for formatting a phone number based on a country</p>
           <form class="bs-docs-example form-inline">
             <input type="text" class="input-medium bfh-phone" data-country="US">
           </form>
           <pre class="prettyprint">&lt;input type="text" class="input-medium bfh-phone" data-country="US"&gt;</pre>
-          
+
           <p>Example for formatting a phone number based on a country selector</p>
           <form class="bs-docs-example form-inline">
             <select id="countries_phone" class="input-medium bfh-countries" data-country="US"></select>
@@ -580,7 +656,7 @@
 
         </section>
 
-        
+
         <!-- Languages
         ================================================== -->
         <section id="languages">
@@ -598,13 +674,13 @@
             <select class="input-medium bfh-languages" data-language="en"></select>
           </form>
           <pre class="prettyprint">&lt;select class="input-medium bfh-languages" data-language="en"&gt;&lt;/select&gt;</pre>
-          
+
           <p>Example for loading the list of languages with country names</p>
           <form class="bs-docs-example form-inline">
             <select class="input-medium bfh-languages" data-language="en_US" data-available="en_US,fr_CA,es_MX"></select>
           </form>
           <pre class="prettyprint">&lt;select class="input-medium bfh-languages" data-language="en_US" data-available="en_US,fr_CA,es_MX"&gt;&lt;/select&gt;</pre>
-          
+
           <p>Example for loading the list of languages and flags using Bootstrap Form Helpers' Select Box</p>
           <form class="bs-docs-example form-inline">
             <div class="bfh-selectbox bfh-languages" data-language="en_US" data-available="en_US,fr_CA,es_MX" data-flags="true">
@@ -641,7 +717,7 @@
           </form>
           <pre class="prettyprint">&lt;span class="bfh-languages" data-language="en_US" data-flags="true"&gt;&lt;/span&gt;</pre>
         </section>
-        
+
         <!-- Timezones
         ================================================== -->
         <section id="timezones">
@@ -651,13 +727,13 @@
           <h3>About timezones</h3>
           <p>For adding a drop-down of timezones of a country from country code, include bootstrap-formhelpers-timezones.codes.js and bootstrap-formhelpers-timezones.js once alongside the other JS files.</p>
           <h3>Use cases</h3>
-          
+
           <p>Example for loading the list of timezones for a country</p>
           <form class="bs-docs-example form-inline">
             <select class="input-medium bfh-timezones" data-country="US"></select>
           </form>
           <pre class="prettyprint">&lt;select class="input-medium bfh-timezones" data-country="US"&gt;&lt;/select&gt;</pre>
-          
+
           <p>Example for loading the list of timezones for a country in JavaScript</p>
           <form class="bs-docs-example form-inline">
             <button onclick="$('#timezones1').bfhtimezones({country: 'US'});return false;" class="btn">Load Timezones</button>
@@ -771,7 +847,7 @@
           <h3>About Google fonts</h3>
           <p>For adding a drop-down of Google Fonts, include bootstrap-formhelpers-googlefonts.codes.js and bootstrap-formhelpers-googlefonts.js once alongside the other JS files.</p>
           <h3>Use cases</h3>
-          
+
           <p>Simplest example, with default selected value.</p>
           <form class="bs-docs-example form-inline">
           <div class="bfh-selectbox bfh-googlefonts" data-family="Lato">
@@ -802,7 +878,7 @@
     &lt;/ul&gt;
   &lt;/div&gt;
   &lt;/div&gt;
-&lt;/div&gt;</pre>  
+&lt;/div&gt;</pre>
 
           <p>Display a subset.</p>
           <form class="bs-docs-example form-inline">
@@ -866,10 +942,10 @@
     &lt;/ul&gt;
     &lt;/div&gt;
   &lt;/div&gt;
-&lt;/div&gt;</pre>  
+&lt;/div&gt;</pre>
 
-        </section> 
-        
+        </section>
+
         <!-- Date Picker
         ================================================== -->
         <section id="datepicker">
@@ -879,7 +955,7 @@
           <h3>About Date Picker</h3>
           <p>For adding a date picker, include bootstrap-formhelpers-datepicker.{language}.js and bootstrap-formhelpers-datepicker.js once alongside the other JS files.</p>
           <h3>Use cases</h3>
-          
+
           <p>Simplest example.</p>
           <form class="bs-docs-example form-inline">
             <div class="bfh-datepicker">
@@ -1000,8 +1076,8 @@
   &lt;/div&gt;
 &lt;/div&gt;</pre>
 
-        </section> 
-        
+        </section>
+
         <!-- Time Picker
         ================================================== -->
         <section id="timepicker">
@@ -1011,7 +1087,7 @@
           <h3>About Time Picker</h3>
           <p>For adding a time picker, include bootstrap-formhelpers-timepicker.js once alongside the other JS files.</p>
           <h3>Use cases</h3>
-          
+
           <p>Simplest example.</p>
           <form class="bs-docs-example form-inline">
             <div class="bfh-timepicker">
@@ -1120,8 +1196,8 @@
   &lt;/div&gt;
 &lt;/div&gt;</pre>
 
-        </section> 
-        
+        </section>
+
         <!-- Fonts
         ================================================== -->
         <section id="fonts">
@@ -1131,7 +1207,7 @@
           <h3>About Fonts</h3>
           <p>For adding a drop-down of Fonts, include bootstrap-formhelpers-fonts.codes.js and bootstrap-formhelpers-fonts.js once alongside the other JS files.</p>
           <h3>Use cases</h3>
-          
+
           <p>Simplest example, with default selected value.</p>
           <form class="bs-docs-example form-inline">
           <div class="bfh-selectbox bfh-fonts" data-family="Helvetica">
@@ -1162,10 +1238,10 @@
     &lt;/ul&gt;
     &lt;/div&gt;
   &lt;/div&gt;
-&lt;/div&gt;</pre>  
+&lt;/div&gt;</pre>
 
-        </section> 
-        
+        </section>
+
         <!-- Font Sizes
         ================================================== -->
         <section id="fontsizes">
@@ -1175,7 +1251,7 @@
           <h3>About Font Sizes</h3>
           <p>For adding a drop-down of Font Sizes, include bootstrap-formhelpers-fontsizes.codes.js and bootstrap-formhelpers-fontsizes.js once alongside the other JS files.</p>
           <h3>Use cases</h3>
-          
+
           <p>Simplest example, with default selected value.</p>
           <form class="bs-docs-example form-inline">
           <div class="bfh-selectbox bfh-fontsizes" data-size="14">
@@ -1206,10 +1282,10 @@
     &lt;/ul&gt;
     &lt;/div&gt;
   &lt;/div&gt;
-&lt;/div&gt;</pre>  
+&lt;/div&gt;</pre>
 
-        </section> 
-        
+        </section>
+
       </div>
     </div>
 
@@ -1235,26 +1311,16 @@
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
-    <script src="http://code.jquery.com/jquery-1.9.0.min.js"></script>
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
     <script src="assets/js/google-code-prettify/prettify.js"></script>
-    <script src="assets/js/bootstrap-transition.js"></script>
-    <script src="assets/js/bootstrap-alert.js"></script>
-    <script src="assets/js/bootstrap-modal.js"></script>
-    <script src="assets/js/bootstrap-dropdown.js"></script>
-    <script src="assets/js/bootstrap-scrollspy.js"></script>
-    <script src="assets/js/bootstrap-tab.js"></script>
-    <script src="assets/js/bootstrap-tooltip.js"></script>
-    <script src="assets/js/bootstrap-popover.js"></script>
-    <script src="assets/js/bootstrap-button.js"></script>
-    <script src="assets/js/bootstrap-collapse.js"></script>
-    <script src="assets/js/bootstrap-carousel.js"></script>
-    <script src="assets/js/bootstrap-typeahead.js"></script>
     <script src="assets/js/bootstrap-affix.js"></script>
 
     <script src="assets/js/bootstrap-formhelpers-countries.en_US.js"></script>
     <script src="assets/js/bootstrap-formhelpers-countries.js"></script>
     <script src="assets/js/bootstrap-formhelpers-states.en_US.js"></script>
     <script src="assets/js/bootstrap-formhelpers-states.js"></script>
+    <script src="assets/js/bootstrap-formhelpers-currencies.en_US.js"></script>
+    <script src="assets/js/bootstrap-formhelpers-currencies.js"></script>
     <script src="assets/js/bootstrap-formhelpers-phone.format.js"></script>
     <script src="assets/js/bootstrap-formhelpers-phone.js"></script>
     <script src="assets/js/bootstrap-formhelpers-selectbox.js"></script>
@@ -1271,5 +1337,5 @@
     <script src="assets/js/bootstrap-formhelpers-fonts.js"></script>
     <script src="assets/js/bootstrap-formhelpers-fontsizes.codes.js"></script>
     <script src="assets/js/bootstrap-formhelpers-fontsizes.js"></script>
-    
+
 </body></html>
