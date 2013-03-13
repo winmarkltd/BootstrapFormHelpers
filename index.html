@@ -11,6 +11,7 @@
     <link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
     <link href="assets/css/bootstrap-formhelpers.css" rel="stylesheet">
     <link href="assets/css/bootstrap-formhelpers-countries.flags.css" rel="stylesheet">
+    <link href="assets/css/bootstrap-formhelpers-currencies.flags.css" rel="stylesheet">
     <link href="assets/css/docs.css" rel="stylesheet">
     <link href="assets/js/google-code-prettify/prettify.css" rel="stylesheet">
 
@@ -548,27 +549,27 @@
 
           <p>Example for loading the list of currencies and selecting a default currency</p>
           <form class="bs-docs-example form-inline">
-            <select class="input-medium bfh-currencies" data-currency="EG"></select>
+            <select class="input-medium bfh-currencies" data-currency="EUR"></select>
           </form>
-          <pre class="prettyprint">&lt;select class="input-medium bfh-currencies" data-currency="EG"&gt;&lt;/select&gt;</pre>
+          <pre class="prettyprint">&lt;select class="input-medium bfh-currencies" data-currency="EUR"&gt;&lt;/select&gt;</pre>
 
-          <p>Example for loading the list of currencies, limited to a specific list of countries</p>
+          <p>Example for loading the list of currencies, limited to a specific list of currencies</p>
           <form class="bs-docs-example form-inline">
-            <select class="input-medium bfh-currencies" data-currencyList="EG,DZ"></select>
+            <select class="input-medium bfh-currencies" data-currencyList="USD,AUD,EUR"></select>
           </form>
-          <pre class="prettyprint">&lt;select class="input-medium bfh-currencies" data-currencyList="EG,DZ"&gt;&lt;/select&gt;</pre>
+          <pre class="prettyprint">&lt;select class="input-medium bfh-currencies" data-currencyList="USD,AUD,EUR"&gt;&lt;/select&gt;</pre>
 
           <p>Example for loading the list of currencies in JavaScript and selecting a default currency</p>
           <form class="bs-docs-example form-inline">
-            <button onclick="$('#currencies1').bfhcurrencies({currency: 'DZD'});return false;" class="btn">Load Currencies</button>
+            <button onclick="$('#currencies1').bfhcurrencies({currency: 'USD'});return false;" class="btn">Load Currencies</button>
             <select id="currencies1" class="input-medium"></select>
           </form>
-          <pre class="prettyprint">&lt;button onclick="$('#currencies1').bfhcurrencies({currency: 'DZD'})" class="btn"&gt;Load Currencies&lt;/button&gt;
+          <pre class="prettyprint">&lt;button onclick="$('#currencies1').bfhcurrencies({currency: 'USD'})" class="btn"&gt;Load Currencies&lt;/button&gt;
 &lt;select id="currencies1" class="input-medium"&gt;&lt;/select&gt;</pre>
 
           <p>Example for loading the list of currencies and currencies flags using Bootstrap Form Helpers' Select Box</p>
           <form class="bs-docs-example form-inline">
-            <div class="bfh-selectbox bfh-currencies" data-currency="DZ" data-flagscurrencies="true">
+            <div class="bfh-selectbox bfh-currencies" data-currency="EUR" data-flags="true">
               <input type="hidden" value="">
               <a class="bfh-selectbox-toggle" role="button" data-toggle="bfh-selectbox" href="#">
                 <span class="bfh-selectbox-option input-medium" data-option=""></span>
@@ -583,7 +584,7 @@
               </div>
             </div>
           </form>
-          <pre class="prettyprint">&lt;div class="bfh-selectbox bfh-currencies" data-currency="DZ" data-flagscurrencies="true"&gt;
+          <pre class="prettyprint">&lt;div class="bfh-selectbox bfh-currencies" data-currency="EUR" data-flags="true"&gt;
   &lt;input type="hidden" value=""&gt;
   &lt;a class="bfh-selectbox-toggle" role="button" data-toggle="bfh-selectbox" href="#"&gt;
     &lt;span class="bfh-selectbox-option input-medium" data-option=""&gt;&lt;/span&gt;
@@ -598,50 +599,14 @@
   &lt;/div&gt;
 &lt;/div&gt;</pre>
 
-          <p>Example for loading the list of currencies and countries flags using Bootstrap Form Helpers' Select Box</p>
-          <form class="bs-docs-example form-inline">
-            <div class="bfh-selectbox bfh-currencies" data-currency="EUR" data-flagscountries="true">
-              <input type="hidden" value="">
-              <a class="bfh-selectbox-toggle" role="button" data-toggle="bfh-selectbox" href="#">
-                <span class="bfh-selectbox-option input-medium" data-option=""></span>
-                <b class="caret"></b>
-              </a>
-              <div class="bfh-selectbox-options">
-                <input type="text" class="bfh-selectbox-filter">
-                <div role="listbox">
-                  <ul role="option">
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </form>
-          <pre class="prettyprint">&lt;div class="bfh-selectbox bfh-currencies" data-currency="EUR" data-flagscountries="true"&gt;
-  &lt;input type="hidden" value=""&gt;
-  &lt;a class="bfh-selectbox-toggle" role="button" data-toggle="bfh-selectbox" href="#"&gt;
-    &lt;span class="bfh-selectbox-option input-medium" data-option=""&gt;&lt;/span&gt;
-    &lt;b class="caret"&gt;&lt;/b&gt;
-  &lt;/a&gt;
-  &lt;div class="bfh-selectbox-options"&gt;
-    &lt;input type="text" class="bfh-selectbox-filter"&gt;
-    &lt;div role="listbox"&gt;
-    &lt;ul role="option"&gt;
-    &lt;/ul&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/div&gt;</pre>
 
-          <p>Example for displaying the currency name and currency flag from a country code</p>
-          <form class="bs-docs-example form-inline">
-              <span class="bfh-currencies" data-currency="AG" data-flagscurrencies="true"></span>
-          </form>
-          <pre class="prettyprint">&lt;span class="bfh-currencies" data-currency="AG" data-flagscurrencies="true"&gt;&lt;/span&gt;</pre>
 
-          <p>Example for displaying the currency name and country flag from a country code</p>
+          <p>Example for displaying the currency name and currency flag from a currency code</p>
           <form class="bs-docs-example form-inline">
-              <span class="bfh-currencies" data-currency="AG" data-flagscountries="true"></span>
+              <span class="bfh-currencies" data-currency="XCD" data-flags="true"></span>
           </form>
-          <pre class="prettyprint">&lt;span class="bfh-currencies" data-currency="AG" data-flagscountries="true"&gt;&lt;/span&gt;</pre>
-        </section>
+          <pre class="prettyprint">&lt;span class="bfh-currencies" data-currency="XCD" data-flags="true"&gt;&lt;/span&gt;</pre>
+       </section>
 
 
 
@@ -1354,7 +1319,7 @@
     <script src="assets/js/bootstrap-formhelpers-countries.js"></script>
     <script src="assets/js/bootstrap-formhelpers-states.en_US.js"></script>
     <script src="assets/js/bootstrap-formhelpers-states.js"></script>
-    <script src="assets/js/bootstrap-formhelpers-currencies.fr_FR.js"></script>
+    <script src="assets/js/bootstrap-formhelpers-currencies.en_US.js"></script>
     <script src="assets/js/bootstrap-formhelpers-currencies.js"></script>
     <script src="assets/js/bootstrap-formhelpers-phone.format.js"></script>
     <script src="assets/js/bootstrap-formhelpers-phone.js"></script>

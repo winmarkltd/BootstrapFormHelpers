@@ -64,16 +64,18 @@
       this.$element.html('')
       this.$element.append('<option value=""></option>')
       for (var currency in this.currencyList) {
-        this.$element.append('<option value="' + this.currencyList[currency]['code_iso'] + '">' + this.currencyList[currency]['devise'] + '</option>')
+        this.$element.append('<option value="' + currency + '">' + this.currencyList[currency]['label'] + '</option>')
       }
 
       this.$element.val(value)
     }
 
+
     , addBootstrapCurrencies: function() {
       var $input
       , $toggle
       , $options
+
 
       var value = this.options.currency
 
@@ -81,27 +83,29 @@
       $toggle = this.$element.find('.bfh-selectbox-option')
       $options = this.$element.find('[role=option]')
 
+
       $options.html('')
       $options.append('<li><a tabindex="-1" href="#" data-option=""></a></li>')
       for (var currency in this.currencyList) {
-        if (this.options.flagscurrencies == true) {
-          $options.append('<li><a tabindex="-1" href="#" data-option="' + this.currencyList[currency]['code_iso'] + '"><i class="icon-flag-' + this.currencyList[currency]['flag'] + '"></i>' + this.currencyList[currency]['devise'] + '</a></li>')
-        } else if (this.options.flagscountries == true) {
-          $options.append('<li><a tabindex="-1" href="#" data-option="' + this.currencyList[currency]['code_iso'] + '"><i class="icon-flag-' + currency + '"></i>' + this.currencyList[currency]['devise'] + '</a></li>')
+        if(this.currencyList[currency]['currencyflag']) {
+            this.flag = this.currencyList[currency]['currencyflag']
+        }else{
+            this.flag = currency.substr(0,2)
+        }
+        if (this.options.flags == true) {
+          $options.append('<li><a tabindex="-1" href="#" data-option="' + currency +  '"><i class="icon-flag-' + this.flag + '"></i>' + this.currencyList[currency]['label'] + '</a></li>')
         } else {
-          $options.append('<li><a tabindex="-1" href="#" data-option="' + this.currencyList[currency]['code_iso'] + '">' + this.currencyList[currency]['devise'] + '</a></li>')
+          $options.append('<li><a tabindex="-1" href="#" data-option="' + currency + '">' + this.currencyList[currency]['label'] + '</a></li>')
         }
       }
 
       $toggle.data('option', value)
 
       if (value) {
-        if (this.options.flagscurrencies == true) {
-          $toggle.html('<i class="icon-flag-' + this.currencyList[value]['flag'] + '"></i> ' + this.currencyList[value]['devise'])
-        } else if (this.options.flagscountries == true) {
-          $toggle.html('<i class="icon-flag-' + value + '"></i> ' + this.currencyList[value]['devise'])
+        if (this.options.flags == true) {
+          $toggle.html('<i class="icon-flag-' + value + '"></i> ' + this.currencyList[value]['label'])
         } else {
-          $toggle.html(this.currencyList[value]['devise'])
+          $toggle.html(this.currencyList[value]['label'])
         }
       }
 
@@ -111,12 +115,10 @@
     , displayCurrency: function () {
       var value = this.options.currency
 
-      if (this.options.flagscurrencies == true) {
-        this.$element.html('<i class="icon-flag-' + this.currencyList[value]['flag'] + '"></i> ' + this.currencyList[value]['devise'])
-      } else if (this.options.flagscountries == true) {
-          this.$element.html('<i class="icon-flag-' + value + '"></i> ' + this.currencyList[value]['devise'])
+      if (this.options.flags == true) {
+        this.$element.html('<i class="icon-flag-' + value + '"></i>' + this.currencyList[value]['label'])
       } else {
-        this.$element.html(this.currencyList[value]['devise'])
+        this.$element.html(this.currencyList[value]['label'])
       }
     }
 
@@ -142,8 +144,7 @@
   $.fn.bfhcurrencies.defaults = {
     currency: "",
     currencyList: "",
-    flagscurrencie: false,
-    flagscountries: false
+    flags: false
   }
 
 
