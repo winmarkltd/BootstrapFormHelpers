@@ -28,7 +28,7 @@
   var BFHPhone = function (element, options) {
     this.options = $.extend({}, $.fn.bfhphone.defaults, options)
     this.$element = $(element)
-    if (this.$element.is("input:text")) {
+    if (this.$element.is('input[type="text"]') || this.$element.is('input[type="tel"]')) {
       this.$element.on('propertychange.bfhphone.data-api change.bfhphone.data-api input.bfhphone.data-api paste.bfhphone.data-api', {phoneObject: this}, this.change)
       
       var country = this.options.country
@@ -169,7 +169,7 @@
   * ============== */
 
   $(window).on('load', function () {
-    $('form input:text.bfh-phone, span.bfh-phone').each(function () {
+    $('form input[type="text"].bfh-phone, form input[type="tel"].bfh-phone, span.bfh-phone').each(function () {
       var $phone = $(this)
 
       $phone.bfhphone($phone.data())
