@@ -39,7 +39,7 @@
         , $parent
         , isActive
 
-      if ($this.is('.disabled, :disabled')) return
+      if ($this.is('.disabled, :disabled')) return false
 
       $parent = getParent($this)
 
@@ -87,7 +87,7 @@
       e.preventDefault()
       e.stopPropagation()
 
-      if ($this.is('.disabled, :disabled')) return
+      if ($this.is('.disabled, :disabled')) return false
 
       $parent = $this.closest('.bfh-selectbox')
 
@@ -126,7 +126,7 @@
 	  
 	  $this = $(this)
 	  
-	  if ($this.is('.disabled, :disabled')) return
+	  if ($this.is('.disabled, :disabled')) return false
 	  
 	  $this.focus()
     }
@@ -142,7 +142,7 @@
       e.preventDefault()
       e.stopPropagation()
       
-      if ($this.is('.disabled, :disabled')) return
+      if ($this.is('.disabled, :disabled')) return false
       
       $parent = $this.closest('.bfh-selectbox')
       $toggle = $parent.find('.bfh-selectbox-option')

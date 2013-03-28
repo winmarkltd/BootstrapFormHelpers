@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en"><head>
     <meta charset="utf-8">
-    <title>Bootstrap Form Helpers</title>
+    <title>Time Picker Input - Bootstrap Form Helpers</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Extend Bootstrap's components — now with 12 custom jQuery plugins.">
-    <meta name="keywords" content="jquery,jquery plugins,twitter bootstrap,bootstrap form,bootstrap form helpers">
+    <meta name="description" content="Extend Bootstrap's components with time picker inputs.">
+    <meta name="keywords" content="jquery,jquery plugins,twitter bootstrap,bootstrap form,bootstrap form helpers,timepicker,timepicker input,time picker">
     <meta name="author" content="">
 
     <!-- Le styles -->
@@ -111,17 +111,124 @@
       </div>
       <div class="span9">
 
-
-        <!-- Overview
+        <!-- Time Picker
         ================================================== -->
-        <section id="overview">
+        <section id="timepicker">
           <div class="page-header">
-            <h1>Bootstrap Form Helpers</h1>
+            <h1>Time Picker <small>bootstrap-formhelpers-timepicker.js</small></h1>
           </div>
           
-          <p>These components are based on <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap</a>.</p>
+          <h3>About Time Picker</h3>
+          <p>For adding a time picker, include bootstrap-formhelpers-timepicker.js once alongside the other JS files.</p>
+          <h3>Use cases</h3>
 
-          <p>These components are distributed for free but you can contribute and make them better.</p>
+          <p>Simplest example.</p>
+          <form class="bs-docs-example form-inline">
+            <div class="bfh-timepicker">
+              <div class="input-prepend bfh-timepicker-toggle" data-toggle="bfh-timepicker">
+                <span class="add-on"><i class="icon-time"></i></span>
+                <input type="text" class="input-medium" readonly>
+              </div>
+              <div class="bfh-timepicker-popover">
+                <table class="table">
+                  <tbody>
+                    <tr>
+                      <td class="hour">
+                        <a class="next" href="#"><i class="icon-chevron-up"></i></a><br>
+                        <input type="text" class="input-mini" readonly><br>
+                        <a class="previous" href="#"><i class="icon-chevron-down"></i></a>
+                      </td>
+                      <td class="separator">:</td>
+                      <td class="minute">
+                        <a class="next" href="#"><i class="icon-chevron-up"></i></a><br>
+                        <input type="text" class="input-mini" readonly><br>
+                        <a class="previous" href="#"><i class="icon-chevron-down"></i></a>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </form>
+          <pre class="prettyprint">&lt;div class="bfh-timepicker"&gt;
+  &lt;div class="input-prepend bfh-timepicker-toggle" data-toggle="bfh-timepicker"&gt;
+    &lt;span class="add-on"&gt;&lt;i class="icon-time"&gt;&lt;/i&gt;&lt;/span&gt;
+    &lt;input type="text" class="input-medium" readonly&gt;
+  &lt;/div&gt;
+  &lt;div class="bfh-timepicker-popover"&gt;
+    &lt;table class="table"&gt;
+      &lt;tbody&gt;
+        &lt;tr&gt;
+          &lt;td class="hour"&gt;
+            &lt;a class="next" href="#"&gt;&lt;i class="icon-chevron-up"&gt;&lt;/i&gt;&lt;/a&gt;&lt;br&gt;
+            &lt;input type="text" class="input-mini" readonly&gt;&lt;br&gt;
+            &lt;a class="previous" href="#"&gt;&lt;i class="icon-chevron-down"&gt;&lt;/i&gt;&lt;/a&gt;
+          &lt;/td&gt;
+          &lt;td class="separator"&gt;:&lt;/td&gt;
+          &lt;td class="minute"&gt;
+            &lt;a class="next" href="#"&gt;&lt;i class="icon-chevron-up"&gt;&lt;/i&gt;&lt;/a&gt;&lt;br&gt;
+            &lt;input type="text" class="input-mini" readonly&gt;&lt;br&gt;
+            &lt;a class="previous" href="#"&gt;&lt;i class="icon-chevron-down"&gt;&lt;/i&gt;&lt;/a&gt;
+          &lt;/td&gt;
+        &lt;/tr&gt;
+      &lt;/tbody&gt;
+    &lt;/table&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</pre>
+
+          <p>Example showing how to set a default time.</p>
+          <form class="bs-docs-example form-inline">
+            <div class="bfh-timepicker" data-time="08:00">
+              <div class="input-prepend bfh-timepicker-toggle" data-toggle="bfh-timepicker">
+                <span class="add-on"><i class="icon-time"></i></span>
+                <input type="text" class="input-medium" readonly>
+              </div>
+              <div class="bfh-timepicker-popover">
+                <table class="table">
+                  <tbody>
+                    <tr>
+                      <td class="hour">
+                        <a class="next" href="#"><i class="icon-chevron-up"></i></a><br>
+                        <input type="text" class="input-mini" readonly><br>
+                        <a class="previous" href="#"><i class="icon-chevron-down"></i></a>
+                      </td>
+                      <td class="separator">:</td>
+                      <td class="minute">
+                        <a class="next" href="#"><i class="icon-chevron-up"></i></a><br>
+                        <input type="text" class="input-mini" readonly><br>
+                        <a class="previous" href="#"><i class="icon-chevron-down"></i></a>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </form>
+          <pre class="prettyprint">&lt;div class="bfh-timepicker" data-time="08:00"&gt;
+  &lt;div class="input-prepend bfh-timepicker-toggle" data-toggle="bfh-timepicker"&gt;
+    &lt;span class="add-on"&gt;&lt;i class="icon-time"&gt;&lt;/i&gt;&lt;/span&gt;
+    &lt;input type="text" class="input-medium" readonly&gt;
+  &lt;/div&gt;
+  &lt;div class="bfh-timepicker-popover"&gt;
+    &lt;table class="table"&gt;
+      &lt;tbody&gt;
+        &lt;tr&gt;
+          &lt;td class="hour"&gt;
+            &lt;a class="next" href="#"&gt;&lt;i class="icon-chevron-up"&gt;&lt;/i&gt;&lt;/a&gt;&lt;br&gt;
+            &lt;input type="text" class="input-mini" readonly&gt;&lt;br&gt;
+            &lt;a class="previous" href="#"&gt;&lt;i class="icon-chevron-down"&gt;&lt;/i&gt;&lt;/a&gt;
+          &lt;/td&gt;
+          &lt;td class="separator"&gt;:&lt;/td&gt;
+          &lt;td class="minute"&gt;
+            &lt;a class="next" href="#"&gt;&lt;i class="icon-chevron-up"&gt;&lt;/i&gt;&lt;/a&gt;&lt;br&gt;
+            &lt;input type="text" class="input-mini" readonly&gt;&lt;br&gt;
+            &lt;a class="previous" href="#"&gt;&lt;i class="icon-chevron-down"&gt;&lt;/i&gt;&lt;/a&gt;
+          &lt;/td&gt;
+        &lt;/tr&gt;
+      &lt;/tbody&gt;
+    &lt;/table&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</pre>
 
         </section>
 
@@ -152,6 +259,8 @@
     
     <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
     <script src="assets/js/google-code-prettify/prettify.js"></script>
+
+    <script src="assets/js/bootstrap-formhelpers-timepicker.js"></script>
 
 	<script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
 </body></html>
