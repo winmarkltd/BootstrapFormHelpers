@@ -138,6 +138,8 @@
     $this.addFormatter()
     
     $this.$element.data('number', $this.options.number)
+    
+    return false
   }
 
   }
