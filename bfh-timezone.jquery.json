@@ -1,0 +1,28 @@
+{
+    "name": "bfh-timezone",
+    "title": "Bootstrap Form Helpers Timezones List",
+    "description": "jQuery plugin for adding a list of timezones.",
+    "keywords": [
+        "form",
+        "input",
+        "timezone"
+    ],
+    "version": "1.8.1",
+    "author": {
+        "name": "Vincent Lamanna",
+        "url": "http://vincentlamanna.com"
+    },
+    "licenses": [
+        {
+            "type": "Apache License v2.0",
+            "url": "http://www.apache.org/licenses/LICENSE-2.0"
+        }
+    ],
+    "bugs": "https://github.com/vlamanna/BootstrapFormHelpers/issues",
+    "homepage": "http://vincentlamanna.com/BootstrapFormHelpers/",
+    "docs": "http://vincentlamanna.com/BootstrapFormHelpers/timezone",
+    "download": "https://github.com/vlamanna/BootstrapFormHelpers/archive/master.zip",
+    "dependencies": {
+        "jquery": ">=1.7"
+    }
+}
