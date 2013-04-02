@@ -29,8 +29,6 @@
     this.options = $.extend({}, $.fn.bfhphone.defaults, options)
     this.$element = $(element)
     if (this.$element.is('input[type="text"]') || this.$element.is('input[type="tel"]')) {
-      this.$element.on('propertychange.bfhphone.data-api change.bfhphone.data-api input.bfhphone.data-api keyup.bfhphone.data-api paste.bfhphone.data-api', {phoneObject: this}, this.change)
-      
       var country = this.options.country
       
       var formObject = this.$element.closest('form')
@@ -40,7 +38,6 @@
 		
 		if (countryObject.length != 0) {
 		  this.options.format = BFHPhoneFormatList[countryObject.val()]
-		  countryObject.on('change.bfhphone.data-api', {phoneObject: this}, this.changeCountry)
 		} else {
 		  this.options.format = BFHPhoneFormatList[country]
 		}
@@ -100,7 +97,9 @@
   , addFormatter: function () {
     var formattedNumber = this.getFormattedNumber()
     
+    this.$element.addClass('disabled');
     this.$element.val(formattedNumber)
+    this.$element.removeClass('disabled');
   }
   
   , displayFormatter: function () {
@@ -111,7 +110,7 @@
   
   , changeCountry: function (e) {
       var $this = $(this)
-      var phoneObject = e.data.phoneObject
+      var phoneObject = $(this).data('bfhphone')
       
       phoneObject.options.format = BFHPhoneFormatList[$this.val()]
       
@@ -121,9 +120,9 @@
   , change: function(e) {
     var $this
     
-    $this = e.data.phoneObject
+    $this = $(this).data('bfhphone')
     
-    if ($this.$element.is('.disabled, :disabled')) return
+    if ($this.$element.is('.disabled, :disabled')) return false
     
     var number = $this.$element.val()
     var newNumber = ""
@@ -176,6 +175,12 @@
 
       $phone.bfhphone($phone.data())
     })
+  })
+  
+  $(function () {
+    $('body')
+      .on('propertychange.bfhphone.data-api change.bfhphone.data-api input.bfhphone.data-api keyup.bfhphone.data-api paste.bfhphone.data-api', '.bfh-phone', BFHPhone.prototype.change)
+      .on('change.bfhphone.data-api', '.bfh-country', BFHPhone.prototype.changeCountry)
   })
 
 }(window.jQuery);
