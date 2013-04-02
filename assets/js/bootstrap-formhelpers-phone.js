@@ -100,7 +100,9 @@
   , addFormatter: function () {
     var formattedNumber = this.getFormattedNumber()
     
+    this.$element.addClass('disabled');
     this.$element.val(formattedNumber)
+    this.$element.removeClass('disabled');
   }
   
   , displayFormatter: function () {
@@ -123,7 +125,7 @@
     
     $this = e.data.phoneObject
     
-    if ($this.$element.is('.disabled, :disabled')) return
+    if ($this.$element.is('.disabled, :disabled')) return false
     
     var number = $this.$element.val()
     var newNumber = ""
