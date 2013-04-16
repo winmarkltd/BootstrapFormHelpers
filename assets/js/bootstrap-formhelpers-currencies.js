@@ -103,7 +103,12 @@
 
       if (value) {
         if (this.options.flags == true) {
-          $toggle.html('<i class="icon-flag-' + value + '"></i> ' + this.currencyList[value]['label'])
+          if(this.currencyList[value]['currencyflag']) {
+            this.flag = this.currencyList[value]['currencyflag']
+          }else{
+            this.flag = value.substr(0,2)
+          }       
+          $toggle.html('<i class="icon-flag-' + this.flag + '"></i> ' + this.currencyList[value]['label'])
         } else {
           $toggle.html(this.currencyList[value]['label'])
         }
@@ -114,9 +119,13 @@
 
     , displayCurrency: function () {
       var value = this.options.currency
-
+      if(this.currencyList[value]['currencyflag']) {
+        this.flag = this.currencyList[value]['currencyflag']
+      }else{
+        this.flag = value.substr(0,2)
+      }   
       if (this.options.flags == true) {
-        this.$element.html('<i class="icon-flag-' + value + '"></i>' + this.currencyList[value]['label'])
+        this.$element.html('<i class="icon-flag-' + this.flag + '"></i>' + this.currencyList[value]['label'])
       } else {
         this.$element.html(this.currencyList[value]['label'])
       }
