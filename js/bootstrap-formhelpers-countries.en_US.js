@@ -152,7 +152,7 @@
    'MQ': 'Martinique',
    'MR': 'Mauritania',
    'MU': 'Mauritius',
-   'MT': 'Mayotte',
+   'YT': 'Mayotte',
    'MX': 'Mexico',
    'FM': 'Micronesia',
    'MD': 'Moldova',
