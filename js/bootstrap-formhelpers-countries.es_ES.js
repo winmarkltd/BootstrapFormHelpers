@@ -163,7 +163,7 @@
    'MA': 'Marruecos',
    'MR': 'Mauritania',
    'MU': 'Mauricio',
-   'MT': 'Mayotte',
+   'YT': 'Mayotte',
    'MX': 'México',
    'FM': 'Micronesia',
    'MD': 'Moldavia',

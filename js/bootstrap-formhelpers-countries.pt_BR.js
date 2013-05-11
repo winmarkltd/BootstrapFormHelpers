@@ -133,7 +133,7 @@ var BFHCountriesList = {
    'MQ': 'Martinica',
    'MR': 'Mauritânia',
    'MU': 'Maurício',
-   'MT': 'Mayotte',
+   'YT': 'Mayotte',
    'MX': 'México',
    'FM': 'Micronésia',
    'MD': 'Moldávia',
