@@ -162,6 +162,7 @@ var BFHCountriesList = {
    'OM': 'Omã',
    'PK': 'Paquistão',
    'PW': 'Palau',
+   'PS': 'Palestina',
    'PA': 'Panamá',
    'PG': 'Papua Nova Guiné',
    'PY': 'Paraguai',

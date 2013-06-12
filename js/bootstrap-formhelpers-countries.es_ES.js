@@ -187,6 +187,7 @@
    'PK': 'Pakistán',
    'NL': 'Países Bajos',
    'PW': 'Palau',
+   'PS': 'Palestina',
    'PA': 'Panamá',
    'PG': 'Papua New Guinea',
    'PY': 'Paraguay',
