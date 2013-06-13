@@ -181,6 +181,7 @@
    'OM': 'Oman',
    'PK': 'Pakistan',
    'PW': 'Palau',
+   'PS': 'Palestine',
    'PA': 'Panama',
    'PG': 'Papua New Guinea',
    'PY': 'Paraguay',
