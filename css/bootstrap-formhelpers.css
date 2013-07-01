@@ -328,3 +328,13 @@ span.bfh-countries {
 .open > .bfh-timepicker-popover {
   display: block;
 }
+
+.form-horizontal .controls a.bfh-selectbox-toggle {
+  width: 210px;
+  vertical-align: middle;
+}
+
+.form-horizontal .control-group.error a {
+  color: #b94a48;
+  border-color: #b94a48;
+}
