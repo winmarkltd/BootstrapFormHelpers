@@ -338,3 +338,18 @@ span.bfh-countries {
   color: #b94a48;
   border-color: #b94a48;
 }
+
+.form-horizontal .control-group.success a {
+    color: #468847;
+    border-color: #468847;
+}
+
+.form-horizontal .control-group.info a {
+    color: #3a87ad;
+    border-color: #3a87ad;
+}
+
+.form-horizontal .control-group.warning a {
+    color: #c09853;
+    border-color: #c09853;
+}
