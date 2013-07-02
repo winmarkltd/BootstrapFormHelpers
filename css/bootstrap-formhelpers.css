@@ -63,6 +63,20 @@
   list-style: none;
 }
 
+.bfh-selectbox-options ul::-webkit-scrollbar {
+    width: 15px;
+}
+ 
+.bfh-selectbox-options ul::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background: #08c;
+}
+
+.bfh-selectbox-options ul::-webkit-scrollbar-button {
+	width: 0; 
+	height: 0;
+}
+
 .bfh-selectbox-options.pull-right {
   right: 0;
   left: auto;
