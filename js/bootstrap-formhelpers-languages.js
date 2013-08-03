@@ -3,6 +3,7 @@
  * https://github.com/vlamanna/BootstrapFormHelpers
  * ==========================================================
  * Copyright 2012 Vincent Lamanna
+ * Contribution 2013 Tomasz Kuter
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -32,11 +33,11 @@
     if (this.$element.is("select")) {
       this.addLanguages()
     }
-    
+
     if (this.$element.is("span")) {
       this.displayLanguage()
     }
-    
+
     if (this.$element.hasClass("bfh-selectbox")) {
       this.addBootstrapLanguages()
     }
@@ -49,9 +50,13 @@
     , addLanguages: function () {
       var value = this.options.language
       var available = this.options.available
-      
-      this.$element.html('')
-      this.$element.append('<option value=""></option>')
+
+      this.$element.html('');
+
+      if (this.options.allowBlank == true) {
+        this.$element.append('<option value=""></option>');
+      }
+
       if (available.length > 0) {
         var languages = available.split(",")
         for (var i=0; i < languages.length; i++) {
@@ -64,14 +69,14 @@
           }
         }
       } else {
-		for (var language in BFHLanguagesList) {
-		  this.$element.append('<option value="' + language + '">' + BFHLanguagesList[language].toProperCase() + '</option>')
-		}
-	  }
-      
+        for (var language in BFHLanguagesList) {
+          this.$element.append('<option value="' + language + '">' + BFHLanguagesList[language].toProperCase() + '</option>')
+        }
+      }
+
       this.$element.val(value)
     }
-    
+
     , addBootstrapLanguages: function() {
       var $input
       , $toggle
@@ -84,8 +89,12 @@
       $toggle = this.$element.find('.bfh-selectbox-option')
       $options = this.$element.find('[role=option]')
       
-      $options.html('')
-      $options.append('<li><a tabindex="-1" href="#" data-option=""></a></li>')
+      $options.html('');
+      
+      if (this.options.allowBlank == true) {
+        $options.append('<li><a tabindex="-1" href="#" data-option=""></a></li>');
+      }
+
       if (available.length > 0) {
         var languages = available.split(",")
         for (var i=0; i < languages.length; i++) {
@@ -102,11 +111,11 @@
           }
         }
       } else {
-		for (var language in BFHLanguagesList) {
-		  $options.append('<li><a tabindex="-1" href="#" data-option="' + language + '">' + BFHLanguagesList[language].toProperCase() + '</a></li>')
-		}
-	  }
-      
+        for (var language in BFHLanguagesList) {
+          $options.append('<li><a tabindex="-1" href="#" data-option="' + language + '">' + BFHLanguagesList[language].toProperCase() + '</a></li>')
+        }
+      }
+
       $toggle.data('option', value)
       if (value.indexOf("_") != -1) {
         var languageArr = value.split("_")
@@ -118,13 +127,13 @@
       } else {
         $toggle.html(BFHLanguagesList[value])
       }
-      
+
       $input.val(value)
     }
-    
+
     , displayLanguage: function () {
       var value = this.options.language
-      
+
       if (value.indexOf("_") != -1) {
         var languageArr = value.split("_")
         if (this.options.flags == true) {
@@ -159,7 +168,11 @@
   $.fn.bfhlanguages.defaults = {
     language: "",
     available: "",
-    flags: false
+    flags: false,
+    /**
+     * If set true - adds empty option to the list
+     */
+    allowBlank: true
   }
   
 
