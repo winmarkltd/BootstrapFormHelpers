@@ -79,7 +79,7 @@
    'zu': 'isiZulu',
    'it': 'italiano',
    'ik': 'Iñupiaq',
-   'pl': 'język polski',
+   'pl': 'polski',
    'mh': 'Kajin M̧ajeļ',
    'kl': 'kalaallisut',
    'kr': 'Kanuri',
