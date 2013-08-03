@@ -166,6 +166,40 @@
   &lt;/div&gt;
 &lt;/div&gt;</pre>
 
+
+          <p>
+            Example for loading the list of languages and flags using Bootstrap Form Helpers' Select Box<br />
+            <span style="text-decoration: underline;">There is no empty option in the dropdown in this example</span>
+          </p>
+          <form class="bs-docs-example form-inline">
+            <div class="bfh-selectbox bfh-languages" data-language="en_US" data-available="en_US,fr_CA,es_MX,pl_PL" data-flags="true" data-allow-blank="false">
+              <input type="hidden" value="">
+              <a class="bfh-selectbox-toggle" role="button" data-toggle="bfh-selectbox" href="#">
+                <span class="bfh-selectbox-option input-medium" data-option=""></span>
+                <b class="caret"></b>
+              </a>
+              <div class="bfh-selectbox-options">
+                <div role="listbox">
+                  <ul role="option">
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </form>
+          <pre class="prettyprint">&lt;div class="bfh-selectbox bfh-languages" data-language="en_US" data-available="en_US,fr_CA,es_MX,pl_PL" data-flags="true" data-allow-blank="false"&gt;
+  &lt;input type="hidden" value=""&gt;
+  &lt;a class="bfh-selectbox-toggle" role="button" data-toggle="bfh-selectbox" href="#"&gt;
+    &lt;span class="bfh-selectbox-option input-medium" data-option=""&gt;&lt;/span&gt;
+    &lt;b class="caret"&gt;&lt;/b&gt;
+  &lt;/a&gt;
+  &lt;div class="bfh-selectbox-options"&gt;
+  &lt;div role="listbox"&gt;
+    &lt;ul role="option"&gt;
+    &lt;/ul&gt;
+  &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</pre>
+
           <p>Example for displaying the language name and flag from language code</p>
           <form class="bs-docs-example form-inline">
             <span class="bfh-languages" data-language="en_US" data-flags="true"></span>
