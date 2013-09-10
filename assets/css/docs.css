@@ -190,6 +190,11 @@ hr.soften {
   line-height: 1;
   letter-spacing: -2px;
 }
+.masthead h2 {
+  font-size: 80px;
+  line-height: 1;
+  letter-spacing: -2px;
+}
 .masthead p {
   font-size: 34px;
   font-weight: 200;
@@ -247,6 +252,9 @@ hr.soften {
   display: none;
 }
 
+.page-header h1 {
+  font-size: 31.5px;
+}
 
 
 /* Marketing section of Overview
