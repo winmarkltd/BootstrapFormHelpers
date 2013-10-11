@@ -200,7 +200,7 @@
   
   $(function () {
     $('body')
-      .on('propertychange.bfhphone.data-api change.bfhphone.data-api input.bfhphone.data-api keyup.bfhphone.data-api paste.bfhphone.data-api', '.bfh-phone', BFHPhone.prototype.change)
+      .on('propertychange.bfhphone.data-api change.bfhphone.data-api input.bfhphone.data-api keyup.bfhphone.data-api', '.bfh-phone', BFHPhone.prototype.change)
       .on('change.bfhphone.data-api', '.bfh-country', BFHPhone.prototype.changeCountry)
   })
 
