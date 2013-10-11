@@ -1,0 +1,12 @@
+{
+  "name": "bootstrap-formhelpers",
+  "version": "1.8.2",
+  "homepage": "http://bootstrapformhelpers.com",
+  "authors": [
+    "Vincent Lamanna <v@cakemail.com>"
+  ],
+  "description": "A collection of jQuery plugins for Bootstrap.",
+  "dependencies": {
+    "bootstrap": "2.3.x",
+  }
+}
