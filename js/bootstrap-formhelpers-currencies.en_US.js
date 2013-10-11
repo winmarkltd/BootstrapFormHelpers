@@ -155,7 +155,7 @@ var BFHCurrenciesList = {
 'TMT':{'label':'Turkmenistan manat','currencyflag':'','symbol':'m'},
 'TND':{'label':'Tunisian dinar','currencyflag':'','symbol':'د.ت'},
 'TOP':{'label':'Tongan paʻanga','currencyflag':'','symbol':'T$'},
-'TRY':{'label':'Turkish lira','currencyflag':'','symbol':''},
+'TRY':{'label':'Turkish lira','currencyflag':'','symbol':'&#8378;'},
 'TTD':{'label':'Trinidad and Tobago dollar','currencyflag':'','symbol':'$'},
 'TWD':{'label':'New Taiwan dollar','currencyflag':'','symbol':'$'},
 'TZS':{'label':'Tanzanian shilling','currencyflag':'','symbol':'Sh'},
