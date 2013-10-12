@@ -1,7 +1,7 @@
 {
     "name": "bfh-font",
-    "title": "Bootstrap Form Helpers Fonts List",
-    "description": "jQuery plugin for adding a list of fonts.",
+    "title": "Bootstrap Form Helpers Font Picker",
+    "description": "Font Picker jQuery plugin for Bootstrap.",
     "keywords": [
         "form",
         "input",
@@ -19,8 +19,8 @@
         }
     ],
     "bugs": "https://github.com/vlamanna/BootstrapFormHelpers/issues",
-    "homepage": "http://vincentlamanna.com/BootstrapFormHelpers/",
-    "docs": "http://vincentlamanna.com/BootstrapFormHelpers/font",
+    "homepage": "http://bootstrapformhelpers.com",
+    "docs": "http://bootstrapformhelpers.com/font",
     "download": "https://github.com/vlamanna/BootstrapFormHelpers/archive/master.zip",
     "dependencies": {
         "jquery": ">=1.7"

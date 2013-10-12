@@ -1,7 +1,7 @@
 {
     "name": "bfh-language",
-    "title": "Bootstrap Form Helpers Languages List",
-    "description": "jQuery plugin for adding a list of languages.",
+    "title": "Bootstrap Form Helpers Language Picker",
+    "description": "Language Picker jQuery plugin for Bootstrap.",
     "keywords": [
         "form",
         "input",
@@ -19,8 +19,8 @@
         }
     ],
     "bugs": "https://github.com/vlamanna/BootstrapFormHelpers/issues",
-    "homepage": "http://vincentlamanna.com/BootstrapFormHelpers/",
-    "docs": "http://vincentlamanna.com/BootstrapFormHelpers/language",
+    "homepage": "http://bootstrapformhelpers.com",
+    "docs": "http://bootstrapformhelpers.com/language",
     "download": "https://github.com/vlamanna/BootstrapFormHelpers/archive/master.zip",
     "dependencies": {
         "jquery": ">=1.7"

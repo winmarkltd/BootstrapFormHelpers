@@ -1,7 +1,7 @@
 {
     "name": "bfh-select",
-    "title": "Bootstrap Form Helpers Select Box",
-    "description": "jQuery plugin for adding a select box.",
+    "title": "Bootstrap Form Helpers Select",
+    "description": "Select jQuery plugin for Bootstrap.",
     "keywords": [
         "form",
         "input",
@@ -19,8 +19,8 @@
         }
     ],
     "bugs": "https://github.com/vlamanna/BootstrapFormHelpers/issues",
-    "homepage": "http://vincentlamanna.com/BootstrapFormHelpers/",
-    "docs": "http://vincentlamanna.com/BootstrapFormHelpers/select",
+    "homepage": "http://bootstrapformhelpers.com",
+    "docs": "http://bootstrapformhelpers.com/select",
     "download": "https://github.com/vlamanna/BootstrapFormHelpers/archive/master.zip",
     "dependencies": {
         "jquery": ">=1.7"
