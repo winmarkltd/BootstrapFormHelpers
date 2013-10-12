@@ -263,6 +263,10 @@ span.bfh-countries {
   *margin-bottom: -3px;
 }
 
+.bfh-datepicker-toggle > input {
+  cursor: default;
+}
+
 .bfh-datepicker-calendar {
   position: absolute;
   top: 100%;
@@ -317,6 +321,7 @@ span.bfh-countries {
 .bfh-timepicker-popover > table > tbody > tr > td > input {
   margin: 0;
   text-align: center;
+  cursor: default;
 }
 
 .bfh-timepicker {
@@ -325,6 +330,10 @@ span.bfh-countries {
 
 .bfh-timepicker-toggle {
   *margin-bottom: -3px;
+}
+
+.bfh-timepicker-toggle > input {
+  cursor: default;
 }
 
 .bfh-timepicker-popover {
