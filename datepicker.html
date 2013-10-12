@@ -12,8 +12,6 @@
     <link href="assets/css/bootstrap.css" rel="stylesheet">
     <link href="assets/css/bootstrap-responsive.css" rel="stylesheet">
     <link href="assets/css/bootstrap-formhelpers.css" rel="stylesheet">
-    <link href="assets/css/bootstrap-formhelpers-countries.flags.css" rel="stylesheet">
-    <link href="assets/css/bootstrap-formhelpers-currencies.flags.css" rel="stylesheet">
     <link href="assets/css/docs.css" rel="stylesheet">
     <link href="assets/js/google-code-prettify/prettify.css" rel="stylesheet">
 
@@ -74,7 +72,7 @@
       <p><a href="https://github.com/vlamanna/BootstrapFormHelpers/zipball/master" class="btn btn-primary btn-large">Download Bootstrap Form Helpers</a></p>
       <ul class="masthead-links">
         <li><a href="http://github.com/vlamanna/BootstrapFormHelpers">GitHub project</a></li>
-        <li>Version 1.8.2</li>
+        <li>Version 1.9.0</li>
       </ul>
     </div>
   </div>
@@ -283,6 +281,66 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
   &lt;/div&gt;
 &lt;/div&gt;</pre>
 
+          <p>Example showing how to set a range and not close on selecting a date.</p>
+          <form class="bs-docs-example form-inline">
+            <div class="bfh-datepicker" data-start="01/15/2013" data-end="11/15/2013" data-close="0">
+              <div class="input-prepend bfh-datepicker-toggle" data-toggle="bfh-datepicker">
+                <span class="add-on"><i class="icon-calendar"></i></span>
+                <input type="text" class="input-medium" readonly>
+              </div>
+              <div class="bfh-datepicker-calendar">
+                <table class="calendar table table-bordered">
+                  <thead>
+                    <tr class="months-header">
+                      <th class="month" colspan="4">
+                        <a class="previous" href="#"><i class="icon-chevron-left"></i></a>
+                        <span></span>
+                        <a class="next" href="#"><i class="icon-chevron-right"></i></a>
+                      </th>
+                      <th class="year" colspan="3">
+                        <a class="previous" href="#"><i class="icon-chevron-left"></i></a>
+                        <span></span>
+                        <a class="next" href="#"><i class="icon-chevron-right"></i></a>
+                      </th>
+                    </tr>
+                    <tr class="days-header">
+                    </tr>
+                  </thead>
+                  <tbody>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </form>
+          <pre class="prettyprint">&lt;div class="bfh-datepicker" data-start="01/15/2013" data-end="11/15/2013" data-close="0"&gt;
+  &lt;div class="input-prepend bfh-datepicker-toggle" data-toggle="bfh-datepicker"&gt;
+    &lt;span class="add-on"&gt;&lt;i class="icon-calendar"&gt;&lt;/i&gt;&lt;/span&gt;
+    &lt;input type="text" class="input-medium" readonly&gt;
+  &lt;/div&gt;
+  &lt;div class="bfh-datepicker-calendar"&gt;
+    &lt;table class="calendar table table-bordered"&gt;
+      &lt;thead&gt;
+        &lt;tr class="months-header"&gt;
+          &lt;th class="month" colspan="4"&gt;
+            &lt;a class="previous" href="#"&gt;&lt;i class="icon-chevron-left"&gt;&lt;/i&gt;&lt;/a&gt;
+            &lt;span&gt;&lt;/span&gt;
+            &lt;a class="next" href="#"&gt;&lt;i class="icon-chevron-right"&gt;&lt;/i&gt;&lt;/a&gt;
+          &lt;/th&gt;
+          &lt;th class="year" colspan="3"&gt;
+            &lt;a class="previous" href="#"&gt;&lt;i class="icon-chevron-left"&gt;&lt;/i&gt;&lt;/a&gt;
+            &lt;span&gt;&lt;/span&gt;
+            &lt;a class="next" href="#"&gt;&lt;i class="icon-chevron-right"&gt;&lt;/i&gt;&lt;/a&gt;
+          &lt;/th&gt;
+        &lt;/tr&gt;
+        &lt;tr class="days-header"&gt;
+        &lt;/tr&gt;
+      &lt;/thead&gt;
+      &lt;tbody&gt;
+      &lt;/tbody&gt;
+    &lt;/table&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</pre>
+
 	  <script type="text/javascript"><!--
           google_ad_client = "ca-pub-1024496565678366";
           /* BootstrapFormHelpers */
@@ -326,7 +384,5 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
    
     <script src="assets/js/bootstrap-formhelpers-datepicker.en_US.js"></script>
     <script src="assets/js/bootstrap-formhelpers-datepicker.js"></script>
-
-	<script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
 	
 </body></html>

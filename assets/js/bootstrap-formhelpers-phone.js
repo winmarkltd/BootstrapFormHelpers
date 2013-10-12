@@ -124,6 +124,15 @@
     
     if ($this.$element.is('.disabled, :disabled')) return false
     
+    // store current positions in variables
+    var start = $this.$element[0].selectionStart,
+        end = $this.$element[0].selectionEnd;
+        
+    var replaceAtEnd = false;
+    if (start == $this.$element.val().length) {
+    	replaceAtEnd = true;
+    }
+        
     var number = $this.$element.val()
     var newNumber = ""
     for (var i = 0; i < number.length; i++) {
@@ -132,11 +141,23 @@
       }
     }
     
+    if ($this.$element.data('number') == newNumber) {
+    	return false;
+    }
+    
     $this.options.number = newNumber
     
     $this.addFormatter()
     
     $this.$element.data('number', $this.options.number)
+    
+    if (replaceAtEnd) {
+    	start = $this.$element.val().length;
+    	end = $this.$element.val().length;
+    }
+    
+    // restore from variables...
+    $this.$element[0].setSelectionRange(start, end);
     
     return false
   }
@@ -179,7 +200,7 @@
   
   $(function () {
     $('body')
-      .on('propertychange.bfhphone.data-api change.bfhphone.data-api input.bfhphone.data-api keyup.bfhphone.data-api paste.bfhphone.data-api', '.bfh-phone', BFHPhone.prototype.change)
+      .on('propertychange.bfhphone.data-api change.bfhphone.data-api input.bfhphone.data-api keyup.bfhphone.data-api', '.bfh-phone', BFHPhone.prototype.change)
       .on('change.bfhphone.data-api', '.bfh-country', BFHPhone.prototype.changeCountry)
   })
 

@@ -102,7 +102,7 @@
       var $this = $(this)
         , data = $this.data('bfhfonts')
         , options = typeof option == 'object' && option
-      this.type = 'bfhfonts';
+      this.type = 'bfhfonts'
       if (!data) $this.data('bfhfonts', (data = new BFHFonts(this, options)))
       if (typeof option == 'string') data[option]()
     })

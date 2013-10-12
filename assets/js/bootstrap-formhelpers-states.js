@@ -134,10 +134,16 @@
     }
     
     , displayState: function () {
-      var country = this.options.country
-      var value = this.options.state
-      
-      this.$element.html(BFHStatesList[country][value])
+      var country = this.options.country;
+      var state_code = this.options.state;
+      var state_name = "";
+      for (var state_id in BFHStatesList[country]) {
+        if (BFHStatesList[country][state_id]["code"] === state_code) {
+          state_name = BFHStatesList[country][state_id]["name"];
+          break;
+        }
+      }
+      this.$element.html(state_name);
     }
 
   }

@@ -237,12 +237,14 @@ span.bfh-countries {
   text-align: center;
   font-size: 11px;
   line-height: 12px;
+  width: 30px;
 }
 
 .bfh-datepicker-calendar > table.calendar > tbody > tr > td {
   text-align: center;
   font-size: 11px;
   line-height: 12px;
+  width: 30px;
 }
 
 .bfh-datepicker-calendar > table.calendar > tbody > tr > td.today {
@@ -261,6 +263,10 @@ span.bfh-countries {
 
 .bfh-datepicker-toggle {
   *margin-bottom: -3px;
+}
+
+.bfh-datepicker-toggle > input {
+  cursor: default;
 }
 
 .bfh-datepicker-calendar {
@@ -317,6 +323,7 @@ span.bfh-countries {
 .bfh-timepicker-popover > table > tbody > tr > td > input {
   margin: 0;
   text-align: center;
+  cursor: default;
 }
 
 .bfh-timepicker {
@@ -325,6 +332,10 @@ span.bfh-countries {
 
 .bfh-timepicker-toggle {
   *margin-bottom: -3px;
+}
+
+.bfh-timepicker-toggle > input {
+  cursor: default;
 }
 
 .bfh-timepicker-popover {

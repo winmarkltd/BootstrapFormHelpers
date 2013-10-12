@@ -1,5 +1,5 @@
 /* ==========================================================
- * bootstrap-formhelpers-datepicker.en_US.js
+ * bootstrap-formhelpers-datepicker.es_ES.js
  * https://github.com/vlamanna/BootstrapFormHelpers
  * ==========================================================
  * Copyright 2012 Vincent Lamanna
@@ -18,28 +18,28 @@
  * ========================================================== */
  
  var BFHMonthsList = [
- 	'January',
- 	'February',
- 	'March',
- 	'April',
- 	'May',
- 	'June',
- 	'July',
- 	'August',
- 	'September',
- 	'October',
- 	'November',
- 	'December'
+    'Enero',
+    'Febrero',
+    'Marzo',
+    'Abril',
+    'Mayo',
+    'Junio',
+    'Julio',
+    'Agosto',
+    'Septiembre',
+    'Octubre',
+    'Noviembre',
+    'Diciembre'
  ]
- 
+
  var BFHDaysList = [
- 	"SUN",
- 	"MON",
- 	"TUE",
- 	"WED",
- 	"THU",
- 	"FRI",
- 	"SAT"
+    "DOM",
+    "LUN",
+    "MAR",
+    "MIE",
+    "JUE",
+    "VIE",
+    "SAB"
  ]
  
- var BFHDayOfWeekStart = 0
+ var BFHDayOfWeekStart = 1
