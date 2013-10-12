@@ -89,7 +89,13 @@
   }
   
   , initCalendar: function() {
-    var date = this.options.date
+    var date
+      , start
+      , end
+      
+    date = this.options.date
+    start = this.options.start
+    end = this.options.end
     
     if (date == "") {
       var today = new Date()
@@ -102,6 +108,24 @@
       this.$element.data('year', this.parse("y", date))
     }
     
+    if (start != "") {
+      this.$element.data('lowerlimit', '1')
+      this.$element.data('lowerday', this.parse("d", start))
+      this.$element.data('lowermonth', this.parse("m", start) - 1)
+      this.$element.data('loweryear', this.parse("y", start))
+    } else {
+      this.$element.data('lowerlimit', '0')
+    }
+    
+    if (end != "") {
+      this.$element.data('higherlimit', '1')
+      this.$element.data('higherday', this.parse("d", end))
+      this.$element.data('highermonth', this.parse("m", end) - 1)
+      this.$element.data('higheryear', this.parse("y", end))
+    } else {
+      this.$element.data('higherlimit', '0')
+    }
+    
     this.updateCalendar()
   }
   
@@ -112,10 +136,32 @@
       , year
       , $daysHeader
       , $days
+      , lowerlimit
+      , lowerday
+      , lowermonth
+      , loweryear
+      , higherlimit
+      , higherday
+      , highermonth
+      , higheryear
     
     var today = new Date()
     month = this.$element.data('month')
     year = this.$element.data('year')
+    
+    lowerlimit = this.$element.data('lowerlimit');
+    if (lowerlimit) {
+      lowerday = this.$element.data('lowerday');
+      lowermonth = this.$element.data('lowermonth');
+      loweryear = this.$element.data('loweryear');
+    }
+    
+    higherlimit = this.$element.data('higherlimit');
+    if (higherlimit) {
+      higherday = this.$element.data('higherday');
+      highermonth = this.$element.data('highermonth');
+      higheryear = this.$element.data('higheryear');
+    }
     
     $calendar = this.$element.find('.bfh-datepicker-calendar')
     
@@ -148,7 +194,11 @@
       if (day == BFHDayOfWeekStart) {
         row += '<tr>'
       }
-      if (i == today.getDate() && month == today.getMonth() && year == today.getFullYear()) {
+      if (lowerlimit && (i < lowerday && month == lowermonth && year == loweryear || month < lowermonth || year < loweryear)) {
+        row += '<td data-day="' + i + '" class="off">' + i + '</td>'
+      } else if (higherlimit && (i > higherday && month == highermonth && year == higheryear || month > highermonth || year > higheryear)) {
+        row += '<td data-day="' + i + '" class="off">' + i + '</td>'
+      } else if (i == today.getDate() && month == today.getMonth() && year == today.getFullYear()) {
         row += '<td data-day="' + i + '" class="today">' + i + '</td>'
       } else {
         row += '<td data-day="' + i + '">' + i + '</td>'
@@ -317,7 +367,9 @@
 
   $.fn.bfhdatepicker.defaults = {
     format: "m/d/y",
-    date: ""
+    date: "",
+    start: "",
+    end: ""
   }
   
   /* APPLY TO STANDARD DATEPICKER ELEMENTS
