@@ -149,18 +149,18 @@
     month = this.$element.data('month')
     year = this.$element.data('year')
     
-    lowerlimit = this.$element.data('lowerlimit');
+    lowerlimit = this.$element.data('lowerlimit')
     if (lowerlimit) {
-      lowerday = this.$element.data('lowerday');
-      lowermonth = this.$element.data('lowermonth');
-      loweryear = this.$element.data('loweryear');
+      lowerday = this.$element.data('lowerday')
+      lowermonth = this.$element.data('lowermonth')
+      loweryear = this.$element.data('loweryear')
     }
     
-    higherlimit = this.$element.data('higherlimit');
+    higherlimit = this.$element.data('higherlimit')
     if (higherlimit) {
-      higherday = this.$element.data('higherday');
-      highermonth = this.$element.data('highermonth');
-      higheryear = this.$element.data('higheryear');
+      higherday = this.$element.data('higherday')
+      highermonth = this.$element.data('highermonth')
+      higheryear = this.$element.data('higheryear')
     }
     
     $calendar = this.$element.find('.bfh-datepicker-calendar')
@@ -187,7 +187,7 @@
         row += '<tr>'
       }
       var previousDay = numDaysPrevious - (firstDay - BFHDayOfWeekStart + 7) % 7 + i + 1
-      row += '<td class="off">' + previousDay + '</td>';
+      row += '<td class="off">' + previousDay + '</td>'
     }
     for (var i=1; i <= numDays; i++) {
       var day = this.dayOfWeek(month, year, i)
@@ -236,7 +236,7 @@
     $datePicker = $parent.data('bfhdatepicker')
     $datePicker.updateCalendar()
     
-    return false;
+    return false
   }
   
   , nextMonth: function (e) {
@@ -256,7 +256,7 @@
     $datePicker = $parent.data('bfhdatepicker')
     $datePicker.updateCalendar()
     
-    return false;
+    return false
   }
   
   , previousYear: function (e) {
@@ -271,7 +271,7 @@
     $datePicker = $parent.data('bfhdatepicker')
     $datePicker.updateCalendar()
     
-    return false;
+    return false
   }
   
   , nextYear: function (e) {
@@ -286,7 +286,7 @@
     $datePicker = $parent.data('bfhdatepicker')
     $datePicker.updateCalendar()
     
-    return false;
+    return false
   }
   
   , select: function (e) {
@@ -304,7 +304,11 @@
     
     $parent.find('input[type=text]').val($datePicker.formatDate(month, year, day)).trigger('change')
     
-    return false;
+    if ($datePicker.options.close) {
+      $datePicker.toggle()
+    }
+    
+    return false
   }
   
   , toggle: function (e) {
@@ -369,7 +373,8 @@
     format: "m/d/y",
     date: "",
     start: "",
-    end: ""
+    end: "",
+    close: 1
   }
   
   /* APPLY TO STANDARD DATEPICKER ELEMENTS
