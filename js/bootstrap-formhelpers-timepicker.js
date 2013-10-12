@@ -227,7 +227,7 @@
     $('html')
       .on('click.bfhtimepicker.data-api', clearMenus)
     $('body')
-      .on('click.bfhtimepicker.data-api touchstart.bfhtimepicker.data-api', toggle, BFHTimePicker.prototype.toggle)
+      .on('click.bfhtimepicker.data-api focus.bfhtimepicker.data-api touchstart.bfhtimepicker.data-api', toggle, BFHTimePicker.prototype.toggle)
       .on('click.bfhtimepicker.data-api touchstart.bfhtimepicker.data-api', '.bfh-timepicker-popover > table .hour > .previous', BFHTimePicker.prototype.previousHour)
       .on('click.bfhtimepicker.data-api touchstart.bfhtimepicker.data-api', '.bfh-timepicker-popover > table .hour > .next', BFHTimePicker.prototype.nextHour)
       .on('click.bfhtimepicker.data-api touchstart.bfhtimepicker.data-api', '.bfh-timepicker-popover > table .minute > .previous', BFHTimePicker.prototype.previousMinute)

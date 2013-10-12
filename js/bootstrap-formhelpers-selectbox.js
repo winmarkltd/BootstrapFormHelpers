@@ -233,7 +233,7 @@
     $('html')
       .on('click.bfhselectbox.data-api', clearMenus)
     $('body')
-      .on('click.bfhselectbox.data-api touchstart.bfhselectbox.data-api'  , toggle, BFHSelectBox.prototype.toggle)
+      .on('click.bfhselectbox.data-api focus.bfhselectbox.data-api touchstart.bfhselectbox.data-api'  , toggle, BFHSelectBox.prototype.toggle)
       .on('keydown.bfhselectbox.data-api', toggle + ', [role=option]' , BFHSelectBox.prototype.keydown)
       .on('mouseenter.bfhselectbox.data-api', '[role=option] > li > a', BFHSelectBox.prototype.mouseenter)
       .on('click.bfhselectbox.data-api', '[role=option] > li > a', BFHSelectBox.prototype.select)  
