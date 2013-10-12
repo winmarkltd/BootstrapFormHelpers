@@ -1,5 +1,5 @@
 /* ==========================================================
- * bootstrap-formhelpers-datepicker.es_US.js
+ * bootstrap-formhelpers-datepicker.es_ES.js
  * https://github.com/vlamanna/BootstrapFormHelpers
  * ==========================================================
  * Copyright 2012 Vincent Lamanna
@@ -42,4 +42,4 @@
     "SAB"
  ]
  
- var BFHDayOfWeekStart = 0
+ var BFHDayOfWeekStart = 1

@@ -41,3 +41,5 @@
  	"FRI",
  	"SAT"
  ]
+ 
+ var BFHDayOfWeekStart = 0

@@ -237,12 +237,14 @@ span.bfh-countries {
   text-align: center;
   font-size: 11px;
   line-height: 12px;
+  width: 30px;
 }
 
 .bfh-datepicker-calendar > table.calendar > tbody > tr > td {
   text-align: center;
   font-size: 11px;
   line-height: 12px;
+  width: 30px;
 }
 
 .bfh-datepicker-calendar > table.calendar > tbody > tr > td.today {

@@ -123,7 +123,10 @@
     $calendar.find('table > thead > tr > th.year > span').text(year)
     $daysHeader = $calendar.find('table > thead > tr.days-header')
     $daysHeader.html('')
-    for (var i=0; i < BFHDaysList.length; i++) {
+    for (var i=BFHDayOfWeekStart; i < BFHDaysList.length; i++) {
+      $daysHeader.append('<th>' + BFHDaysList[i] + '</th>')
+    }
+    for (var i=0; i < BFHDayOfWeekStart; i++) {
       $daysHeader.append('<th>' + BFHDaysList[i] + '</th>')
     }
     $days = $calendar.find('table > tbody')
@@ -133,20 +136,16 @@
     var firstDay = this.dayOfWeek(month, year, 1)
     var lastDay = this.dayOfWeek(month, year, numDays)
     var row = ''
-    for (var i=0; i < firstDay; i++) {
+    for (var i=0; i < (firstDay - BFHDayOfWeekStart + 7) % 7; i++) {
       if (i == 0) {
         row += '<tr>'
       }
-      row += '<td class="off">' + (numDays - firstDay + i) + '</td>'
-      if (i == 6) {
-        row += '</tr>'
-        $days.append(row)
-        row = ''
-      }
+      var previousDay = numDaysPrevious - (firstDay - BFHDayOfWeekStart + 7) % 7 + i + 1
+      row += '<td class="off">' + previousDay + '</td>';
     }
     for (var i=1; i <= numDays; i++) {
       var day = this.dayOfWeek(month, year, i)
-      if (day == 0) {
+      if (day == BFHDayOfWeekStart) {
         row += '<tr>'
       }
       if (i == today.getDate() && month == today.getMonth() && year == today.getFullYear()) {
@@ -154,23 +153,20 @@
       } else {
         row += '<td data-day="' + i + '">' + i + '</td>'
       }
-      if (day == 6) {
+      if (day == (6 + BFHDayOfWeekStart) % 7) {
         row += '</tr>'
         $days.append(row)
         row = ''
       }
     }
-    for (var i=lastDay+1, j=1; i <= 6; i++, j++) {
-      if (i == 0) {
-        row += '<tr>'
-      }
+    for (var i=0, j=1; i < (7 - ((lastDay + 1 - BFHDayOfWeekStart + 7) % 7)) % 7; i++, j++) {
       row += '<td class="off">' + j + '</td>'
-      if (i == 6) {
+      if (i == (7 - ((lastDay + 1 - BFHDayOfWeekStart + 7) % 7)) % 7 - 1) {
         row += '</tr>'
         $days.append(row)
-        row = ''
       }
     }
+	
   }
   
   , previousMonth: function (e) {
