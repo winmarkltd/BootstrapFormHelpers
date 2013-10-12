@@ -320,6 +320,14 @@
 
       $parent = getParent($this)
 
+      if (e && e.type != 'click') {
+        window.setTimeout(function() {
+          $parent.addClass('open')
+        }, 200)
+        
+        return false
+      }
+      
       isActive = $parent.hasClass('open')
 
       clearMenus()
