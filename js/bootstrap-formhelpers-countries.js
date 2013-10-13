@@ -17,9 +17,11 @@
  * limitations under the License.
  * ========================================================== */
  
+ var BFHCountriesList;
+ 
  !function ($) {
 
-  "use strict"; // jshint ;_;
+  "use strict";
 
 
  /* COUNTRIES CLASS DEFINITION
@@ -84,7 +86,7 @@
       $options.html('')
       $options.append('<li><a tabindex="-1" href="#" data-option=""></a></li>')
       for (var country in this.countryList) {
-        if (this.options.flags == true) {
+        if (this.options.flags === true) {
           $options.append('<li><a tabindex="-1" href="#" data-option="' + country + '"><i class="icon-flag-' + country + '"></i>' + this.countryList[country] + '</a></li>')
         } else {
           $options.append('<li><a tabindex="-1" href="#" data-option="' + country + '">' + this.countryList[country] + '</a></li>')
@@ -94,7 +96,7 @@
       $toggle.data('option', value)
       
       if (value) {
-        if (this.options.flags == true) {
+        if (this.options.flags === true) {
           $toggle.html('<i class="icon-flag-' + value + '"></i> ' + this.countryList[value])
         } else {
           $toggle.html(this.countryList[value])
@@ -107,7 +109,7 @@
     , displayCountry: function () {
       var value = this.options.country
       
-      if (this.options.flags == true) {
+      if (this.options.flags === true) {
         this.$element.html('<i class="icon-flag-' + value + '"></i> ' + this.countryList[value])
       } else {
         this.$element.html(this.countryList[value])

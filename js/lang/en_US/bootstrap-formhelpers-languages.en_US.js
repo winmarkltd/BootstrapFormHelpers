@@ -1,5 +1,5 @@
 /* ==========================================================
- * bootstrap-formhelpers-languages.codes.js
+ * bootstrap-formhelpers-languages.en_US.js
  * https://github.com/vlamanna/BootstrapFormHelpers
  * ==========================================================
  * Copyright 2012 Vincent Lamanna
@@ -17,7 +17,7 @@
  * limitations under the License.
  * ========================================================== */
  
- var BFHLanguagesList = {
+BFHLanguagesList = {
    'om': 'Afaan Oromoo',
    'aa': 'Afaraf',
    'af': 'Afrikaans',

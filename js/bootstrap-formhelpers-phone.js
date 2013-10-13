@@ -17,9 +17,11 @@
  * limitations under the License.
  * ========================================================== */
  
+ var BFHPhoneFormatList;
+ 
  !function ($) {
 
-  "use strict"; // jshint ;_;
+  "use strict";
 
 
  /* PHONE CLASS DEFINITION
@@ -33,15 +35,15 @@
       
       var formObject = this.$element.closest('form')
       
-      if (country != "") {
-		var countryObject = formObject.find('#' + country)
-		
-		if (countryObject.length != 0) {
-		  this.options.format = BFHPhoneFormatList[countryObject.val()]
-		} else {
-		  this.options.format = BFHPhoneFormatList[country]
-		}
-	  }
+      if (country !== "") {
+        var countryObject = formObject.find('#' + country)
+
+        if (countryObject.length !== 0) {
+          this.options.format = BFHPhoneFormatList[countryObject.val()]
+        } else {
+          this.options.format = BFHPhoneFormatList[country]
+        }
+      }
       
       this.addFormatter()
     }
@@ -57,7 +59,7 @@
 
   , getFormattedNumber: function() {
     var format = this.options.format
-    var phoneNumber = new String(this.options.number)
+    var phoneNumber = String(this.options.number)
     var formattedNumber = ""
     
     var newNumber = ""
@@ -69,7 +71,7 @@
     phoneNumber = newNumber
     
     var j = 0
-    for (var i = 0; i < format.length; i++) {
+    for (i = 0; i < format.length; i++) {
       if (/[0-9]/.test(format.charAt(i))) {
         if (format.charAt(i) == phoneNumber.charAt(j)) {
           formattedNumber += phoneNumber.charAt(j)
@@ -78,11 +80,11 @@
           formattedNumber += format.charAt(i)
         }
       } else if (format.charAt(i) != "d") {
-        if (phoneNumber.charAt(j) != "" || format.charAt(i) == "+") {
+        if (phoneNumber.charAt(j) !== "" || format.charAt(i) == "+") {
           formattedNumber += format.charAt(i)
         }
       } else {
-        if (phoneNumber.charAt(j) == "") {
+        if (phoneNumber.charAt(j) === "") {
           formattedNumber += ""
         } else {
           formattedNumber += phoneNumber.charAt(j)
@@ -130,7 +132,7 @@
         
     var replaceAtEnd = false;
     if (start == $this.$element.val().length) {
-    	replaceAtEnd = true;
+      replaceAtEnd = true;
     }
         
     var number = $this.$element.val()
@@ -142,7 +144,7 @@
     }
     
     if ($this.$element.data('number') == newNumber) {
-    	return false;
+      return false;
     }
     
     $this.options.number = newNumber
@@ -152,8 +154,8 @@
     $this.$element.data('number', $this.options.number)
     
     if (replaceAtEnd) {
-    	start = $this.$element.val().length;
-    	end = $this.$element.val().length;
+      start = $this.$element.val().length;
+      end = $this.$element.val().length;
     }
     
     // restore from variables...

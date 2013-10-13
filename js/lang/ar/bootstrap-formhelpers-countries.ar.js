@@ -1,4 +1,9 @@
 /* ==========================================================
+ * bootstrap-formhelpers-countries.ar.js
+ * https://github.com/vlamanna/BootstrapFormHelpers
+ * ==========================================================
+ * Copyright 2012 Vincent Lamanna
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -12,7 +17,7 @@
  * limitations under the License.
  * ========================================================== */
 
-var BFHCountriesList = {
+BFHCountriesList = {
     'AZ' : 'أذربيجان',
     'TF' : 'أراض فرنسية جنوبية',
     'AM' : 'أرمينيا',
@@ -143,7 +148,6 @@ var BFHCountriesList = {
     'CF' : 'جمهورية أفريقيا الوسطى',
     'IE' : 'جمهورية أيرلندا',
     'DO' : 'جمهورية الدومنيكان',
-    'CD' : 'جمهورية الكونغو الديمقراطية',
     'CD' : 'جمهورية الكونغو الديمقراطية',
     'RS' : 'جمهورية صربيا',
     'MK' : 'جمهورية مقدونيا',

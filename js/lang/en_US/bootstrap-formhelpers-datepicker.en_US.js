@@ -17,29 +17,29 @@
  * limitations under the License.
  * ========================================================== */
  
- var BFHMonthsList = [
- 	'January',
- 	'February',
- 	'March',
- 	'April',
- 	'May',
- 	'June',
- 	'July',
- 	'August',
- 	'September',
- 	'October',
- 	'November',
- 	'December'
+BFHMonthsList = [
+  'January',
+  'February',
+  'March',
+  'April',
+  'May',
+  'June',
+  'July',
+  'August',
+  'September',
+  'October',
+  'November',
+  'December'
  ]
  
- var BFHDaysList = [
- 	"SUN",
- 	"MON",
- 	"TUE",
- 	"WED",
- 	"THU",
- 	"FRI",
- 	"SAT"
+BFHDaysList = [
+  "SUN",
+  "MON",
+  "TUE",
+  "WED",
+  "THU",
+  "FRI",
+  "SAT"
  ]
  
- var BFHDayOfWeekStart = 0
+BFHDayOfWeekStart = 0

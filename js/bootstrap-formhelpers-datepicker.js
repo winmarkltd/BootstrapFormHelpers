@@ -17,10 +17,13 @@
  * limitations under the License.
  * ========================================================== */
 
+var BFHMonthsList;
+var BFHDaysList;
+var BFHDayOfWeekStart;
 
 !function ($) {
 
-  "use strict"; // jshint ;_;
+  "use strict";
 
 
  /* BFHDATEPICKER CLASS DEFINITION
@@ -29,7 +32,7 @@
   var toggle = '[data-toggle=bfh-datepicker]'
     , BFHDatePicker = function (element, options) {
         this.options = $.extend({}, $.fn.bfhdatepicker.defaults, options)
-    	this.$element = $(element)
+        this.$element = $(element)
         this.initCalendar()
       }
 
@@ -42,14 +45,14 @@
   }
   
   , dayOfWeek: function(month, year, day) {
-  	return new Date(year, month, day).getDay()
+    return new Date(year, month, day).getDay()
   }
   
   , formatDate: function(month, year, day) {
     var date = this.options.format
     month += 1
-    month = new String(month)
-    day = new String(day)
+    month = String(month)
+    day = String(day)
     
     if (month.length == 1) {
       month = "0" + month
@@ -82,8 +85,8 @@
     var parts = date.match(/(\d+)/g)
     
     for (var i=0; i < indexes.length; i++) {
-      if (indexes[i]['type'] == element) {
-        return new Number(parts[i]).toString()
+      if (indexes[i].type == element) {
+        return Number(parts[i]).toString()
       }
     }
   }
@@ -92,14 +95,14 @@
     var date
       , start
       , end
+      , today
       
     date = this.options.date
     start = this.options.start
     end = this.options.end
+    today = new Date()
     
-    if (date == "" || date == "today") {
-      var today = new Date()
-    
+    if (date === "" || date == "today") {
       if (date == "today") {
         this.$element.find('input[type=text]').val(this.formatDate(today.getMonth(), today.getFullYear(), today.getDate()))
       }
@@ -111,7 +114,7 @@
       this.$element.data('year', this.parse("y", date))
     }
     
-    if (start != "") {
+    if (start !== "") {
       this.$element.data('lowerlimit', '1')
       
       if (start == "today") {
@@ -127,7 +130,7 @@
       this.$element.data('lowerlimit', '0')
     }
     
-    if (end != "") {
+    if (end !== "") {
       this.$element.data('higherlimit', '1')
       if (end == "today") {
         this.$element.data('higherday', today.getDate())
@@ -160,8 +163,10 @@
       , higherday
       , highermonth
       , higheryear
+      , i
+      , j
     
-    var today = new Date()
+    today = new Date()
     month = this.$element.data('month')
     year = this.$element.data('year')
     
@@ -185,10 +190,10 @@
     $calendar.find('table > thead > tr > th.year > span').text(year)
     $daysHeader = $calendar.find('table > thead > tr.days-header')
     $daysHeader.html('')
-    for (var i=BFHDayOfWeekStart; i < BFHDaysList.length; i++) {
+    for (i=BFHDayOfWeekStart; i < BFHDaysList.length; i++) {
       $daysHeader.append('<th>' + BFHDaysList[i] + '</th>')
     }
-    for (var i=0; i < BFHDayOfWeekStart; i++) {
+    for (i=0; i < BFHDayOfWeekStart; i++) {
       $daysHeader.append('<th>' + BFHDaysList[i] + '</th>')
     }
     $days = $calendar.find('table > tbody')
@@ -198,14 +203,14 @@
     var firstDay = this.dayOfWeek(month, year, 1)
     var lastDay = this.dayOfWeek(month, year, numDays)
     var row = ''
-    for (var i=0; i < (firstDay - BFHDayOfWeekStart + 7) % 7; i++) {
-      if (i == 0) {
+    for (i=0; i < (firstDay - BFHDayOfWeekStart + 7) % 7; i++) {
+      if (i === 0) {
         row += '<tr>'
       }
       var previousDay = numDaysPrevious - (firstDay - BFHDayOfWeekStart + 7) % 7 + i + 1
       row += '<td class="off">' + previousDay + '</td>'
     }
-    for (var i=1; i <= numDays; i++) {
+    for (i=1; i <= numDays; i++) {
       var day = this.dayOfWeek(month, year, i)
       if (day == BFHDayOfWeekStart) {
         row += '<tr>'
@@ -225,14 +230,14 @@
         row = ''
       }
     }
-    for (var i=0, j=1; i < (7 - ((lastDay + 1 - BFHDayOfWeekStart + 7) % 7)) % 7; i++, j++) {
+    for (i=0, j=1; i < (7 - ((lastDay + 1 - BFHDayOfWeekStart + 7) % 7)) % 7; i++, j++) {
       row += '<td class="off">' + j + '</td>'
       if (i == (7 - ((lastDay + 1 - BFHDayOfWeekStart + 7) % 7)) % 7 - 1) {
         row += '</tr>'
         $days.append(row)
       }
     }
-	
+
   }
   
   , previousMonth: function (e) {
@@ -242,11 +247,11 @@
       
     $parent = $this.closest('.bfh-datepicker')
     
-    if ($parent.data('month') == 0) {
-    	$parent.data('month', 11)
-    	$parent.data('year', new Number($parent.data('year')) - 1)
+    if ($parent.data('month') === 0) {
+      $parent.data('month', 11)
+      $parent.data('year', Number($parent.data('year')) - 1)
     } else {
-    	$parent.data('month', new Number($parent.data('month')) - 1)
+      $parent.data('month', Number($parent.data('month')) - 1)
     }
     
     $datePicker = $parent.data('bfhdatepicker')
@@ -263,10 +268,10 @@
     $parent = $this.closest('.bfh-datepicker')
     
     if ($parent.data('month') == 11) {
-    	$parent.data('month', 0)
-    	$parent.data('year', new Number($parent.data('year')) + 1)
+      $parent.data('month', 0)
+      $parent.data('year', Number($parent.data('year')) + 1)
     } else {
-    	$parent.data('month', new Number($parent.data('month')) + 1)
+      $parent.data('month', Number($parent.data('month')) + 1)
     }
     
     $datePicker = $parent.data('bfhdatepicker')
@@ -282,7 +287,7 @@
       
     $parent = $this.closest('.bfh-datepicker')
     
-    $parent.data('year', new Number($parent.data('year')) - 1)
+    $parent.data('year', Number($parent.data('year')) - 1)
     
     $datePicker = $parent.data('bfhdatepicker')
     $datePicker.updateCalendar()
@@ -297,7 +302,7 @@
       
     $parent = $this.closest('.bfh-datepicker')
     
-    $parent.data('year', new Number($parent.data('year')) + 1)
+    $parent.data('year', Number($parent.data('year')) + 1)
     
     $datePicker = $parent.data('bfhdatepicker')
     $datePicker.updateCalendar()

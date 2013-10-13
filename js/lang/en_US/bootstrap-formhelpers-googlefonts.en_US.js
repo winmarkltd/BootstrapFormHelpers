@@ -1,5 +1,5 @@
 /* ==========================================================
- * bootstrap-formhelpers-googlefonts.codes.js
+ * bootstrap-formhelpers-googlefonts.en_US.js
  * https://github.com/vlamanna/BootstrapFormHelpers
  * ==========================================================
  * Copyright 2012 Vincent Lamanna
@@ -18,7 +18,7 @@
  * limitations under the License.
  * ========================================================== */
 
-var BFHGoogleFontsList = {
+BFHGoogleFontsList = {
  "kind": "webfonts#webfontList",
  "items": [
   {

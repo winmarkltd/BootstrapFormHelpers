@@ -20,7 +20,7 @@
 
 !function ($) {
 
-  "use strict"; // jshint ;_;
+  "use strict";
 
 
  /* TIMEPICKER CLASS DEFINITION
@@ -29,7 +29,7 @@
   var toggle = '[data-toggle=bfh-timepicker]'
     , BFHTimePicker = function (element, options) {
         this.options = $.extend({}, $.fn.bfhtimepicker.defaults, options)
-    	this.$element = $(element)
+        this.$element = $(element)
         this.initPopover()
       }
 
@@ -40,14 +40,14 @@
   , initPopover: function() {
     var time = this.options.time
     
-    if (time == "") {
+    if (time === "") {
       var today = new Date()
     
       this.$element.data('hour', today.getHours())
       this.$element.data('minute', today.getMinutes())
     } else {
       this.$element.find('.bfh-timepicker-toggle').val(time)
-      var timeParts = new String(time).split(":")
+      var timeParts = String(time).split(":")
       this.$element.data('hour', timeParts[0])
       this.$element.data('minute', timeParts[1])
     }
@@ -59,12 +59,12 @@
     var hour = this.$element.data('hour')
     var minute = this.$element.data('minute')
     
-    hour = new String(hour)
+    hour = String(hour)
     if (hour.length == 1) {
       hour = "0" + hour
     }
     
-    minute = new String(minute)
+    minute = String(minute)
     if (minute.length == 1) {
       minute = "0" + minute
     }
@@ -81,10 +81,10 @@
       
     $parent = $this.closest('.bfh-timepicker')
     
-    if ($parent.data('hour') == 0) {
+    if ($parent.data('hour') === 0) {
       $parent.data('hour', 23)
     } else {
-      $parent.data('hour', new Number($parent.data('hour')) - 1)
+      $parent.data('hour', Number($parent.data('hour')) - 1)
     }
     
     $timePicker = $parent.data('bfhtimepicker')
@@ -103,7 +103,7 @@
     if ($parent.data('hour') == 23) {
       $parent.data('hour', 0)
     } else {
-      $parent.data('hour', new Number($parent.data('hour')) + 1)
+      $parent.data('hour', Number($parent.data('hour')) + 1)
     }
     
     $timePicker = $parent.data('bfhtimepicker')
@@ -119,10 +119,10 @@
       
     $parent = $this.closest('.bfh-timepicker')
     
-    if ($parent.data('minute') == 0) {
+    if ($parent.data('minute') === 0) {
       $parent.data('minute', 59)
     } else {
-      $parent.data('minute', new Number($parent.data('minute')) - 1)
+      $parent.data('minute', Number($parent.data('minute')) - 1)
     }
     
     $timePicker = $parent.data('bfhtimepicker')
@@ -141,7 +141,7 @@
     if ($parent.data('minute') == 59) {
       $parent.data('minute', 0)
     } else {
-      $parent.data('minute', new Number($parent.data('minute')) + 1)
+      $parent.data('minute', Number($parent.data('minute')) + 1)
     }
     
     $timePicker = $parent.data('bfhtimepicker')

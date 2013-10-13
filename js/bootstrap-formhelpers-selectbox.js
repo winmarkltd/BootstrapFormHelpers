@@ -17,10 +17,9 @@
  * limitations under the License.
  * ========================================================== */
 
-
 !function ($) {
 
-  "use strict"; // jshint ;_;
+  "use strict";
 
 
  /* SELECTBOX CLASS DEFINITION
@@ -106,7 +105,7 @@
       if (e.keyCode == 38 && index > 0) index--                                        // up
       if (e.keyCode == 40 && index < $items.length - 1) index++                        // down
       if (/[A-z]/.test(String.fromCharCode(e.which))) {
-      	var $subItems = $items.filter(function() { return ($(this).text().charAt(0).toUpperCase() == String.fromCharCode(e.which)) })
+        var $subItems = $items.filter(function() { return ($(this).text().charAt(0).toUpperCase() == String.fromCharCode(e.which)) })
         var selectedIndex = $subItems.index($subItems.filter(':focus'))
         if (!~selectedIndex) index = $items.index($subItems)
         else if (selectedIndex >= $subItems.length - 1) index = $items.index($subItems)
@@ -122,13 +121,13 @@
     }
     
     , mouseenter: function (e) {
-	  var $this
-	  
-	  $this = $(this)
-	  
-	  if ($this.is('.disabled, :disabled')) return false
-	  
-	  $this.focus()
+      var $this
+
+      $this = $(this)
+
+      if ($this.is('.disabled, :disabled')) return false
+
+      $this.focus()
     }
     
     , select: function (e) {

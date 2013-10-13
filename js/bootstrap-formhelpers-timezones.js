@@ -16,10 +16,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  * ========================================================== */
+
+ var BFHTimezonesList;
  
  !function ($) {
 
-  "use strict"; // jshint ;_;
+  "use strict";
 
 
  /* TIMEZONES CLASS DEFINITION
@@ -44,16 +46,16 @@
 
     , addTimezones: function () {
       var country = this.options.country
-      
-      if (country != "") {
-		var formObject = this.$element.closest('form')
-		var countryObject = formObject.find('#' + country)
-		
-		if (countryObject.length != 0) {
-		  country = countryObject.val()
-		  countryObject.on('change.bfhcountries.data-api', {timezoneObject: this}, this.changeCountry)
-		}
-	  }
+
+      if (country !== "") {
+        var formObject = this.$element.closest('form')
+        var countryObject = formObject.find('#' + country)
+
+        if (countryObject.length !== 0) {
+          country = countryObject.val()
+          countryObject.on('change.bfhcountries.data-api', {timezoneObject: this}, this.changeCountry)
+        }
+      }
       
       this.loadTimezones(country)
     }
@@ -81,11 +83,11 @@
     , addBootstrapTimezones: function() {
       var country = this.options.country
       
-      if (country != "") {
+      if (country !== "") {
         var formObject = this.$element.closest('form')
         var countryObject = formObject.find('#' + country)
         
-        if (countryObject.length != 0) {
+        if (countryObject.length !== 0) {
           country = countryObject.find('input[type="hidden"]').val()
           countryObject.find('input[type="hidden"]').on('change.bfhcountries.data-api', {timezoneObject: this}, this.changeBootstrapCountry)
         }

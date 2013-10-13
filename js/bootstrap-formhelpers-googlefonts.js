@@ -18,50 +18,56 @@
  * limitations under the License.
  * ========================================================== */
  
+ var BFHGoogleFontsList;
+ 
  !function ($) {
 
-  "use strict"; // jshint ;_;
+  "use strict";
 
 
  /* FONTS CLASS DEFINITION
   * ====================== */
 
   var BFHGoogleFonts = function (element, options) {
+    var i
+      , f
+      , font
+      
     this.options = $.extend({}, $.fn.bfhgooglefonts.defaults, options)
     this.$element = $(element)
     this.familyList = {}
     
     if (this.options.subsets) {
       this.options.subsets = this.options.subsets.split(',')
-      for (var i in BFHGoogleFontsList.items) {
-        var font = BFHGoogleFontsList.items[i];
-        for (var f = 0, allhave = true; f <= this.options.subsets.length; f++){
+      for (i in BFHGoogleFontsList.items) {
+        font = BFHGoogleFontsList.items[i];
+        for (f = 0, allhave = true; f <= this.options.subsets.length; f++){
             if ($.inArray(this.options.subsets[f], font.subsets) == -1) {allhave = false;}
-            if (f == this.options.subsets.length-1 && allhave == true){
+            if (f == this.options.subsets.length-1 && allhave === true){
               this.familyList[font.family] = {
                 'font': BFHGoogleFontsList.items[i],
-                'i': parseInt(i)
+                'i': parseInt(i, 10)
               };
             }
         }
       }
     } else if (this.options.families) {
       this.options.families = this.options.families.split(',')
-      for (var i in BFHGoogleFontsList.items) {
-        var font = BFHGoogleFontsList.items[i];
+      for (i in BFHGoogleFontsList.items) {
+        font = BFHGoogleFontsList.items[i];
         if ($.inArray(font.family, this.options.families) >= 0) {
           this.familyList[font.family] = {
             'font': BFHGoogleFontsList.items[i],
-            'i': parseInt(i)
+            'i': parseInt(i, 10)
           };
         }
       }
     } else {
-      for (var i in BFHGoogleFontsList.items) {
-        var font = BFHGoogleFontsList.items[i];
+      for (i in BFHGoogleFontsList.items) {
+        font = BFHGoogleFontsList.items[i];
         this.familyList[font.family] = {
           'font': BFHGoogleFontsList.items[i],
-          'i': parseInt(i)
+          'i': parseInt(i, 10)
         };
       }
     }

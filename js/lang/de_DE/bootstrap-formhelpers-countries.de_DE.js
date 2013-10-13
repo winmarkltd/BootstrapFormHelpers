@@ -17,7 +17,7 @@
  * limitations under the License.
  * ========================================================== */
  
- var BFHCountriesList = {
+BFHCountriesList = {
    'AF': "Afghanistan",
    'EG': "Ägypten",
    'AX': "Aland",

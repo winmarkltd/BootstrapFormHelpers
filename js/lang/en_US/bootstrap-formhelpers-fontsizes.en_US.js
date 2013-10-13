@@ -1,5 +1,5 @@
 /* ==========================================================
- * bootstrap-formhelpers-fontsizes.codes.js
+ * bootstrap-formhelpers-fontsizes.en_US.js
  * https://github.com/vlamanna/BootstrapFormHelpers
  * ==========================================================
  * Copyright 2012 Vincent Lamanna
@@ -17,7 +17,7 @@
  * limitations under the License.
  * ========================================================== */
  
- var BFHFontSizesList = {
+BFHFontSizesList = {
    '8': '8px',
    '9': '9px',
    '10': '10px',

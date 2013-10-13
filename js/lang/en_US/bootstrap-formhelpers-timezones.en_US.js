@@ -17,7 +17,7 @@
  * limitations under the License.
  * ========================================================== */
  
- var BFHTimezonesList = {
+BFHTimezonesList = {
   'AF': {
     'Asia/Kabul': 'Kabul'
   },

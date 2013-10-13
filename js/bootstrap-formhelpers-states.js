@@ -17,9 +17,11 @@
  * limitations under the License.
  * ========================================================== */
  
+ var BFHStatesList;
+ 
  !function ($) {
 
-  "use strict"; // jshint ;_;
+  "use strict";
 
 
  /* STATES CLASS DEFINITION
@@ -49,15 +51,15 @@
     , addStates: function () {
       var country = this.options.country
       
-      if (country != "") {
+      if (country !== "") {
 		var formObject = this.$element.closest('form')
 		var countryObject = formObject.find('#' + country)
 		
-		if (countryObject.length != 0) {
-		  country = countryObject.val()
-		  countryObject.on('change.bfhcountries.data-api', {stateObject: this}, this.changeCountry)
-		}
-	  }
+		if (countryObject.length !== 0) {
+          country = countryObject.val()
+          countryObject.on('change.bfhcountries.data-api', {stateObject: this}, this.changeCountry)
+        }
+      }
       
       this.loadStates(country)
     }
@@ -68,7 +70,7 @@
       this.$element.html('')
       this.$element.append('<option value=""></option>')
       for (var state in BFHStatesList[country]) {
-        this.$element.append('<option value="' + BFHStatesList[country][state]['code'] + '">' + BFHStatesList[country][state]['name'] + '</option>')
+        this.$element.append('<option value="' + BFHStatesList[country][state].code + '">' + BFHStatesList[country][state].name + '</option>')
       }
       
       this.$element.val(value)
@@ -85,11 +87,11 @@
     , addBootstrapStates: function() {
       var country = this.options.country
       
-      if (country != "") {
+      if (country !== "") {
         var formObject = this.$element.closest('form')
         var countryObject = formObject.find('#' + country)
         
-        if (countryObject.length != 0) {
+        if (countryObject.length !== 0) {
           country = countryObject.find('input[type="hidden"]').val()
           countryObject.find('input[type="hidden"]').on('change.bfhcountries.data-api', {stateObject: this}, this.changeBootstrapCountry)
         }
@@ -112,7 +114,7 @@
       $options.html('')
       $options.append('<li><a tabindex="-1" href="#" data-option=""></a></li>')
       for (var state in BFHStatesList[country]) {
-        $options.append('<li><a tabindex="-1" href="#" data-option="' + BFHStatesList[country][state]['code'] + '">' + BFHStatesList[country][state]['name'] + '</a></li>')
+        $options.append('<li><a tabindex="-1" href="#" data-option="' + BFHStatesList[country][state].code + '">' + BFHStatesList[country][state].name + '</a></li>')
       }
       
       $toggle.data('option', value)
@@ -138,8 +140,8 @@
       var state_code = this.options.state;
       var state_name = "";
       for (var state_id in BFHStatesList[country]) {
-        if (BFHStatesList[country][state_id]["code"] === state_code) {
-          state_name = BFHStatesList[country][state_id]["name"];
+        if (BFHStatesList[country][state_id].code === state_code) {
+          state_name = BFHStatesList[country][state_id].name;
           break;
         }
       }

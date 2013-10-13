@@ -1,5 +1,5 @@
 /* ==========================================================
- * bootstrap-formhelpers-fonts.codes.js
+ * bootstrap-formhelpers-fonts.en_US.js
  * https://github.com/vlamanna/BootstrapFormHelpers
  * ==========================================================
  * Copyright 2012 Vincent Lamanna
@@ -17,7 +17,7 @@
  * limitations under the License.
  * ========================================================== */
  
- var BFHFontsList = {
+BFHFontsList = {
    'Andale Mono': '"Andale Mono", AndaleMono, monospace',
    'Arial': 'Arial, "Helvetica Neue", Helvetica, sans-serif',
    'Arial Black': '"Arial Black", "Arial Bold", Gadget, sans-serif',

@@ -18,9 +18,11 @@
  * limitations under the License.
  * ========================================================== */
  
+ var BFHFontSizesList;
+ 
  !function ($) {
 
-  "use strict"; // jshint ;_;
+  "use strict";
 
 
  /* FONTSIZES CLASS DEFINITION

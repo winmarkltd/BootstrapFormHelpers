@@ -1,5 +1,5 @@
 /* ==========================================================
- * bootstrap-formhelpers-countries.en_US.js
+ * bootstrap-formhelpers-countries.es_ES.js
  * https://github.com/vlamanna/BootstrapFormHelpers
  * ==========================================================
  * Copyright 2012 Vincent Lamanna
@@ -17,7 +17,7 @@
  * limitations under the License.
  * ========================================================== */
  
- var BFHCountriesList = {
+BFHCountriesList = {
    'AF': 'Afganistán',
    'AL': 'Albania',
    'DE': 'Alemania',

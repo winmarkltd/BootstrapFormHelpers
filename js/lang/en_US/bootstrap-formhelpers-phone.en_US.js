@@ -1,5 +1,5 @@
 /* ==========================================================
- * bootstrap-formhelpers-phone.format.js
+ * bootstrap-formhelpers-phone.en_US.js
  * https://github.com/vlamanna/BootstrapFormHelpers
  * ==========================================================
  * Copyright 2012 Vincent Lamanna
@@ -17,7 +17,7 @@
  * limitations under the License.
  * ========================================================== */
  
- var BFHPhoneFormatList = {
+BFHPhoneFormatList = {
    'AF': '0dd ddd dddd',
    'AL': '0dd ddd ddd',
    'DZ': '0ddd dd dd dd',
