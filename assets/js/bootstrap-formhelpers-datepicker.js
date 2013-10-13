@@ -97,9 +97,12 @@
     start = this.options.start
     end = this.options.end
     
-    if (date == "") {
+    if (date == "" || date == "today") {
       var today = new Date()
     
+      if (date == "today") {
+        this.$element.find('input[type=text]').val(this.formatDate(today.getMonth(), today.getFullYear(), today.getDate()))
+      }
       this.$element.data('month', today.getMonth())
       this.$element.data('year', today.getFullYear())
     } else {
@@ -110,18 +113,31 @@
     
     if (start != "") {
       this.$element.data('lowerlimit', '1')
-      this.$element.data('lowerday', this.parse("d", start))
-      this.$element.data('lowermonth', this.parse("m", start) - 1)
-      this.$element.data('loweryear', this.parse("y", start))
+      
+      if (start == "today") {
+        this.$element.data('lowerday', today.getDate())
+        this.$element.data('lowermonth', today.getMonth())
+        this.$element.data('loweryear', today.getFullYear())
+      } else {
+        this.$element.data('lowerday', this.parse("d", start))
+        this.$element.data('lowermonth', this.parse("m", start) - 1)
+        this.$element.data('loweryear', this.parse("y", start))
+      }
     } else {
       this.$element.data('lowerlimit', '0')
     }
     
     if (end != "") {
       this.$element.data('higherlimit', '1')
-      this.$element.data('higherday', this.parse("d", end))
-      this.$element.data('highermonth', this.parse("m", end) - 1)
-      this.$element.data('higheryear', this.parse("y", end))
+      if (end == "today") {
+        this.$element.data('higherday', today.getDate())
+        this.$element.data('highermonth', today.getMonth())
+        this.$element.data('higheryear', today.getFullYear())
+      } else {
+        this.$element.data('higherday', this.parse("d", end))
+        this.$element.data('highermonth', this.parse("m", end) - 1)
+        this.$element.data('higheryear', this.parse("y", end))
+      }
     } else {
       this.$element.data('higherlimit', '0')
     }
