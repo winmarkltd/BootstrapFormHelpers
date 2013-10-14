@@ -17,7 +17,7 @@
  * limitations under the License.
  * ========================================================== */
  
-BFHCurrenciesList = {
+var BFHCurrenciesList = {
   'AED':{'label':'United Arab Emirates dirham','currencyflag':'','symbol':'د.إ'},
   'AFN':{'label':'Afghan afghani','currencyflag':'','symbol':'؋'},
   'ALL':{'label':'Albanian lek','currencyflag':'','symbol':'L'},
@@ -177,4 +177,4 @@ BFHCurrenciesList = {
   'ZAR':{'label':'South African rand','currencyflag':'ZAR','symbol':'R'},
   'ZMW':{'label':'Zambian kwacha','currencyflag':'','symbol':'ZK'},
   'ZWL':{'label':'Zimbabwean dollar','currencyflag':'','symbol':'$'}
-}
+};

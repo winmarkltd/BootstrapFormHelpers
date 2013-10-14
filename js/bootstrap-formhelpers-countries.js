@@ -17,141 +17,163 @@
  * limitations under the License.
  * ========================================================== */
  
- var BFHCountriesList;
- 
- !function ($) {
+!function ($) {
 
-  "use strict";
+  'use strict';
 
 
- /* COUNTRIES CLASS DEFINITION
-  * ====================== */
+  /* COUNTRIES CLASS DEFINITION
+   * ====================== */
 
   var BFHCountries = function (element, options) {
-    this.options = $.extend({}, $.fn.bfhcountries.defaults, options)
-    this.$element = $(element)
+    var country;
     
-	if (this.options.countrylist) {
-		this.countryList = []
-		this.options.countrylist = this.options.countrylist.split(',')
-        for (var country in BFHCountriesList) {
-			if ($.inArray(country, this.options.countrylist) >= 0) {
-				this.countryList[country] = BFHCountriesList[country]
-			}
-		}
-	} else {
-		this.countryList = BFHCountriesList
-	}
+    this.options = $.extend({}, $.fn.bfhcountries.defaults, options);
+    this.$element = $(element);
+    
+    if (this.options.countrylist) {
+      this.countryList = [];
+      this.options.countrylist = this.options.countrylist.split(',');
+      for (country in BFHCountriesList) {
+        if (BFHCountriesList.hasOwnProperty(country)) {
+          if ($.inArray(country, this.options.countrylist) >= 0) {
+            this.countryList[country] = BFHCountriesList[country];
+          }
+        }
+      }
+    } else {
+      this.countryList = BFHCountriesList;
+    }
 
-    if (this.$element.is("select")) {
-      this.addCountries()
+    if (this.$element.is('select')) {
+      this.addCountries();
     }
-    
-    if (this.$element.is("span")) {
-      this.displayCountry()
+
+    if (this.$element.is('span')) {
+      this.displayCountry();
     }
-    
-    if (this.$element.hasClass("bfh-selectbox")) {
-      this.addBootstrapCountries()
+
+    if (this.$element.hasClass('bfh-selectbox')) {
+      this.addBootstrapCountries();
     }
-  }
+  };
 
   BFHCountries.prototype = {
 
-    constructor: BFHCountries
+    constructor: BFHCountries,
 
-    , addCountries: function () {
-      var value = this.options.country
+    addCountries: function () {
+      var value,
+          country;
+          
+      value = this.options.country;
       
-      this.$element.html('')
-      this.$element.append('<option value=""></option>')
-      for (var country in this.countryList) {
-        this.$element.append('<option value="' + country + '">' + this.countryList[country] + '</option>')
-      }
-      
-      this.$element.val(value)
-    }
-    
-    , addBootstrapCountries: function() {
-      var $input
-      , $toggle
-      , $options
-      
-      var value = this.options.country
-      
-      $input = this.$element.find('input[type="hidden"]')
-      $toggle = this.$element.find('.bfh-selectbox-option')
-      $options = this.$element.find('[role=option]')
-      
-      $options.html('')
-      $options.append('<li><a tabindex="-1" href="#" data-option=""></a></li>')
-      for (var country in this.countryList) {
-        if (this.options.flags === true) {
-          $options.append('<li><a tabindex="-1" href="#" data-option="' + country + '"><i class="icon-flag-' + country + '"></i>' + this.countryList[country] + '</a></li>')
-        } else {
-          $options.append('<li><a tabindex="-1" href="#" data-option="' + country + '">' + this.countryList[country] + '</a></li>')
+      this.$element.html('');
+      this.$element.append('<option value=""></option>');
+      for (country in this.countryList) {
+        if (this.countryList.hasOwnProperty(country)) {
+          this.$element.append('<option value="' + country + '">' + this.countryList[country] + '</option>');
         }
       }
       
-      $toggle.data('option', value)
+      this.$element.val(value);
+    },
+    
+    addBootstrapCountries: function() {
+      var $input,
+          $toggle,
+          $options,
+          value,
+          country;
+      
+      value = this.options.country;
+      
+      $input = this.$element.find('input[type="hidden"]');
+      $toggle = this.$element.find('.bfh-selectbox-option');
+      $options = this.$element.find('[role=option]');
+      
+      $options.html('');
+      $options.append('<li><a tabindex="-1" href="#" data-option=""></a></li>');
+      for (country in this.countryList) {
+        if (this.countryList.hasOwnProperty(country)) {
+          if (this.options.flags === true) {
+            $options.append('<li><a tabindex="-1" href="#" data-option="' + country + '"><i class="icon-flag-' + country + '"></i>' + this.countryList[country] + '</a></li>');
+          } else {
+            $options.append('<li><a tabindex="-1" href="#" data-option="' + country + '">' + this.countryList[country] + '</a></li>');
+          }
+        }
+      }
+      
+      $toggle.data('option', value);
       
       if (value) {
         if (this.options.flags === true) {
-          $toggle.html('<i class="icon-flag-' + value + '"></i> ' + this.countryList[value])
+          $toggle.html('<i class="icon-flag-' + value + '"></i> ' + this.countryList[value]);
         } else {
-          $toggle.html(this.countryList[value])
+          $toggle.html(this.countryList[value]);
         }
       }
       
-      $input.val(value)
-    }
+      $input.val(value);
+    },
     
-    , displayCountry: function () {
-      var value = this.options.country
+    displayCountry: function () {
+      var value;
+      
+      value = this.options.country;
       
       if (this.options.flags === true) {
-        this.$element.html('<i class="icon-flag-' + value + '"></i> ' + this.countryList[value])
+        this.$element.html('<i class="icon-flag-' + value + '"></i> ' + this.countryList[value]);
       } else {
-        this.$element.html(this.countryList[value])
+        this.$element.html(this.countryList[value]);
       }
     }
 
-  }
+  };
 
 
- /* COUNTRY PLUGIN DEFINITION
-  * ======================= */
+  /* COUNTRY PLUGIN DEFINITION
+   * ======================= */
 
   $.fn.bfhcountries = function (option) {
     return this.each(function () {
-      var $this = $(this)
-        , data = $this.data('bfhcountries')
-        , options = typeof option == 'object' && option
+      var $this,
+          data,
+          options;
         
-      if (!data) $this.data('bfhcountries', (data = new BFHCountries(this, options)))
-      if (typeof option == 'string') data[option]()
-    })
-  }
+      $this = $(this);
+      data = $this.data('bfhcountries');
+      options = typeof option === 'object' && option;
+      
+      if (!data) {
+        $this.data('bfhcountries', (data = new BFHCountries(this, options)));
+      }
+      if (typeof option === 'string') {
+        data[option]();
+      }
+    });
+  };
 
-  $.fn.bfhcountries.Constructor = BFHCountries
+  $.fn.bfhcountries.Constructor = BFHCountries;
 
   $.fn.bfhcountries.defaults = {
-    country: "",
-	countryList: "",
+    country: '',
+    countryList: '',
     flags: false
-  }
+  };
   
 
- /* COUNTRY DATA-API
-  * ============== */
+  /* COUNTRY DATA-API
+   * ============== */
 
   $(window).on('load', function () {
     $('form select.bfh-countries, span.bfh-countries, div.bfh-countries').each(function () {
-      var $countries = $(this)
+      var $countries;
+      
+      $countries = $(this);
 
-      $countries.bfhcountries($countries.data())
-    })
-  })
-
+      $countries.bfhcountries($countries.data());
+    });
+  });
 
 }(window.jQuery);

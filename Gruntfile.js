@@ -1,7 +1,7 @@
 /* jshint node: true */
 
 module.exports = function(grunt) {
-  "use strict";
+  'use strict';
 
   // Project configuration.
   grunt.initConfig({
@@ -29,8 +29,8 @@ module.exports = function(grunt) {
       },
       src: {
         src: [
-          'js/*.js',
-          'js/lang/*/*.js'
+          'js/lang/*/*.js',
+          'js/*.js'
         ]
       }
     },
@@ -42,8 +42,8 @@ module.exports = function(grunt) {
       },
       bootstrapformhelpers: {
         src: [
-          'js/*.js',
-          'js/lang/en_US/*.js'
+          'js/lang/en_US/*.js',
+          'js/*.js'
         ],
         dest: 'dist/js/<%= pkg.name %>.js'
       }

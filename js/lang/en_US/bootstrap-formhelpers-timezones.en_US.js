@@ -17,7 +17,7 @@
  * limitations under the License.
  * ========================================================== */
  
-BFHTimezonesList = {
+var BFHTimezonesList = {
   'AF': {
     'Asia/Kabul': 'Kabul'
   },
@@ -833,4 +833,4 @@ BFHTimezonesList = {
   'ZW': {
     'Africa/Harare': 'Harare'
   }
-}
+};

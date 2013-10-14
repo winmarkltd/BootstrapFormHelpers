@@ -17,29 +17,29 @@
  * limitations under the License.
  * ========================================================== */
  
-BFHMonthsList = [
-    'Enero',
-    'Febrero',
-    'Marzo',
-    'Abril',
-    'Mayo',
-    'Junio',
-    'Julio',
-    'Agosto',
-    'Septiembre',
-    'Octubre',
-    'Noviembre',
-    'Diciembre'
- ]
+var BFHMonthsList = [
+  'Enero',
+  'Febrero',
+  'Marzo',
+  'Abril',
+  'Mayo',
+  'Junio',
+  'Julio',
+  'Agosto',
+  'Septiembre',
+  'Octubre',
+  'Noviembre',
+  'Diciembre'
+];
 
-BFHDaysList = [
-    "DOM",
-    "LUN",
-    "MAR",
-    "MIE",
-    "JUE",
-    "VIE",
-    "SAB"
- ]
+var BFHDaysList = [
+  'DOM',
+  'LUN',
+  'MAR',
+  'MIE',
+  'JUE',
+  'VIE',
+  'SAB'
+];
  
-BFHDayOfWeekStart = 0
+var BFHDayOfWeekStart = 0;

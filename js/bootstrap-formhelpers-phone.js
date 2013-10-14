@@ -17,193 +17,229 @@
  * limitations under the License.
  * ========================================================== */
  
- var BFHPhoneFormatList;
- 
- !function ($) {
+!function ($) {
 
-  "use strict";
+  'use strict';
 
 
- /* PHONE CLASS DEFINITION
-  * ====================== */
+  /* PHONE CLASS DEFINITION
+   * ====================== */
 
   var BFHPhone = function (element, options) {
-    this.options = $.extend({}, $.fn.bfhphone.defaults, options)
-    this.$element = $(element)
+    var country,
+        formObject,
+        countryObject;
+        
+    this.options = $.extend({}, $.fn.bfhphone.defaults, options);
+    this.$element = $(element);
+    
     if (this.$element.is('input[type="text"]') || this.$element.is('input[type="tel"]')) {
-      var country = this.options.country
+      country = this.options.country;
+      formObject = this.$element.closest('form');
       
-      var formObject = this.$element.closest('form')
-      
-      if (country !== "") {
-        var countryObject = formObject.find('#' + country)
+      if (country !== '') {
+        countryObject = formObject.find('#' + country);
 
         if (countryObject.length !== 0) {
-          this.options.format = BFHPhoneFormatList[countryObject.val()]
+          this.options.format = BFHPhoneFormatList[countryObject.val()];
         } else {
-          this.options.format = BFHPhoneFormatList[country]
+          this.options.format = BFHPhoneFormatList[country];
         }
       }
       
-      this.addFormatter()
+      this.addFormatter();
     }
     
-    if (this.$element.is("span")) {
-      this.displayFormatter()
+    if (this.$element.is('span')) {
+      this.displayFormatter();
     }
-  }
+  };
 
   BFHPhone.prototype = {
 
-    constructor: BFHPhone
+    constructor: BFHPhone,
 
-  , getFormattedNumber: function() {
-    var format = this.options.format
-    var phoneNumber = String(this.options.number)
-    var formattedNumber = ""
+    getFormattedNumber: function() {
+      var format,
+          phoneNumber,
+          formattedNumber,
+          newNumber,
+          j,
+          i;
+          
+      format = this.options.format;
+      phoneNumber = String(this.options.number);
+      formattedNumber = '';
     
-    var newNumber = ""
-    for (var i = 0; i < phoneNumber.length; i++) {
-      if (/[0-9]/.test(phoneNumber.charAt(i))) {
-        newNumber += phoneNumber.charAt(i)
+      newNumber = '';
+      for (i = 0; i < phoneNumber.length; i=i+1) {
+        if (/[0-9]/.test(phoneNumber.charAt(i))) {
+          newNumber += phoneNumber.charAt(i);
+        }
       }
-    }
-    phoneNumber = newNumber
+      phoneNumber = newNumber;
     
-    var j = 0
-    for (i = 0; i < format.length; i++) {
-      if (/[0-9]/.test(format.charAt(i))) {
-        if (format.charAt(i) == phoneNumber.charAt(j)) {
-          formattedNumber += phoneNumber.charAt(j)
-          j++
+      for (i = 0, j = 0; i < format.length; i=i+1) {
+        if (/[0-9]/.test(format.charAt(i))) {
+          if (format.charAt(i) === phoneNumber.charAt(j)) {
+            formattedNumber += phoneNumber.charAt(j);
+            j = j + 1;
+          } else {
+            formattedNumber += format.charAt(i);
+          }
+        } else if (format.charAt(i) !== 'd') {
+          if (phoneNumber.charAt(j) !== '' || format.charAt(i) === '+') {
+            formattedNumber += format.charAt(i);
+          }
         } else {
-          formattedNumber += format.charAt(i)
-        }
-      } else if (format.charAt(i) != "d") {
-        if (phoneNumber.charAt(j) !== "" || format.charAt(i) == "+") {
-          formattedNumber += format.charAt(i)
-        }
-      } else {
-        if (phoneNumber.charAt(j) === "") {
-          formattedNumber += ""
-        } else {
-          formattedNumber += phoneNumber.charAt(j)
-          j++
+          if (phoneNumber.charAt(j) === '') {
+            formattedNumber += '';
+          } else {
+            formattedNumber += phoneNumber.charAt(j);
+            j = j + 1;
+          }
         }
       }
-    }
     
-    return formattedNumber
-  }
+      return formattedNumber;
+    },
   
-  , addFormatter: function () {
-    var formattedNumber = this.getFormattedNumber()
-    
-    this.$element.addClass('disabled');
-    this.$element.val(formattedNumber)
-    this.$element.removeClass('disabled');
-  }
-  
-  , displayFormatter: function () {
-    var formattedNumber = this.getFormattedNumber()
-    
-    this.$element.html(formattedNumber)
-  }
-  
-  , changeCountry: function (e) {
-      var $this = $(this)
-      var phoneObject = $(this).data('bfhphone')
+    addFormatter: function () {
+      var formattedNumber;
       
-      phoneObject.options.format = BFHPhoneFormatList[$this.val()]
-      
-      phoneObject.addFormatter()
-  }
+      formattedNumber = this.getFormattedNumber();
+    
+      this.$element.addClass('disabled');
+      this.$element.val(formattedNumber);
+      this.$element.removeClass('disabled');
+    },
   
-  , change: function(e) {
-    var $this
+    displayFormatter: function () {
+      var formattedNumber;
+      
+      formattedNumber = this.getFormattedNumber();
     
-    $this = $(this).data('bfhphone')
+      this.$element.html(formattedNumber);
+    },
+  
+    changeCountry: function () {
+      var $this,
+          phoneObject;
+          
+      $this = $(this);
+      phoneObject = $(this).data('bfhphone');
+      
+      phoneObject.options.format = BFHPhoneFormatList[$this.val()];
+      
+      phoneObject.addFormatter();
+    },
+  
+    change: function() {
+      var $this,
+          start,
+          end,
+          replaceAtEnd,
+          number,
+          newNumber,
+          i;
     
-    if ($this.$element.is('.disabled, :disabled')) return false
+      $this = $(this).data('bfhphone');
     
-    // store current positions in variables
-    var start = $this.$element[0].selectionStart,
-        end = $this.$element[0].selectionEnd;
-        
-    var replaceAtEnd = false;
-    if (start == $this.$element.val().length) {
-      replaceAtEnd = true;
-    }
-        
-    var number = $this.$element.val()
-    var newNumber = ""
-    for (var i = 0; i < number.length; i++) {
-      if (/[0-9]/.test(number.charAt(i))) {
-        newNumber += number.charAt(i)
+      if ($this.$element.is('.disabled, :disabled')) {
+        return false;
       }
-    }
     
-    if ($this.$element.data('number') == newNumber) {
+      start = $this.$element[0].selectionStart;
+      end = $this.$element[0].selectionEnd;
+        
+      replaceAtEnd = false;
+      if (start === $this.$element.val().length) {
+        replaceAtEnd = true;
+      }
+        
+      number = $this.$element.val();
+      newNumber = '';
+      for (i = 0; i < number.length; i=i+1) {
+        if (/[0-9]/.test(number.charAt(i))) {
+          newNumber += number.charAt(i);
+        }
+      }
+    
+      if ($this.$element.data('number') === newNumber) {
+        return false;
+      }
+    
+      $this.options.number = newNumber;
+    
+      $this.addFormatter();
+    
+      $this.$element.data('number', $this.options.number);
+    
+      if (replaceAtEnd) {
+        start = $this.$element.val().length;
+        end = $this.$element.val().length;
+      }
+    
+      $this.$element[0].setSelectionRange(start, end);
+    
       return false;
     }
-    
-    $this.options.number = newNumber
-    
-    $this.addFormatter()
-    
-    $this.$element.data('number', $this.options.number)
-    
-    if (replaceAtEnd) {
-      start = $this.$element.val().length;
-      end = $this.$element.val().length;
-    }
-    
-    // restore from variables...
-    $this.$element[0].setSelectionRange(start, end);
-    
-    return false
-  }
 
-  }
+  };
 
 
- /* PHONE PLUGIN DEFINITION
-  * ======================= */
+  /* PHONE PLUGIN DEFINITION
+   * ======================= */
 
   $.fn.bfhphone = function (option) {
     return this.each(function () {
-      var $this = $(this)
-        , data = $this.data('bfhphone')
-        , options = typeof option == 'object' && option
-      if (!data) $this.data('bfhphone', (data = new BFHPhone(this, options)))
-      if (typeof option == 'string') data[option]()
-    })
-  }
+      var $this,
+          data,
+          options;
+          
+      $this = $(this);
+      data = $this.data('bfhphone');
+      options = typeof option === 'object' && option;
+      
+      if (!data) {
+        $this.data('bfhphone', (data = new BFHPhone(this, options)));
+      }
+      if (typeof option === 'string') {
+        data[option]();
+      }
+    });
+  };
 
-  $.fn.bfhphone.Constructor = BFHPhone
+  $.fn.bfhphone.Constructor = BFHPhone;
 
   $.fn.bfhphone.defaults = {
-    format: "",
-    number: "",
-    country: ""
-  }
+    format: '',
+    number: '',
+    country: ''
+  };
 
 
- /* PHONE DATA-API
-  * ============== */
+  /* PHONE DATA-API
+   * ============== */
 
   $(window).on('load', function () {
     $('form input[type="text"].bfh-phone, form input[type="tel"].bfh-phone, span.bfh-phone').each(function () {
-      var $phone = $(this)
+      var $phone;
+      
+      $phone = $(this);
 
-      $phone.bfhphone($phone.data())
-    })
-  })
+      $phone.bfhphone($phone.data());
+    });
+  });
   
+  
+  /* APPLY TO STANDARD PHONE ELEMENTS
+   * =================================== */
+   
   $(function () {
     $('body')
       .on('propertychange.bfhphone.data-api change.bfhphone.data-api input.bfhphone.data-api keyup.bfhphone.data-api', '.bfh-phone', BFHPhone.prototype.change)
-      .on('change.bfhphone.data-api', '.bfh-country', BFHPhone.prototype.changeCountry)
-  })
+      .on('change.bfhphone.data-api', '.bfh-country', BFHPhone.prototype.changeCountry);
+  });
 
 }(window.jQuery);

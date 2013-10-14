@@ -17,7 +17,7 @@
  * limitations under the License.
  * ========================================================== */
  
-BFHMonthsList = [
+var BFHMonthsList = [
   'January',
   'February',
   'March',
@@ -30,16 +30,16 @@ BFHMonthsList = [
   'October',
   'November',
   'December'
- ]
+];
  
-BFHDaysList = [
-  "SUN",
-  "MON",
-  "TUE",
-  "WED",
-  "THU",
-  "FRI",
-  "SAT"
- ]
+var BFHDaysList = [
+  'SUN',
+  'MON',
+  'TUE',
+  'WED',
+  'THU',
+  'FRI',
+  'SAT'
+];
  
-BFHDayOfWeekStart = 0
+var BFHDayOfWeekStart = 0;
