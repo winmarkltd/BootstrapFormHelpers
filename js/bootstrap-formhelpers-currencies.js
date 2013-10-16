@@ -102,7 +102,7 @@
             this.flag = currency.substr(0,2);
           }
           if (this.options.flags === true) {
-            $options.append('<li><a tabindex="-1" href="#" data-option="' + currency +  '"><i class="icon-flag-' + this.flag + '"></i>' + this.currencyList[currency].label + '</a></li>');
+            $options.append('<li><a tabindex="-1" href="#" data-option="' + currency +  '"><i class="glyphicon bfh-flag-' + this.flag + '"></i>' + this.currencyList[currency].label + '</a></li>');
           } else {
             $options.append('<li><a tabindex="-1" href="#" data-option="' + currency + '">' + this.currencyList[currency].label + '</a></li>');
           }
@@ -118,7 +118,7 @@
           } else {
             this.flag = value.substr(0,2);
           }
-          $toggle.html('<i class="icon-flag-' + this.flag + '"></i> ' + this.currencyList[value].label);
+          $toggle.html('<i class="glyphicon bfh-flag-' + this.flag + '"></i> ' + this.currencyList[value].label);
         } else {
           $toggle.html(this.currencyList[value].label);
         }
@@ -138,7 +138,7 @@
         this.flag = value.substr(0,2);
       }
       if (this.options.flags === true) {
-        this.$element.html('<i class="icon-flag-' + this.flag + '"></i>' + this.currencyList[value].label);
+        this.$element.html('<i class="glyphicon bfh-flag-' + this.flag + '"></i>' + this.currencyList[value].label);
       } else {
         this.$element.html(this.currencyList[value].label);
       }

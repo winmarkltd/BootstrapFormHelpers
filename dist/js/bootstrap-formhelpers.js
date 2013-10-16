@@ -13844,7 +13844,7 @@ var BFHTimezonesList = {
       for (country in this.countryList) {
         if (this.countryList.hasOwnProperty(country)) {
           if (this.options.flags === true) {
-            $options.append('<li><a tabindex="-1" href="#" data-option="' + country + '"><i class="icon-flag-' + country + '"></i>' + this.countryList[country] + '</a></li>');
+            $options.append('<li><a tabindex="-1" href="#" data-option="' + country + '"><i class="glyphicon bfh-flag-' + country + '"></i>' + this.countryList[country] + '</a></li>');
           } else {
             $options.append('<li><a tabindex="-1" href="#" data-option="' + country + '">' + this.countryList[country] + '</a></li>');
           }
@@ -13855,7 +13855,7 @@ var BFHTimezonesList = {
       
       if (value) {
         if (this.options.flags === true) {
-          $toggle.html('<i class="icon-flag-' + value + '"></i> ' + this.countryList[value]);
+          $toggle.html('<i class="glyphicon bfh-flag-' + value + '"></i> ' + this.countryList[value]);
         } else {
           $toggle.html(this.countryList[value]);
         }
@@ -13870,7 +13870,7 @@ var BFHTimezonesList = {
       value = this.options.country;
       
       if (this.options.flags === true) {
-        this.$element.html('<i class="icon-flag-' + value + '"></i> ' + this.countryList[value]);
+        this.$element.html('<i class="glyphicon bfh-flag-' + value + '"></i> ' + this.countryList[value]);
       } else {
         this.$element.html(this.countryList[value]);
       }
@@ -14029,7 +14029,7 @@ var BFHTimezonesList = {
             this.flag = currency.substr(0,2);
           }
           if (this.options.flags === true) {
-            $options.append('<li><a tabindex="-1" href="#" data-option="' + currency +  '"><i class="icon-flag-' + this.flag + '"></i>' + this.currencyList[currency].label + '</a></li>');
+            $options.append('<li><a tabindex="-1" href="#" data-option="' + currency +  '"><i class="glyphicon bfh-flag-' + this.flag + '"></i>' + this.currencyList[currency].label + '</a></li>');
           } else {
             $options.append('<li><a tabindex="-1" href="#" data-option="' + currency + '">' + this.currencyList[currency].label + '</a></li>');
           }
@@ -14045,7 +14045,7 @@ var BFHTimezonesList = {
           } else {
             this.flag = value.substr(0,2);
           }
-          $toggle.html('<i class="icon-flag-' + this.flag + '"></i> ' + this.currencyList[value].label);
+          $toggle.html('<i class="glyphicon bfh-flag-' + this.flag + '"></i> ' + this.currencyList[value].label);
         } else {
           $toggle.html(this.currencyList[value].label);
         }
@@ -14065,7 +14065,7 @@ var BFHTimezonesList = {
         this.flag = value.substr(0,2);
       }
       if (this.options.flags === true) {
-        this.$element.html('<i class="icon-flag-' + this.flag + '"></i>' + this.currencyList[value].label);
+        this.$element.html('<i class="glyphicon bfh-flag-' + this.flag + '"></i>' + this.currencyList[value].label);
       } else {
         this.$element.html(this.currencyList[value].label);
       }
@@ -15227,7 +15227,7 @@ var BFHTimezonesList = {
           if (language.indexOf('_') !== -1) {
             languageArr = language.split('_');
             if (this.options.flags === true) {
-              $options.append('<li><a tabindex="-1" href="#" data-option="' + language + '"><i class="icon-flag-' + languageArr[1] + '"></i>' + BFHLanguagesList[languageArr[0]].toProperCase() + '</a></li>');
+              $options.append('<li><a tabindex="-1" href="#" data-option="' + language + '"><i class="glyphicon bfh-flag-' + languageArr[1] + '"></i>' + BFHLanguagesList[languageArr[0]].toProperCase() + '</a></li>');
             } else {
               $options.append('<li><a tabindex="-1" href="#" data-option="' + language + '">' + BFHLanguagesList[languageArr[0]].toProperCase() + ' (' + BFHCountriesList[languageArr[1]] + ')</a></li>');
             }
@@ -15247,7 +15247,7 @@ var BFHTimezonesList = {
       if (value.indexOf('_') !== -1) {
         languageArr = value.split('_');
         if (this.options.flags === true) {
-          $toggle.html('<i class="icon-flag-' + languageArr[1] + '"></i> ' + BFHLanguagesList[languageArr[0]]);
+          $toggle.html('<i class="glyphicon bfh-flag-' + languageArr[1] + '"></i> ' + BFHLanguagesList[languageArr[0]]);
         } else {
           $toggle.html(BFHLanguagesList[languageArr[0]] + ' (' + BFHCountriesList[languageArr[1]] + ')');
         }
@@ -15267,7 +15267,7 @@ var BFHTimezonesList = {
       if (value.indexOf('_') !== -1) {
         languageArr = value.split('_');
         if (this.options.flags === true) {
-          this.$element.html('<i class="icon-flag-' + languageArr[1] + '"></i> ' + BFHLanguagesList[languageArr[0]]);
+          this.$element.html('<i class="glyphicon bfh-flag-' + languageArr[1] + '"></i> ' + BFHLanguagesList[languageArr[0]]);
         } else {
           this.$element.html(BFHLanguagesList[languageArr[0]] + ' (' + BFHCountriesList[languageArr[1]] + ')');
         }

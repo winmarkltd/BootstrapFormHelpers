@@ -58,6 +58,32 @@ module.exports = function(grunt) {
         dest: 'dist/js/<%= pkg.name %>.min.js'
       }
     },
+    
+    recess: {
+      options: {
+        compile: true,
+        banner: '<%= banner %>'
+      },
+      bootstrap: {
+        src: ['less/bootstrap-formhelpers.less'],
+        dest: 'dist/css/<%= pkg.name %>.css'
+      },
+      min: {
+        options: {
+          compress: true
+        },
+        src: ['less/bootstrap-formhelpers.less'],
+        dest: 'dist/css/<%= pkg.name %>.min.css'
+      }
+    },
+    
+    copy: {
+      img: {
+        expand: true,
+        src: ['img/*'],
+        dest: 'dist/'
+      }
+    },
 
     watch: {
       src: {
@@ -67,6 +93,10 @@ module.exports = function(grunt) {
       test: {
         files: '<%= jshint.test.src %>',
         tasks: ['jshint:test']
+      },
+      recess: {
+        files: 'less/*.less',
+        tasks: ['recess']
       }
     }
   });
@@ -75,17 +105,25 @@ module.exports = function(grunt) {
   // These plugins provide necessary tasks.
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-concat');
+  grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-recess');
   
-  grunt.registerTask('test', ['jshint']);
+  grunt.registerTask('test', ['dist-css', 'jshint']);
 
   // JS distribution task.
   grunt.registerTask('dist-js', ['concat', 'uglify']);
 
+  // CSS distribution task.
+  grunt.registerTask('dist-css', ['recess']);
+  
+  // Img distribution task.
+  grunt.registerTask('dist-img', ['copy']);
+  
   // Full distribution task.
-  grunt.registerTask('dist', ['clean', 'dist-js']);
+  grunt.registerTask('dist', ['clean', 'dist-css', 'dist-img', 'dist-js']);
 
   // Default task.
   grunt.registerTask('default', ['test', 'dist']);

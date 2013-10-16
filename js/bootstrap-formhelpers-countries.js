@@ -97,7 +97,7 @@
       for (country in this.countryList) {
         if (this.countryList.hasOwnProperty(country)) {
           if (this.options.flags === true) {
-            $options.append('<li><a tabindex="-1" href="#" data-option="' + country + '"><i class="icon-flag-' + country + '"></i>' + this.countryList[country] + '</a></li>');
+            $options.append('<li><a tabindex="-1" href="#" data-option="' + country + '"><i class="glyphicon bfh-flag-' + country + '"></i>' + this.countryList[country] + '</a></li>');
           } else {
             $options.append('<li><a tabindex="-1" href="#" data-option="' + country + '">' + this.countryList[country] + '</a></li>');
           }
@@ -108,7 +108,7 @@
       
       if (value) {
         if (this.options.flags === true) {
-          $toggle.html('<i class="icon-flag-' + value + '"></i> ' + this.countryList[value]);
+          $toggle.html('<i class="glyphicon bfh-flag-' + value + '"></i> ' + this.countryList[value]);
         } else {
           $toggle.html(this.countryList[value]);
         }
@@ -123,7 +123,7 @@
       value = this.options.country;
       
       if (this.options.flags === true) {
-        this.$element.html('<i class="icon-flag-' + value + '"></i> ' + this.countryList[value]);
+        this.$element.html('<i class="glyphicon bfh-flag-' + value + '"></i> ' + this.countryList[value]);
       } else {
         this.$element.html(this.countryList[value]);
       }

@@ -116,7 +116,7 @@
           if (language.indexOf('_') !== -1) {
             languageArr = language.split('_');
             if (this.options.flags === true) {
-              $options.append('<li><a tabindex="-1" href="#" data-option="' + language + '"><i class="icon-flag-' + languageArr[1] + '"></i>' + BFHLanguagesList[languageArr[0]].toProperCase() + '</a></li>');
+              $options.append('<li><a tabindex="-1" href="#" data-option="' + language + '"><i class="glyphicon bfh-flag-' + languageArr[1] + '"></i>' + BFHLanguagesList[languageArr[0]].toProperCase() + '</a></li>');
             } else {
               $options.append('<li><a tabindex="-1" href="#" data-option="' + language + '">' + BFHLanguagesList[languageArr[0]].toProperCase() + ' (' + BFHCountriesList[languageArr[1]] + ')</a></li>');
             }
@@ -136,7 +136,7 @@
       if (value.indexOf('_') !== -1) {
         languageArr = value.split('_');
         if (this.options.flags === true) {
-          $toggle.html('<i class="icon-flag-' + languageArr[1] + '"></i> ' + BFHLanguagesList[languageArr[0]]);
+          $toggle.html('<i class="glyphicon bfh-flag-' + languageArr[1] + '"></i> ' + BFHLanguagesList[languageArr[0]]);
         } else {
           $toggle.html(BFHLanguagesList[languageArr[0]] + ' (' + BFHCountriesList[languageArr[1]] + ')');
         }
@@ -156,7 +156,7 @@
       if (value.indexOf('_') !== -1) {
         languageArr = value.split('_');
         if (this.options.flags === true) {
-          this.$element.html('<i class="icon-flag-' + languageArr[1] + '"></i> ' + BFHLanguagesList[languageArr[0]]);
+          this.$element.html('<i class="glyphicon bfh-flag-' + languageArr[1] + '"></i> ' + BFHLanguagesList[languageArr[0]]);
         } else {
           this.$element.html(BFHLanguagesList[languageArr[0]] + ' (' + BFHCountriesList[languageArr[1]] + ')');
         }

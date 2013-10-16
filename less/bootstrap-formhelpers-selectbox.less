@@ -1,0 +1,240 @@
+//
+// Select box
+// --------------------------------------------------
+
+
+// Select box arrow/caret
+.caret {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  margin-left: 2px;
+  vertical-align: middle;
+  border-top:   @caret-width-base solid @select-caret-color;
+  border-right: @caret-width-base solid transparent;
+  border-left:  @caret-width-base solid transparent;
+  border-bottom: 0 dotted;
+}
+
+// The select box wrapper (div)
+.bfh-selectbox {
+  position: relative;
+  height: 30px;
+  display: inline-block;
+}
+
+// Select box toggle
+.bfh-selectbox-toggle {
+  *margin-bottom: -3px;
+  padding: 4px;
+  display: inline-block;
+  text-decoration: none;
+  color: @select-caret-color;
+  background-color: @select-bg;
+  border: 1px solid @select-fallback-border; // IE8 fallback
+  border: 1px solid @select-border;
+  border-radius: @border-radius-base;
+  
+  &:hover,
+  &:focus {
+    color: @select-caret-color;
+  }
+}
+
+// Prevent the focus on the select box toggle when closing select box
+.bfh-selectbox-toggle:focus {
+  outline: 0;
+}
+
+// The select box options (ul)
+.bfh-selectbox-options {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: @zindex-select;
+  display: none; // none by default, but block on "open" of the menu
+  float: left;
+  min-width: @select-width-base - 80;
+  padding: 5px 0;
+  margin: 2px 0 0; // override default ul
+  font-size: @font-size-base;
+  background-color: @select-bg;
+  border: 1px solid @select-fallback-border; // IE8 fallback
+  border: 1px solid @select-border;
+  border-radius: @border-radius-base;
+  .box-shadow(0 6px 12px rgba(0,0,0,.175));
+  background-clip: padding-box;
+
+  // Aligns the select box to right
+  &.pull-right {
+    right: 0;
+    left: auto;
+  }
+
+  // Dividers (basically an hr) within the select box
+  .divider {
+    .nav-divider(@select-divider-bg);
+  }
+
+  ul {
+    list-style: none;
+    max-height: @select-height-base;
+    overflow-x: hidden;
+    overflow-y: auto;
+    margin: 5px 0 0 0;
+    width: @select-width-base;
+    padding: 0;
+  }
+  
+  // Links within the select box
+  a {
+    display: block;
+    padding: 3px 20px;
+    clear: both;
+    font-weight: normal;
+    line-height: @line-height-base;
+    color: @select-link-color;
+    white-space: nowrap; // prevent links from randomly breaking onto new lines
+  }
+}
+
+// Hover/Focus state
+.bfh-selectbox-options li > a {
+  &:hover,
+  &:focus {
+    text-decoration: none;
+    color: @select-link-hover-color;
+    background-color: @select-link-hover-bg;
+  }
+}
+
+// Active state
+.bfh-selectbox-options .active > a {
+  &,
+  &:hover,
+  &:focus {
+    color: @select-link-active-color;
+    text-decoration: none;
+    outline: 0;
+    background-color: @select-link-active-bg;
+  }
+}
+
+// Disabled state
+//
+// Gray out text and ensure the hover/focus state remains gray
+
+.bfh-selectbox-options .disabled > a {
+  &,
+  &:hover,
+  &:focus {
+    color: @select-link-disabled-color;
+  }
+}
+// Nuke hover/focus effects
+.bfh-selectbox-options .disabled > a {
+  &:hover,
+  &:focus {
+    text-decoration: none;
+    background-color: transparent;
+    background-image: none; // Remove CSS gradient
+    .reset-filter();
+    cursor: not-allowed;
+  }
+}
+
+// Open state for the select box
+.open {
+  // Show the menu
+  > .bfh-selectbox-options {
+    display: block;
+  }
+
+  // Remove the outline when :focus is triggered
+  a {
+    outline: 0;
+  }
+}
+
+// Select box section headers
+.bfh-selectbox-options-header {
+  display: block;
+  padding: 3px 20px;
+  font-size: @font-size-small;
+  line-height: @line-height-base;
+  color: @select-header-color;
+}
+
+// Backdrop to catch body clicks on mobile, etc.
+.bfh-selectbox-backdrop {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  z-index: @zindex-select - 10;
+}
+
+// Select box filter
+.bfh-selectbox-filter {
+  margin: 0 10px;
+  width: @select-width-base - 20;
+}
+
+// Select box option
+.bfh-selectbox-option {
+  display: inline-block;
+  float: left;
+  height: 20px;
+  overflow: hidden;
+}
+
+// Right aligned select box
+.pull-right > .bfh-selectbox-options {
+  right: 0;
+  left: auto;
+}
+
+// Allow for select box to go bottom up
+//
+// Just add .bfh-selectbox-up after the standard .bfh-selectbox class and you're set, bro.
+
+.bfh-selectbox-up,
+.navbar-fixed-bottom .bfh-selectbox {
+  // Reverse the caret
+  .caret {
+    border-top: 0 dotted;
+    border-bottom: 4px solid @select-caret-color;
+    content: "";
+  }
+  // Different positioning for bottom up menu
+  .bfh-selectbox-options {
+    top: auto;
+    bottom: 100%;
+    margin-bottom: 1px;
+  }
+}
+
+.bfh-selectbox-small {
+  width: @input-small;
+}
+
+.bfh-selectbox-medium {
+  width: @input-medium;
+}
+
+.bfh-selectbox-large {
+  width: @input-large;
+}
+
+// Component alignment
+//
+// Reiterate per navbar.less and the modified component alignment there.
+
+@media (min-width: @grid-float-breakpoint) {
+  .navbar-right {
+    .bfh-selectbox-options {
+      .pull-right > .bfh-selectbox-options();
+    }
+  }
+}
