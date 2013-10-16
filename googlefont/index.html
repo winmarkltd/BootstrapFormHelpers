@@ -1,0 +1,107 @@
+---
+layout: default
+title: Google Font Picker jQuery plugins
+description: Extend Bootstrap with Bootstrap Form Helpers Google font picker jQuery plugins.
+base_url: "../"
+seo_url: "/googlefont/"
+---
+
+<h3>About <i>google font picker</i></h3>
+<p>For adding a <b>google font picker</b>, include bootstrap-formhelpers-googlefonts.codes.js and bootstrap-formhelpers-googlefonts.js once alongside the other JS files.</p>
+<h3>Use cases</h3>
+
+<p>Simplest example, with default selected value.</p>
+<form class="example form-inline">
+<div class="bfh-selectbox bfh-googlefonts" data-family="Lato">
+  <input type="hidden" value="">
+  <a class="bfh-selectbox-toggle" role="button" data-toggle="bfh-selectbox" href="#">
+  <span class="bfh-selectbox-option bfh-selectbox-large" data-option=""></span>
+  <b class="caret"></b>
+  </a>
+  <div class="bfh-selectbox-options">
+	<input type="text" class="bfh-selectbox-filter">
+	<div role="listbox">
+	  <ul role="option">
+	  </ul>
+	</div>
+  </div>
+</div>
+</form>
+<pre class="prettyprint">&lt;div class="bfh-selectbox bfh-googlefonts" data-family="Lato"&gt;
+  &lt;input type="hidden" value=""&gt;
+  &lt;a class="bfh-selectbox-toggle" role="button" data-toggle="bfh-selectbox" href="#"&gt;
+    &lt;span class="bfh-selectbox-option bfh-selectbox-large" data-option=""&gt;&lt;/span&gt;
+    &lt;b class="caret"&gt;&lt;/b&gt;
+  &lt;/a&gt;
+  &lt;div class="bfh-selectbox-options"&gt;
+    &lt;input type="text" class="bfh-selectbox-filter"&gt;
+    &lt;div role="listbox"&gt;
+      &lt;ul role="option"&gt;
+      &lt;/ul&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</pre>
+
+<p>Display a subset.</p>
+<form class="example form-inline">
+<div class="bfh-selectbox bfh-googlefonts" data-subsets="latin-ext">
+  <input type="hidden" value="">
+  <a class="bfh-selectbox-toggle" role="button" data-toggle="bfh-selectbox" href="#">
+  <span class="bfh-selectbox-option bfh-selectbox-large" data-option=""></span>
+  <b class="caret"></b>
+  </a>
+  <div class="bfh-selectbox-options">
+	<input type="text" class="bfh-selectbox-filter">
+	<div role="listbox">
+	  <ul role="option">
+	  </ul>
+	</div>
+  </div>
+</div>
+</form>
+<pre class="prettyprint">&lt;div class="bfh-selectbox bfh-googlefonts" data-subsets="latin-ext"&gt;
+  &lt;input type="hidden" value=""&gt;
+  &lt;a class="bfh-selectbox-toggle" role="button" data-toggle="bfh-selectbox" href="#"&gt;
+    &lt;span class="bfh-selectbox-option bfh-selectbox-large" data-option=""&gt;&lt;/span&gt;
+    &lt;b class="caret"&gt;&lt;/b&gt;
+  &lt;/a&gt;
+  &lt;div class="bfh-selectbox-options"&gt;
+    &lt;input type="text" class="bfh-selectbox-filter"&gt;
+    &lt;div role="listbox"&gt;
+      &lt;ul role="option"&gt;
+      &lt;/ul&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</pre>
+
+<p>Limit font choices.</p>
+<form class="example form-inline">
+<div class="bfh-selectbox bfh-googlefonts" data-family="Lato" data-families="Open Sans,Josefin Slab,Avro,Lato,Vollkorn,Abril Fatface,Ubuntu,PT Sans,PT Serif,Old Standard TT,Droid Sans">
+  <input type="hidden" value="">
+  <a class="bfh-selectbox-toggle" role="button" data-toggle="bfh-selectbox" href="#">
+  <span class="bfh-selectbox-option bfh-selectbox-large" data-option=""></span>
+  <b class="caret"></b>
+  </a>
+  <div class="bfh-selectbox-options">
+	<input type="text" class="bfh-selectbox-filter">
+	<div role="listbox">
+	  <ul role="option">
+	  </ul>
+	</div>
+  </div>
+</div>
+</form>
+<pre class="prettyprint">&lt;div class="bfh-selectbox bfh-googlefonts" data-families="Open Sans,Josefin Slab,Avro,Lato,Vollkorn,Abril Fatface,Ubuntu,PT Sans,PT Serif,Old Standard TT,Droid Sans"&gt;
+  &lt;input type="hidden" value=""&gt;
+  &lt;a class="bfh-selectbox-toggle" role="button" data-toggle="bfh-selectbox" href="#"&gt;
+    &lt;span class="bfh-selectbox-option bfh-selectbox-large" data-option=""&gt;&lt;/span&gt;
+    &lt;b class="caret"&gt;&lt;/b&gt;
+  &lt;/a&gt;
+  &lt;div class="bfh-selectbox-options"&gt;
+    &lt;input type="text" class="bfh-selectbox-filter"&gt;
+    &lt;div role="listbox"&gt;
+      &lt;ul role="option"&gt;
+      &lt;/ul&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</pre>

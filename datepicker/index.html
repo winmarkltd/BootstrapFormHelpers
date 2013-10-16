@@ -1,0 +1,191 @@
+---
+layout: default
+title: Date Picker jQuery plugins
+description: Extend Bootstrap with Bootstrap Form Helpers date picker jQuery plugins.
+base_url: "../"
+seo_url: "/datepicker/"
+---
+
+<h3>About <i>date picker</i></h3>
+<p>For adding a <b>date picker</b>, include bootstrap-formhelpers-datepicker.{language}.js and bootstrap-formhelpers-datepicker.js once alongside the other JS files.</p>
+<h3>Use cases</h3>
+
+<p>Simplest example.</p>
+<form class="example form-inline">
+  <div class="bfh-datepicker">
+	<div class="input-group bfh-datepicker-toggle" data-toggle="bfh-datepicker">
+	  <span class="input-group-addon"><i class="glyphicon glyphglyphicon glyphicon-calendar"></i></span>
+	  <input type="text" class="form-control" readonly>
+	</div>
+	<div class="bfh-datepicker-calendar">
+	  <table class="calendar table table-bordered">
+		<thead>
+		  <tr class="months-header">
+			<th class="month" colspan="4">
+			  <a class="previous" href="#"><i class="glyphicon glyphicon-chevron-left"></i></a>
+			  <span></span>
+			  <a class="next" href="#"><i class="glyphicon glyphicon-chevron-right"></i></a>
+			</th>
+			<th class="year" colspan="3">
+			  <a class="previous" href="#"><i class="glyphicon glyphicon-chevron-left"></i></a>
+			  <span></span>
+			  <a class="next" href="#"><i class="glyphicon glyphicon-chevron-right"></i></a>
+			</th>
+		  </tr>
+		  <tr class="days-header">
+		  </tr>
+		</thead>
+		<tbody>
+		</tbody>
+	  </table>
+	</div>
+  </div>
+</form>
+<pre class="prettyprint">&lt;div class="bfh-datepicker"&gt;
+  &lt;div class="input-group bfh-datepicker-toggle" data-toggle="bfh-datepicker"&gt;
+    &lt;span class="input-group-addon"&gt;&lt;i class="glyphicon glyphicon-calendar"&gt;&lt;/i&gt;&lt;/span&gt;
+    &lt;input type="text" class="form-control" readonly&gt;
+  &lt;/div&gt;
+  &lt;div class="bfh-datepicker-calendar"&gt;
+    &lt;table class="calendar table table-bordered"&gt;
+      &lt;thead&gt;
+        &lt;tr class="months-header"&gt;
+          &lt;th class="month" colspan="4"&gt;
+            &lt;a class="previous" href="#"&gt;&lt;i class="glyphicon glyphicon-chevron-left"&gt;&lt;/i&gt;&lt;/a&gt;
+            &lt;span&gt;&lt;/span&gt;
+            &lt;a class="next" href="#"&gt;&lt;i class="glyphicon glyphicon-chevron-right"&gt;&lt;/i&gt;&lt;/a&gt;
+          &lt;/th&gt;
+          &lt;th class="year" colspan="3"&gt;
+            &lt;a class="previous" href="#"&gt;&lt;i class="glyphicon glyphicon-chevron-left"&gt;&lt;/i&gt;&lt;/a&gt;
+            &lt;span&gt;&lt;/span&gt;
+            &lt;a class="next" href="#"&gt;&lt;i class="glyphicon glyphicon-chevron-right"&gt;&lt;/i&gt;&lt;/a&gt;
+          &lt;/th&gt;
+        &lt;/tr&gt;
+        &lt;tr class="days-header"&gt;
+        &lt;/tr&gt;
+      &lt;/thead&gt;
+      &lt;tbody&gt;
+      &lt;/tbody&gt;
+    &lt;/table&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</pre>
+
+<p>Example showing how to set a default date and format.</p>
+<form class="example form-inline">
+  <div class="bfh-datepicker" data-format="y-m-d" data-date="today">
+	<div class="input-group bfh-datepicker-toggle" data-toggle="bfh-datepicker">
+	  <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+	  <input type="text" class="form-control" readonly>
+	</div>
+	<div class="bfh-datepicker-calendar">
+	  <table class="calendar table table-bordered">
+		<thead>
+		  <tr class="months-header">
+			<th class="month" colspan="4">
+			  <a class="previous" href="#"><i class="glyphicon glyphicon-chevron-left"></i></a>
+			  <span></span>
+			  <a class="next" href="#"><i class="glyphicon glyphicon-chevron-right"></i></a>
+			</th>
+			<th class="year" colspan="3">
+			  <a class="previous" href="#"><i class="glyphicon glyphicon-chevron-left"></i></a>
+			  <span></span>
+			  <a class="next" href="#"><i class="glyphicon glyphicon-chevron-right"></i></a>
+			</th>
+		  </tr>
+		  <tr class="days-header">
+		  </tr>
+		</thead>
+		<tbody>
+		</tbody>
+	  </table>
+	</div>
+  </div>
+</form>
+<pre class="prettyprint">&lt;div class="bfh-datepicker" data-format="y-m-d" data-date="today"&gt;
+  &lt;div class="input-group bfh-datepicker-toggle" data-toggle="bfh-datepicker"&gt;
+    &lt;span class="input-group-addon"&gt;&lt;i class="glyphicon glyphicon-calendar"&gt;&lt;/i&gt;&lt;/span&gt;
+    &lt;input type="text" class="form-control" readonly&gt;
+  &lt;/div&gt;
+  &lt;div class="bfh-datepicker-calendar"&gt;
+    &lt;table class="calendar table table-bordered"&gt;
+      &lt;thead&gt;
+        &lt;tr class="months-header"&gt;
+          &lt;th class="month" colspan="4"&gt;
+            &lt;a class="previous" href="#"&gt;&lt;i class="glyphicon glyphicon-chevron-left"&gt;&lt;/i&gt;&lt;/a&gt;
+            &lt;span&gt;&lt;/span&gt;
+            &lt;a class="next" href="#"&gt;&lt;i class="glyphicon glyphicon-chevron-right"&gt;&lt;/i&gt;&lt;/a&gt;
+          &lt;/th&gt;
+          &lt;th class="year" colspan="3"&gt;
+            &lt;a class="previous" href="#"&gt;&lt;i class="glyphicon glyphicon-chevron-left"&gt;&lt;/i&gt;&lt;/a&gt;
+            &lt;span&gt;&lt;/span&gt;
+            &lt;a class="next" href="#"&gt;&lt;i class="glyphicon glyphicon-chevron-right"&gt;&lt;/i&gt;&lt;/a&gt;
+          &lt;/th&gt;
+        &lt;/tr&gt;
+        &lt;tr class="days-header"&gt;
+        &lt;/tr&gt;
+      &lt;/thead&gt;
+      &lt;tbody&gt;
+      &lt;/tbody&gt;
+    &lt;/table&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</pre>
+
+<p>Example showing how to set a range and not close on selecting a date.</p>
+<form class="example form-inline">
+  <div class="bfh-datepicker" data-start="01/15/2013" data-end="today" data-close="0">
+	<div class="input-group bfh-datepicker-toggle" data-toggle="bfh-datepicker">
+	  <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+	  <input type="text" class="form-control" readonly>
+	</div>
+	<div class="bfh-datepicker-calendar">
+	  <table class="calendar table table-bordered">
+		<thead>
+		  <tr class="months-header">
+			<th class="month" colspan="4">
+			  <a class="previous" href="#"><i class="glyphicon glyphicon-chevron-left"></i></a>
+			  <span></span>
+			  <a class="next" href="#"><i class="glyphicon glyphicon-chevron-right"></i></a>
+			</th>
+			<th class="year" colspan="3">
+			  <a class="previous" href="#"><i class="glyphicon glyphicon-chevron-left"></i></a>
+			  <span></span>
+			  <a class="next" href="#"><i class="glyphicon glyphicon-chevron-right"></i></a>
+			</th>
+		  </tr>
+		  <tr class="days-header">
+		  </tr>
+		</thead>
+		<tbody>
+		</tbody>
+	  </table>
+	</div>
+  </div>
+</form>
+<pre class="prettyprint">&lt;div class="bfh-datepicker" data-start="01/15/2013" data-end="today" data-close="0"&gt;
+  &lt;div class="input-group bfh-datepicker-toggle" data-toggle="bfh-datepicker"&gt;
+    &lt;span class="input-group-addon"&gt;&lt;i class="glyphicon glyphicon-calendar"&gt;&lt;/i&gt;&lt;/span&gt;
+    &lt;input type="text" class="form-control" readonly&gt;
+  &lt;/div&gt;
+  &lt;div class="bfh-datepicker-calendar"&gt;
+    &lt;table class="calendar table table-bordered"&gt;
+      &lt;thead&gt;
+        &lt;tr class="months-header"&gt;
+          &lt;th class="month" colspan="4"&gt;
+            &lt;a class="previous" href="#"&gt;&lt;i class="glyphicon glyphicon-chevron-left"&gt;&lt;/i&gt;&lt;/a&gt;
+            &lt;span&gt;&lt;/span&gt;
+            &lt;a class="next" href="#"&gt;&lt;i class="glyphicon glyphicon-chevron-right"&gt;&lt;/i&gt;&lt;/a&gt;
+          &lt;/th&gt;
+          &lt;th class="year" colspan="3"&gt;
+            &lt;a class="previous" href="#"&gt;&lt;i class="glyphicon glyphicon-chevron-left"&gt;&lt;/i&gt;&lt;/a&gt;
+            &lt;span&gt;&lt;/span&gt;
+            &lt;a class="next" href="#"&gt;&lt;i class="glyphicon glyphicon-chevron-right"&gt;&lt;/i&gt;&lt;/a&gt;
+          &lt;/th&gt;
+        &lt;/tr&gt;
+        &lt;tr class="days-header"&gt;
+        &lt;/tr&gt;
+      &lt;/thead&gt;
+      &lt;tbody&gt;
+      &lt;/tbody&gt;
+    &lt;/table&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</pre>

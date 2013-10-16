@@ -1,0 +1,74 @@
+---
+layout: default
+title: Currency Picker jQuery plugins
+description: Extend Bootstrap with Bootstrap Form Helpers currency picker jQuery plugins.
+base_url: "../"
+seo_url: "/currency/"
+---
+
+<h3>About <i>currency picker</i></h3>
+<p>For adding a <b>currency picker</b> or display a currency name from a currency code, include bootstrap-formhelpers-currencies.{language}.js and bootstrap-formhelpers-currencies.js once alongside the other JS files.</p>
+<p>If you want to have access to the country flags, you can include bootstrap-formhelpers-countries.flags.css once alongside the other CSS files.</p>
+<h3>Use cases</h3>
+
+<p>Example for loading the list of currencies and selecting a default currency</p>
+<form class="example form-inline">
+  <select class="form-control bfh-currencies" data-currency="EUR"></select>
+</form>
+<pre class="prettyprint">&lt;select class="form-control bfh-currencies" data-currency="EUR"&gt;&lt;/select&gt;</pre>
+
+<p>Example for loading the list of currencies, limited to a specific list of currencies</p>
+<form class="example form-inline">
+  <select class="form-control bfh-currencies" data-currencyList="USD,AUD,EUR"></select>
+</form>
+<pre class="prettyprint">&lt;select class="form-control bfh-currencies" data-currencyList="USD,AUD,EUR"&gt;&lt;/select&gt;</pre>
+
+<p>Example for loading the list of currencies in JavaScript and selecting a default currency</p>
+<form class="example form-inline">
+  <button onclick="$('#currencies1').bfhcurrencies({currency: 'USD'});return false;" class="btn">Load Currencies</button>
+  <br><br>
+  <select id="currencies1" class="form-control"></select>
+</form>
+<pre class="prettyprint">&lt;button onclick="$('#currencies1').bfhcurrencies({currency: 'USD'})" class="btn"&gt;
+  Load Currencies
+&lt;/button&gt;
+&lt;br&gt;&lt;br&gt;
+&lt;select id="currencies1" class="form-control"&gt;&lt;/select&gt;</pre>
+
+<p>Example for loading the list of currencies and currencies flags using Bootstrap Form Helpers' Select Box</p>
+<form class="example form-inline">
+  <div class="bfh-selectbox bfh-currencies" data-currency="EUR" data-flags="true">
+	<input type="hidden" value="">
+	<a class="bfh-selectbox-toggle" role="button" data-toggle="bfh-selectbox" href="#">
+	  <span class="bfh-selectbox-option bfh-selectbox-medium" data-option=""></span>
+	  <b class="caret"></b>
+	</a>
+	<div class="bfh-selectbox-options">
+	  <input type="text" class="bfh-selectbox-filter">
+	  <div role="listbox">
+		<ul role="option">
+		</ul>
+	  </div>
+	</div>
+  </div>
+</form>
+<pre class="prettyprint">&lt;div class="bfh-selectbox bfh-currencies" data-currency="EUR" data-flags="true"&gt;
+  &lt;input type="hidden" value=""&gt;
+  &lt;a class="bfh-selectbox-toggle" role="button" data-toggle="bfh-selectbox" href="#"&gt;
+    &lt;span class="bfh-selectbox-option bfh-selectbox-medium" data-option=""&gt;&lt;/span&gt;
+    &lt;b class="caret"&gt;&lt;/b&gt;
+  &lt;/a&gt;
+  &lt;div class="bfh-selectbox-options"&gt;
+    &lt;input type="text" class="bfh-selectbox-filter"&gt;
+    &lt;div role="listbox"&gt;
+      &lt;ul role="option"&gt;
+      &lt;/ul&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</pre>
+
+<p>Example for displaying the currency name and currency flag from a currency code</p>
+<form class="example form-inline">
+	<span class="bfh-currencies" data-currency="XCD" data-flags="true"></span>
+</form>
+<pre class="prettyprint">&lt;span class="bfh-currencies" data-currency="XCD" data-flags="true"&gt;&lt;/span&gt;</pre>

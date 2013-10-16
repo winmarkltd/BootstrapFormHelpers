@@ -1,3 +1,5 @@
+.DS_Store
+_site
 /nbproject/private/
 /nbproject/project.properties
 /nbproject/project.xml
