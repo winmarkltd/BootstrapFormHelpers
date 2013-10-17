@@ -16,16 +16,16 @@
             "type": "package",
             "package": {
                 "name": "jquery/jquery",
-                "version": "1.9.1",
+                "version": "1.10.2",
                 "dist": {
-                    "url": "http://code.jquery.com/jquery-1.9.1.js",
+                    "url": "http://code.jquery.com/jquery-1.10.2.min.js",
                     "type": "file"
                 }
             }
         }
     ],
 	"require": {
-		"jquery/jquery": "1.9.*",
-        "twitter/bootstrap": "2.3.*"
+		"jquery/jquery": "1.10.*",
+        "twitter/bootstrap": "3.0.*"
     }
 }
