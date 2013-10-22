@@ -9,14 +9,26 @@ seo_url: "/"
 ### About Bootstrap Form Helpers
 
 **Bootstrap** Form Helpers is a collection of **jQuery plugins** to help you build
-better forms. The components can be used individually but some of them work together
-like Countries and States.
+better forms. The plugins can be used individually but some of them work together
+like Countries and States. The collection includes:
+
+* A custom select element
+* A country picker
+* A state picker
+* A currency picker
+* A phone input
+* A language picker
+* A timezone picker
+* A Google font picker
+* A date picker
+* A time picker
+* A font picker
+* A font size picker
 
 These [*jQuery plugins*](http://plugins.jquery.com) are based on
 [*Bootstrap*](https://github.com/twbs/bootstrap).
 
-These jQuery plugins are distributed for free but you can contribute and make them
-better.
+The plugins are distributed for free but you can contribute and make them better.
 
 
 ### Quick start
