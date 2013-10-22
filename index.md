@@ -26,9 +26,8 @@ like Countries and States. The collection includes:
 * A font size picker
 
 These [*jQuery plugins*](http://plugins.jquery.com) are based on
-[*Bootstrap*](https://github.com/twbs/bootstrap).
-
-The plugins are distributed for free but you can contribute and make them better.
+[*Bootstrap*](https://github.com/twbs/bootstrap). They are distributed for free but
+you can contribute and make them better.
 
 
 ### Quick start
