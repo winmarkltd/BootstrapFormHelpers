@@ -47,6 +47,9 @@
         }
       }
       
+      if( !this.options.number && this.$element.val() )
+        this.options.number = this.$element.val().replace(/\D/g, '');
+      
       this.addFormatter();
     }
     
