@@ -1,5 +1,7 @@
-BootstrapFormHelpers(http://bootstrapformhelpers.com)
+BootstrapFormHelpers
 ====================
+
+(http://bootstrapformhelpers.com)
 
 [![Stories in Ready](https://badge.waffle.io/vlamanna/BootstrapFormHelpers.png)](http://waffle.io/vlamanna/BootstrapFormHelpers)  
 
