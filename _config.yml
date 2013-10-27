@@ -1,1 +1,4 @@
 name: Bootstrap Form Helpers
+
+markdown:         rdiscount
+pygments:         true

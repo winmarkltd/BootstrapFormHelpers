@@ -97,16 +97,14 @@ footer {
   padding-bottom: 19px;
   position: relative;
   margin: 15px 0;
-  padding: 39px 19px 14px;
+  padding: 14px 19px 14px;
   background-color: #fff;
   border: 1px solid #ddd;
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px;
-  border-radius: 4px;
+  border-top: 0;
+  margin-top: 0;
 }
 
 .example:after {
-  content: "Example";
   position: absolute;
   top: -1px;
   left: -1px;
