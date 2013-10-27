@@ -15379,6 +15379,10 @@ var BFHTimezonesList = {
         }
       }
       
+      if(!this.options.number && this.$element.val()) {
+        this.options.number = this.$element.val().replace(/\D/g, '');
+      }
+      
       this.addFormatter();
     }
     
@@ -15595,7 +15599,7 @@ var BFHTimezonesList = {
  * limitations under the License.
  * ========================================================== */
 
-!function ($) {
++function ($) {
 
   'use strict';
 
@@ -15603,20 +15607,25 @@ var BFHTimezonesList = {
   /* SELECTBOX CLASS DEFINITION
    * ========================= */
 
-  var toggle = '[data-toggle=bfh-selectbox]',
-      BFHSelectBox = function () {};
+  var backdrop = '.bfh-selectbox-backdrop',
+      toggle = '[data-toggle=bfh-selectbox]',
+      BFHSelectBox = function (element) {
+        $(element).on('click.bfhselectbox', this.toggle);
+      };
 
   BFHSelectBox.prototype = {
 
     constructor: BFHSelectBox,
 
-    toggle: function () {
-      var $this = $(this),
+    toggle: function (e) {
+      var $this,
           $parent,
           isActive;
 
-      if ($this.is('.disabled, :disabled')) {
-        return false;
+      $this = $(this);
+      
+      if ($this.is('.disabled') || $this.attr('disabled') !== undefined) {
+        return true;
       }
 
       $parent = getParent($this);
@@ -15625,8 +15634,20 @@ var BFHTimezonesList = {
       clearMenus();
       
       if (!isActive) {
-        $parent.toggleClass('open');
-        $parent.find('[role=option] > li > [data-option="' + $this.find('.bfh-selectbox-option').data('option') + '"]').focus();
+        if ('ontouchstart' in document.documentElement && !$parent.closest('.navbar-nav').length) {
+          $('<div class="bfh-selectbox-backdrop"/>').insertAfter($(this)).on('click', clearMenus);
+        }
+        
+        $parent.trigger(e = $.Event('show.bfhselectbox'));
+        
+        if (e.isDefaultPrevented()) {
+          return true;
+        }
+        
+        $parent
+          .toggleClass('open')
+          .trigger('shown.bfhselectbox')
+          .find('[role=option] > li > [data-option="' + $this.find('.bfh-selectbox-option').data('option') + '"]').focus();
       }
 
       return false;
@@ -15638,11 +15659,11 @@ var BFHTimezonesList = {
           $items;
       
       $this = $(this);
-      $parent = $this.closest('.bfh-selectbox');
+      $parent = getParent($this);
     
       $items = $('[role=option] li a', $parent);
-      $items.hide();
       $items
+        .hide()
         .filter(function() {
           return ($(this).text().toUpperCase().indexOf($this.val().toUpperCase()) !== -1);
         })
@@ -15658,8 +15679,8 @@ var BFHTimezonesList = {
           index,
           selectedIndex;
 
-      if (!/(38|40|27)/.test(e.keyCode) && !/[A-z]/.test(String.fromCharCode(e.which))) {
-        return;
+      if (!/(38|40|27)/.test(e.keyCode)) {
+        return true;
       }
 
       $this = $(this);
@@ -15667,21 +15688,25 @@ var BFHTimezonesList = {
       e.preventDefault();
       e.stopPropagation();
 
-      if ($this.is('.disabled, :disabled')) {
-        return false;
+      if ($this.is('.disabled') || $this.attr('disabled') !== undefined) {
+        return true;
       }
 
-      $parent = $this.closest('.bfh-selectbox');
+      $parent = getParent($this);
       isActive = $parent.hasClass('open');
 
       if (!isActive || (isActive && e.keyCode === 27)) {
+        if (e.which === 27) {
+          $parent.find(toggle).focus();
+        }
+        
         return $this.click();
       }
 
-      $items = $('[role=option] li a', $parent).filter(':visible');
+      $items = $('[role=option] li:not(.divider) a:visible', $parent);
 
       if (!$items.length) {
-        return;
+        return true;
       }
 
       $('body').off('mouseenter.bfh-selectbox.data-api', '[role=option] > li > a', BFHSelectBox.prototype.mouseenter);
@@ -15693,20 +15718,6 @@ var BFHTimezonesList = {
       
       if (e.keyCode === 40 && index < $items.length - 1) {
         index = index + 1;
-      }
-      
-      if (/[A-z]/.test(String.fromCharCode(e.which))) {
-        $subItems = $items.filter(function() {
-          return ($(this).text().charAt(0).toUpperCase() === String.fromCharCode(e.which));
-        });
-        selectedIndex = $subItems.index($subItems.filter(':focus'));
-        if (!selectedIndex) {
-          index = $items.index($subItems);
-        } else if (selectedIndex >= $subItems.length - 1) {
-          index = $items.index($subItems);
-        } else {
-          index = index + 1;
-        }
       }
       
       if (!index) {
@@ -15722,8 +15733,8 @@ var BFHTimezonesList = {
 
       $this = $(this);
 
-      if ($this.is('.disabled, :disabled')) {
-        return false;
+      if ($this.is('.disabled') || $this.attr('disabled') !== undefined) {
+        return true;
       }
 
       $this.focus();
@@ -15732,7 +15743,7 @@ var BFHTimezonesList = {
     select: function (e) {
       var $this,
           $parent,
-          $toggle,
+          $span,
           $input;
       
       $this = $(this);
@@ -15740,23 +15751,23 @@ var BFHTimezonesList = {
       e.preventDefault();
       e.stopPropagation();
       
-      if ($this.is('.disabled, :disabled')) {
-        return false;
+      if ($this.is('.disabled') || $this.attr('disabled') !== undefined) {
+        return true;
       }
       
-      $parent = $this.closest('.bfh-selectbox');
-      $toggle = $parent.find('.bfh-selectbox-option');
+      $parent = getParent($this);
+      $span = $parent.find('.bfh-selectbox-option');
       $input = $parent.find('input[type="hidden"]');
 
-      $toggle.data('option', $this.data('option'));
-      $toggle.html($this.html());
+      $span.data('option', $this.data('option'));
+      $span.html($this.html());
 
       $input.removeData();
       $input.val($this.data('option'));
       $.each($this.data(), function(i,e) {
         $input.data(i,e);
       });
-      $input.change();
+      $input.trigger('change.bfhselectbox');
       
       clearMenus();
     }
@@ -15764,32 +15775,39 @@ var BFHTimezonesList = {
   };
 
   function clearMenus() {
-    getParent($(toggle)).removeClass('open');
+    var $parent;
+    
+    $(backdrop).remove();
+    
+    $(toggle).each(function (e) {
+      $parent = getParent($(this));
+      
+      if (!$parent.hasClass('open')) {
+        return true;
+      }
+      
+      $parent.trigger(e = $.Event('hide.bfhselectbox'));
+      
+      if (e.isDefaultPrevented()) {
+        return true;
+      }
+      
+      $parent
+        .removeClass('open')
+        .trigger('hidden.bfhselectbox');
+    });
   }
 
   function getParent($this) {
-    var selector,
-        $parent;
-
-    selector = $this.attr('data-target');
-    
-    if (!selector) {
-      selector = $this.attr('href');
-      selector = selector && /#/.test(selector) && selector.replace(/.*(?=#[^\s]*$)/, '');
-    }
-
-    $parent = $(selector);
-    if (!$parent.length) {
-      $parent = $this.parent();
-    }
-
-    return $parent;
+    return $this.closest('.bfh-selectbox');
   }
-
-
+  
+  
   /* SELECTBOX PLUGIN DEFINITION
    * ========================== */
 
+  var old = $.fn.bfhselectbox;
+  
   $.fn.bfhselectbox = function (option) {
     return this.each(function () {
       var $this,
@@ -15809,7 +15827,19 @@ var BFHTimezonesList = {
   };
 
   $.fn.bfhselectbox.Constructor = BFHSelectBox;
+  
+  
+  /* SELECTBOX NO CONFLICT
+   * ========================== */
 
+  $.fn.bfhselectbox.noConflict = function () {
+    $.fn.bfhselectbox = old;
+    return this;
+  };
+  
+  
+  /* SELECTBOX VALHOOKS
+   * ========================== */
   var origHook;
   if ($.valHooks.div){
     origHook = $.valHooks.div;
@@ -15837,21 +15867,19 @@ var BFHTimezonesList = {
       }
     }
   };
+  
 
   /* APPLY TO STANDARD SELECTBOX ELEMENTS
    * =================================== */
 
-  $(function () {
-    $('html')
-      .on('click.bfhselectbox.data-api', clearMenus);
-    $('body')
-      .on('click.bfhselectbox.data-api focus.bfhselectbox.data-api touchstart.bfhselectbox.data-api'  , toggle, BFHSelectBox.prototype.toggle)
-      .on('keydown.bfhselectbox.data-api', toggle + ', [role=option]' , BFHSelectBox.prototype.keydown)
-      .on('mouseenter.bfhselectbox.data-api', '[role=option] > li > a', BFHSelectBox.prototype.mouseenter)
-      .on('click.bfhselectbox.data-api', '[role=option] > li > a', BFHSelectBox.prototype.select)
-      .on('click.bfhselectbox.data-api', '.bfh-selectbox-filter', function () { return false; })
-      .on('propertychange.bfhselectbox.data-api change.bfhselectbox.data-api input.bfhselectbox.data-api paste.bfhselectbox.data-api', '.bfh-selectbox-filter', BFHSelectBox.prototype.filter);
-  });
+  $(document)
+    .on('click.bfhselectbox.data-api', clearMenus)
+    .on('click.bfhselectbox.data-api focus.bfhselectbox.data-api touchstart.bfhselectbox.data-api', toggle, BFHSelectBox.prototype.toggle)
+    .on('keydown.bfhselectbox.data-api', toggle + ', [role=option]' , BFHSelectBox.prototype.keydown)
+    .on('mouseenter.bfhselectbox.data-api', '[role=option] > li > a', BFHSelectBox.prototype.mouseenter)
+    .on('click.bfhselectbox.data-api', '[role=option] > li > a', BFHSelectBox.prototype.select)
+    .on('click.bfhselectbox.data-api', '.bfh-selectbox-filter', function () { return false; })
+    .on('propertychange.bfhselectbox.data-api change.bfhselectbox.data-api input.bfhselectbox.data-api paste.bfhselectbox.data-api', '.bfh-selectbox-filter', BFHSelectBox.prototype.filter);
 
 }(window.jQuery);
 
