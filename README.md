@@ -1,6 +1,11 @@
-[![Stories in Ready](https://badge.waffle.io/vlamanna/BootstrapFormHelpers.png)](http://waffle.io/vlamanna/BootstrapFormHelpers)  
-BootstrapFormHelpers(http://bootstrapformhelpers.com)
+BootstrapFormHelpers
 ====================
+
+http://bootstrapformhelpers.com
+
+[![Stories in Ready](https://badge.waffle.io/vlamanna/BootstrapFormHelpers.png)](http://waffle.io/vlamanna/BootstrapFormHelpers)  
+
+[![Build Status](https://travis-ci.org/vlamanna/BootstrapFormHelpers.png?branch=master)](https://travis-ci.org/vlamanna/BootstrapFormHelpers)
 
 BootstrapFormHelpers is a set of javascript to help you create user friendly forms, created and maintained by [Vincent Lamanna](http://twitter.com/vincentlamanna).
 
