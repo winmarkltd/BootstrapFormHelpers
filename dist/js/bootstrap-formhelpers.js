@@ -13764,7 +13764,7 @@ var BFHTimezonesList = {
  * limitations under the License.
  * ========================================================== */
  
-!function ($) {
++function ($) {
 
   'use strict';
 
@@ -13773,35 +13773,19 @@ var BFHTimezonesList = {
    * ====================== */
 
   var BFHCountries = function (element, options) {
-    var country;
-    
     this.options = $.extend({}, $.fn.bfhcountries.defaults, options);
     this.$element = $(element);
-    
-    if (this.options.countrylist) {
-      this.countryList = [];
-      this.options.countrylist = this.options.countrylist.split(',');
-      for (country in BFHCountriesList) {
-        if (BFHCountriesList.hasOwnProperty(country)) {
-          if ($.inArray(country, this.options.countrylist) >= 0) {
-            this.countryList[country] = BFHCountriesList[country];
-          }
-        }
-      }
-    } else {
-      this.countryList = BFHCountriesList;
-    }
 
     if (this.$element.is('select')) {
       this.addCountries();
     }
 
-    if (this.$element.is('span')) {
-      this.displayCountry();
-    }
-
     if (this.$element.hasClass('bfh-selectbox')) {
       this.addBootstrapCountries();
+    }
+    
+    if (this.$element.is('span')) {
+      this.displayCountry();
     }
   };
 
@@ -13809,17 +13793,46 @@ var BFHTimezonesList = {
 
     constructor: BFHCountries,
 
+    getCountries: function() {
+      var country,
+          countries;
+      
+      if (this.options.available) {
+        countries = [];
+        
+        this.options.available = this.options.available.split(',');
+        
+        for (country in BFHCountriesList) {
+          if (BFHCountriesList.hasOwnProperty(country)) {
+            if ($.inArray(country, this.options.available) >= 0) {
+              countries[country] = BFHCountriesList[country];
+            }
+          }
+        }
+        
+        return countries;
+      } else {
+        return BFHCountriesList;
+      }
+    },
+    
     addCountries: function () {
       var value,
-          country;
+          country,
+          countries;
           
       value = this.options.country;
+      countries = this.getCountries();
       
       this.$element.html('');
-      this.$element.append('<option value=""></option>');
-      for (country in this.countryList) {
-        if (this.countryList.hasOwnProperty(country)) {
-          this.$element.append('<option value="' + country + '">' + this.countryList[country] + '</option>');
+      
+      if (this.options.blank === true) {
+        this.$element.append('<option value=""></option>');
+      }
+      
+      for (country in countries) {
+        if (countries.hasOwnProperty(country)) {
+          this.$element.append('<option value="' + country + '">' + countries[country] + '</option>');
         }
       }
       
@@ -13831,22 +13844,27 @@ var BFHTimezonesList = {
           $toggle,
           $options,
           value,
-          country;
+          country,
+          countries;
       
       value = this.options.country;
-      
       $input = this.$element.find('input[type="hidden"]');
       $toggle = this.$element.find('.bfh-selectbox-option');
       $options = this.$element.find('[role=option]');
+      countries = this.getCountries();
       
       $options.html('');
-      $options.append('<li><a tabindex="-1" href="#" data-option=""></a></li>');
-      for (country in this.countryList) {
-        if (this.countryList.hasOwnProperty(country)) {
+      
+      if (this.options.blank === true) {
+        $options.append('<li><a tabindex="-1" href="#" data-option=""></a></li>');
+      }
+      
+      for (country in countries) {
+        if (countries.hasOwnProperty(country)) {
           if (this.options.flags === true) {
-            $options.append('<li><a tabindex="-1" href="#" data-option="' + country + '"><i class="glyphicon bfh-flag-' + country + '"></i>' + this.countryList[country] + '</a></li>');
+            $options.append('<li><a tabindex="-1" href="#" data-option="' + country + '"><i class="glyphicon bfh-flag-' + country + '"></i>' + countries[country] + '</a></li>');
           } else {
-            $options.append('<li><a tabindex="-1" href="#" data-option="' + country + '">' + this.countryList[country] + '</a></li>');
+            $options.append('<li><a tabindex="-1" href="#" data-option="' + country + '">' + countries[country] + '</a></li>');
           }
         }
       }
@@ -13855,9 +13873,9 @@ var BFHTimezonesList = {
       
       if (value) {
         if (this.options.flags === true) {
-          $toggle.html('<i class="glyphicon bfh-flag-' + value + '"></i> ' + this.countryList[value]);
+          $toggle.html('<i class="glyphicon bfh-flag-' + value + '"></i>' + countries[value]);
         } else {
-          $toggle.html(this.countryList[value]);
+          $toggle.html(countries[value]);
         }
       }
       
@@ -13870,9 +13888,9 @@ var BFHTimezonesList = {
       value = this.options.country;
       
       if (this.options.flags === true) {
-        this.$element.html('<i class="glyphicon bfh-flag-' + value + '"></i> ' + this.countryList[value]);
+        this.$element.html('<i class="glyphicon bfh-flag-' + value + '"></i> ' + BFHCountriesList[value]);
       } else {
-        this.$element.html(this.countryList[value]);
+        this.$element.html(BFHCountriesList[value]);
       }
     }
 
@@ -13882,6 +13900,8 @@ var BFHTimezonesList = {
   /* COUNTRY PLUGIN DEFINITION
    * ======================= */
 
+  var old = $.fn.bfhcountries;
+  
   $.fn.bfhcountries = function (option) {
     return this.each(function () {
       var $this,
@@ -13905,8 +13925,18 @@ var BFHTimezonesList = {
 
   $.fn.bfhcountries.defaults = {
     country: '',
-    countryList: '',
-    flags: false
+    available: '',
+    flags: false,
+    blank: true
+  };
+  
+  
+  /* SELECTBOX NO CONFLICT
+   * ========================== */
+
+  $.fn.bfhcountries.noConflict = function () {
+    $.fn.bfhcountries = old;
+    return this;
   };
   
 
