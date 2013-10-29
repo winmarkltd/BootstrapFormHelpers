@@ -60,7 +60,7 @@ There is also an option to display the country flags.
   </div>
   <div class="tab-pane fade" id="example4">
     <form class="example form-inline">
-      <p>Example for loading the list of countries and flags using Bootstrap Form Helpers' Select Box</p>
+      <p>Example for loading the list of countries and flags using Bootstrap Form Helpers Select Box</p>
 	  <div class="bfh-selectbox bfh-countries" data-country="US" data-flags="true">
 		<input type="hidden" value="">
 		<a class="bfh-selectbox-toggle" role="button" data-toggle="bfh-selectbox" href="#">
@@ -124,7 +124,7 @@ There is also an option to display the country flags.
   <tbody>
     <tr>
       <td>country</td>
-      <td>Two letters country code. To select a country. Required when blank is set to true. <em>Default: ''</em></td>
+      <td>Two letters country code. To select a country. Required when blank is set to false. <em>Default: ''</em></td>
     </tr>
     <tr>
       <td>available</td>
