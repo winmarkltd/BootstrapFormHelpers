@@ -8,7 +8,7 @@ $(function () {
     var bfhselectbox;
 
     bfhselectbox = $.fn.bfhselectbox.noConflict();
-    ok(!$.fn.bfhselectbox, 'selectbox was set back to undefined (org value)');
+    ok(!$.fn.bfhselectbox, 'bfhselectbox was set back to undefined (org value)');
     $.fn.bfhselectbox = bfhselectbox;
   });
 

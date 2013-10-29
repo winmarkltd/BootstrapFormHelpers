@@ -8,7 +8,7 @@ $(function () {
     var bfhcountries;
 
     bfhcountries = $.fn.bfhcountries.noConflict();
-    ok(!$.fn.bfhcountries, 'countries was set back to undefined (org value)');
+    ok(!$.fn.bfhcountries, 'bfhcountries was set back to undefined (org value)');
     $.fn.bfhcountries = bfhcountries;
   });
 

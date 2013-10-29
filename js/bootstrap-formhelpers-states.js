@@ -17,7 +17,7 @@
  * limitations under the License.
  * ========================================================== */
  
-!function ($) {
++function ($) {
 
   'use strict';
 
@@ -33,12 +33,12 @@
       this.addStates();
     }
     
-    if (this.$element.is('span')) {
-      this.displayState();
-    }
-    
     if (this.$element.hasClass('bfh-selectbox')) {
       this.addBootstrapStates();
+    }
+    
+    if (this.$element.is('span')) {
+      this.displayState();
     }
   };
 
@@ -48,18 +48,16 @@
 
     addStates: function () {
       var country,
-          formObject,
-          countryObject;
+          $country;
       
       country = this.options.country;
       
       if (country !== '') {
-        formObject = this.$element.closest('form');
-        countryObject = formObject.find('#' + country);
+        $country = $(document).find('#' + country);
 
-        if (countryObject.length !== 0) {
-          country = countryObject.val();
-          countryObject.on('change.bfhcountries.data-api', {stateObject: this}, this.changeCountry);
+        if ($country.length !== 0) {
+          country = $country.val();
+          $country.on('change', {state: this}, this.changeCountry);
         }
       }
       
@@ -73,7 +71,11 @@
       value = this.options.state;
       
       this.$element.html('');
-      this.$element.append('<option value=""></option>');
+      
+      if (this.options.blank === true) {
+        this.$element.append('<option value=""></option>');
+      }
+      
       for (state in BFHStatesList[country]) {
         if (BFHStatesList[country].hasOwnProperty(state)) {
           this.$element.append('<option value="' + BFHStatesList[country][state].code + '">' + BFHStatesList[country][state].name + '</option>');
@@ -85,30 +87,28 @@
     
     changeCountry: function (e) {
       var $this,
-          stateObject,
+          $state,
           country;
           
       $this = $(this);
-      stateObject = e.data.stateObject;
+      $state = e.data.state;
       country = $this.val();
         
-      stateObject.loadStates(country);
+      $state.loadStates(country);
     },
     
     addBootstrapStates: function() {
       var country,
-          formObject,
-          countryObject;
+          $country;
           
       country = this.options.country;
       
       if (country !== '') {
-        formObject = this.$element.closest('form');
-        countryObject = formObject.find('#' + country);
+        $country = $(document).find('#' + country);
         
-        if (countryObject.length !== 0) {
-          country = countryObject.find('input[type="hidden"]').val();
-          countryObject.find('input[type="hidden"]').on('change.bfhcountries.data-api', {stateObject: this}, this.changeBootstrapCountry);
+        if ($country.length !== 0) {
+          country = $country.find('input[type="hidden"]').val();
+          $country.on('change.bfhselectbox', {state: this}, this.changeBootstrapCountry);
         }
       }
       
@@ -119,42 +119,51 @@
       var $input,
           $toggle,
           $options,
-          value,
+          stateCode,
+          stateName,
           state;
       
-      value = this.options.state;
+      stateCode = this.options.state;
+      stateName = '';
       $input = this.$element.find('input[type="hidden"]');
       $toggle = this.$element.find('.bfh-selectbox-option');
       $options = this.$element.find('[role=option]');
       
       $options.html('');
-      $options.append('<li><a tabindex="-1" href="#" data-option=""></a></li>');
+      
+      if (this.options.blank === true) {
+        $options.append('<li><a tabindex="-1" href="#" data-option=""></a></li>');
+      }
+      
       for (state in BFHStatesList[country]) {
         if (BFHStatesList[country].hasOwnProperty(state)) {
           $options.append('<li><a tabindex="-1" href="#" data-option="' + BFHStatesList[country][state].code + '">' + BFHStatesList[country][state].name + '</a></li>');
+          
+          if (BFHStatesList[country][state].code === stateCode) {
+            stateName = BFHStatesList[country][state].name;
+          }
         }
       }
       
-      $toggle.data('option', value);
-      if (typeof BFHStatesList[country][value] === 'undefined') {
-        $toggle.html('');
-      } else {
-        $toggle.html(BFHStatesList[country][value]);
+      $toggle.data('option', stateCode);
+      
+      if (stateName !== '') {
+        $toggle.html(stateName);
       }
       
-      $input.val(value);
+      $input.val(stateCode);
     },
     
     changeBootstrapCountry: function (e) {
       var $this,
-          stateObject,
+          $state,
           country;
             
       $this = $(this);
-      stateObject = e.data.stateObject;
+      $state = e.data.state;
       country = $this.val();
-        
-      stateObject.loadBootstrapStates(country);
+      
+      $state.loadBootstrapStates(country);
     },
     
     displayState: function () {
@@ -184,6 +193,8 @@
  /* STATES PLUGIN DEFINITION
   * ======================= */
 
+  var old = $.fn.bfhstates;
+  
   $.fn.bfhstates = function (option) {
     return this.each(function () {
       var $this,
@@ -207,7 +218,17 @@
 
   $.fn.bfhstates.defaults = {
     country: '',
-    state: ''
+    state: '',
+    blank: true
+  };
+  
+  
+  /* SELECTBOX NO CONFLICT
+   * ========================== */
+
+  $.fn.bfhstates.noConflict = function () {
+    $.fn.bfhstates = old;
+    return this;
   };
   
 
