@@ -16064,6 +16064,8 @@ var BFHTimezonesList = {
       
       if (stateName !== '') {
         $toggle.html(stateName);
+      } else {
+        $toggle.html('');
       }
       
       $input.val(stateCode);
