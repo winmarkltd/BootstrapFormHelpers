@@ -95,6 +95,36 @@ $(function () {
     ok(selectbox.parent('.bfh-selectbox').hasClass('open'), 'open class added on click');
   });
   
+  test('should add and remove class open to options if toggled', function () {
+    var selectboxHTML = '<div class="bfh-selectbox">' +
+      '<input type="hidden" name="selectbox" value="">' +
+      '<a class="bfh-selectbox-toggle" role="button" data-toggle="bfh-selectbox" href="#">' +
+      '<span class="bfh-selectbox-option bfh-selectbox-medium"></span>' +
+      '<b class="caret"></b>' +
+      '</a>' +
+      '<div class="bfh-selectbox-options">' +
+      '<input type="text" class="bfh-selectbox-filter">' +
+      '<div role="listbox">' +
+      '<ul role="option">' +
+      '<li><a tabindex="-1" href="#" data-option="1">Option 1</a></li>' +
+      '<li><a tabindex="-1" href="#" data-option="2">Option 2</a></li>' +
+      '<li><a tabindex="-1" href="#" data-option="3">Option 3</a></li>' +
+      '<li><a tabindex="-1" href="#" data-option="4">Option 4</a></li>' +
+      '</ul>' +
+      '</div>' +
+      '</div>' +
+      '</div>',
+      selectbox = $(selectboxHTML).appendTo('#qunit-fixture');
+      
+    selectbox.bfhselectbox('toggle');
+    ok(selectbox.hasClass('open'), 'open class added on toggle');
+    
+    selectbox.bfhselectbox('toggle');
+    ok(!selectbox.hasClass('open'), 'open class removed on toggle');
+    
+    selectbox.remove();
+  });
+  
   test('should add class open to options if focused', function () {
     var selectboxHTML = '<div class="bfh-selectbox">' +
       '<input type="hidden" name="selectbox" value="">' +

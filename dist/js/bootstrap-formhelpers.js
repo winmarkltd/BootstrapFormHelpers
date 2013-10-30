@@ -13974,7 +13974,7 @@ var BFHTimezonesList = {
  * limitations under the License.
  * ========================================================== */
  
-!function ($) {
++function ($) {
 
   'use strict';
 
@@ -13983,35 +13983,19 @@ var BFHTimezonesList = {
    * ====================== */
 
   var BFHCurrencies = function (element, options) {
-    var currency;
-    
     this.options = $.extend({}, $.fn.bfhcurrencies.defaults, options);
     this.$element = $(element);
-
-    if (this.options.currencylist) {
-      this.currencyList = [];
-      this.options.currencylist = this.options.currencylist.split(',');
-      for (currency in BFHCurrenciesList) {
-        if (BFHCurrenciesList.hasOwnProperty(currency)) {
-          if ($.inArray(currency, this.options.currencylist) >= 0) {
-            this.currencyList[currency] = BFHCurrenciesList[currency];
-          }
-        }
-      }
-    } else {
-      this.currencyList = BFHCurrenciesList;
-    }
 
     if (this.$element.is('select')) {
       this.addCurrencies();
     }
 
-    if (this.$element.is('span')) {
-      this.displayCurrency();
-    }
-
     if (this.$element.hasClass('bfh-selectbox')) {
       this.addBootstrapCurrencies();
+    }
+    
+    if (this.$element.is('span')) {
+      this.displayCurrency();
     }
   };
 
@@ -14019,17 +14003,46 @@ var BFHTimezonesList = {
 
     constructor: BFHCurrencies,
 
+    getCurrencies: function () {
+      var currency,
+          currencies;
+          
+      if (this.options.available) {
+        currencies = [];
+        
+        this.options.available = this.options.available.split(',');
+        
+        for (currency in BFHCurrenciesList) {
+          if (BFHCurrenciesList.hasOwnProperty(currency)) {
+            if ($.inArray(currency, this.options.available) >= 0) {
+              currencies[currency] = BFHCurrenciesList[currency];
+            }
+          }
+        }
+        
+        return currencies;
+      } else {
+        return BFHCurrenciesList;
+      }
+    },
+    
     addCurrencies: function () {
       var value,
-          currency;
+          currency,
+          currencies;
           
       value = this.options.currency;
+      currencies = this.getCurrencies();
 
       this.$element.html('');
-      this.$element.append('<option value=""></option>');
-      for (currency in this.currencyList) {
-        if (this.currencyList.hasOwnProperty(currency)) {
-          this.$element.append('<option value="' + currency + '">' + this.currencyList[currency].label + '</option>');
+      
+      if (this.options.blank === true) {
+        this.$element.append('<option value=""></option>');
+      }
+      
+      for (currency in currencies) {
+        if (currencies.hasOwnProperty(currency)) {
+          this.$element.append('<option value="' + currency + '">' + currencies[currency].label + '</option>');
         }
       }
 
@@ -14042,26 +14055,33 @@ var BFHTimezonesList = {
           $toggle,
           $options,
           value,
-          currency;
+          currency,
+          currencies,
+          flag;
 
       value = this.options.currency;
       $input = this.$element.find('input[type="hidden"]');
       $toggle = this.$element.find('.bfh-selectbox-option');
       $options = this.$element.find('[role=option]');
+      currencies = this.getCurrencies();
 
       $options.html('');
-      $options.append('<li><a tabindex="-1" href="#" data-option=""></a></li>');
-      for (currency in this.currencyList) {
-        if (this.currencyList.hasOwnProperty(currency)) {
-          if (this.currencyList[currency].currencyflag) {
-            this.flag = this.currencyList[currency].currencyflag;
-          } else {
-            this.flag = currency.substr(0,2);
-          }
+      
+      if (this.options.blank === true) {
+        $options.append('<li><a tabindex="-1" href="#" data-option=""></a></li>');
+      }
+      
+      for (currency in currencies) {
+        if (currencies.hasOwnProperty(currency)) {
           if (this.options.flags === true) {
-            $options.append('<li><a tabindex="-1" href="#" data-option="' + currency +  '"><i class="glyphicon bfh-flag-' + this.flag + '"></i>' + this.currencyList[currency].label + '</a></li>');
+            if (currencies[currency].currencyflag) {
+              flag = currencies[currency].currencyflag;
+            } else {
+              flag = currency.substr(0,2);
+            }
+            $options.append('<li><a tabindex="-1" href="#" data-option="' + currency +  '"><i class="glyphicon bfh-flag-' + flag + '"></i>' + currencies[currency].label + '</a></li>');
           } else {
-            $options.append('<li><a tabindex="-1" href="#" data-option="' + currency + '">' + this.currencyList[currency].label + '</a></li>');
+            $options.append('<li><a tabindex="-1" href="#" data-option="' + currency + '">' + currencies[currency].label + '</a></li>');
           }
         }
       }
@@ -14070,14 +14090,14 @@ var BFHTimezonesList = {
 
       if (value) {
         if (this.options.flags === true) {
-          if (this.currencyList[value].currencyflag) {
-            this.flag = this.currencyList[value].currencyflag;
+          if (currencies[value].currencyflag) {
+            flag = currencies[value].currencyflag;
           } else {
-            this.flag = value.substr(0,2);
+            flag = value.substr(0,2);
           }
-          $toggle.html('<i class="glyphicon bfh-flag-' + this.flag + '"></i> ' + this.currencyList[value].label);
+          $toggle.html('<i class="glyphicon bfh-flag-' + flag + '"></i>' + currencies[value].label);
         } else {
-          $toggle.html(this.currencyList[value].label);
+          $toggle.html(currencies[value].label);
         }
       }
 
@@ -14085,19 +14105,20 @@ var BFHTimezonesList = {
     },
 
     displayCurrency: function () {
-      var value;
+      var value,
+          flag;
       
       value = this.options.currency;
 
-      if (this.currencyList[value].currencyflag) {
-        this.flag = this.currencyList[value].currencyflag;
-      } else {
-        this.flag = value.substr(0,2);
-      }
       if (this.options.flags === true) {
-        this.$element.html('<i class="glyphicon bfh-flag-' + this.flag + '"></i>' + this.currencyList[value].label);
+        if (BFHCurrenciesList[value].currencyflag) {
+          flag = BFHCurrenciesList[value].currencyflag;
+        } else {
+          flag = value.substr(0,2);
+        }
+        this.$element.html('<i class="glyphicon bfh-flag-' + flag + '"></i> ' + BFHCurrenciesList[value].label);
       } else {
-        this.$element.html(this.currencyList[value].label);
+        this.$element.html(BFHCurrenciesList[value].label);
       }
     }
 
@@ -14107,6 +14128,8 @@ var BFHTimezonesList = {
   /* CURRENCY PLUGIN DEFINITION
    * ======================= */
 
+  var old = $.fn.bfhcurrencies;
+  
   $.fn.bfhcurrencies = function (option) {
     return this.each(function () {
       var $this,
@@ -14130,8 +14153,18 @@ var BFHTimezonesList = {
 
   $.fn.bfhcurrencies.defaults = {
     currency: '',
-    currencyList: '',
-    flags: false
+    available: '',
+    flags: false,
+    blank: true
+  };
+  
+  
+  /* SELECTBOX NO CONFLICT
+   * ========================== */
+
+  $.fn.bfhcurrencies.noConflict = function () {
+    $.fn.bfhcurrencies = old;
+    return this;
   };
 
 
