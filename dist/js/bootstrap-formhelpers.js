@@ -13931,7 +13931,7 @@ var BFHTimezonesList = {
   };
   
   
-  /* SELECTBOX NO CONFLICT
+  /* COUNTRY NO CONFLICT
    * ========================== */
 
   $.fn.bfhcountries.noConflict = function () {
@@ -14159,7 +14159,7 @@ var BFHTimezonesList = {
   };
   
   
-  /* SELECTBOX NO CONFLICT
+  /* CURRENCY NO CONFLICT
    * ========================== */
 
   $.fn.bfhcurrencies.noConflict = function () {
@@ -15192,7 +15192,7 @@ var BFHTimezonesList = {
  * limitations under the License.
  * ========================================================== */
  
-!function ($) {
++function ($) {
 
   'use strict';
 
@@ -15221,38 +15221,54 @@ var BFHTimezonesList = {
 
     constructor: BFHLanguages,
 
-    addLanguages: function () {
-      var value,
-          available,
-          languages,
+    getLanguages: function () {
+      var split,
           language,
-          languageArr,
-          i;
+          languages;
+      
+      if (this.options.available) {
+        languages = [];
+        
+        this.options.available = this.options.available.split(',');
+        
+        for (language in this.options.available) {
+          if (this.options.available.hasOwnProperty(language)) {
+            if (this.options.available[language].indexOf('_') !== -1) {
+              split = this.options.available[language].split('_');
+              languages[split[0]] = {name: BFHLanguagesList[split[0]], country: split[1]};
+            } else {
+              languages[this.options.available[language]] = BFHLanguagesList[this.options.available[language]];
+            }
+          }
+        }
+        
+        return languages;
+      } else {
+        return BFHLanguagesList;
+      }
+    },
+    
+    addLanguages: function () {
+      var split,
+          value,
+          languages,
+          language;
         
       value = this.options.language;
-      available = this.options.available;
+      languages = this.getLanguages();
 
       this.$element.html('');
 
-      if (this.options.allowBlank === true) {
+      if (this.options.blank === true) {
         this.$element.append('<option value=""></option>');
       }
 
-      if (available.length > 0) {
-        languages = available.split(',');
-        for (i=0; i < languages.length; i=i+1) {
-          language = languages[i];
-          if (language.indexOf('_') !== -1) {
-            languageArr = language.split('_');
-            this.$element.append('<option value="' + language + '">' + BFHLanguagesList[languageArr[0]].toProperCase() + ' (' + BFHCountriesList[languageArr[1]] + ')</option>');
+      for (language in languages) {
+        if (languages.hasOwnProperty(language)) {
+          if (languages[language].hasOwnProperty('name')) {
+            this.$element.append('<option value="' + language + '_' + languages[language].country + '">' + languages[language].name.toProperCase() + ' (' + BFHCountriesList[languages[language].country] + ')</option>');
           } else {
-            this.$element.append('<option value="' + language + '">' + BFHLanguagesList[language].toProperCase() + '</option>');
-          }
-        }
-      } else {
-        for (language in BFHLanguagesList) {
-          if (BFHLanguagesList.hasOwnProperty(language)) {
-            this.$element.append('<option value="' + language + '">' + BFHLanguagesList[language].toProperCase() + '</option>');
+            this.$element.append('<option value="' + language + '">' + languages[language].toProperCase() + '</option>');
           }
         }
       }
@@ -15265,77 +15281,69 @@ var BFHTimezonesList = {
           $toggle,
           $options,
           value,
-          available,
           languages,
           language,
-          languageArr,
-          i;
+          split;
       
       value = this.options.language;
-      available = this.options.available;
       $input = this.$element.find('input[type="hidden"]');
       $toggle = this.$element.find('.bfh-selectbox-option');
       $options = this.$element.find('[role=option]');
+      languages = this.getLanguages();
       
       $options.html('');
       
-      if (this.options.allowBlank === true) {
+      if (this.options.blank === true) {
         $options.append('<li><a tabindex="-1" href="#" data-option=""></a></li>');
       }
 
-      if (available.length > 0) {
-        languages = available.split(',');
-        for (i=0; i < languages.length; i=i+1) {
-          language = languages[i];
-          if (language.indexOf('_') !== -1) {
-            languageArr = language.split('_');
+      for (language in languages) {
+        if (languages.hasOwnProperty(language)) {
+          if (languages[language].hasOwnProperty('name')) {
             if (this.options.flags === true) {
-              $options.append('<li><a tabindex="-1" href="#" data-option="' + language + '"><i class="glyphicon bfh-flag-' + languageArr[1] + '"></i>' + BFHLanguagesList[languageArr[0]].toProperCase() + '</a></li>');
+              $options.append('<li><a tabindex="-1" href="#" data-option="' + language + '_' + languages[language].country + '"><i class="glyphicon bfh-flag-' + languages[language].country + '"></i>' + languages[language].name.toProperCase() + '</a></li>');
             } else {
-              $options.append('<li><a tabindex="-1" href="#" data-option="' + language + '">' + BFHLanguagesList[languageArr[0]].toProperCase() + ' (' + BFHCountriesList[languageArr[1]] + ')</a></li>');
+              $options.append('<li><a tabindex="-1" href="#" data-option="' + language + '_' + languages[language].country + '">' + languages[language].name.toProperCase() + ' (' + BFHCountriesList[languages[language].country] + ')</a></li>');
             }
           } else {
-            this.$element.append('<option value="' + language + '">' + BFHLanguagesList[language].toProperCase() + '</option>');
-          }
-        }
-      } else {
-        for (language in BFHLanguagesList) {
-          if (BFHLanguagesList.hasOwnProperty(language)) {
-            $options.append('<li><a tabindex="-1" href="#" data-option="' + language + '">' + BFHLanguagesList[language].toProperCase() + '</a></li>');
+            $options.append('<li><a tabindex="-1" href="#" data-option="' + language + '">' + languages[language] + '</a></li>');
           }
         }
       }
 
       $toggle.data('option', value);
       if (value.indexOf('_') !== -1) {
-        languageArr = value.split('_');
+        split = value.split('_');
         if (this.options.flags === true) {
-          $toggle.html('<i class="glyphicon bfh-flag-' + languageArr[1] + '"></i> ' + BFHLanguagesList[languageArr[0]]);
+          $toggle.html('<i class="glyphicon bfh-flag-' + split[1] + '"></i>' + BFHLanguagesList[split[0]].toProperCase());
         } else {
-          $toggle.html(BFHLanguagesList[languageArr[0]] + ' (' + BFHCountriesList[languageArr[1]] + ')');
+          $toggle.html(BFHLanguagesList[split[0]].toProperCase() + ' (' + BFHCountriesList[split[1]] + ')');
         }
       } else {
-        $toggle.html(BFHLanguagesList[value]);
+        if (value === '') {
+          $toggle.html('');
+        } else {
+          $toggle.html(languages[value].toProperCase());
+        }
       }
 
       $input.val(value);
     },
 
     displayLanguage: function () {
-      var value,
-          languageArr;
+      var value;
           
       value = this.options.language;
 
       if (value.indexOf('_') !== -1) {
-        languageArr = value.split('_');
+        value = value.split('_');
         if (this.options.flags === true) {
-          this.$element.html('<i class="glyphicon bfh-flag-' + languageArr[1] + '"></i> ' + BFHLanguagesList[languageArr[0]]);
+          this.$element.html('<i class="glyphicon bfh-flag-' + value[1] + '"></i> ' + BFHLanguagesList[value[0]].toProperCase());
         } else {
-          this.$element.html(BFHLanguagesList[languageArr[0]] + ' (' + BFHCountriesList[languageArr[1]] + ')');
+          this.$element.html(BFHLanguagesList[value[0]].toProperCase() + ' (' + BFHCountriesList[value[1]] + ')');
         }
       } else {
-        this.$element.html(BFHLanguagesList[value]);
+        this.$element.html(BFHLanguagesList[value].toProperCase());
       }
     }
 
@@ -15345,6 +15353,8 @@ var BFHTimezonesList = {
   /* LANGUAGES PLUGIN DEFINITION
    * ======================= */
 
+  var old = $.fn.bfhlanguages;
+  
   $.fn.bfhlanguages = function (option) {
     return this.each(function () {
       var $this,
@@ -15370,7 +15380,16 @@ var BFHTimezonesList = {
     language: '',
     available: '',
     flags: false,
-    allowBlank: true
+    blank: true
+  };
+  
+  
+  /* LANGUAGES NO CONFLICT
+   * ========================== */
+
+  $.fn.bfhlanguages.noConflict = function () {
+    $.fn.bfhlanguages = old;
+    return this;
   };
   
 
@@ -15387,6 +15406,10 @@ var BFHTimezonesList = {
     });
   });
   
+  
+  /* LANGUAGES HELPERS
+   * ============== */
+   
   String.prototype.toProperCase = function () {
     return this.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
   };
@@ -16173,7 +16196,7 @@ var BFHTimezonesList = {
   };
   
   
-  /* SELECTBOX NO CONFLICT
+  /* STATES NO CONFLICT
    * ========================== */
 
   $.fn.bfhstates.noConflict = function () {

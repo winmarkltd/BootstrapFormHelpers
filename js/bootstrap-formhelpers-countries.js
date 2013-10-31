@@ -184,7 +184,7 @@
   };
   
   
-  /* SELECTBOX NO CONFLICT
+  /* COUNTRY NO CONFLICT
    * ========================== */
 
   $.fn.bfhcountries.noConflict = function () {

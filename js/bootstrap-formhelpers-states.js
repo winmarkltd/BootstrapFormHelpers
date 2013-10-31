@@ -225,7 +225,7 @@
   };
   
   
-  /* SELECTBOX NO CONFLICT
+  /* STATES NO CONFLICT
    * ========================== */
 
   $.fn.bfhstates.noConflict = function () {

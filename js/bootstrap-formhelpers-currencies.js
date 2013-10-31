@@ -202,7 +202,7 @@
   };
   
   
-  /* SELECTBOX NO CONFLICT
+  /* CURRENCY NO CONFLICT
    * ========================== */
 
   $.fn.bfhcurrencies.noConflict = function () {
