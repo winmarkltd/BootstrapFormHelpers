@@ -61,7 +61,7 @@ $(function () {
   });
   
   test('should fill select with a list of states and work with bfhcountries', function() {
-    var statesHTML = '<select id="countries" class="bfh-countries" data-country="CA"></select>' +
+    var statesHTML = '<select id="countries" class="bfh-countries" data-country="US"></select>' +
       '<select class="bfh-states" data-country="countries"></select>',
       states = $(statesHTML).appendTo('#qunit-fixture'),
       first = states.first().bfhcountries({country: 'US'}),
@@ -192,6 +192,29 @@ $(function () {
     ok(last.find('.bfh-selectbox-options > div > ul > li > a[data-option="ON"]').html() === 'Ontario', 'valid state shown');
     
     $('#qunit-fixture').html('');
+  });
+  
+  test('in bfhselectbox should have value after selecting a state', function() {
+    var statesHTML = '<div class="bfh-selectbox bfh-states" data-country="US">' +
+      '<input type="hidden" value="">' +
+      '<a class="bfh-selectbox-toggle" role="button" data-toggle="bfh-selectbox" href="#">' +
+      '<span class="bfh-selectbox-option bfh-selectbox-medium" data-option=""></span>' +
+      '<b class="caret"></b>' +
+      '</a>' +
+      '<div class="bfh-selectbox-options">' +
+      '<div role="listbox">' +
+      '<ul role="option">' +
+      '</ul>' +
+      '</div>' +
+      '</div>' +
+      '</div>',
+      states = $(statesHTML).appendTo('#qunit-fixture').bfhstates({country: 'US'});
+      
+    states.find('.bfh-selectbox-options > div > ul > li > a[data-option="CA"]').click();
+    ok(states.find('.bfh-selectbox-option').html() === 'California', 'correct option selected');
+    ok(states.val() === 'CA', 'correct element value');
+    
+    states.remove();
   });
   
 });

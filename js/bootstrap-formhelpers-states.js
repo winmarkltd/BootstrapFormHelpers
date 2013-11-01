@@ -192,8 +192,8 @@
   };
 
 
- /* STATES PLUGIN DEFINITION
-  * ======================= */
+  /* STATES PLUGIN DEFINITION
+   * ======================= */
 
   var old = $.fn.bfhstates;
   
@@ -246,6 +246,5 @@
       $states.bfhstates($states.data());
     });
   });
-
 
 }(window.jQuery);

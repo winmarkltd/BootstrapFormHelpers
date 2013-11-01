@@ -18,7 +18,7 @@
  * limitations under the License.
  * ========================================================== */
   
-!function ($) {
++function ($) {
 
   'use strict';
 
@@ -29,19 +29,17 @@
   var BFHFonts = function (element, options) {
     this.options = $.extend({}, $.fn.bfhfonts.defaults, options);
     this.$element = $(element);
-
-    this.familyList = BFHFontsList;
     
     if (this.$element.is('select')) {
       this.addFonts();
     }
     
-    if (this.$element.is('span')) {
-      this.displayFont();
-    }
-    
     if (this.$element.hasClass('bfh-selectbox')) {
       this.addBootstrapFonts();
+    }
+    
+    if (this.$element.is('span')) {
+      this.displayFont();
     }
   };
 
@@ -49,16 +47,46 @@
 
     constructor: BFHFonts,
 
+    getFonts: function() {
+      var font,
+          fonts;
+      
+      if (this.options.available) {
+        fonts = [];
+        
+        this.options.available = this.options.available.split(',');
+        
+        for (font in BFHFontsList) {
+          if (BFHFontsList.hasOwnProperty(font)) {
+            if ($.inArray(font, this.options.available) >= 0) {
+              fonts[font] = BFHFontsList[font];
+            }
+          }
+        }
+        
+        return fonts;
+      } else {
+        return BFHFontsList;
+      }
+    },
+    
     addFonts: function () {
       var value,
-          f;
-          
-      value = this.options.family;
+          font,
+          fonts;
+         
+      value = this.options.font;
+      fonts = this.getFonts();
       
       this.$element.html('');
-      for (f in this.familyList) {
-        if (this.familyList.hasOwnProperty(f)) {
-          this.$element.append('<option value="' + f + '">' + f + '</option>');
+      
+      if (this.options.blank === true) {
+        this.$element.append('<option value=""></option>');
+      }
+      
+      for (font in fonts) {
+        if (fonts.hasOwnProperty(font)) {
+          this.$element.append('<option value="' + font + '">' + font + '</option>');
         }
       }
       
@@ -70,17 +98,24 @@
           $toggle,
           $options,
           value,
-          f;
+          font,
+          fonts;
       
-      value = this.options.family;
+      value = this.options.font;
       $input = this.$element.find('input[type="hidden"]');
       $toggle = this.$element.find('.bfh-selectbox-option');
       $options = this.$element.find('[role=option]');
+      fonts = this.getFonts();
       
       $options.html('');
-      for (f in this.familyList) {
-        if (this.familyList.hasOwnProperty(f)) {
-          $options.append('<li><a tabindex="-1" href="#" style=\'font-family: ' + this.familyList[f] + '\' data-option="' + f + '">' + f + '</a></li>');
+      
+      if (this.options.blank === true) {
+        $options.append('<li><a tabindex="-1" href="#" data-option=""></a></li>');
+      }
+      
+      for (font in fonts) {
+        if (fonts.hasOwnProperty(font)) {
+          $options.append('<li><a tabindex="-1" href="#" style=\'font-family: ' + fonts[font] + '\' data-option="' + font + '">' + font + '</a></li>');
         }
       }
       
@@ -91,14 +126,6 @@
       }
       
       $input.val(value);
-    },
-    
-    displayFont: function () {
-      var value;
-      
-      value = this.options.family;
-      
-      this.$element.html(value);
     }
 
   };
@@ -107,6 +134,8 @@
   /* FONTS PLUGIN DEFINITION
    * ======================= */
 
+  var old = $.fn.bfhfonts;
+  
   $.fn.bfhfonts = function (option) {
     return this.each(function () {
       var $this,
@@ -116,8 +145,7 @@
       $this = $(this);
       data = $this.data('bfhfonts');
       options = typeof option === 'object' && option;
-      this.type = 'bfhfonts';
-      
+
       if (!data) {
         $this.data('bfhfonts', (data = new BFHFonts(this, options)));
       }
@@ -130,7 +158,18 @@
   $.fn.bfhfonts.Constructor = BFHFonts;
 
   $.fn.bfhfonts.defaults = {
-    family: 'Arial'
+    font: '',
+    available: '',
+    blank: true
+  };
+  
+  
+  /* FONTS NO CONFLICT
+   * ========================== */
+
+  $.fn.bfhfonts.noConflict = function () {
+    $.fn.bfhfonts = old;
+    return this;
   };
   
 

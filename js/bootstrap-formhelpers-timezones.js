@@ -17,7 +17,7 @@
  * limitations under the License.
  * ========================================================== */
  
-!function ($) {
++function ($) {
 
   'use strict';
 
@@ -44,18 +44,16 @@
 
     addTimezones: function () {
       var country,
-          formObject,
-          countryObject;
+          $country;
           
       country = this.options.country;
 
       if (country !== '') {
-        formObject = this.$element.closest('form');
-        countryObject = formObject.find('#' + country);
+        $country = $(document).find('#' + country);
 
-        if (countryObject.length !== 0) {
-          country = countryObject.val();
-          countryObject.on('change.bfhcountries.data-api', {timezoneObject: this}, this.changeCountry);
+        if ($country.length !== 0) {
+          country = $country.val();
+          $country.on('change', {timezone: this}, this.changeCountry);
         }
       }
       
@@ -69,7 +67,11 @@
       value = this.options.timezone;
       
       this.$element.html('');
-      this.$element.append('<option value=""></option>');
+      
+      if (this.options.blank === true) {
+        this.$element.append('<option value=""></option>');
+      }
+      
       for (timezone in BFHTimezonesList[country]) {
         if (BFHTimezonesList[country].hasOwnProperty(timezone)) {
           this.$element.append('<option value="' + timezone + '">' + BFHTimezonesList[country][timezone] + '</option>');
@@ -81,30 +83,28 @@
     
     changeCountry: function (e) {
       var $this,
-          timezoneObject,
+          $timezone,
           country;
             
       $this = $(this);
-      timezoneObject = e.data.timezoneObject;
+      $timezone = e.data.timezone;
       country = $this.val();
         
-      timezoneObject.loadTimezones(country);
+      $timezone.loadTimezones(country);
     },
     
     addBootstrapTimezones: function() {
       var country,
-          formObject,
-          countryObject;
+          $country;
           
       country = this.options.country;
       
       if (country !== '') {
-        formObject = this.$element.closest('form');
-        countryObject = formObject.find('#' + country);
+        $country = $(document).find('#' + country);
         
-        if (countryObject.length !== 0) {
-          country = countryObject.find('input[type="hidden"]').val();
-          countryObject.find('input[type="hidden"]').on('change.bfhcountries.data-api', {timezoneObject: this}, this.changeBootstrapCountry);
+        if ($country.length !== 0) {
+          country = $country.find('input[type="hidden"]').val();
+          $country.on('change.bfhselectbox', {timezone: this}, this.changeBootstrapCountry);
         }
       }
       
@@ -124,7 +124,11 @@
       $options = this.$element.find('[role=option]');
       
       $options.html('');
-      $options.append('<li><a tabindex="-1" href="#" data-option=""></a></li>');
+      
+      if (this.options.blank === true) {
+        $options.append('<li><a tabindex="-1" href="#" data-option=""></a></li>');
+      }
+      
       for (timezone in BFHTimezonesList[country]) {
         if (BFHTimezonesList[country].hasOwnProperty(timezone)) {
           $options.append('<li><a tabindex="-1" href="#" data-option="' + timezone + '">' + BFHTimezonesList[country][timezone] + '</a></li>');
@@ -132,10 +136,10 @@
       }
       
       $toggle.data('option', value);
-      if (typeof BFHTimezonesList[country][value] === 'undefined') {
-        $toggle.html('');
+      if (BFHTimezonesList[country][value] !== '') {
+        $toggle.html(BFHTimezonesList[country][value]);
       } else {
-        $toggle.html(value);
+        $toggle.html('');
       }
       
       $input.val(value);
@@ -143,14 +147,14 @@
     
     changeBootstrapCountry: function (e) {
       var $this,
-          timezoneObject,
+          $timezone,
           country;
           
       $this = $(this);
-      timezoneObject = e.data.timezoneObject;
+      $timezone = e.data.timezone;
       country = $this.val();
         
-      timezoneObject.loadBootstrapTimezones(country);
+      $timezone.loadBootstrapTimezones(country);
     }
 
   };
@@ -159,6 +163,8 @@
   /* TIMEZONES PLUGIN DEFINITION
    * ======================= */
 
+  var old = $.fn.bfhtimezones;
+  
   $.fn.bfhtimezones = function (option) {
     return this.each(function () {
       var $this,
@@ -182,7 +188,17 @@
 
   $.fn.bfhtimezones.defaults = {
     country: '',
-    timezone: ''
+    timezone: '',
+    blank: true
+  };
+  
+  
+  /* TIMEZONES NO CONFLICT
+   * ========================== */
+
+  $.fn.bfhtimezones.noConflict = function () {
+    $.fn.bfhtimezones = old;
+    return this;
   };
   
 
