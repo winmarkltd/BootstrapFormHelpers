@@ -3,7 +3,7 @@
 * Copyright 2013 Vincent Lamanna
 * http://www.apache.org/licenses/LICENSE-2.0
 */
-if (!jQuery) { throw new Error("Bootstrap Form Helpers requires jQuery") }
+if (!jQuery) { throw new Error("Bootstrap Form Helpers requires jQuery"); }
 
 /* ==========================================================
  * bootstrap-formhelpers-countries.en_US.js
