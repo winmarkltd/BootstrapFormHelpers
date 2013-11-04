@@ -14703,10 +14703,6 @@ var BFHTimezonesList = {
     if (this.$element.hasClass('bfh-selectbox')) {
       this.addBootstrapFonts();
     }
-    
-    if (this.$element.is('span')) {
-      this.displayFont();
-    }
   };
 
   BFHFonts.prototype = {
@@ -14893,10 +14889,6 @@ var BFHTimezonesList = {
     if (this.$element.hasClass('bfh-selectbox')) {
       this.addBootstrapFontSizes();
     }
-    
-    if (this.$element.is('span')) {
-      this.displayFont();
-    }
   };
 
   BFHFontSizes.prototype = {
@@ -15064,73 +15056,20 @@ var BFHTimezonesList = {
  * limitations under the License.
  * ========================================================== */
  
-!function ($) {
++function ($) {
 
   'use strict';
 
 
-  /* FONTS CLASS DEFINITION
+  /* GOOGLE FONTS CLASS DEFINITION
    * ====================== */
 
   var BFHGoogleFonts = function (element, options) {
-    var i,
-        f,
-        font,
-        allhave;
-      
     this.options = $.extend({}, $.fn.bfhgooglefonts.defaults, options);
     this.$element = $(element);
-    this.familyList = {};
-    
-    if (this.options.subsets) {
-      this.options.subsets = this.options.subsets.split(',');
-      for (i in BFHGoogleFontsList.items) {
-        if (BFHGoogleFontsList.items.hasOwnProperty(i)) {
-          font = BFHGoogleFontsList.items[i];
-          for (f = 0, allhave = true; f <= this.options.subsets.length; f=f+1) {
-            if ($.inArray(this.options.subsets[f], font.subsets) === -1) {
-              allhave = false;
-            }
-            if (f === this.options.subsets.length-1 && allhave === true) {
-              this.familyList[font.family] = {
-                'font': BFHGoogleFontsList.items[i],
-                'i': parseInt(i, 10)
-              };
-            }
-          }
-        }
-      }
-    } else if (this.options.families) {
-      this.options.families = this.options.families.split(',');
-      for (i in BFHGoogleFontsList.items) {
-        if (BFHGoogleFontsList.items.hasOwnProperty(i)) {
-          font = BFHGoogleFontsList.items[i];
-          if ($.inArray(font.family, this.options.families) >= 0) {
-            this.familyList[font.family] = {
-              'font': BFHGoogleFontsList.items[i],
-              'i': parseInt(i, 10)
-            };
-          }
-        }
-      }
-    } else {
-      for (i in BFHGoogleFontsList.items) {
-        if (BFHGoogleFontsList.items.hasOwnProperty(i)) {
-          font = BFHGoogleFontsList.items[i];
-          this.familyList[font.family] = {
-            'font': BFHGoogleFontsList.items[i],
-            'i': parseInt(i, 10)
-          };
-        }
-      }
-    }
 
     if (this.$element.is('select')) {
       this.addFonts();
-    }
-    
-    if (this.$element.is('span')) {
-      this.displayFont();
     }
     
     if (this.$element.hasClass('bfh-selectbox')) {
@@ -15142,19 +15081,67 @@ var BFHTimezonesList = {
 
     constructor: BFHGoogleFonts,
 
+    getFonts: function() {
+      var font,
+          fonts;
+      
+      fonts = [];
+      
+      if (this.options.subset) {
+        for (font in BFHGoogleFontsList.items) {
+          if (BFHGoogleFontsList.items.hasOwnProperty(font)) {
+            if ($.inArray(this.options.subset, BFHGoogleFontsList.items[font].subsets) >= 0) {
+              fonts[BFHGoogleFontsList.items[font].family] = {
+                'info': BFHGoogleFontsList.items[font],
+                'index': parseInt(font, 10)
+              };
+            }
+          }
+        }
+      } else if (this.options.available) {
+        this.options.available = this.options.available.split(',');
+        
+        for (font in BFHGoogleFontsList.items) {
+          if (BFHGoogleFontsList.items.hasOwnProperty(font)) {
+            if ($.inArray(BFHGoogleFontsList.items[font].family, this.options.available) >= 0) {
+              fonts[BFHGoogleFontsList.items[font].family] = {
+                'info': BFHGoogleFontsList.items[font],
+                'index': parseInt(font, 10)
+              };
+            }
+          }
+        }
+      } else {
+        for (font in BFHGoogleFontsList.items) {
+          if (BFHGoogleFontsList.items.hasOwnProperty(font)) {
+            fonts[BFHGoogleFontsList.items[font].family] = {
+              'info': BFHGoogleFontsList.items[font],
+              'index': parseInt(font, 10)
+            };
+          }
+        }
+      }
+      
+      return fonts;
+    },
+    
     addFonts: function () {
       var value,
-          f,
-          entry;
+          font,
+          fonts;
           
-      value = this.options.family;
+      value = this.options.font;
+      fonts = this.getFonts();
       
       this.$element.html('');
-      this.$element.append('<option value=""></option>');
-      for (f in this.familyList) {
-        if (this.familyList.hasOwnProperty(f)) {
-          entry = this.familyList[f];
-          this.$element.append('<option value="' + entry.font.family + '">' + entry.font.family + '</option>');
+      
+      if (this.options.blank === true) {
+        this.$element.append('<option value=""></option>');
+      }
+      
+      for (font in fonts) {
+        if (fonts.hasOwnProperty(font)) {
+          this.$element.append('<option value="' + fonts[font].info.family + '">' + fonts[font].info.family + '</option>');
         }
       }
       
@@ -15166,46 +15153,44 @@ var BFHTimezonesList = {
           $toggle,
           $options,
           value,
-          f,
-          entry;
+          font,
+          fonts;
       
-      value = this.options.family;
+      value = this.options.font;
       $input = this.$element.find('input[type="hidden"]');
       $toggle = this.$element.find('.bfh-selectbox-option');
       $options = this.$element.find('[role=option]');
+      fonts = this.getFonts();
       
       $options.html('');
-      $options.append('<li><a tabindex="-1" href="#" data-option="" style="background-image: none;"></a></li>');
-      for (f in this.familyList) {
-        if (this.familyList.hasOwnProperty(f)) {
-          entry = this.familyList[f];
-          $options.append('<li><a tabindex="-1" href="#" style="background-position: 0 -' + ((entry.i * 30) - 2) + 'px;" data-option="' + entry.font.family + '">' + entry.font.family + '</a></li>');
+      
+      if (this.options.blank === true) {
+        $options.append('<li><a tabindex="-1" href="#" data-option="" style="background-image: none;"></a></li>');
+      }
+      
+      for (font in fonts) {
+        if (fonts.hasOwnProperty(font)) {
+          $options.append('<li><a tabindex="-1" href="#" style="background-position: 0 -' + ((fonts[font].index * 30) - 2) + 'px;" data-option="' + fonts[font].info.family + '">' + fonts[font].info.family + '</a></li>');
         }
       }
       
       $toggle.data('option', value);
       
       if (value) {
-        $toggle.html(this.familyList[value].font.family);
+        $toggle.html(fonts[value].info.family);
       }
       
       $input.val(value);
-    },
-    
-    displayFont: function () {
-      var value;
-      
-      value = this.options.family;
-      
-      this.$element.html(this.familyList[value].font.family);
     }
 
   };
 
 
-  /* FONTS PLUGIN DEFINITION
+  /* GOOGLE FONTS PLUGIN DEFINITION
    * ======================= */
 
+  var old = $.fn.bfhgooglefonts;
+  
   $.fn.bfhgooglefonts = function (option) {
     return this.each(function () {
       var $this,
@@ -15215,7 +15200,6 @@ var BFHTimezonesList = {
       $this = $(this);
       data = $this.data('bfhgooglefonts');
       options = typeof option === 'object' && option;
-      this.type = 'bfhgooglefonts';
       
       if (!data) {
         $this.data('bfhgooglefonts', (data = new BFHGoogleFonts(this, options)));
@@ -15229,13 +15213,23 @@ var BFHTimezonesList = {
   $.fn.bfhgooglefonts.Constructor = BFHGoogleFonts;
 
   $.fn.bfhgooglefonts.defaults = {
-    family: '',
-    families: '',
-    subsets: ''
+    font: '',
+    available: '',
+    subset: '',
+    blank: true
+  };
+  
+  
+  /* GOOGLE FONTS NO CONFLICT
+   * ========================== */
+
+  $.fn.bfhgooglefonts.noConflict = function () {
+    $.fn.bfhgooglefonts = old;
+    return this;
   };
   
 
-  /* FONTS DATA-API
+  /* GOOGLE FONTS DATA-API
    * ============== */
 
   $(window).on('load', function () {

@@ -37,10 +37,6 @@
     if (this.$element.hasClass('bfh-selectbox')) {
       this.addBootstrapFontSizes();
     }
-    
-    if (this.$element.is('span')) {
-      this.displayFont();
-    }
   };
 
   BFHFontSizes.prototype = {
