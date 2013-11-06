@@ -9,7 +9,7 @@ seo_url: "/currency/"
 ### About *currency picker*
 
 This **jQuery plugin** allows you to add a **currency picker** to easily display a list
-of currencies in your form. This currency picker can be used along with our [*select jQuery plugin*](../select/).
+of currencies in your **Bootstrap** form. This currency picker can be used along with our [*select jQuery plugin*](../select/).
 There is also an option to display the currency or country flags.
 
 
@@ -64,33 +64,9 @@ There is also an option to display the currency or country flags.
 	<form class="example form-inline">
 	  <p>Example for loading the list of currencies and currencies flags using Bootstrap Form Helpers' Select Box</p>
 	  <div class="bfh-selectbox bfh-currencies" data-currency="EUR" data-flags="true">
-		<input type="hidden" value="">
-		<a class="bfh-selectbox-toggle" role="button" data-toggle="bfh-selectbox" href="#">
-		  <span class="bfh-selectbox-option bfh-selectbox-medium" data-option=""></span>
-		  <b class="caret"></b>
-		</a>
-		<div class="bfh-selectbox-options">
-		  <input type="text" class="bfh-selectbox-filter">
-		  <div role="listbox">
-			<ul role="option">
-			</ul>
-		  </div>
-		</div>
 	  </div>
 	</form>
 	<pre class="prettyprint">&lt;div class="bfh-selectbox bfh-currencies" data-currency="EUR" data-flags="true"&gt;
-  &lt;input type="hidden" value=""&gt;
-  &lt;a class="bfh-selectbox-toggle" role="button" data-toggle="bfh-selectbox" href="#"&gt;
-    &lt;span class="bfh-selectbox-option bfh-selectbox-medium" data-option=""&gt;&lt;/span&gt;
-    &lt;b class="caret"&gt;&lt;/b&gt;
-  &lt;/a&gt;
-  &lt;div class="bfh-selectbox-options"&gt;
-    &lt;input type="text" class="bfh-selectbox-filter"&gt;
-    &lt;div role="listbox"&gt;
-      &lt;ul role="option"&gt;
-      &lt;/ul&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
 &lt;/div&gt;</pre>
   </div>
   <div class="tab-pane fade" id="example5">
@@ -137,12 +113,14 @@ There is also an option to display the currency or country flags.
   </tbody>
 </table>
 
+If using our select jQuery plugin, [refer to this documentation for a list of additional options](../select/).
+
 
 ### Methods
 
-None.
+If using our select jQuery plugin, [refer to this documentation for a list of methods](../select/).
 
 
 ### Events
 
-None.
+If using our select jQuery plugin, [refer to this documentation for a list of events](../select/).

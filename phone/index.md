@@ -9,7 +9,7 @@ seo_url: "/phone/"
 ### About *phone input*
 
 This **jQuery plugin** allows you to add a **phone input** to easily format phone numbers
-in your form. This phone input can be used along with our [*country picker jQuery plugin*](../country/).
+in your **Bootstrap** form. This phone input can be used along with our [*country picker jQuery plugin*](../country/).
 
 
 ### Examples

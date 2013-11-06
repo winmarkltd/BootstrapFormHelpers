@@ -9,7 +9,7 @@ seo_url: "/googlefont/"
 ### About *Google font picker*
 
 This **jQuery plugin** allows you to add a **Google font picker** to easily display a list
-of Google fonts in your form. This font picker can be used along with our [*select jQuery plugin*](../select/).
+of Google fonts in your **Bootstrap** form. This font picker can be used along with our [*select jQuery plugin*](../select/).
 
 
 ### Examples
@@ -68,33 +68,9 @@ of Google fonts in your form. This font picker can be used along with our [*sele
     <form class="example form-inline">
       <p>Example for loading the list of fonts using Bootstrap Form Helpers Select Box</p>
 	  <div class="bfh-selectbox bfh-googlefonts" data-font="Lato">
-		<input type="hidden" value="">
-		<a class="bfh-selectbox-toggle" role="button" data-toggle="bfh-selectbox" href="#">
-		  <span class="bfh-selectbox-option bfh-selectbox-medium" data-option=""></span>
-		  <b class="caret"></b>
-		</a>
-		<div class="bfh-selectbox-options">
-		  <input type="text" class="bfh-selectbox-filter">
-		  <div role="listbox">
-			<ul role="option">
-			</ul>
-		  </div>
-		</div>
 	  </div>
 	</form>
 	<pre class="prettyprint">&lt;div class="bfh-selectbox bfh-googlefonts" data-font="Lato"&gt;
-  &lt;input type="hidden" value=""&gt;
-  &lt;a class="bfh-selectbox-toggle" role="button" data-toggle="bfh-selectbox" href="#"&gt;
-    &lt;span class="bfh-selectbox-option bfh-selectbox-medium" data-option=""&gt;&lt;/span&gt;
-    &lt;b class="caret"&gt;&lt;/b&gt;
-  &lt;/a&gt;
-  &lt;div class="bfh-selectbox-options"&gt;
-    &lt;input type="text" class="bfh-selectbox-filter"&gt;
-    &lt;div role="listbox"&gt;
-      &lt;ul role="option"&gt;
-      &lt;/ul&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
 &lt;/div&gt;</pre>
   </div>
 </div>
@@ -133,12 +109,14 @@ of Google fonts in your form. This font picker can be used along with our [*sele
   </tbody>
 </table>
 
+If using our select jQuery plugin, [refer to this documentation for a list of additional options](../select/).
+
 
 ### Methods
 
-None.
+If using our select jQuery plugin, [refer to this documentation for a list of methods](../select/).
 
 
 ### Events
 
-None.
+If using our select jQuery plugin, [refer to this documentation for a list of events](../select/).

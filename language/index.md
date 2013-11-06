@@ -9,7 +9,7 @@ seo_url: "/language/"
 ### About *language picker*
 
 This **jQuery plugin** allows you to add a **language picker** to easily display a list
-of languages in your form. This language picker can be used along with our [*select jQuery plugin*](../select/).
+of languages in your **Bootstrap** form. This language picker can be used along with our [*select jQuery plugin*](../select/).
 There is also an option to display the country flags.
 
 
@@ -64,17 +64,6 @@ There is also an option to display the country flags.
       </div>
     </form>
     <pre class="prettyprint">&lt;div class="bfh-selectbox bfh-languages" data-language="en_US" data-available="en_US,fr_CA,es_MX" data-flags="true"&gt;
-  &lt;input type="hidden" value=""&gt;
-  &lt;a class="bfh-selectbox-toggle" role="button" data-toggle="bfh-selectbox" href="#"&gt;
-    &lt;span class="bfh-selectbox-option bfh-selectbox-medium" data-option=""&gt;&lt;/span&gt;
-    &lt;b class="caret"&gt;&lt;/b&gt;
-  &lt;/a&gt;
-  &lt;div class="bfh-selectbox-options"&gt;
-    &lt;div role="listbox"&gt;
-      &lt;ul role="option"&gt;
-      &lt;/ul&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
 &lt;/div&gt;</pre>
   </div>
   <div class="tab-pane fade" id="example4">
@@ -120,12 +109,14 @@ There is also an option to display the country flags.
   </tbody>
 </table>
 
+If using our select jQuery plugin, [refer to this documentation for a list of additional options](../select/).
+
 
 ### Methods
 
-None.
+If using our select jQuery plugin, [refer to this documentation for a list of methods](../select/).
 
 
 ### Events
 
-None.
+If using our select jQuery plugin, [refer to this documentation for a list of events](../select/).

@@ -9,7 +9,7 @@ seo_url: "/timezone/"
 ### About *timezone picker*
 
 This **jQuery plugin** allows you to add a **timezone picker** to easily display a list
-of timezones in your form. This timezone picker can be used along with our [*select jQuery plugin*](../select/)
+of timezones in your **Bootstrap** form. This timezone picker can be used along with our [*select jQuery plugin*](../select/)
 as well as our [*country picker jQuery plugin*](../country/).
 
 
@@ -57,31 +57,9 @@ as well as our [*country picker jQuery plugin*](../country/).
     <form class="example form-inline">
       <p>Example for loading the list of timezones using Bootstrap Form Helpers' Select Box</p>
 	  <div class="bfh-selectbox bfh-timezones" data-country="US">
-		<input type="hidden" value="">
-		<a class="bfh-selectbox-toggle" role="button" data-toggle="bfh-selectbox" href="#">
-		  <span class="bfh-selectbox-option bfh-selectbox-medium" data-option=""></span>
-		  <b class="caret"></b>
-		</a>
-		<div class="bfh-selectbox-options">
-		  <div role="listbox">
-			<ul role="option">
-			</ul>
-		  </div>
-		</div>
 	  </div>
 	</form>
 	<pre class="prettyprint">&lt;div class="bfh-selectbox bfh-timezones" data-country="US"&gt;
-  &lt;input type="hidden" value=""&gt;
-  &lt;a class="bfh-selectbox-toggle" role="button" data-toggle="bfh-selectbox" href="#"&gt;
-    &lt;span class="bfh-selectbox-option bfh-selectbox-medium" data-option=""&gt;&lt;/span&gt;
-    &lt;b class="caret"&gt;&lt;/b&gt;
-  &lt;/a&gt;
-  &lt;div class="bfh-selectbox-options"&gt;
-    &lt;div role="listbox"&gt;
-      &lt;ul role="option"&gt;
-      &lt;/ul&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
 &lt;/div&gt;</pre>
   </div>
   <div class="tab-pane fade" id="example4">
@@ -99,57 +77,15 @@ as well as our [*country picker jQuery plugin*](../country/).
     <form class="example form-inline">
       <p>Example for loading the list of timezones based on a country select using Bootstrap Form Helpers Select Box</p>
 	  <div id="countries_timezones2" class="bfh-selectbox bfh-countries" data-country="US">
-		<input type="hidden" value="">
-		<a class="bfh-selectbox-toggle" role="button" data-toggle="bfh-selectbox" href="#">
-		  <span class="bfh-selectbox-option bfh-selectbox-medium" data-option=""></span>
-		  <b class="caret"></b>
-		</a>
-		<div class="bfh-selectbox-options">
-		  <div role="listbox">
-			<ul role="option">
-			</ul>
-		  </div>
-		</div>
 	  </div>
+	  <br><br>
 	  <div class="bfh-selectbox bfh-timezones" data-country="countries_timezones2">
-		<input type="hidden" value="">
-		<a class="bfh-selectbox-toggle" role="button" data-toggle="bfh-selectbox" href="#">
-		  <span class="bfh-selectbox-option bfh-selectbox-medium" data-option=""></span>
-		  <b class="caret"></b>
-		</a>
-		<div class="bfh-selectbox-options">
-		  <div role="listbox">
-			<ul role="option">
-			</ul>
-		  </div>
-		</div>
 	  </div>
 	</form>
 	<pre class="prettyprint">&lt;div id="countries_timezones2" class="bfh-selectbox bfh-countries" data-country="US"&gt;
-  &lt;input type="hidden" value=""&gt;
-  &lt;a class="bfh-selectbox-toggle" role="button" data-toggle="bfh-selectbox" href="#"&gt;
-    &lt;span class="bfh-selectbox-option bfh-selectbox-medium" data-option=""&gt;&lt;/span&gt;
-    &lt;b class="caret"&gt;&lt;/b&gt;
-  &lt;/a&gt;
-  &lt;div class="bfh-selectbox-options"&gt;
-    &lt;div role="listbox"&gt;
-      &lt;ul role="option"&gt;
-      &lt;/ul&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
 &lt;/div&gt;
+&lt;br&gt;&lt;br&gt;
 &lt;div class="bfh-selectbox bfh-timezones" data-country="countries_timezones2"&gt;
-  &lt;input type="hidden" value=""&gt;
-  &lt;a class="bfh-selectbox-toggle" role="button" data-toggle="bfh-selectbox" href="#"&gt;
-    &lt;span class="bfh-selectbox-option bfh-selectbox-medium" data-option=""&gt;&lt;/span&gt;
-    &lt;b class="caret"&gt;&lt;/b&gt;
-  &lt;/a&gt;
-  &lt;div class="bfh-selectbox-options"&gt;
-    &lt;div role="listbox"&gt;
-      &lt;ul role="option"&gt;
-      &lt;/ul&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
 &lt;/div&gt;</pre>
   </div>
 </div>
@@ -185,12 +121,14 @@ as well as our [*country picker jQuery plugin*](../country/).
   </tbody>
 </table>
 
+If using our select jQuery plugin, [refer to this documentation for a list of additional options](../select/).
+
 
 ### Methods
 
-None.
+If using our select jQuery plugin, [refer to this documentation for a list of methods](../select/).
 
 
 ### Events
 
-None.
+If using our select jQuery plugin, [refer to this documentation for a list of events](../select/).
