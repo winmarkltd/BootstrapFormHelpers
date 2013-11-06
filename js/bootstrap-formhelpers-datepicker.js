@@ -130,9 +130,9 @@
           this.$element.data('lowermonth', today.getMonth());
           this.$element.data('loweryear', today.getFullYear());
         } else {
-          this.$element.data('lowerday', this.parse('d', start));
-          this.$element.data('lowermonth', this.parse('m', start) - 1);
-          this.$element.data('loweryear', this.parse('y', start));
+          this.$element.data('lowerday', Number(this.parse('d', start)));
+          this.$element.data('lowermonth', Number(this.parse('m', start) - 1));
+          this.$element.data('loweryear', Number(this.parse('y', start)));
         }
       } else {
         this.$element.data('lowerlimit', '0');
@@ -146,9 +146,9 @@
           this.$element.data('highermonth', today.getMonth());
           this.$element.data('higheryear', today.getFullYear());
         } else {
-          this.$element.data('higherday', this.parse('d', end));
-          this.$element.data('highermonth', this.parse('m', end) - 1);
-          this.$element.data('higheryear', this.parse('y', end));
+          this.$element.data('higherday', Number(this.parse('d', end)));
+          this.$element.data('highermonth', Number(this.parse('m', end) - 1));
+          this.$element.data('higheryear', Number(this.parse('y', end)));
         }
       } else {
         this.$element.data('higherlimit', '0');
@@ -233,9 +233,9 @@
         if (day === BFHDayOfWeekStart) {
           row += '<tr>';
         }
-        if (lowerlimit && (i < lowerday && month === lowermonth && year === loweryear || month < lowermonth || year < loweryear)) {
+        if (lowerlimit && ((i < lowerday && month === lowermonth && year === loweryear) || (month < lowermonth && year === loweryear) || (year < loweryear))) {
           row += '<td data-day="' + i + '" class="off">' + i + '</td>';
-        } else if (higherlimit && (i > higherday && month === highermonth && year === higheryear || month > highermonth || year > higheryear)) {
+        } else if (higherlimit && ((i > higherday && month === highermonth && year === higheryear) || (month > highermonth && year === higheryear) || (year > higheryear))) {
           row += '<td data-day="' + i + '" class="off">' + i + '</td>';
         } else if (i === today.getDate() && month === today.getMonth() && year === today.getFullYear()) {
           row += '<td data-day="' + i + '" class="today">' + i + '</td>';
