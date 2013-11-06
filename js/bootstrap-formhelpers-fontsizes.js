@@ -115,13 +115,7 @@
         }
       }
       
-      $toggle.data('option', value);
-      
-      if (value) {
-        $toggle.html(fontsizes[value]);
-      }
-      
-      $input.val(value);
+      this.$element.val(value);
     }
 
   };
@@ -146,7 +140,7 @@
         $this.data('bfhfontsizes', (data = new BFHFontSizes(this, options)));
       }
       if (typeof option === 'string') {
-        data[option]();
+        data[option].call($this);
       }
     });
   };
@@ -178,6 +172,9 @@
       
       $fontSizes = $(this);
 
+      if ($fontSizes.hasClass('bfh-selectbox')) {
+        $fontSizes.bfhselectbox($fontSizes.data());
+      }
       $fontSizes.bfhfontsizes($fontSizes.data());
     });
   });

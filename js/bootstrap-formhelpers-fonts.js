@@ -115,13 +115,7 @@
         }
       }
       
-      $toggle.data('option', value);
-      
-      if (value) {
-        $toggle.html(value);
-      }
-      
-      $input.val(value);
+      this.$element.val(value);
     }
 
   };
@@ -146,7 +140,7 @@
         $this.data('bfhfonts', (data = new BFHFonts(this, options)));
       }
       if (typeof option === 'string') {
-        data[option]();
+        data[option].call($this);
       }
     });
   };
@@ -178,6 +172,9 @@
       
       $fonts = $(this);
 
+      if ($fonts.hasClass('bfh-selectbox')) {
+        $fonts.bfhselectbox($fonts.data());
+      }
       $fonts.bfhfonts($fonts.data());
     });
   });

@@ -62,7 +62,7 @@
     loadFormatter: function () {
       var formattedNumber;
 
-      formattedNumber = this.getFormattedNumber(this.options.format, this.$element.val());
+      formattedNumber = formatNumber(this.options.format, this.$element.val());
     
       this.$element.addClass('disabled');
       this.$element.val(formattedNumber);
@@ -76,7 +76,7 @@
         this.options.format = BFHPhoneFormatList[this.options.country];
       }
       
-      formattedNumber = this.getFormattedNumber(this.options.format, this.options.number);
+      formattedNumber = formatNumber(this.options.format, this.options.number);
     
       this.$element.html(formattedNumber);
     },
@@ -91,39 +91,6 @@
       $phone.options.format = BFHPhoneFormatList[$this.val()];
       
       $phone.loadFormatter();
-    },
-    
-    getFormattedNumber: function(format, number) {
-      var formattedNumber,
-          indexFormat,
-          indexNumber;
-          
-      formattedNumber = '';
-      number = String(number).replace(/\D/g, '');
-    
-      for (indexFormat = 0, indexNumber = 0; indexFormat < format.length; indexFormat = indexFormat + 1) {
-        if (/\d/g.test(format.charAt(indexFormat))) {
-          if (format.charAt(indexFormat) === number.charAt(indexNumber)) {
-            formattedNumber += number.charAt(indexNumber);
-            indexNumber = indexNumber + 1;
-          } else {
-            formattedNumber += format.charAt(indexFormat);
-          }
-        } else if (format.charAt(indexFormat) !== 'd') {
-          if (number.charAt(indexNumber) !== '' || format.charAt(indexFormat) === '+') {
-            formattedNumber += format.charAt(indexFormat);
-          }
-        } else {
-          if (number.charAt(indexNumber) === '') {
-            formattedNumber += '';
-          } else {
-            formattedNumber += number.charAt(indexNumber);
-            indexNumber = indexNumber + 1;
-          }
-        }
-      }
-    
-      return formattedNumber;
     },
     
     change: function() {
@@ -157,6 +124,39 @@
 
   };
 
+  function formatNumber(format, number) {
+    var formattedNumber,
+        indexFormat,
+        indexNumber;
+        
+    formattedNumber = '';
+    number = String(number).replace(/\D/g, '');
+  
+    for (indexFormat = 0, indexNumber = 0; indexFormat < format.length; indexFormat = indexFormat + 1) {
+      if (/\d/g.test(format.charAt(indexFormat))) {
+        if (format.charAt(indexFormat) === number.charAt(indexNumber)) {
+          formattedNumber += number.charAt(indexNumber);
+          indexNumber = indexNumber + 1;
+        } else {
+          formattedNumber += format.charAt(indexFormat);
+        }
+      } else if (format.charAt(indexFormat) !== 'd') {
+        if (number.charAt(indexNumber) !== '' || format.charAt(indexFormat) === '+') {
+          formattedNumber += format.charAt(indexFormat);
+        }
+      } else {
+        if (number.charAt(indexNumber) === '') {
+          formattedNumber += '';
+        } else {
+          formattedNumber += number.charAt(indexNumber);
+          indexNumber = indexNumber + 1;
+        }
+      }
+    }
+  
+    return formattedNumber;
+  }
+    
   function getCursorPosition($element) {
     var position = 0,
         selection;
@@ -211,7 +211,7 @@
         $this.data('bfhphone', (data = new BFHPhone(this, options)));
       }
       if (typeof option === 'string') {
-        data[option]();
+        data[option].call($this);
       }
     });
   };

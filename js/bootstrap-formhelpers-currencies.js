@@ -129,22 +129,7 @@
         }
       }
 
-      $toggle.data('option', value);
-
-      if (value) {
-        if (this.options.flags === true) {
-          if (currencies[value].currencyflag) {
-            flag = currencies[value].currencyflag;
-          } else {
-            flag = value.substr(0,2);
-          }
-          $toggle.html('<i class="glyphicon bfh-flag-' + flag + '"></i>' + currencies[value].label);
-        } else {
-          $toggle.html(currencies[value].label);
-        }
-      }
-
-      $input.val(value);
+      this.$element.val(value);
     },
 
     displayCurrency: function () {
@@ -187,7 +172,7 @@
         $this.data('bfhcurrencies', (data = new BFHCurrencies(this, options)));
       }
       if (typeof option === 'string') {
-        data[option]();
+        data[option].call($this);
       }
     });
   };
@@ -220,6 +205,9 @@
       
       $currencies = $(this);
 
+      if ($currencies.hasClass('bfh-selectbox')) {
+        $currencies.bfhselectbox($currencies.data());
+      }
       $currencies.bfhcurrencies($currencies.data());
     });
   });

@@ -145,15 +145,7 @@
         }
       }
       
-      $toggle.data('option', stateCode);
-      
-      if (stateName !== '') {
-        $toggle.html(stateName);
-      } else {
-        $toggle.html('');
-      }
-      
-      $input.val(stateCode);
+      this.$element.val(stateCode);
     },
     
     changeBootstrapCountry: function (e) {
@@ -211,7 +203,7 @@
         $this.data('bfhstates', (data = new BFHStates(this, options)));
       }
       if (typeof option === 'string') {
-        data[option]();
+        data[option].call($this);
       }
     });
   };
@@ -243,6 +235,9 @@
       
       $states = $(this);
 
+      if ($states.hasClass('bfh-selectbox')) {
+        $states.bfhselectbox($states.data());
+      }
       $states.bfhstates($states.data());
     });
   });

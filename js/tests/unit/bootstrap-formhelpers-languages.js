@@ -96,19 +96,8 @@ $(function () {
   
   test('should fill bfhselectbox with a list of languages', function() {
     var languagesHTML = '<div class="bfh-selectbox bfh-languages">' +
-      '<input type="hidden" value="">' +
-      '<a class="bfh-selectbox-toggle" role="button" data-toggle="bfh-selectbox" href="#">' +
-      '<span class="bfh-selectbox-option bfh-selectbox-medium" data-option=""></span>' +
-      '<b class="caret"></b>' +
-      '</a>' +
-      '<div class="bfh-selectbox-options">' +
-      '<div role="listbox">' +
-      '<ul role="option">' +
-      '</ul>' +
-      '</div>' +
-      '</div>' +
       '</div>',
-      languages = $(languagesHTML).bfhlanguages();
+      languages = $(languagesHTML).bfhselectbox().bfhlanguages();
 
     ok(languages.find('.bfh-selectbox-options > div > ul > li').size() === 184, 'correct number of elements shown');
     ok(languages.find('.bfh-selectbox-option').html() === '', 'correct option selected');
@@ -118,19 +107,8 @@ $(function () {
   
   test('should fill bfhselectbox with a list of languages with preselected language', function() {
     var languagesHTML = '<div class="bfh-selectbox bfh-languages" data-language="en">' +
-      '<input type="hidden" value="">' +
-      '<a class="bfh-selectbox-toggle" role="button" data-toggle="bfh-selectbox" href="#">' +
-      '<span class="bfh-selectbox-option bfh-selectbox-medium" data-option=""></span>' +
-      '<b class="caret"></b>' +
-      '</a>' +
-      '<div class="bfh-selectbox-options">' +
-      '<div role="listbox">' +
-      '<ul role="option">' +
-      '</ul>' +
-      '</div>' +
-      '</div>' +
       '</div>',
-      languages = $(languagesHTML).bfhlanguages({language: 'en'});
+      languages = $(languagesHTML).bfhselectbox().bfhlanguages({language: 'en'});
       
     ok(languages.find('.bfh-selectbox-options > div > ul > li').size() === 184, 'correct number of elements shown');
     ok(languages.find('.bfh-selectbox-option').html() === 'English', 'correct option selected');
@@ -140,19 +118,8 @@ $(function () {
   
   test('should fill bfhselectbox with predefined list of languages', function() {
     var languagesHTML = '<div class="bfh-selectbox bfh-languages" data-available="en,fr,es">' +
-      '<input type="hidden" value="">' +
-      '<a class="bfh-selectbox-toggle" role="button" data-toggle="bfh-selectbox" href="#">' +
-      '<span class="bfh-selectbox-option bfh-selectbox-medium" data-option=""></span>' +
-      '<b class="caret"></b>' +
-      '</a>' +
-      '<div class="bfh-selectbox-options">' +
-      '<div role="listbox">' +
-      '<ul role="option">' +
-      '</ul>' +
-      '</div>' +
-      '</div>' +
       '</div>',
-      languages = $(languagesHTML).bfhlanguages({available: 'en,fr,es'});
+      languages = $(languagesHTML).bfhselectbox().bfhlanguages({available: 'en,fr,es'});
       
     ok(languages.find('.bfh-selectbox-options > div > ul > li').size() === 4, 'correct number of elements shown');
     ok(languages.find('.bfh-selectbox-option').html() === '', 'correct option selected');
@@ -162,19 +129,8 @@ $(function () {
   
   test('should fill bfhselectbox with predefined list of languages with country', function() {
     var languagesHTML = '<div class="bfh-selectbox bfh-languages" data-available="en_US,fr_CA,es_MX">' +
-      '<input type="hidden" value="">' +
-      '<a class="bfh-selectbox-toggle" role="button" data-toggle="bfh-selectbox" href="#">' +
-      '<span class="bfh-selectbox-option bfh-selectbox-medium" data-option=""></span>' +
-      '<b class="caret"></b>' +
-      '</a>' +
-      '<div class="bfh-selectbox-options">' +
-      '<div role="listbox">' +
-      '<ul role="option">' +
-      '</ul>' +
-      '</div>' +
-      '</div>' +
       '</div>',
-      languages = $(languagesHTML).bfhlanguages({available: 'en_US,fr_CA,es_MX'});
+      languages = $(languagesHTML).bfhselectbox().bfhlanguages({available: 'en_US,fr_CA,es_MX'});
 
     ok(languages.find('.bfh-selectbox-options > div > ul > li').size() === 4, 'correct number of elements shown');
     ok(languages.find('.bfh-selectbox-option').html() === '', 'correct option selected');
@@ -184,19 +140,8 @@ $(function () {
   
   test('should fill bfhselectbox with predefined list of languages with flags', function() {
     var languagesHTML = '<div class="bfh-selectbox bfh-languages" data-language="en_US" data-available="en_US,fr_CA,es_MX" data-flags="true">' +
-      '<input type="hidden" value="">' +
-      '<a class="bfh-selectbox-toggle" role="button" data-toggle="bfh-selectbox" href="#">' +
-      '<span class="bfh-selectbox-option bfh-selectbox-medium" data-option=""></span>' +
-      '<b class="caret"></b>' +
-      '</a>' +
-      '<div class="bfh-selectbox-options">' +
-      '<div role="listbox">' +
-      '<ul role="option">' +
-      '</ul>' +
-      '</div>' +
-      '</div>' +
       '</div>',
-      languages = $(languagesHTML).bfhlanguages({language: 'en_US', available: 'en_US,fr_CA,es_MX', flags: true});
+      languages = $(languagesHTML).bfhselectbox().bfhlanguages({language: 'en_US', available: 'en_US,fr_CA,es_MX', flags: true});
 
     ok(languages.find('.bfh-selectbox-options > div > ul > li').size() === 4, 'correct number of elements shown');
     ok(languages.find('.bfh-selectbox-option').html() === '<i class="glyphicon bfh-flag-US"></i>English', 'correct option selected');
@@ -206,19 +151,8 @@ $(function () {
   
   test('should fill bfhselectbox with a list of languages without a blank option', function() {
     var languagesHTML = '<div class="bfh-selectbox bfh-languages" data-language="en" data-blank="false">' +
-      '<input type="hidden" value="">' +
-      '<a class="bfh-selectbox-toggle" role="button" data-toggle="bfh-selectbox" href="#">' +
-      '<span class="bfh-selectbox-option bfh-selectbox-medium" data-option=""></span>' +
-      '<b class="caret"></b>' +
-      '</a>' +
-      '<div class="bfh-selectbox-options">' +
-      '<div role="listbox">' +
-      '<ul role="option">' +
-      '</ul>' +
-      '</div>' +
-      '</div>' +
       '</div>',
-      languages = $(languagesHTML).bfhlanguages({language: 'en', blank: false});
+      languages = $(languagesHTML).bfhselectbox().bfhlanguages({language: 'en', blank: false});
 
     ok(languages.find('.bfh-selectbox-options > div > ul > li').size() === 183, 'correct number of elements shown');
     ok(languages.find('.bfh-selectbox-option').html() === 'English', 'correct option selected');
@@ -228,19 +162,8 @@ $(function () {
   
   test('in bfhselectbox should have value after selecting a language', function() {
     var languagesHTML = '<div class="bfh-selectbox bfh-languages">' +
-      '<input type="hidden" value="">' +
-      '<a class="bfh-selectbox-toggle" role="button" data-toggle="bfh-selectbox" href="#">' +
-      '<span class="bfh-selectbox-option bfh-selectbox-medium" data-option=""></span>' +
-      '<b class="caret"></b>' +
-      '</a>' +
-      '<div class="bfh-selectbox-options">' +
-      '<div role="listbox">' +
-      '<ul role="option">' +
-      '</ul>' +
-      '</div>' +
-      '</div>' +
       '</div>',
-      languages = $(languagesHTML).appendTo('#qunit-fixture').bfhlanguages();
+      languages = $(languagesHTML).appendTo('#qunit-fixture').bfhselectbox().bfhlanguages();
       
     languages.find('.bfh-selectbox-options > div > ul > li > a[data-option="en"]').click();
     ok(languages.find('.bfh-selectbox-option').html() === 'English', 'correct option selected');
@@ -251,19 +174,8 @@ $(function () {
   
   test('in bfhselectbox should have value after selecting a language with country', function() {
     var languagesHTML = '<div class="bfh-selectbox bfh-languages" data-available="en_US,fr_CA,es_MX">' +
-      '<input type="hidden" value="">' +
-      '<a class="bfh-selectbox-toggle" role="button" data-toggle="bfh-selectbox" href="#">' +
-      '<span class="bfh-selectbox-option bfh-selectbox-medium" data-option=""></span>' +
-      '<b class="caret"></b>' +
-      '</a>' +
-      '<div class="bfh-selectbox-options">' +
-      '<div role="listbox">' +
-      '<ul role="option">' +
-      '</ul>' +
-      '</div>' +
-      '</div>' +
       '</div>',
-      languages = $(languagesHTML).appendTo('#qunit-fixture').bfhlanguages({available: 'en_US,fr_CA,es_MX'});
+      languages = $(languagesHTML).appendTo('#qunit-fixture').bfhselectbox().bfhlanguages({available: 'en_US,fr_CA,es_MX'});
       
     languages.find('.bfh-selectbox-options > div > ul > li > a[data-option="en_US"]').click();
     ok(languages.find('.bfh-selectbox-option').html() === 'English (United States)', 'correct option selected');
@@ -274,19 +186,8 @@ $(function () {
   
   test('in bfhselectbox should have value after selecting a language with flags', function() {
     var languagesHTML = '<div class="bfh-selectbox bfh-languages" data-available="en_US,fr_CA,es_MX" data-flags="true">' +
-      '<input type="hidden" value="">' +
-      '<a class="bfh-selectbox-toggle" role="button" data-toggle="bfh-selectbox" href="#">' +
-      '<span class="bfh-selectbox-option bfh-selectbox-medium" data-option=""></span>' +
-      '<b class="caret"></b>' +
-      '</a>' +
-      '<div class="bfh-selectbox-options">' +
-      '<div role="listbox">' +
-      '<ul role="option">' +
-      '</ul>' +
-      '</div>' +
-      '</div>' +
       '</div>',
-      languages = $(languagesHTML).appendTo('#qunit-fixture').bfhlanguages({available: 'en_US,fr_CA,es_MX', flags: true});
+      languages = $(languagesHTML).appendTo('#qunit-fixture').bfhselectbox().bfhlanguages({available: 'en_US,fr_CA,es_MX', flags: true});
       
     languages.find('.bfh-selectbox-options > div > ul > li > a[data-option="en_US"]').click();
     ok(languages.find('.bfh-selectbox-option').html() === '<i class="glyphicon bfh-flag-US"></i>English', 'correct option selected');

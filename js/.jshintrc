@@ -27,7 +27,7 @@
     "unused"        : false,    // true: Require all defined variables be used
     "strict"        : true,     // true: Requires all functions run in ES5 Strict Mode
     "trailing"      : true,     // true: Prohibit trailing whitespaces
-    "maxparams"     : 3,        // {int} Max number of formal params allowed per function
+    "maxparams"     : 4,        // {int} Max number of formal params allowed per function
     "maxdepth"      : 5,        // {int} Max depth of nested blocks (within functions)
     "maxstatements" : false,    // {int} Max number statements per function
     "maxcomplexity" : false,    // {int} Max cyclomatic complexity per function

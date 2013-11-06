@@ -77,19 +77,8 @@ $(function () {
   
   test('should fill bfhselectbox with a list of timezones', function() {
     var timezonesHTML = '<div class="bfh-selectbox bfh-timezones" data-country="US">' +
-      '<input type="hidden" value="">' +
-      '<a class="bfh-selectbox-toggle" role="button" data-toggle="bfh-selectbox" href="#">' +
-      '<span class="bfh-selectbox-option bfh-selectbox-medium" data-option=""></span>' +
-      '<b class="caret"></b>' +
-      '</a>' +
-      '<div class="bfh-selectbox-options">' +
-      '<div role="listbox">' +
-      '<ul role="option">' +
-      '</ul>' +
-      '</div>' +
-      '</div>' +
       '</div>',
-      timezones = $(timezonesHTML).bfhtimezones({country: 'US'});
+      timezones = $(timezonesHTML).bfhselectbox().bfhtimezones({country: 'US'});
 
     ok(timezones.find('.bfh-selectbox-options > div > ul > li').size() === 31, 'correct number of elements shown');
     ok(timezones.find('.bfh-selectbox-option').html() === '', 'correct option selected');
@@ -99,19 +88,8 @@ $(function () {
   
   test('should fill bfhselectbox with a list of timezones with preselected timezone', function() {
     var timezonesHTML = '<div class="bfh-selectbox bfh-timezones" data-country="US" data-timezone="America/New_York">' +
-      '<input type="hidden" value="">' +
-      '<a class="bfh-selectbox-toggle" role="button" data-toggle="bfh-selectbox" href="#">' +
-      '<span class="bfh-selectbox-option bfh-selectbox-medium" data-option=""></span>' +
-      '<b class="caret"></b>' +
-      '</a>' +
-      '<div class="bfh-selectbox-options">' +
-      '<div role="listbox">' +
-      '<ul role="option">' +
-      '</ul>' +
-      '</div>' +
-      '</div>' +
       '</div>',
-      timezones = $(timezonesHTML).bfhtimezones({country: 'US', timezone: 'America/New_York'});
+      timezones = $(timezonesHTML).bfhselectbox().bfhtimezones({country: 'US', timezone: 'America/New_York'});
 
     ok(timezones.find('.bfh-selectbox-options > div > ul > li').size() === 31, 'correct number of elements shown');
     ok(timezones.find('.bfh-selectbox-option').html() === 'New York', 'correct option selected');
@@ -121,19 +99,8 @@ $(function () {
   
   test('should fill bfhselectbox with a list of timezones without a blank option', function() {
     var timezonesHTML = '<div class="bfh-selectbox bfh-timezones" data-country="US" data-timezone="America/New_York" data-blank="false">' +
-      '<input type="hidden" value="">' +
-      '<a class="bfh-selectbox-toggle" role="button" data-toggle="bfh-selectbox" href="#">' +
-      '<span class="bfh-selectbox-option bfh-selectbox-medium" data-option=""></span>' +
-      '<b class="caret"></b>' +
-      '</a>' +
-      '<div class="bfh-selectbox-options">' +
-      '<div role="listbox">' +
-      '<ul role="option">' +
-      '</ul>' +
-      '</div>' +
-      '</div>' +
       '</div>',
-      timezones = $(timezonesHTML).bfhtimezones({country: 'US', timezone: 'America/New_York', blank: false});
+      timezones = $(timezonesHTML).bfhselectbox().bfhtimezones({country: 'US', timezone: 'America/New_York', blank: false});
 
     ok(timezones.find('.bfh-selectbox-options > div > ul > li').size() === 30, 'correct number of elements shown');
     ok(timezones.find('.bfh-selectbox-option').html() === 'New York', 'correct option selected');
@@ -143,34 +110,12 @@ $(function () {
   
   test('should fill bfhselectbox with a list of timezones and work with bfhcountries', function() {
     var timezonesHTML = '<div id="countries" class="bfh-selectbox bfh-countries" data-country="US">' +
-      '<input type="hidden" value="">' +
-      '<a class="bfh-selectbox-toggle" role="button" data-toggle="bfh-selectbox" href="#">' +
-      '<span class="bfh-selectbox-option bfh-selectbox-medium" data-option=""></span>' +
-      '<b class="caret"></b>' +
-      '</a>' +
-      '<div class="bfh-selectbox-options">' +
-      '<div role="listbox">' +
-      '<ul role="option">' +
-      '</ul>' +
-      '</div>' +
-      '</div>' +
       '</div>' +
       '<div class="bfh-selectbox bfh-timezones" data-country="countries"' +
-      '<input type="hidden" value="">' +
-      '<a class="bfh-selectbox-toggle" role="button" data-toggle="bfh-selectbox" href="#">' +
-      '<span class="bfh-selectbox-option bfh-selectbox-medium" data-option=""></span>' +
-      '<b class="caret"></b>' +
-      '</a>' +
-      '<div class="bfh-selectbox-options">' +
-      '<div role="listbox">' +
-      '<ul role="option">' +
-      '</ul>' +
-      '</div>' +
-      '</div>' +
       '</div>',
       timezones = $(timezonesHTML).appendTo('#qunit-fixture'),
-      first = timezones.first().bfhcountries({country: 'US'}),
-      last = timezones.last().bfhtimezones({country: 'countries'});
+      first = timezones.first().bfhselectbox().bfhcountries({country: 'US'}),
+      last = timezones.last().bfhselectbox().bfhtimezones({country: 'countries'});
     
     ok(last.find('.bfh-selectbox-options > div > ul > li').size() === 31, 'correct number of elements shown');
     ok(last.find('.bfh-selectbox-option').html() === '', 'correct option selected');
@@ -189,19 +134,8 @@ $(function () {
   
   test('in bfhselectbox should have value after selecting a timezone', function() {
     var timezonesHTML = '<div class="bfh-selectbox bfh-timezones" data-country="US">' +
-      '<input type="hidden" value="">' +
-      '<a class="bfh-selectbox-toggle" role="button" data-toggle="bfh-selectbox" href="#">' +
-      '<span class="bfh-selectbox-option bfh-selectbox-medium" data-option=""></span>' +
-      '<b class="caret"></b>' +
-      '</a>' +
-      '<div class="bfh-selectbox-options">' +
-      '<div role="listbox">' +
-      '<ul role="option">' +
-      '</ul>' +
-      '</div>' +
-      '</div>' +
       '</div>',
-      timezones = $(timezonesHTML).appendTo('#qunit-fixture').bfhtimezones({country: 'US'});
+      timezones = $(timezonesHTML).appendTo('#qunit-fixture').bfhselectbox().bfhtimezones({country: 'US'});
       
     timezones.find('.bfh-selectbox-options > div > ul > li > a[data-option="America/New_York"]').click();
     ok(timezones.find('.bfh-selectbox-option').html() === 'New York', 'correct option selected');

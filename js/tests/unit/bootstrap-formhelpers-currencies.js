@@ -79,19 +79,8 @@ $(function () {
   
   test('should fill bfhselectbox with a list of currencies', function() {
     var currenciesHTML = '<div class="bfh-selectbox bfh-currencies">' +
-      '<input type="hidden" value="">' +
-      '<a class="bfh-selectbox-toggle" role="button" data-toggle="bfh-selectbox" href="#">' +
-      '<span class="bfh-selectbox-option bfh-selectbox-medium" data-option=""></span>' +
-      '<b class="caret"></b>' +
-      '</a>' +
-      '<div class="bfh-selectbox-options">' +
-      '<div role="listbox">' +
-      '<ul role="option">' +
-      '</ul>' +
-      '</div>' +
-      '</div>' +
       '</div>',
-      currencies = $(currenciesHTML).bfhcurrencies();
+      currencies = $(currenciesHTML).bfhselectbox().bfhcurrencies();
 
     ok(currencies.find('.bfh-selectbox-options > div > ul > li').size() === 160, 'correct number of elements shown');
     ok(currencies.find('.bfh-selectbox-option').html() === '', 'correct option selected');
@@ -101,19 +90,8 @@ $(function () {
   
   test('should fill bfhselectbox with a list of currencies with preselected currency', function() {
     var currenciesHTML = '<div class="bfh-selectbox bfh-currencies" data-currency="USD">' +
-      '<input type="hidden" value="">' +
-      '<a class="bfh-selectbox-toggle" role="button" data-toggle="bfh-selectbox" href="#">' +
-      '<span class="bfh-selectbox-option bfh-selectbox-medium" data-option=""></span>' +
-      '<b class="caret"></b>' +
-      '</a>' +
-      '<div class="bfh-selectbox-options">' +
-      '<div role="listbox">' +
-      '<ul role="option">' +
-      '</ul>' +
-      '</div>' +
-      '</div>' +
       '</div>',
-      currencies = $(currenciesHTML).bfhcurrencies({currency: 'USD'});
+      currencies = $(currenciesHTML).bfhselectbox().bfhcurrencies({currency: 'USD'});
       
     ok(currencies.find('.bfh-selectbox-options > div > ul > li').size() === 160, 'correct number of elements shown');
     ok(currencies.find('.bfh-selectbox-option').html() === 'United States dollar', 'correct option selected');
@@ -123,19 +101,8 @@ $(function () {
   
   test('should fill bfhselectbox with predefined list of currencies', function() {
     var currenciesHTML = '<div class="bfh-selectbox bfh-currencies" data-available="USD,CAD,EUR">' +
-      '<input type="hidden" value="">' +
-      '<a class="bfh-selectbox-toggle" role="button" data-toggle="bfh-selectbox" href="#">' +
-      '<span class="bfh-selectbox-option bfh-selectbox-medium" data-option=""></span>' +
-      '<b class="caret"></b>' +
-      '</a>' +
-      '<div class="bfh-selectbox-options">' +
-      '<div role="listbox">' +
-      '<ul role="option">' +
-      '</ul>' +
-      '</div>' +
-      '</div>' +
       '</div>',
-      currencies = $(currenciesHTML).bfhcurrencies({available: 'USD,CAD,EUR'});
+      currencies = $(currenciesHTML).bfhselectbox().bfhcurrencies({available: 'USD,CAD,EUR'});
       
     ok(currencies.find('.bfh-selectbox-options > div > ul > li').size() === 4, 'correct number of elements shown');
     ok(currencies.find('.bfh-selectbox-option').html() === '', 'correct option selected');
@@ -145,19 +112,8 @@ $(function () {
   
   test('should fill bfhselectbox with a list of currencies without a blank option', function() {
     var currenciesHTML = '<div class="bfh-selectbox bfh-currencies" data-currency="USD" data-blank="false">' +
-      '<input type="hidden" value="">' +
-      '<a class="bfh-selectbox-toggle" role="button" data-toggle="bfh-selectbox" href="#">' +
-      '<span class="bfh-selectbox-option bfh-selectbox-medium" data-option=""></span>' +
-      '<b class="caret"></b>' +
-      '</a>' +
-      '<div class="bfh-selectbox-options">' +
-      '<div role="listbox">' +
-      '<ul role="option">' +
-      '</ul>' +
-      '</div>' +
-      '</div>' +
       '</div>',
-      currencies = $(currenciesHTML).bfhcurrencies({currency: 'USD', blank: false});
+      currencies = $(currenciesHTML).bfhselectbox().bfhcurrencies({currency: 'USD', blank: false});
 
     ok(currencies.find('.bfh-selectbox-options > div > ul > li').size() === 159, 'correct number of elements shown');
     ok(currencies.find('.bfh-selectbox-option').html() === 'United States dollar', 'correct option selected');
@@ -167,19 +123,8 @@ $(function () {
   
   test('should fill bfhselectbox with a list of currencies with flags', function() {
     var currenciesHTML = '<div class="bfh-selectbox bfh-currencies" data-currency="USD" data-flags="true">' +
-      '<input type="hidden" value="">' +
-      '<a class="bfh-selectbox-toggle" role="button" data-toggle="bfh-selectbox" href="#">' +
-      '<span class="bfh-selectbox-option bfh-selectbox-medium" data-option=""></span>' +
-      '<b class="caret"></b>' +
-      '</a>' +
-      '<div class="bfh-selectbox-options">' +
-      '<div role="listbox">' +
-      '<ul role="option">' +
-      '</ul>' +
-      '</div>' +
-      '</div>' +
       '</div>',
-      currencies = $(currenciesHTML).bfhcurrencies({currency: 'USD', flags: true});
+      currencies = $(currenciesHTML).bfhselectbox().bfhcurrencies({currency: 'USD', flags: true});
 
     ok(currencies.find('.bfh-selectbox-options > div > ul > li').size() === 160, 'correct number of elements shown');
     ok(currencies.find('.bfh-selectbox-option').html() === '<i class="glyphicon bfh-flag-US"></i>United States dollar', 'correct option selected');
@@ -189,19 +134,8 @@ $(function () {
   
   test('in bfhselectbox should have value after selecting a currency', function() {
     var currenciesHTML = '<div class="bfh-selectbox bfh-currencies">' +
-      '<input type="hidden" value="">' +
-      '<a class="bfh-selectbox-toggle" role="button" data-toggle="bfh-selectbox" href="#">' +
-      '<span class="bfh-selectbox-option bfh-selectbox-medium" data-option=""></span>' +
-      '<b class="caret"></b>' +
-      '</a>' +
-      '<div class="bfh-selectbox-options">' +
-      '<div role="listbox">' +
-      '<ul role="option">' +
-      '</ul>' +
-      '</div>' +
-      '</div>' +
       '</div>',
-      currencies = $(currenciesHTML).appendTo('#qunit-fixture').bfhcurrencies();
+      currencies = $(currenciesHTML).appendTo('#qunit-fixture').bfhselectbox().bfhcurrencies();
       
     currencies.find('.bfh-selectbox-options > div > ul > li > a[data-option="USD"]').click();
     ok(currencies.find('.bfh-selectbox-option').html() === 'United States dollar', 'correct option selected');
@@ -212,19 +146,8 @@ $(function () {
   
   test('in bfhselectbox should have value after selecting a currency with flags', function() {
     var currenciesHTML = '<div class="bfh-selectbox bfh-currencies" data-flags="true">' +
-      '<input type="hidden" value="">' +
-      '<a class="bfh-selectbox-toggle" role="button" data-toggle="bfh-selectbox" href="#">' +
-      '<span class="bfh-selectbox-option bfh-selectbox-medium" data-option=""></span>' +
-      '<b class="caret"></b>' +
-      '</a>' +
-      '<div class="bfh-selectbox-options">' +
-      '<div role="listbox">' +
-      '<ul role="option">' +
-      '</ul>' +
-      '</div>' +
-      '</div>' +
       '</div>',
-      currencies = $(currenciesHTML).appendTo('#qunit-fixture').bfhcurrencies({flags: true});
+      currencies = $(currenciesHTML).appendTo('#qunit-fixture').bfhselectbox().bfhcurrencies({flags: true});
       
     currencies.find('.bfh-selectbox-options > div > ul > li > a[data-option="USD"]').click();
     ok(currencies.find('.bfh-selectbox-option').html() === '<i class="glyphicon bfh-flag-US"></i>United States dollar', 'correct option selected');

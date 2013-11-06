@@ -136,13 +136,7 @@
         }
       }
       
-      $toggle.data('option', value);
-      
-      if (value) {
-        $toggle.html(fonts[value].info.family);
-      }
-      
-      $input.val(value);
+      this.$element.val(value);
     }
 
   };
@@ -167,7 +161,7 @@
         $this.data('bfhgooglefonts', (data = new BFHGoogleFonts(this, options)));
       }
       if (typeof option === 'string') {
-        data[option]();
+        data[option].call($this);
       }
     });
   };
@@ -200,6 +194,9 @@
       
       $googleFonts = $(this);
 
+      if ($googleFonts.hasClass('bfh-selectbox')) {
+        $googleFonts.bfhselectbox($googleFonts.data());
+      }
       $googleFonts.bfhgooglefonts($googleFonts.data());
     });
   });

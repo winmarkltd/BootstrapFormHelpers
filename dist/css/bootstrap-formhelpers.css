@@ -1727,55 +1727,41 @@
   background-position: -224px -80px;
 }
 
-.caret {
-  display: inline-block;
-  width: 0;
-  height: 0;
-  margin-left: 2px;
-  vertical-align: middle;
-  border-top: 4px solid #000000;
-  border-right: 4px solid transparent;
-  border-bottom: 0 dotted;
-  border-left: 4px solid transparent;
-}
-
 .bfh-selectbox {
   position: relative;
-  display: inline-block;
-  height: 30px;
 }
 
-.bfh-selectbox-toggle {
+.bfh-selectbox .bfh-selectbox-toggle {
   display: inline-block;
-  padding: 4px;
-  *margin-bottom: -3px;
-  color: #000000;
   text-decoration: none;
-  background-color: #ffffff;
-  border: 1px solid #cccccc;
-  border: 1px solid rgba(0, 0, 0, 0.15);
-  border-radius: 4px;
 }
 
-.bfh-selectbox-toggle:hover,
-.bfh-selectbox-toggle:focus {
-  color: #000000;
-}
-
-.bfh-selectbox-toggle:focus {
+.bfh-selectbox .bfh-selectbox-toggle:focus {
   outline: 0;
 }
 
-.bfh-selectbox-options {
+.bfh-selectbox .bfh-selectbox-toggle .bfh-selectbox-option {
+  display: inline-block;
+  float: left;
+  height: 20px;
+  overflow: hidden;
+}
+
+.bfh-selectbox .bfh-selectbox-toggle .selectbox-caret {
+  float: right;
+  margin-top: 8px;
+}
+
+.bfh-selectbox .bfh-selectbox-options {
   position: absolute;
   top: 100%;
   left: 0;
   z-index: 1000;
   display: none;
   float: left;
-  min-width: 160px;
+  min-width: 90px;
   padding: 5px 0;
-  margin: 2px 0 0;
+  margin: -1px 0 0;
   font-size: 14px;
   background-color: #ffffff;
   border: 1px solid #cccccc;
@@ -1786,20 +1772,20 @@
   background-clip: padding-box;
 }
 
-.bfh-selectbox-options.pull-right {
+.bfh-selectbox .bfh-selectbox-options.pull-right {
   right: 0;
   left: auto;
 }
 
-.bfh-selectbox-options .divider {
+.bfh-selectbox .bfh-selectbox-options .divider {
   height: 1px;
   margin: 9px 0;
   overflow: hidden;
   background-color: #e5e5e5;
 }
 
-.bfh-selectbox-options ul {
-  width: 240px;
+.bfh-selectbox .bfh-selectbox-options ul {
+  max-width: 500px;
   max-height: 200px;
   padding: 0;
   margin: 5px 0 0 0;
@@ -1808,8 +1794,9 @@
   list-style: none;
 }
 
-.bfh-selectbox-options a {
+.bfh-selectbox .bfh-selectbox-options ul li > a {
   display: block;
+  min-height: 26px;
   padding: 3px 20px;
   clear: both;
   font-weight: normal;
@@ -1818,46 +1805,14 @@
   white-space: nowrap;
 }
 
-.bfh-selectbox-options li > a:hover,
-.bfh-selectbox-options li > a:focus {
+.bfh-selectbox .bfh-selectbox-options ul li > a:hover,
+.bfh-selectbox .bfh-selectbox-options ul li > a:focus {
   color: #262626;
   text-decoration: none;
   background-color: #f5f5f5;
 }
 
-.bfh-selectbox-options .active > a,
-.bfh-selectbox-options .active > a:hover,
-.bfh-selectbox-options .active > a:focus {
-  color: #ffffff;
-  text-decoration: none;
-  background-color: #428bca;
-  outline: 0;
-}
-
-.bfh-selectbox-options .disabled > a,
-.bfh-selectbox-options .disabled > a:hover,
-.bfh-selectbox-options .disabled > a:focus {
-  color: #999999;
-}
-
-.bfh-selectbox-options .disabled > a:hover,
-.bfh-selectbox-options .disabled > a:focus {
-  text-decoration: none;
-  cursor: not-allowed;
-  background-color: transparent;
-  background-image: none;
-  filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
-}
-
-.open > .bfh-selectbox-options {
-  display: block;
-}
-
-.open a {
-  outline: 0;
-}
-
-.bfh-selectbox-options-header {
+.bfh-selectbox .bfh-selectbox-options ul .bfh-selectbox-options-header {
   display: block;
   padding: 3px 20px;
   font-size: 12px;
@@ -1865,25 +1820,26 @@
   color: #999999;
 }
 
-.bfh-selectbox-backdrop {
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 990;
+.bfh-selectbox .bfh-selectbox-options ul .disabled > a {
+  color: #999999;
 }
 
-.bfh-selectbox-filter {
-  width: 220px;
-  margin: 0 10px;
+.bfh-selectbox .bfh-selectbox-options ul .disabled > a:hover,
+.bfh-selectbox .bfh-selectbox-options ul .disabled > a:focus {
+  color: #999999;
+  text-decoration: none;
+  cursor: not-allowed;
+  background-color: transparent;
+  background-image: none;
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
 }
 
-.bfh-selectbox-option {
-  display: inline-block;
-  float: left;
-  height: 20px;
-  overflow: hidden;
+.bfh-selectbox.open > .bfh-selectbox-options {
+  display: block;
+}
+
+.bfh-selectbox.open a {
+  outline: 0;
 }
 
 .pull-right > .bfh-selectbox-options {
@@ -1905,18 +1861,6 @@
   margin-bottom: 1px;
 }
 
-.bfh-selectbox-small {
-  width: 90px;
-}
-
-.bfh-selectbox-medium {
-  width: 150px;
-}
-
-.bfh-selectbox-large {
-  width: 210px;
-}
-
 @media (min-width: 768px) {
   .navbar-right .bfh-selectbox-options {
     right: 0;
@@ -1925,6 +1869,7 @@
 }
 
 .bfh-googlefonts .bfh-selectbox-options a {
+  width: 230px;
   height: 30px;
   text-indent: -9999px;
   background-image: url(../img/bootstrap-formhelpers-googlefonts.png);
@@ -2013,8 +1958,9 @@
   *margin-bottom: -3px;
 }
 
-.bfh-datepicker-toggle > input {
-  cursor: default;
+.bfh-datepicker-toggle > input[readonly] {
+  cursor: inherit;
+  background-color: inherit;
 }
 
 .open > .bfh-datepicker-calendar {
@@ -2069,8 +2015,9 @@
   *margin-bottom: -3px;
 }
 
-.bfh-timepicker-toggle > input {
-  cursor: default;
+.bfh-timepicker-toggle > input[readonly] {
+  cursor: inherit;
+  background-color: inherit;
 }
 
 .open > .bfh-timepicker-popover {

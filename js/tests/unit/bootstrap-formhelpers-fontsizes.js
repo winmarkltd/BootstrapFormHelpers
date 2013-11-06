@@ -65,19 +65,8 @@ $(function () {
   
   test('should fill bfhselectbox with a list of fonts', function() {
     var fontsizesHTML = '<div class="bfh-selectbox bfh-fontsizes">' +
-      '<input type="hidden" value="">' +
-      '<a class="bfh-selectbox-toggle" role="button" data-toggle="bfh-selectbox" href="#">' +
-      '<span class="bfh-selectbox-option bfh-selectbox-medium" data-option=""></span>' +
-      '<b class="caret"></b>' +
-      '</a>' +
-      '<div class="bfh-selectbox-options">' +
-      '<div role="listbox">' +
-      '<ul role="option">' +
-      '</ul>' +
-      '</div>' +
-      '</div>' +
       '</div>',
-      fontsizes = $(fontsizesHTML).bfhfontsizes();
+      fontsizes = $(fontsizesHTML).bfhselectbox().bfhfontsizes();
 
     ok(fontsizes.find('.bfh-selectbox-options > div > ul > li').size() === 14, 'correct number of elements shown');
     ok(fontsizes.find('.bfh-selectbox-option').html() === '', 'correct option selected');
@@ -87,19 +76,8 @@ $(function () {
   
   test('should fill bfhselectbox with a list of fonts with preselected font', function() {
     var fontsizesHTML = '<div class="bfh-selectbox bfh-fontsizes" data-fontsize="12">' +
-      '<input type="hidden" value="">' +
-      '<a class="bfh-selectbox-toggle" role="button" data-toggle="bfh-selectbox" href="#">' +
-      '<span class="bfh-selectbox-option bfh-selectbox-medium" data-option=""></span>' +
-      '<b class="caret"></b>' +
-      '</a>' +
-      '<div class="bfh-selectbox-options">' +
-      '<div role="listbox">' +
-      '<ul role="option">' +
-      '</ul>' +
-      '</div>' +
-      '</div>' +
       '</div>',
-      fontsizes = $(fontsizesHTML).bfhfontsizes({fontsize: '12'});
+      fontsizes = $(fontsizesHTML).bfhselectbox().bfhfontsizes({fontsize: '12'});
       
     ok(fontsizes.find('.bfh-selectbox-options > div > ul > li').size() === 14, 'correct number of elements shown');
     ok(fontsizes.find('.bfh-selectbox-option').html() === '12px', 'correct option selected');
@@ -109,19 +87,8 @@ $(function () {
   
   test('should fill bfhselectbox with predefined list of fonts', function() {
     var fontsizesHTML = '<div class="bfh-selectbox bfh-fontsizes" data-available="12,14,16">' +
-      '<input type="hidden" value="">' +
-      '<a class="bfh-selectbox-toggle" role="button" data-toggle="bfh-selectbox" href="#">' +
-      '<span class="bfh-selectbox-option bfh-selectbox-medium" data-option=""></span>' +
-      '<b class="caret"></b>' +
-      '</a>' +
-      '<div class="bfh-selectbox-options">' +
-      '<div role="listbox">' +
-      '<ul role="option">' +
-      '</ul>' +
-      '</div>' +
-      '</div>' +
       '</div>',
-      fontsizes = $(fontsizesHTML).bfhfontsizes({available: '12,14,16'});
+      fontsizes = $(fontsizesHTML).bfhselectbox().bfhfontsizes({available: '12,14,16'});
       
     ok(fontsizes.find('.bfh-selectbox-options > div > ul > li').size() === 4, 'correct number of elements shown');
     ok(fontsizes.find('.bfh-selectbox-option').html() === '', 'correct option selected');
@@ -131,19 +98,8 @@ $(function () {
   
   test('should fill bfhselectbox with a list of fonts without a blank option', function() {
     var fontsizesHTML = '<div class="bfh-selectbox bfh-fontsizes" data-fontsize="12" data-blank="false">' +
-      '<input type="hidden" value="">' +
-      '<a class="bfh-selectbox-toggle" role="button" data-toggle="bfh-selectbox" href="#">' +
-      '<span class="bfh-selectbox-option bfh-selectbox-medium" data-option=""></span>' +
-      '<b class="caret"></b>' +
-      '</a>' +
-      '<div class="bfh-selectbox-options">' +
-      '<div role="listbox">' +
-      '<ul role="option">' +
-      '</ul>' +
-      '</div>' +
-      '</div>' +
       '</div>',
-      fontsizes = $(fontsizesHTML).bfhfontsizes({fontsize: '12', blank: false});
+      fontsizes = $(fontsizesHTML).bfhselectbox().bfhfontsizes({fontsize: '12', blank: false});
 
     ok(fontsizes.find('.bfh-selectbox-options > div > ul > li').size() === 13, 'correct number of elements shown');
     ok(fontsizes.find('.bfh-selectbox-option').html() === '12px', 'correct option selected');
@@ -153,19 +109,8 @@ $(function () {
   
   test('in bfhselectbox should have value after selecting a font', function() {
     var fontsizesHTML = '<div class="bfh-selectbox bfh-fontsizes">' +
-      '<input type="hidden" value="">' +
-      '<a class="bfh-selectbox-toggle" role="button" data-toggle="bfh-selectbox" href="#">' +
-      '<span class="bfh-selectbox-option bfh-selectbox-medium" data-option=""></span>' +
-      '<b class="caret"></b>' +
-      '</a>' +
-      '<div class="bfh-selectbox-options">' +
-      '<div role="listbox">' +
-      '<ul role="option">' +
-      '</ul>' +
-      '</div>' +
-      '</div>' +
       '</div>',
-      fontsizes = $(fontsizesHTML).appendTo('#qunit-fixture').bfhfontsizes();
+      fontsizes = $(fontsizesHTML).appendTo('#qunit-fixture').bfhselectbox().bfhfontsizes();
       
     fontsizes.find('.bfh-selectbox-options > div > ul > li > a[data-option="12"]').click();
     ok(fontsizes.find('.bfh-selectbox-option').html() === '12px', 'correct option selected');

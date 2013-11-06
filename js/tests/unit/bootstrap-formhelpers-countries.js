@@ -79,19 +79,8 @@ $(function () {
   
   test('should fill bfhselectbox with a list of countries', function() {
     var countriesHTML = '<div class="bfh-selectbox bfh-countries">' +
-      '<input type="hidden" value="">' +
-      '<a class="bfh-selectbox-toggle" role="button" data-toggle="bfh-selectbox" href="#">' +
-      '<span class="bfh-selectbox-option bfh-selectbox-medium" data-option=""></span>' +
-      '<b class="caret"></b>' +
-      '</a>' +
-      '<div class="bfh-selectbox-options">' +
-      '<div role="listbox">' +
-      '<ul role="option">' +
-      '</ul>' +
-      '</div>' +
-      '</div>' +
       '</div>',
-      countries = $(countriesHTML).bfhcountries();
+      countries = $(countriesHTML).bfhselectbox().bfhcountries();
 
     ok(countries.find('.bfh-selectbox-options > div > ul > li').size() === 242, 'correct number of elements shown');
     ok(countries.find('.bfh-selectbox-option').html() === '', 'correct option selected');
@@ -101,19 +90,8 @@ $(function () {
   
   test('should fill bfhselectbox with a list of countries with preselected country', function() {
     var countriesHTML = '<div class="bfh-selectbox bfh-countries" data-country="US">' +
-      '<input type="hidden" value="">' +
-      '<a class="bfh-selectbox-toggle" role="button" data-toggle="bfh-selectbox" href="#">' +
-      '<span class="bfh-selectbox-option bfh-selectbox-medium" data-option=""></span>' +
-      '<b class="caret"></b>' +
-      '</a>' +
-      '<div class="bfh-selectbox-options">' +
-      '<div role="listbox">' +
-      '<ul role="option">' +
-      '</ul>' +
-      '</div>' +
-      '</div>' +
       '</div>',
-      countries = $(countriesHTML).bfhcountries({country: 'US'});
+      countries = $(countriesHTML).bfhselectbox().bfhcountries({country: 'US'});
       
     ok(countries.find('.bfh-selectbox-options > div > ul > li').size() === 242, 'correct number of elements shown');
     ok(countries.find('.bfh-selectbox-option').html() === 'United States', 'correct option selected');
@@ -123,19 +101,8 @@ $(function () {
   
   test('should fill bfhselectbox with predefined list of countries', function() {
     var countriesHTML = '<div class="bfh-selectbox bfh-countries" data-available="US,CA,MX">' +
-      '<input type="hidden" value="">' +
-      '<a class="bfh-selectbox-toggle" role="button" data-toggle="bfh-selectbox" href="#">' +
-      '<span class="bfh-selectbox-option bfh-selectbox-medium" data-option=""></span>' +
-      '<b class="caret"></b>' +
-      '</a>' +
-      '<div class="bfh-selectbox-options">' +
-      '<div role="listbox">' +
-      '<ul role="option">' +
-      '</ul>' +
-      '</div>' +
-      '</div>' +
       '</div>',
-      countries = $(countriesHTML).bfhcountries({available: 'US,CA,MX'});
+      countries = $(countriesHTML).bfhselectbox().bfhcountries({available: 'US,CA,MX'});
       
     ok(countries.find('.bfh-selectbox-options > div > ul > li').size() === 4, 'correct number of elements shown');
     ok(countries.find('.bfh-selectbox-option').html() === '', 'correct option selected');
@@ -145,19 +112,8 @@ $(function () {
   
   test('should fill bfhselectbox with a list of countries without a blank option', function() {
     var countriesHTML = '<div class="bfh-selectbox bfh-countries" data-country="US" data-blank="false">' +
-      '<input type="hidden" value="">' +
-      '<a class="bfh-selectbox-toggle" role="button" data-toggle="bfh-selectbox" href="#">' +
-      '<span class="bfh-selectbox-option bfh-selectbox-medium" data-option=""></span>' +
-      '<b class="caret"></b>' +
-      '</a>' +
-      '<div class="bfh-selectbox-options">' +
-      '<div role="listbox">' +
-      '<ul role="option">' +
-      '</ul>' +
-      '</div>' +
-      '</div>' +
       '</div>',
-      countries = $(countriesHTML).bfhcountries({country: 'US', blank: false});
+      countries = $(countriesHTML).bfhselectbox().bfhcountries({country: 'US', blank: false});
 
     ok(countries.find('.bfh-selectbox-options > div > ul > li').size() === 241, 'correct number of elements shown');
     ok(countries.find('.bfh-selectbox-option').html() === 'United States', 'correct option selected');
@@ -167,19 +123,8 @@ $(function () {
   
   test('should fill bfhselectbox with a list of countries with flags', function() {
     var countriesHTML = '<div class="bfh-selectbox bfh-countries" data-country="US" data-flags="true">' +
-      '<input type="hidden" value="">' +
-      '<a class="bfh-selectbox-toggle" role="button" data-toggle="bfh-selectbox" href="#">' +
-      '<span class="bfh-selectbox-option bfh-selectbox-medium" data-option=""></span>' +
-      '<b class="caret"></b>' +
-      '</a>' +
-      '<div class="bfh-selectbox-options">' +
-      '<div role="listbox">' +
-      '<ul role="option">' +
-      '</ul>' +
-      '</div>' +
-      '</div>' +
       '</div>',
-      countries = $(countriesHTML).bfhcountries({country: 'US', flags: true});
+      countries = $(countriesHTML).bfhselectbox().bfhcountries({country: 'US', flags: true});
 
     ok(countries.find('.bfh-selectbox-options > div > ul > li').size() === 242, 'correct number of elements shown');
     ok(countries.find('.bfh-selectbox-option').html() === '<i class="glyphicon bfh-flag-US"></i>United States', 'correct option selected');
@@ -189,19 +134,8 @@ $(function () {
   
   test('in bfhselectbox should have value after selecting a country', function() {
     var countriesHTML = '<div class="bfh-selectbox bfh-countries">' +
-      '<input type="hidden" value="">' +
-      '<a class="bfh-selectbox-toggle" role="button" data-toggle="bfh-selectbox" href="#">' +
-      '<span class="bfh-selectbox-option bfh-selectbox-medium" data-option=""></span>' +
-      '<b class="caret"></b>' +
-      '</a>' +
-      '<div class="bfh-selectbox-options">' +
-      '<div role="listbox">' +
-      '<ul role="option">' +
-      '</ul>' +
-      '</div>' +
-      '</div>' +
       '</div>',
-      countries = $(countriesHTML).appendTo('#qunit-fixture').bfhcountries();
+      countries = $(countriesHTML).appendTo('#qunit-fixture').bfhselectbox().bfhcountries();
       
     countries.find('.bfh-selectbox-options > div > ul > li > a[data-option="US"]').click();
     ok(countries.find('.bfh-selectbox-option').html() === 'United States', 'correct option selected');
@@ -212,19 +146,8 @@ $(function () {
   
   test('in bfhselectbox should have value after selecting a country with flags', function() {
     var countriesHTML = '<div class="bfh-selectbox bfh-countries" data-flags="true">' +
-      '<input type="hidden" value="">' +
-      '<a class="bfh-selectbox-toggle" role="button" data-toggle="bfh-selectbox" href="#">' +
-      '<span class="bfh-selectbox-option bfh-selectbox-medium" data-option=""></span>' +
-      '<b class="caret"></b>' +
-      '</a>' +
-      '<div class="bfh-selectbox-options">' +
-      '<div role="listbox">' +
-      '<ul role="option">' +
-      '</ul>' +
-      '</div>' +
-      '</div>' +
       '</div>',
-      countries = $(countriesHTML).appendTo('#qunit-fixture').bfhcountries({flags: true});
+      countries = $(countriesHTML).appendTo('#qunit-fixture').bfhselectbox().bfhcountries({flags: true});
       
     countries.find('.bfh-selectbox-options > div > ul > li > a[data-option="US"]').click();
     ok(countries.find('.bfh-selectbox-option').html() === '<i class="glyphicon bfh-flag-US"></i>United States', 'correct option selected');

@@ -137,23 +137,7 @@
         }
       }
 
-      $toggle.data('option', value);
-      if (value.indexOf('_') !== -1) {
-        split = value.split('_');
-        if (this.options.flags === true) {
-          $toggle.html('<i class="glyphicon bfh-flag-' + split[1] + '"></i>' + BFHLanguagesList[split[0]].toProperCase());
-        } else {
-          $toggle.html(BFHLanguagesList[split[0]].toProperCase() + ' (' + BFHCountriesList[split[1]] + ')');
-        }
-      } else {
-        if (value === '') {
-          $toggle.html('');
-        } else {
-          $toggle.html(languages[value].toProperCase());
-        }
-      }
-
-      $input.val(value);
+      this.$element.val(value);
     },
 
     displayLanguage: function () {
@@ -195,7 +179,7 @@
         $this.data('bfhlanguages', (data = new BFHLanguages(this, options)));
       }
       if (typeof option === 'string') {
-        data[option]();
+        data[option].call($this);
       }
     });
   };
@@ -228,6 +212,9 @@
       
       $languages = $(this);
 
+      if ($languages.hasClass('bfh-selectbox')) {
+        $languages.bfhselectbox($languages.data());
+      }
       $languages.bfhlanguages($languages.data());
     });
   });

@@ -70,8 +70,9 @@
 .bfh-datepicker-toggle {
   *margin-bottom: -3px;
   
-  > input {
-    cursor: default;
+  > input[readonly] {
+    cursor: inherit;
+    background-color: inherit;
   }
 }
 

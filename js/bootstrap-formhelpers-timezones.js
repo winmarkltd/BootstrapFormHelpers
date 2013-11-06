@@ -135,14 +135,7 @@
         }
       }
       
-      $toggle.data('option', value);
-      if (BFHTimezonesList[country][value] !== '') {
-        $toggle.html(BFHTimezonesList[country][value]);
-      } else {
-        $toggle.html('');
-      }
-      
-      $input.val(value);
+      this.$element.val(value);
     },
     
     changeBootstrapCountry: function (e) {
@@ -179,7 +172,7 @@
         $this.data('bfhtimezones', (data = new BFHTimezones(this, options)));
       }
       if (typeof option === 'string') {
-        data[option]();
+        data[option].call($this);
       }
     });
   };
@@ -211,6 +204,9 @@
       
       $timezones = $(this);
 
+      if ($timezones.hasClass('bfh-selectbox')) {
+        $timezones.bfhselectbox($timezones.data());
+      }
       $timezones.bfhtimezones($timezones.data());
     });
   });

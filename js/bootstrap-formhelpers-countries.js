@@ -122,17 +122,7 @@
         }
       }
       
-      $toggle.data('option', value);
-      
-      if (value) {
-        if (this.options.flags === true) {
-          $toggle.html('<i class="glyphicon bfh-flag-' + value + '"></i>' + countries[value]);
-        } else {
-          $toggle.html(countries[value]);
-        }
-      }
-      
-      $input.val(value);
+      this.$element.val(value);
     },
     
     displayCountry: function () {
@@ -169,7 +159,7 @@
         $this.data('bfhcountries', (data = new BFHCountries(this, options)));
       }
       if (typeof option === 'string') {
-        data[option]();
+        data[option].call($this);
       }
     });
   };
@@ -201,7 +191,10 @@
       var $countries;
       
       $countries = $(this);
-
+      
+      if ($countries.hasClass('bfh-selectbox')) {
+        $countries.bfhselectbox($countries.data());
+      }
       $countries.bfhcountries($countries.data());
     });
   });
