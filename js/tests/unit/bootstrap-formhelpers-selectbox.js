@@ -25,10 +25,10 @@ $(function () {
   
   test('should not open select box if target is disabled', function () {
     var selectboxHTML = '<div class="bfh-selectbox" disabled="disabled">' +
-      '<option value="1">Option 1</option>' +
-      '<option value="2">Option 2</option>' +
-      '<option value="3">Option 3</option>' +
-      '<option value="4">Option 4</option>' +
+      '<div class="bfh-selectbox-option" data-value="1">Option 1</div>' +
+      '<div class="bfh-selectbox-option" data-value="2">Option 2</div>' +
+      '<div class="bfh-selectbox-option" data-value="3">Option 3</div>' +
+      '<div class="bfh-selectbox-option" data-value="4">Option 4</div>' +
       '</div>',
       selectbox = $(selectboxHTML).bfhselectbox();
       
@@ -39,10 +39,10 @@ $(function () {
   
   test('should not open select box if target is disabled', function () {
     var selectboxHTML = '<div class="bfh-selectbox disabled">' +
-      '<option value="1">Option 1</option>' +
-      '<option value="2">Option 2</option>' +
-      '<option value="3">Option 3</option>' +
-      '<option value="4">Option 4</option>' +
+      '<div class="bfh-selectbox-option" data-value="1">Option 1</div>' +
+      '<div class="bfh-selectbox-option" data-value="2">Option 2</div>' +
+      '<div class="bfh-selectbox-option" data-value="3">Option 3</div>' +
+      '<div class="bfh-selectbox-option" data-value="4">Option 4</div>' +
       '</div>',
       selectbox = $(selectboxHTML).bfhselectbox();
       
@@ -53,10 +53,10 @@ $(function () {
   
   test('should add class open to options if clicked', function () {
     var selectboxHTML = '<div class="bfh-selectbox">' +
-      '<option value="1">Option 1</option>' +
-      '<option value="2">Option 2</option>' +
-      '<option value="3">Option 3</option>' +
-      '<option value="4">Option 4</option>' +
+      '<div class="bfh-selectbox-option" data-value="1">Option 1</div>' +
+      '<div class="bfh-selectbox-option" data-value="2">Option 2</div>' +
+      '<div class="bfh-selectbox-option" data-value="3">Option 3</div>' +
+      '<div class="bfh-selectbox-option" data-value="4">Option 4</div>' +
       '</div>',
       selectbox = $(selectboxHTML).bfhselectbox();
       
@@ -67,10 +67,10 @@ $(function () {
   
   test('should add and remove class open to options if toggled', function () {
     var selectboxHTML = '<div class="bfh-selectbox">' +
-      '<option value="1">Option 1</option>' +
-      '<option value="2">Option 2</option>' +
-      '<option value="3">Option 3</option>' +
-      '<option value="4">Option 4</option>' +
+      '<div class="bfh-selectbox-option" data-value="1">Option 1</div>' +
+      '<div class="bfh-selectbox-option" data-value="2">Option 2</div>' +
+      '<div class="bfh-selectbox-option" data-value="3">Option 3</div>' +
+      '<div class="bfh-selectbox-option" data-value="4">Option 4</div>' +
       '</div>',
       selectbox = $(selectboxHTML).appendTo('#qunit-fixture');
       
@@ -85,10 +85,10 @@ $(function () {
   
   test('should remove open class if body clicked', function () {
     var selectboxHTML = '<div class="bfh-selectbox">' +
-      '<option value="1">Option 1</option>' +
-      '<option value="2">Option 2</option>' +
-      '<option value="3">Option 3</option>' +
-      '<option value="4">Option 4</option>' +
+      '<div class="bfh-selectbox-option" data-value="1">Option 1</div>' +
+      '<div class="bfh-selectbox-option" data-value="2">Option 2</div>' +
+      '<div class="bfh-selectbox-option" data-value="3">Option 3</div>' +
+      '<div class="bfh-selectbox-option" data-value="4">Option 4</div>' +
       '</div>',
       selectbox = $(selectboxHTML).appendTo('#qunit-fixture').bfhselectbox();
         
@@ -102,10 +102,10 @@ $(function () {
   
   test('should display correct number of options', function () {
     var selectboxHTML = '<div class="bfh-selectbox">' +
-      '<option value="1">Option 1</option>' +
-      '<option value="2">Option 2</option>' +
-      '<option value="3">Option 3</option>' +
-      '<option value="4">Option 4</option>' +
+      '<div class="bfh-selectbox-option" data-value="1">Option 1</div>' +
+      '<div class="bfh-selectbox-option" data-value="2">Option 2</div>' +
+      '<div class="bfh-selectbox-option" data-value="3">Option 3</div>' +
+      '<div class="bfh-selectbox-option" data-value="4">Option 4</div>' +
       '</div>',
       selectbox = $(selectboxHTML).bfhselectbox();
     
@@ -114,10 +114,10 @@ $(function () {
   
   test('should remove open class if option selected', function () {
     var selectboxHTML = '<div class="bfh-selectbox">' +
-      '<option value="1">Option 1</option>' +
-      '<option value="2">Option 2</option>' +
-      '<option value="3">Option 3</option>' +
-      '<option value="4">Option 4</option>' +
+      '<div class="bfh-selectbox-option" data-value="1">Option 1</div>' +
+      '<div class="bfh-selectbox-option" data-value="2">Option 2</div>' +
+      '<div class="bfh-selectbox-option" data-value="3">Option 3</div>' +
+      '<div class="bfh-selectbox-option" data-value="4">Option 4</div>' +
       '</div>',
       selectbox = $(selectboxHTML).appendTo('#qunit-fixture').bfhselectbox();
       
@@ -131,16 +131,16 @@ $(function () {
   
   test('should remove open class if body clicked, with multiple select boxes', function () {
     var selectboxHTML = '<div class="bfh-selectbox">' +
-      '<option value="1">Option 1</option>' +
-      '<option value="2">Option 2</option>' +
-      '<option value="3">Option 3</option>' +
-      '<option value="4">Option 4</option>' +
+      '<div class="bfh-selectbox-option" data-value="1">Option 1</div>' +
+      '<div class="bfh-selectbox-option" data-value="2">Option 2</div>' +
+      '<div class="bfh-selectbox-option" data-value="3">Option 3</div>' +
+      '<div class="bfh-selectbox-option" data-value="4">Option 4</div>' +
       '</div>' +
       '<div class="bfh-selectbox">' +
-      '<option value="1">Option 1</option>' +
-      '<option value="2">Option 2</option>' +
-      '<option value="3">Option 3</option>' +
-      '<option value="4">Option 4</option>' +
+      '<div class="bfh-selectbox-option" data-value="1">Option 1</div>' +
+      '<div class="bfh-selectbox-option" data-value="2">Option 2</div>' +
+      '<div class="bfh-selectbox-option" data-value="3">Option 3</div>' +
+      '<div class="bfh-selectbox-option" data-value="4">Option 4</div>' +
       '</div>',
       selectbox = $(selectboxHTML).appendTo('#qunit-fixture'),
       first = selectbox.first().bfhselectbox(),
@@ -165,10 +165,10 @@ $(function () {
   
   test('should have name after init', function () {
     var selectboxHTML = '<div class="bfh-selectbox" data-name="selectbox1">' +
-      '<option value="1">Option 1</option>' +
-      '<option value="2">Option 2</option>' +
-      '<option value="3">Option 3</option>' +
-      '<option value="4">Option 4</option>' +
+      '<div class="bfh-selectbox-option" data-value="1">Option 1</div>' +
+      '<div class="bfh-selectbox-option" data-value="2">Option 2</div>' +
+      '<div class="bfh-selectbox-option" data-value="3">Option 3</div>' +
+      '<div class="bfh-selectbox-option" data-value="4">Option 4</div>' +
       '</div>',
       selectbox = $(selectboxHTML).appendTo('#qunit-fixture').bfhselectbox({name: 'selectbox1'});
       
@@ -178,10 +178,10 @@ $(function () {
   
   test('should have value after init', function () {
     var selectboxHTML = '<div class="bfh-selectbox" data-value="2">' +
-      '<option value="1">Option 1</option>' +
-      '<option value="2">Option 2</option>' +
-      '<option value="3">Option 3</option>' +
-      '<option value="4">Option 4</option>' +
+      '<div class="bfh-selectbox-option" data-value="1">Option 1</div>' +
+      '<div class="bfh-selectbox-option" data-value="2">Option 2</div>' +
+      '<div class="bfh-selectbox-option" data-value="3">Option 3</div>' +
+      '<div class="bfh-selectbox-option" data-value="4">Option 4</div>' +
       '</div>',
       selectbox = $(selectboxHTML).appendTo('#qunit-fixture').bfhselectbox({value: '2'});
     
@@ -193,10 +193,10 @@ $(function () {
   
   test('should have value after selecting an option', function () {
     var selectboxHTML = '<div class="bfh-selectbox">' +
-      '<option value="1">Option 1</option>' +
-      '<option value="2">Option 2</option>' +
-      '<option value="3">Option 3</option>' +
-      '<option value="4">Option 4</option>' +
+      '<div class="bfh-selectbox-option" data-value="1">Option 1</div>' +
+      '<div class="bfh-selectbox-option" data-value="2">Option 2</div>' +
+      '<div class="bfh-selectbox-option" data-value="3">Option 3</div>' +
+      '<div class="bfh-selectbox-option" data-value="4">Option 4</div>' +
       '</div>',
       selectbox = $(selectboxHTML).appendTo('#qunit-fixture').bfhselectbox();
     
@@ -212,10 +212,10 @@ $(function () {
   
   test('should filter elements', function () {
     var selectboxHTML = '<div class="bfh-selectbox" data-filter="true">' +
-      '<option value="1">Option 1</option>' +
-      '<option value="2">Option 2</option>' +
-      '<option value="3">Option 3</option>' +
-      '<option value="4">Option 4</option>' +
+      '<div class="bfh-selectbox-option" data-value="1">Option 1</div>' +
+      '<div class="bfh-selectbox-option" data-value="2">Option 2</div>' +
+      '<div class="bfh-selectbox-option" data-value="3">Option 3</div>' +
+      '<div class="bfh-selectbox-option" data-value="4">Option 4</div>' +
       '</div>',
       selectbox = $(selectboxHTML).appendTo('#qunit-fixture').bfhselectbox({filter: true});
     
@@ -229,10 +229,10 @@ $(function () {
   
   test('should fire show and hide event', function () {
     var selectboxHTML = '<div class="bfh-selectbox">' +
-      '<option value="1">Option 1</option>' +
-      '<option value="2">Option 2</option>' +
-      '<option value="3">Option 3</option>' +
-      '<option value="4">Option 4</option>' +
+      '<div class="bfh-selectbox-option" data-value="1">Option 1</div>' +
+      '<div class="bfh-selectbox-option" data-value="2">Option 2</div>' +
+      '<div class="bfh-selectbox-option" data-value="3">Option 3</div>' +
+      '<div class="bfh-selectbox-option" data-value="4">Option 4</div>' +
       '</div>',
       selectbox = $(selectboxHTML).appendTo('#qunit-fixture').bfhselectbox();
         
@@ -255,10 +255,10 @@ $(function () {
   
   test('should fire shown and hidden event', function () {
     var selectboxHTML = '<div class="bfh-selectbox">' +
-      '<option value="1">Option 1</option>' +
-      '<option value="2">Option 2</option>' +
-      '<option value="3">Option 3</option>' +
-      '<option value="4">Option 4</option>' +
+      '<div class="bfh-selectbox-option" data-value="1">Option 1</div>' +
+      '<div class="bfh-selectbox-option" data-value="2">Option 2</div>' +
+      '<div class="bfh-selectbox-option" data-value="3">Option 3</div>' +
+      '<div class="bfh-selectbox-option" data-value="4">Option 4</div>' +
       '</div>',
       selectbox = $(selectboxHTML).appendTo('#qunit-fixture').bfhselectbox();
         
@@ -281,10 +281,10 @@ $(function () {
   
   test('should fire change event', function () {
     var selectboxHTML = '<div class="bfh-selectbox">' +
-      '<option value="1">Option 1</option>' +
-      '<option value="2">Option 2</option>' +
-      '<option value="3">Option 3</option>' +
-      '<option value="4">Option 4</option>' +
+      '<div class="bfh-selectbox-option" data-value="1">Option 1</div>' +
+      '<div class="bfh-selectbox-option" data-value="2">Option 2</div>' +
+      '<div class="bfh-selectbox-option" data-value="3">Option 3</div>' +
+      '<div class="bfh-selectbox-option" data-value="4">Option 4</div>' +
       '</div>',
       selectbox = $(selectboxHTML).appendTo('#qunit-fixture').bfhselectbox();
         

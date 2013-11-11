@@ -1784,6 +1784,11 @@
   background-color: #e5e5e5;
 }
 
+.bfh-selectbox .bfh-selectbox-options .bfh-selectbox-filter-container {
+  width: 100%;
+  padding: 5px;
+}
+
 .bfh-selectbox .bfh-selectbox-options ul {
   max-width: 500px;
   max-height: 200px;

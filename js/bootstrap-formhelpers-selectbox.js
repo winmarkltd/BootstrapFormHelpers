@@ -41,8 +41,8 @@
       var options;
       
       options = '';
-      this.$element.find('option').each(function() {
-        options = options + '<li><a tabindex="-1" href="#" data-option="' + $(this).val() + '">' + $(this).html() + '</a></li>';
+      this.$element.find('div.bfh-selectbox-option').each(function() {
+        options = options + '<li><a tabindex="-1" href="#" data-option="' + $(this).data('value') + '">' + $(this).html() + '</a></li>';
       });
       
       this.$element.html(
@@ -62,7 +62,7 @@
       this.$element.find('[role=option]').html(options);
       
       if (this.options.filter === true) {
-        this.$element.find('.bfh-selectbox-options').prepend('<input type="text" class="bfh-selectbox-filter form-control">');
+        this.$element.find('.bfh-selectbox-options').prepend('<div class="bfh-selectbox-filter-container"><input type="text" class="bfh-selectbox-filter form-control"></div>');
       }
       
       this.$element.val(this.options.value);
