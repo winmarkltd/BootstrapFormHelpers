@@ -15844,7 +15844,7 @@ var BFHTimezonesList = {
       var options;
       
       options = '';
-      this.$element.find('div.bfh-selectbox-option').each(function() {
+      this.$element.find('.bfh-selectbox-option').each(function() {
         options = options + '<li><a tabindex="-1" href="#" data-option="' + $(this).data('value') + '">' + $(this).html() + '</a></li>';
       });
       
