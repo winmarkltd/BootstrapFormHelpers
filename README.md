@@ -7,6 +7,8 @@ http://bootstrapformhelpers.com
 
 [![Dependency Status](https://gemnasium.com/vlamanna/BootstrapFormHelpers.png)](https://gemnasium.com/vlamanna/BootstrapFormHelpers)
 
+[![Code Climate](https://codeclimate.com/github/vlamanna/BootstrapFormHelpers.png)](https://codeclimate.com/github/vlamanna/BootstrapFormHelpers)
+
 
 BootstrapFormHelpers is a set of javascript to help you create user friendly forms, created and maintained by [Vincent Lamanna](http://twitter.com/vincentlamanna).
 
