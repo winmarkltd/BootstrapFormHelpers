@@ -17,7 +17,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  * ========================================================== */
- 
+
 +function ($) {
 
   'use strict';
@@ -29,7 +29,7 @@
   var BFHLanguages = function (element, options) {
     this.options = $.extend({}, $.fn.bfhlanguages.defaults, options);
     this.$element = $(element);
-    
+
     if (this.$element.is('select')) {
       this.addLanguages();
     }
@@ -51,12 +51,12 @@
       var split,
           language,
           languages;
-      
+
       if (this.options.available) {
         languages = [];
-        
+
         this.options.available = this.options.available.split(',');
-        
+
         for (language in this.options.available) {
           if (this.options.available.hasOwnProperty(language)) {
             if (this.options.available[language].indexOf('_') !== -1) {
@@ -67,19 +67,19 @@
             }
           }
         }
-        
+
         return languages;
       } else {
         return BFHLanguagesList;
       }
     },
-    
+
     addLanguages: function () {
       var split,
           value,
           languages,
           language;
-        
+
       value = this.options.language;
       languages = this.getLanguages();
 
@@ -110,15 +110,15 @@
           languages,
           language,
           split;
-      
+
       value = this.options.language;
       $input = this.$element.find('input[type="hidden"]');
       $toggle = this.$element.find('.bfh-selectbox-option');
       $options = this.$element.find('[role=option]');
       languages = this.getLanguages();
-      
+
       $options.html('');
-      
+
       if (this.options.blank === true) {
         $options.append('<li><a tabindex="-1" href="#" data-option=""></a></li>');
       }
@@ -142,7 +142,7 @@
 
     displayLanguage: function () {
       var value;
-          
+
       value = this.options.language;
 
       if (value.indexOf('_') !== -1) {
@@ -164,17 +164,17 @@
    * ======================= */
 
   var old = $.fn.bfhlanguages;
-  
+
   $.fn.bfhlanguages = function (option) {
     return this.each(function () {
       var $this,
           data,
           options;
-          
+
       $this = $(this);
       data = $this.data('bfhlanguages');
       options = typeof option === 'object' && option;
-        
+
       if (!data) {
         $this.data('bfhlanguages', (data = new BFHLanguages(this, options)));
       }
@@ -192,8 +192,8 @@
     flags: false,
     blank: true
   };
-  
-  
+
+
   /* LANGUAGES NO CONFLICT
    * ========================== */
 
@@ -201,15 +201,15 @@
     $.fn.bfhlanguages = old;
     return this;
   };
-  
+
 
   /* LANGUAGES DATA-API
    * ============== */
 
-  $(window).on('load', function () {
+  $(document).ready( function () {
     $('form select.bfh-languages, span.bfh-languages, div.bfh-languages').each(function () {
       var $languages;
-      
+
       $languages = $(this);
 
       if ($languages.hasClass('bfh-selectbox')) {
@@ -218,11 +218,11 @@
       $languages.bfhlanguages($languages.data());
     });
   });
-  
-  
+
+
   /* LANGUAGES HELPERS
    * ============== */
-   
+
   String.prototype.toProperCase = function () {
     return this.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
   };
