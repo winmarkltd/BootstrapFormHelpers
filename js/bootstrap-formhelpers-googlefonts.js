@@ -17,7 +17,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  * ========================================================== */
- 
+
 +function ($) {
 
   'use strict';
@@ -33,7 +33,7 @@
     if (this.$element.is('select')) {
       this.addFonts();
     }
-    
+
     if (this.$element.hasClass('bfh-selectbox')) {
       this.addBootstrapFonts();
     }
@@ -46,9 +46,9 @@
     getFonts: function() {
       var font,
           fonts;
-      
+
       fonts = [];
-      
+
       if (this.options.subset) {
         for (font in BFHGoogleFontsList.items) {
           if (BFHGoogleFontsList.items.hasOwnProperty(font)) {
@@ -62,7 +62,7 @@
         }
       } else if (this.options.available) {
         this.options.available = this.options.available.split(',');
-        
+
         for (font in BFHGoogleFontsList.items) {
           if (BFHGoogleFontsList.items.hasOwnProperty(font)) {
             if ($.inArray(BFHGoogleFontsList.items[font].family, this.options.available) >= 0) {
@@ -83,33 +83,33 @@
           }
         }
       }
-      
+
       return fonts;
     },
-    
+
     addFonts: function () {
       var value,
           font,
           fonts;
-          
+
       value = this.options.font;
       fonts = this.getFonts();
-      
+
       this.$element.html('');
-      
+
       if (this.options.blank === true) {
         this.$element.append('<option value=""></option>');
       }
-      
+
       for (font in fonts) {
         if (fonts.hasOwnProperty(font)) {
           this.$element.append('<option value="' + fonts[font].info.family + '">' + fonts[font].info.family + '</option>');
         }
       }
-      
+
       this.$element.val(value);
     },
-    
+
     addBootstrapFonts: function() {
       var $input,
           $toggle,
@@ -117,25 +117,25 @@
           value,
           font,
           fonts;
-      
+
       value = this.options.font;
       $input = this.$element.find('input[type="hidden"]');
       $toggle = this.$element.find('.bfh-selectbox-option');
       $options = this.$element.find('[role=option]');
       fonts = this.getFonts();
-      
+
       $options.html('');
-      
+
       if (this.options.blank === true) {
         $options.append('<li><a tabindex="-1" href="#" data-option="" style="background-image: none;"></a></li>');
       }
-      
+
       for (font in fonts) {
         if (fonts.hasOwnProperty(font)) {
           $options.append('<li><a tabindex="-1" href="#" style="background-position: 0 -' + ((fonts[font].index * 30) - 2) + 'px;" data-option="' + fonts[font].info.family + '">' + fonts[font].info.family + '</a></li>');
         }
       }
-      
+
       this.$element.val(value);
     }
 
@@ -146,17 +146,17 @@
    * ======================= */
 
   var old = $.fn.bfhgooglefonts;
-  
+
   $.fn.bfhgooglefonts = function (option) {
     return this.each(function () {
       var $this,
           data,
           options;
-          
+
       $this = $(this);
       data = $this.data('bfhgooglefonts');
       options = typeof option === 'object' && option;
-      
+
       if (!data) {
         $this.data('bfhgooglefonts', (data = new BFHGoogleFonts(this, options)));
       }
@@ -174,8 +174,8 @@
     subset: '',
     blank: true
   };
-  
-  
+
+
   /* GOOGLE FONTS NO CONFLICT
    * ========================== */
 
@@ -183,15 +183,15 @@
     $.fn.bfhgooglefonts = old;
     return this;
   };
-  
+
 
   /* GOOGLE FONTS DATA-API
    * ============== */
 
-  $(window).on('load', function () {
+  $(document).ready( function () {
     $('form select.bfh-googlefonts, span.bfh-googlefonts, div.bfh-googlefonts').each(function () {
       var $googleFonts;
-      
+
       $googleFonts = $(this);
 
       if ($googleFonts.hasClass('bfh-selectbox')) {
