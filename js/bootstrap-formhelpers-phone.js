@@ -16,7 +16,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  * ========================================================== */
- 
+
 +function ($) {
 
   'use strict';
@@ -28,11 +28,11 @@
   var BFHPhone = function (element, options) {
     this.options = $.extend({}, $.fn.bfhphone.defaults, options);
     this.$element = $(element);
-    
+
     if (this.$element.is('input[type="text"]') || this.$element.is('input[type="tel"]')) {
       this.addFormatter();
     }
-    
+
     if (this.$element.is('span')) {
       this.displayFormatter();
     }
@@ -41,10 +41,10 @@
   BFHPhone.prototype = {
 
     constructor: BFHPhone,
-  
+
     addFormatter: function() {
       var $country;
-      
+
       if (this.options.country !== '') {
         $country = $(document).find('#' + this.options.country);
 
@@ -55,70 +55,70 @@
           this.options.format = BFHPhoneFormatList[this.options.country];
         }
       }
-      
+
       this.loadFormatter();
     },
-    
+
     loadFormatter: function () {
       var formattedNumber;
 
       formattedNumber = formatNumber(this.options.format, this.$element.val());
-    
+
       this.$element.addClass('disabled');
       this.$element.val(formattedNumber);
       this.$element.removeClass('disabled');
     },
-  
+
     displayFormatter: function () {
       var formattedNumber;
-      
+
       if (this.options.country !== '') {
         this.options.format = BFHPhoneFormatList[this.options.country];
       }
-      
+
       formattedNumber = formatNumber(this.options.format, this.options.number);
-    
+
       this.$element.html(formattedNumber);
     },
-  
+
     changeCountry: function (e) {
       var $this,
           $phone;
-          
+
       $this = $(this);
       $phone = e.data.phone;
-      
+
       $phone.options.format = BFHPhoneFormatList[$this.val()];
-      
+
       $phone.loadFormatter();
     },
-    
+
     change: function() {
       var $this,
           cursorPosition,
           cursorEnd;
-    
+
       $this = $(this).data('bfhphone');
-    
+
       if ($this.$element.is('.disabled') || $this.$element.attr('disabled') !== undefined) {
         return true;
       }
-    
+
       cursorPosition = getCursorPosition($this.$element[0]);
-        
+
       cursorEnd = false;
       if (cursorPosition === $this.$element.val().length) {
         cursorEnd = true;
       }
-        
+
       $this.loadFormatter();
-    
+
       if (cursorEnd) {
         cursorPosition = $this.$element.val().length;
       }
-    
+
       setCursorPosition($this.$element[0], cursorPosition);
-    
+
       return false;
     }
 
@@ -128,10 +128,10 @@
     var formattedNumber,
         indexFormat,
         indexNumber;
-        
+
     formattedNumber = '';
     number = String(number).replace(/\D/g, '');
-  
+
     for (indexFormat = 0, indexNumber = 0; indexFormat < format.length; indexFormat = indexFormat + 1) {
       if (/\d/g.test(format.charAt(indexFormat))) {
         if (format.charAt(indexFormat) === number.charAt(indexNumber)) {
@@ -153,10 +153,10 @@
         }
       }
     }
-  
+
     return formattedNumber;
   }
-    
+
   function getCursorPosition($element) {
     var position = 0,
         selection;
@@ -173,10 +173,10 @@
 
     return position;
   }
-  
+
   function setCursorPosition($element, position) {
     var selection;
-    
+
     if (document.selection) {
       // IE Support
       $element.focus ();
@@ -196,17 +196,17 @@
    * ======================= */
 
   var old = $.fn.bfhphone;
-  
+
   $.fn.bfhphone = function (option) {
     return this.each(function () {
       var $this,
           data,
           options;
-          
+
       $this = $(this);
       data = $this.data('bfhphone');
       options = typeof option === 'object' && option;
-      
+
       if (!data) {
         $this.data('bfhphone', (data = new BFHPhone(this, options)));
       }
@@ -223,8 +223,8 @@
     number: '',
     country: ''
   };
-  
-  
+
+
   /* PHONE NO CONFLICT
    * ========================== */
 
@@ -237,20 +237,20 @@
   /* PHONE DATA-API
    * ============== */
 
-  $(window).on('load', function () {
+  $(document).ready( function () {
     $('form input[type="text"].bfh-phone, form input[type="tel"].bfh-phone, span.bfh-phone').each(function () {
       var $phone;
-      
+
       $phone = $(this);
 
       $phone.bfhphone($phone.data());
     });
   });
-  
-  
+
+
   /* APPLY TO STANDARD PHONE ELEMENTS
    * =================================== */
-   
+
   $(document)
     .on('propertychange.bfhphone.data-api change.bfhphone.data-api input.bfhphone.data-api keyup.bfhphone.data-api', '.bfh-phone', BFHPhone.prototype.change);
 
