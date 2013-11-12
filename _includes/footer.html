@@ -1,6 +1,25 @@
+<script>
+(function(){
+  var s = document.createElement('script');
+  s.src = "//widget.wbsrvc.com/subscriber.min.js";
+  s.async = true;
+  window.subscriber_options = {
+    btnTxt : "Newsletter",
+    list: '//app.cakemail.com/subscriptions/?client=188969&list=1925187'
+  };
+  document.body.appendChild(s);
+})();
+</script>
+
 <!-- Bootstrap core JavaScript
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
 <script src="{{ page.base_url }}assets/js/jquery-1.10.2.min.js"></script>
 <script src="{{ page.base_url }}assets/js/bootstrap.min.js"></script>
 <script src="{{ page.base_url }}assets/js/bootstrap-formhelpers.min.js"></script>
+
+<script>
+  $(document.links).filter(function() {
+    return this.hostname != window.location.hostname;
+  }).attr('target', '_blank');
+</script>

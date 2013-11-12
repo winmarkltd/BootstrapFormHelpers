@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Meta, title, CSS, favicons, etc. -->
+    {% include header.html %}
+  </head>
+  <body>
+    <!-- Start Alexa Certify Javascript -->
+    <script type="text/javascript">
+    _atrk_opts = { atrk_acct:"uQnbh1acOh00wy", domain:"bootstrapformhelpers.com",dynamic: true};
+    (function() { var as = document.createElement('script'); as.type = 'text/javascript'; as.async = true; as.src = "https://d31qbv1cthcecs.cloudfront.net/atrk.js"; var s = document.getElementsByTagName('script')[0];s.parentNode.insertBefore(as, s); })();
+    </script>
+    <noscript><img src="https://d5nxst8fruw4z.cloudfront.net/atrk.gif?account=uQnbh1acOh00wy" style="display:none" height="1" width="1" alt="" /></noscript>
+    <!-- End Alexa Certify Javascript -->
+
+    <a class="sr-only" href="#content">Skip to main content</a>
+    
+    <!-- Docs master nav -->
+    {% include nav-main.html %}
+    
+    <!-- Docs jumbotron -->
+    {% include jumbotron-main.html %}
+    
+    <!-- Docs social bar -->
+    {% include social-main.html %}
+    
+    <!-- Main content -->
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12" role="main">
+          {% include title.html %}
+          {{ content }}
+        </div>
+      </div>
+    </div>
+    
+    <!-- Footer -->
+    <footer role="contentinfo">
+      <div class="container">
+        <p>Designed and built by <a href="http://twitter.com/vincentlamanna" target="_blank">@vincentlamanna</a>.</p>
+        <p>Code licensed under the <a href="http://www.apache.org/licenses/LICENSE-2.0" target="_blank">Apache License v2.0</a>. Documentation licensed under <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.</p>
+        <p>Icons from <a href="http://glyphicons.com">Glyphicons Free</a>, licensed under <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.</p>
+        <p>Flags from <a href="http://www.gosquared.com">GoSquared</a>, licensed under <a href="{{ page.base_url }}assets/img/bootstrap-formhelpers-countries.flags-LICENSE.txt">GoSquared</a>.</p>
+      </div>
+    </footer>
+
+    <!-- JS and analytics only. -->
+    {% include footer.html %}
+
+  </body>
+</html>
