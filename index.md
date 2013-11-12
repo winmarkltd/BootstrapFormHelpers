@@ -30,6 +30,147 @@ These [*jQuery plugins*](http://plugins.jquery.com) are based on
 you can contribute and make them better.
 
 
+### jQuery Plugins Gallery
+
+<div id="carousel-bfh" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#carousel-bfh" data-slide-to="0" class="active"></li>
+    <li data-target="#carousel-bfh" data-slide-to="1"></li>
+    <li data-target="#carousel-bfh" data-slide-to="2"></li>
+    <li data-target="#carousel-bfh" data-slide-to="3"></li>
+    <li data-target="#carousel-bfh" data-slide-to="4"></li>
+    <li data-target="#carousel-bfh" data-slide-to="5"></li>
+    <li data-target="#carousel-bfh" data-slide-to="6"></li>
+    <li data-target="#carousel-bfh" data-slide-to="7"></li>
+    <li data-target="#carousel-bfh" data-slide-to="8"></li>
+    <li data-target="#carousel-bfh" data-slide-to="9"></li>
+    <li data-target="#carousel-bfh" data-slide-to="10"></li>
+    <li data-target="#carousel-bfh" data-slide-to="11"></li>
+  </ol>
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner">
+    <div class="item active">
+      <div style="height:600px;overflow:hidden;">
+      <img src="{{ page.base_url }}assets/img/select.png" alt="Select jQuery plugins - Bootstrap Form Helpers">
+      </div>
+      <div class="carousel-caption">
+        <h3>Select jQuery plugins</h3>
+        <p>Extend Bootstrap with Bootstrap Form Helpers select jQuery plugins.</p>
+      </div>
+    </div>
+    <div class="item">
+      <div style="height:600px;overflow:hidden;">
+      <img src="{{ page.base_url }}assets/img/country-picker.png" alt="Country Picker jQuery plugins - Bootstrap Form Helpers">
+      </div>
+      <div class="carousel-caption">
+        <h3>Country Picker jQuery plugins</h3>
+        <p>Extend Bootstrap with Bootstrap Form Helpers country picker jQuery plugins.</p>
+      </div>
+    </div>
+    <div class="item">
+      <div style="height:600px;overflow:hidden;">
+      <img src="{{ page.base_url }}assets/img/state-picker.png" alt="State Picker jQuery plugins - Bootstrap Form Helpers">
+      </div>
+      <div class="carousel-caption">
+        <h3>State Picker jQuery plugins</h3>
+        <p>Extend Bootstrap with Bootstrap Form Helpers state picker jQuery plugins.</p>
+      </div>
+    </div>
+    <div class="item">
+      <div style="height:600px;overflow:hidden;">
+      <img src="{{ page.base_url }}assets/img/currency-picker.png" alt="Currency Picker jQuery plugins - Bootstrap Form Helpers">
+      </div>
+      <div class="carousel-caption">
+        <h3>Currency Picker jQuery plugins</h3>
+        <p>Extend Bootstrap with Bootstrap Form Helpers currency picker jQuery plugins.</p>
+      </div>
+    </div>
+    <div class="item">
+      <div style="height:600px;overflow:hidden;">
+      <img src="{{ page.base_url }}assets/img/phone-input.png" alt="Phone Input jQuery plugins - Bootstrap Form Helpers">
+      </div>
+      <div class="carousel-caption">
+        <h3>Phone Input jQuery plugins</h3>
+        <p>Extend Bootstrap with Bootstrap Form Helpers phone input jQuery plugins.</p>
+      </div>
+    </div>
+    <div class="item">
+      <div style="height:600px;overflow:hidden;">
+      <img src="{{ page.base_url }}assets/img/language-picker.png" alt="Language Picker jQuery plugins - Bootstrap Form Helpers">
+      </div>
+      <div class="carousel-caption">
+        <h3>Language Picker jQuery plugins</h3>
+        <p>Extend Bootstrap with Bootstrap Form Helpers language picker jQuery plugins.</p>
+      </div>
+    </div>
+    <div class="item">
+      <div style="height:600px;overflow:hidden;">
+      <img src="{{ page.base_url }}assets/img/timezone-picker.png" alt="Timezone Picker jQuery plugins - Bootstrap Form Helpers">
+      </div>
+      <div class="carousel-caption">
+        <h3>Timezone Picker jQuery plugins</h3>
+        <p>Extend Bootstrap with Bootstrap Form Helpers timezone picker jQuery plugins.</p>
+      </div>
+    </div>
+    <div class="item">
+      <div style="height:600px;overflow:hidden;">
+      <img src="{{ page.base_url }}assets/img/google-font-picker.png" alt="Google Font Picker jQuery plugins - Bootstrap Form Helpers">
+      </div>
+      <div class="carousel-caption">
+        <h3>Google Font Picker jQuery plugins</h3>
+        <p>Extend Bootstrap with Bootstrap Form Helpers Google font picker jQuery plugins.</p>
+      </div>
+    </div>
+    <div class="item">
+      <div style="height:600px;overflow:hidden;">
+      <img src="{{ page.base_url }}assets/img/date-picker.png" alt="Date Picker jQuery plugins - Bootstrap Form Helpers">
+      </div>
+      <div class="carousel-caption">
+        <h3>Date Picker jQuery plugins</h3>
+        <p>Extend Bootstrap with Bootstrap Form Helpers date picker jQuery plugins.</p>
+      </div>
+    </div>
+    <div class="item">
+      <div style="height:600px;overflow:hidden;">
+      <img src="{{ page.base_url }}assets/img/time-picker.png" alt="Time Picker jQuery plugins - Bootstrap Form Helpers">
+      </div>
+      <div class="carousel-caption">
+        <h3>Time Picker jQuery plugins</h3>
+        <p>Extend Bootstrap with Bootstrap Form Helpers time picker jQuery plugins.</p>
+      </div>
+    </div>
+    <div class="item">
+      <div style="height:600px;overflow:hidden;">
+      <img src="{{ page.base_url }}assets/img/font-picker.png" alt="Font Picker jQuery plugins - Bootstrap Form Helpers">
+      </div>
+      <div class="carousel-caption">
+        <h3>Font Picker jQuery plugins</h3>
+        <p>Extend Bootstrap with Bootstrap Form Helpers font picker jQuery plugins.</p>
+      </div>
+    </div>
+    <div class="item">
+      <div style="height:600px;overflow:hidden;">
+      <img src="{{ page.base_url }}assets/img/font-size-picker.png" alt="Font Size Picker jQuery plugins - Bootstrap Form Helpers">
+      </div>
+      <div class="carousel-caption">
+        <h3>Font Size Picker jQuery plugins</h3>
+        <p>Extend Bootstrap with Bootstrap Form Helpers font size picker jQuery plugins.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Controls -->
+  <a class="left carousel-control" href="#carousel-bfh" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left"></span>
+  </a>
+  <a class="right carousel-control" href="#carousel-bfh" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right"></span>
+  </a>
+</div>
+
+
 ### Quick start
 
 Two quick start options are available:
