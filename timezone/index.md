@@ -94,6 +94,7 @@ as well as our [*country picker jQuery plugin*](../country/).
 ### Available languages
 
 * English (US)
+* Simplified Chinese (CN)
 
 
 ### Options
