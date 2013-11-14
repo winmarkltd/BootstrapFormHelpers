@@ -833,4 +833,4 @@ var BFHTimezonesList = {
   'ZW': {
     'Africa/Harare': '哈拉雷'
   }
-}
+};
