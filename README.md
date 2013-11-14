@@ -1,21 +1,18 @@
 BootstrapFormHelpers
 ====================
-
 http://bootstrapformhelpers.com
+
+BootstrapFormHelpers is a set of javascript to help you create user friendly forms, created and maintained by [Vincent Lamanna](http://twitter.com/vincentlamanna).
+[![endorse](http://api.coderwall.com/vlamanna/endorsecount.png)](http://coderwall.com/vlamanna)
+
 
 [![Build Status](https://travis-ci.org/vlamanna/BootstrapFormHelpers.png?branch=master)](https://travis-ci.org/vlamanna/BootstrapFormHelpers)
 
 [![Dependency Status](https://gemnasium.com/vlamanna/BootstrapFormHelpers.png)](https://gemnasium.com/vlamanna/BootstrapFormHelpers)
 
-[![Code Climate](https://codeclimate.com/github/vlamanna/BootstrapFormHelpers.png)](https://codeclimate.com/github/vlamanna/BootstrapFormHelpers)
+[![Code Climate](https://codeclimate.com/repos/52843de889af7e5235035103/badges/47cfbe2b2dbfbf1cdf3d/gpa.png)](https://codeclimate.com/repos/52843de889af7e5235035103/feed)
 
 [![Coverage Status](https://coveralls.io/repos/vlamanna/BootstrapFormHelpers/badge.png)](https://coveralls.io/r/vlamanna/BootstrapFormHelpers)
-
-
-BootstrapFormHelpers is a set of javascript to help you create user friendly forms, created and maintained by [Vincent Lamanna](http://twitter.com/vincentlamanna).
-
-
-[![endorse](http://api.coderwall.com/vlamanna/endorsecount.png)](http://coderwall.com/vlamanna)
 
 
 Quick start
