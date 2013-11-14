@@ -1,6 +1,7 @@
 .DS_Store
 nbproject/*
 node_modules
+coverage
 dev-select.html
 dev-countries.html
 dev-datepicker.html

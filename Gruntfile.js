@@ -90,8 +90,16 @@ module.exports = function(grunt) {
       }
     },
     
-    qunit: {
-      files: ['js/tests/*.html']
+    karma: {
+      test: {
+        configFile: 'karma.conf.js'
+      }
+    },
+    
+    coveralls: {
+      options: {
+        coverage_dir: 'coverage'
+      }
     },
 
     watch: {
@@ -120,8 +128,10 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-recess');
+  grunt.loadNpmTasks('grunt-karma');
+  grunt.loadNpmTasks('grunt-karma-coveralls');
   
-  grunt.registerTask('test', ['dist-css', 'jshint', 'qunit']);
+  grunt.registerTask('test', ['dist-css', 'jshint', 'karma', 'coveralls']);
 
   // JS distribution task.
   grunt.registerTask('dist-js', ['concat', 'uglify']);
