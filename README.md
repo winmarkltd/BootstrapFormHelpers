@@ -12,7 +12,7 @@ BootstrapFormHelpers is a set of javascript to help you create user friendly for
 
 [![Code Climate](https://codeclimate.com/repos/52843de889af7e5235035103/badges/47cfbe2b2dbfbf1cdf3d/gpa.png)](https://codeclimate.com/repos/52843de889af7e5235035103/feed)
 
-<a href='https://coveralls.io/r/vlamanna/BootstrapFormHelpers'><img src='https://coveralls.io/repos/vlamanna/BootstrapFormHelpers/badge.png' alt='Coverage Status' /></a>
+[![Coverage Status](https://coveralls.io/repos/vlamanna/BootstrapFormHelpers/badge.png)](https://coveralls.io/r/vlamanna/BootstrapFormHelpers)
 
 
 Quick start
