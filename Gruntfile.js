@@ -131,7 +131,14 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-karma');
   grunt.loadNpmTasks('grunt-karma-coveralls');
   
-  grunt.registerTask('test', ['dist-css', 'jshint', 'karma', 'coveralls']);
+  var testSubtasks = ['dist-css', 'jshint', 'karma'];
+  // Only push to coveralls under Travis
+  if (process.env.TRAVIS) {
+    if ((process.env.TRAVIS_REPO_SLUG === 'vlamanna/BootstrapFormHelpers' && process.env.TRAVIS_PULL_REQUEST === 'false')) {
+      testSubtasks.push('coveralls');
+    }
+  }
+  grunt.registerTask('test', testSubtasks);
 
   // JS distribution task.
   grunt.registerTask('dist-js', ['concat', 'uglify']);
