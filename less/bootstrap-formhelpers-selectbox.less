@@ -8,6 +8,7 @@
   .bfh-selectbox-toggle {
     display: inline-block;
     text-decoration: none;
+    padding: 6px 24px 6px 12px;
   
     &:focus {
       outline: 0;
@@ -18,11 +19,15 @@
       float: left;
       height: 20px;
       overflow: hidden;
+      width: 100%;
+      text-overflow:ellipsis;
     }
 
     .selectbox-caret {
       float: right;
       margin-top: 8px;
+      margin-left: -10px;
+      margin-right: -16px;
     }
   }
   
@@ -78,6 +83,9 @@
         color: @select-link-color;
         white-space: nowrap;
         min-height: 26px;
+        text-overflow:ellipsis;
+        width: 100%;
+        overflow-x: hidden;
         
         &:hover,
         &:focus {

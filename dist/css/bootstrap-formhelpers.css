@@ -1733,6 +1733,7 @@
 
 .bfh-selectbox .bfh-selectbox-toggle {
   display: inline-block;
+  padding: 6px 24px 6px 12px;
   text-decoration: none;
 }
 
@@ -1743,13 +1744,17 @@
 .bfh-selectbox .bfh-selectbox-toggle .bfh-selectbox-option {
   display: inline-block;
   float: left;
+  width: 100%;
   height: 20px;
   overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .bfh-selectbox .bfh-selectbox-toggle .selectbox-caret {
   float: right;
   margin-top: 8px;
+  margin-right: -16px;
+  margin-left: -10px;
 }
 
 .bfh-selectbox .bfh-selectbox-options {
@@ -1801,12 +1806,15 @@
 
 .bfh-selectbox .bfh-selectbox-options ul li > a {
   display: block;
+  width: 100%;
   min-height: 26px;
   padding: 3px 20px;
+  overflow-x: hidden;
   clear: both;
   font-weight: normal;
   line-height: 1.428571429;
   color: #333333;
+  text-overflow: ellipsis;
   white-space: nowrap;
 }
 
