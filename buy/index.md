@@ -6,6 +6,10 @@ base_url: "../"
 seo_url: "/buy/"
 ---
 
+<div class="alert alert-success">
+<strong>Release 2.0 Special Offer!</strong> Until December 1st, get 50% off when you buy a commercial license!
+</div>
+
 If you intend to use Bootstrap Form Helpers for commercial purposes, you should consider
 buying a commercial license. Commercial licenses come with 1-year of support. The support
 period can be extended by buying a new license.
@@ -29,15 +33,15 @@ period can be extended by buying a new license.
     <tr>
       <td>Single Site</td>
       <td>For commercial purposes on 1 website.</td>
-      <td>$59</td>
+      <td><span style="text-decoration:line-through">$59</span> <b>$29</b></td>
       <td>
         <form action="" method="POST">
 		  <script
 			src="https://checkout.stripe.com/checkout.js" class="stripe-button"
 			data-key="pk_live_zQyPs0Wzra8LSJS407T8xGhm"
-			data-amount="5900"
+			data-amount="2900"
 			data-name="Bootstrap Form Helpers"
-			data-description="Single Site ($59)"
+			data-description="Single Site ($29)"
 			data-image="{{ page.base_url }}assets/img/logo.png">
 		  </script>
 		</form>
@@ -46,15 +50,15 @@ period can be extended by buying a new license.
     <tr>
       <td>Multi Sites or Application</td>
       <td>For commercial purposes on multiple websites or web application.</td>
-      <td>$599</td>
+      <td><span style="text-decoration:line-through">$599</span> <b>$299</b></td>
       <td>
         <form action="" method="POST">
 		  <script
 			src="https://checkout.stripe.com/checkout.js" class="stripe-button"
 			data-key="pk_live_zQyPs0Wzra8LSJS407T8xGhm"
-			data-amount="59900"
+			data-amount="29900"
 			data-name="Bootstrap Form Helpers"
-			data-description="Multi Sites ($599)"
+			data-description="Multi Sites ($299)"
 			data-image="{{ page.base_url }}assets/img/logo.png">
 		  </script>
 		</form>

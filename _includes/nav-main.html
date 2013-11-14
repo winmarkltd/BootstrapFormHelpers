@@ -14,22 +14,8 @@
   <div class="collapse navbar-collapse navbar-ex1-collapse">
     <ul class="nav navbar-nav">
       <li><a href="/">Home</a></li>
-      <li><a href="/buy/">Buy</a></li>
       <li><a href="/support/">Support</a></li>
+      <li><button onclick="ga('send', 'event', 'button', 'click', 'buy-small'); window.location.href = '/buy/';" class="btn btn-success navbar-btn">Buy</a></button>
     </ul>
-    <ul class="nav navbar-nav navbar-right">
-	  <li style="padding: 10px;margin-right: 10px;">
-		<!-- AddThis Button BEGIN -->
-		<div class="addthis_toolbox addthis_default_style ">
-		<a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
-		<a class="addthis_button_tweet"></a>
-		<a class="addthis_button_pinterest_pinit" pi:pinit:layout="horizontal"></a>
-		<a class="addthis_counter addthis_pill_style"></a>
-		</div>
-		<script type="text/javascript">var addthis_config = {"data_track_addressbar":true};</script>
-		<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-4df14df26c87e5bd"></script>
-		<!-- AddThis Button END -->
-	  </li>
-	</ul>
   </div><!-- /.navbar-collapse -->
 </nav>
