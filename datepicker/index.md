@@ -79,8 +79,16 @@ look and feel you want using HTML and CSS.
       <td>String. Class name for the icon on the input. <em>Default: 'glyphicon glyphicon-calendar'</em></td>
     </tr>
     <tr>
+      <td>align</td>
+      <td>String. Alignment for the icon 'left' or 'right'. <em>Default: 'left'</em></td>
+    </tr>
+    <tr>
       <td>input</td>
       <td>String. Class name for styling the input. <em>Default: 'form-control'</em></td>
+    </tr>
+    <tr>
+      <td>placeholder</td>
+      <td>String. Text for the placeholder of the input. <em>Default: ''</em></td>
     </tr>
     <tr>
       <td>name</td>
