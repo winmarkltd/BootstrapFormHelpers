@@ -64,20 +64,27 @@
     },
 
     initPopover: function() {
-      var icon,
+      var iconLeft,
+          iconRight,
           iconAddon;
 
-      icon = '';
+      iconLeft = '';
+      iconRight = '';
       iconAddon = '';
       if (this.options.icon !== '') {
-        icon = '<span class="input-group-addon"><i class="' + this.options.icon + '"></i></span>';
+        if (this.options.align === 'right') {
+          iconRight = '<span class="input-group-addon"><i class="' + this.options.icon + '"></i></span>';
+        } else {
+          iconLeft = '<span class="input-group-addon"><i class="' + this.options.icon + '"></i></span>';
+        }
         iconAddon = 'input-group';
       }
 
       this.$element.html(
         '<div class="' + iconAddon + ' bfh-timepicker-toggle" data-toggle="bfh-timepicker">' +
-        icon +
-        '<input type="text" name="' + this.options.name + '" class="' + this.options.input + '" readonly>' +
+        iconLeft +
+        '<input type="text" name="' + this.options.name + '" class="' + this.options.input + '" placeholder="' + this.options.placeholder + '" readonly>' +
+        iconRight +
         '</div>' +
         '<div class="bfh-timepicker-popover">' +
         '<table class="table">' +
@@ -132,7 +139,6 @@
 
       this.$element.find('.hour > input[type=text]').val(hour);
       this.$element.find('.minute > input[type=text]').val(minute);
-      this.$element.val(hour + ':' + minute);
     },
 
     previousHour: function () {
@@ -151,6 +157,7 @@
 
       $timePicker = $parent.data('bfhtimepicker');
       $timePicker.updatePopover();
+      $parent.val(formatTime($parent.data('hour'), $parent.data('minute')));
 
       $parent.trigger('change.bfhtimepicker');
 
@@ -175,6 +182,7 @@
 
       $timePicker = $parent.data('bfhtimepicker');
       $timePicker.updatePopover();
+      $parent.val(formatTime($parent.data('hour'), $parent.data('minute')));
 
       return false;
     },
@@ -197,6 +205,7 @@
 
       $timePicker = $parent.data('bfhtimepicker');
       $timePicker.updatePopover();
+      $parent.val(formatTime($parent.data('hour'), $parent.data('minute')));
 
       return false;
     },
@@ -219,6 +228,7 @@
 
       $timePicker = $parent.data('bfhtimepicker');
       $timePicker.updatePopover();
+      $parent.val(formatTime($parent.data('hour'), $parent.data('minute')));
 
       return false;
     },
@@ -327,7 +337,9 @@
 
   $.fn.bfhtimepicker.defaults = {
     icon: 'glyphicon glyphicon-time',
+    align: 'left',
     input: 'form-control',
+    placeholder: '',
     name: '',
     time: 'now'
   };

@@ -87,20 +87,27 @@
     },
 
     initCalendar: function() {
-      var icon,
+      var iconLeft,
+          iconRight,
           iconAddon;
 
-      icon = '';
+      iconLeft = '';
+      iconRight = '';
       iconAddon = '';
       if (this.options.icon !== '') {
-        icon = '<span class="input-group-addon"><i class="' + this.options.icon + '"></i></span>';
+        if (this.options.align === 'right') {
+          iconRight = '<span class="input-group-addon"><i class="' + this.options.icon + '"></i></span>';
+        } else {
+          iconLeft = '<span class="input-group-addon"><i class="' + this.options.icon + '"></i></span>';
+        }
         iconAddon = 'input-group';
       }
 
       this.$element.html(
         '<div class="' + iconAddon + ' bfh-datepicker-toggle" data-toggle="bfh-datepicker">' +
-        icon +
-        '<input type="text" name="' + this.options.name + '" class="' + this.options.input + '" readonly>' +
+        iconLeft +
+        '<input type="text" name="' + this.options.name + '" class="' + this.options.input + '" placeholder="' + this.options.placeholder + '" readonly>' +
+        iconRight +
         '</div>' +
         '<div class="bfh-datepicker-calendar">' +
         '<table class="calendar table table-bordered">' +
@@ -508,7 +515,9 @@
 
   $.fn.bfhdatepicker.defaults = {
     icon: 'glyphicon glyphicon-calendar',
+    align: 'left',
     input: 'form-control',
+    placeholder: '',
     name: '',
     date: 'today',
     format: 'm/d/y',
