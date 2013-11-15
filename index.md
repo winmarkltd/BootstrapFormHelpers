@@ -13,6 +13,7 @@ better forms. The plugins can be used individually but some of them work togethe
 like Countries and States. The collection includes:
 
 * A custom select element
+* A slider
 * A country picker
 * A state picker
 * A currency picker
@@ -58,6 +59,15 @@ you can contribute and make them better.
       <div class="carousel-caption">
         <h3>Select jQuery plugins</h3>
         <p>Extend Bootstrap with Bootstrap Form Helpers select jQuery plugins.</p>
+      </div>
+    </div>
+    <div class="item">
+      <div style="height:600px;overflow:hidden;">
+      <img src="{{ page.base_url }}assets/img/slider.png" alt="Slider jQuery plugins - Bootstrap Form Helpers">
+      </div>
+      <div class="carousel-caption">
+        <h3>Slider jQuery plugins</h3>
+        <p>Extend Bootstrap with Bootstrap Form Helpers slider jQuery plugins.</p>
       </div>
     </div>
     <div class="item">
