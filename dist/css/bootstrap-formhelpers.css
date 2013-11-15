@@ -2036,3 +2036,52 @@
 .open > .bfh-timepicker-popover {
   display: block;
 }
+
+.bfh-slider {
+  height: 20px;
+  margin-top: 8px;
+  margin-bottom: 23px;
+  background-color: #ffffff;
+  border: 1px solid #cccccc;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  -webkit-user-select: none;
+   -khtml-user-select: none;
+     -moz-user-select: none;
+       -o-user-select: none;
+}
+
+.bfh-slider > .bfh-slider-handle {
+  position: absolute;
+  width: 20px;
+  height: 34px;
+  margin-top: -7px;
+  cursor: pointer;
+  background: #efefef;
+  border: 1px solid #cccccc;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+}
+
+.bfh-slider > .bfh-slider-handle > .bfh-slider-value {
+  position: absolute;
+  width: 48px;
+  height: 20px;
+  margin-top: 5px;
+  margin-left: -15px;
+  line-height: 20px;
+  text-align: center;
+  cursor: pointer;
+  background-color: #ffffff;
+  border: 1px solid #cccccc;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+}
+
+.bfh-slider > .bfh-slider-handle > .bfh-slider-value .disabled {
+  color: #999999;
+}
+
+.bfh-slider.disabled .bfh-slider-value {
+  color: #999999;
+}
