@@ -1,5 +1,5 @@
 /**
-* bootstrap-formhelpers.js v2.0.0 by @vincentlamanna
+* bootstrap-formhelpers.js v2.1.0 by @vincentlamanna
 * Copyright 2013 Vincent Lamanna
 * http://www.apache.org/licenses/LICENSE-2.0
 */
