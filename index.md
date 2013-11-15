@@ -48,6 +48,7 @@ you can contribute and make them better.
     <li data-target="#carousel-bfh" data-slide-to="9"></li>
     <li data-target="#carousel-bfh" data-slide-to="10"></li>
     <li data-target="#carousel-bfh" data-slide-to="11"></li>
+    <li data-target="#carousel-bfh" data-slide-to="12"></li>
   </ol>
 
   <!-- Wrapper for slides -->
