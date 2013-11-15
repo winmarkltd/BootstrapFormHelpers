@@ -16216,7 +16216,7 @@ var BFHTimezonesList = {
           
       span = this.options.max - this.options.min;
       width = this.$element.width();
-      left = this.$element.offset().left;
+      left = this.$element.position().left;
       
       positionX = Math.round((val - this.options.min) * (width - 20) / span + left);
       
