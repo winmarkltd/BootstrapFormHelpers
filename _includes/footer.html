@@ -33,6 +33,12 @@
 <!-- AddThis Smart Layers END -->
 
 <script>
+  $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+    $($(e.target).attr('href')).find('.bfh-slider').val($($(e.target).attr('href')).find('.bfh-slider').val());
+  });
+</script>
+
+<script>
   $(document.links).filter(function() {
     return this.hostname != window.location.hostname;
   }).attr('target', '_blank');
