@@ -35,16 +35,12 @@ period can be extended by buying a new license.
       <td>For commercial purposes on 1 website.</td>
       <td><span style="text-decoration:line-through">$59</span> <b>$29</b></td>
       <td>
-        <form action="" method="POST">
-		  <script
-			src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-			data-key="pk_live_zQyPs0Wzra8LSJS407T8xGhm"
-			data-amount="2900"
-			data-name="Bootstrap Form Helpers"
-			data-description="Single Site ($29)"
-			data-image="{{ page.base_url }}assets/img/logo.png">
-		  </script>
-		</form>
+        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+          <input type="hidden" name="cmd" value="_s-xclick">
+          <input type="hidden" name="hosted_button_id" value="RQVHU88MFN7AW">
+          <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynow_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+          <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+        </form>
       </td>
     </tr>
     <tr>
@@ -52,16 +48,12 @@ period can be extended by buying a new license.
       <td>For commercial purposes on multiple websites or web application.</td>
       <td><span style="text-decoration:line-through">$599</span> <b>$299</b></td>
       <td>
-        <form action="" method="POST">
-		  <script
-			src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-			data-key="pk_live_zQyPs0Wzra8LSJS407T8xGhm"
-			data-amount="29900"
-			data-name="Bootstrap Form Helpers"
-			data-description="Multi Sites ($299)"
-			data-image="{{ page.base_url }}assets/img/logo.png">
-		  </script>
-		</form>
+       <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+         <input type="hidden" name="cmd" value="_s-xclick">
+         <input type="hidden" name="hosted_button_id" value="NUT2RGN93GJW4">
+         <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynow_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+         <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+       </form>
       </td>
     </tr>
   </tbody>
