@@ -37,6 +37,10 @@
     constructor: BFHSlider,
 
     initSlider: function() {
+      if (this.options.value === '') {
+        this.options.value = this.options.min;
+      }
+      
       this.$element.html(
         '<input type="hidden" name="' + this.options.name + '" value="">' +
         '<div class="bfh-slider-handle"><div class="bfh-slider-value"></div></div>'
@@ -159,7 +163,7 @@
 
   $.fn.bfhslider.defaults = {
     name: '',
-    value: 0,
+    value: '',
     min: 0,
     max: 100
   };

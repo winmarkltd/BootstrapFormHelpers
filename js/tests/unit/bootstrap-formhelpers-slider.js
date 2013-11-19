@@ -42,5 +42,16 @@ $(function () {
     ok(slider.find('input[type=hidden]').val() === '2', 'value is 2');
     slider.remove();
   });
+  
+  test('should have value after init with min', function () {
+    var sliderHTML = '<div class="bfh-slider" data-min="2">' +
+      '</div>',
+      slider = $(sliderHTML).appendTo('#qunit-fixture').bfhslider({min: '2'});
+    
+    ok(slider.val() === '2', 'value is 2');
+    ok(slider.find('.bfh-slider-value').text() === '2', 'value is 2');
+    ok(slider.find('input[type=hidden]').val() === '2', 'value is 2');
+    slider.remove();
+  });
 
 });
