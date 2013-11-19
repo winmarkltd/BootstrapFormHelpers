@@ -47,10 +47,10 @@ This slider can be fully customized to match the look and feel you want using HT
   <div class="tab-pane fade" id="example3">
     <form class="example form-inline">
       <p>Simple example for adding a slider with different min and max values.</p>
-      <div class="bfh-slider" data-name="slider3" data-value="5" data-min="5" data-max="25">
+      <div class="bfh-slider" data-name="slider3" data-min="5" data-max="25">
       </div>
     </form>
-    <pre class="prettyprint">&lt;div class="bfh-slider" data-name="slider3" data-value="5" data-min="5" data-max="25"&gt;
+    <pre class="prettyprint">&lt;div class="bfh-slider" data-name="slider3" data-min="5" data-max="25"&gt;
 &lt;/div&gt;</pre>
   </div>
 </div>
@@ -77,7 +77,7 @@ Not applicable.
     </tr>
     <tr>
       <td>value</td>
-      <td>String. Initial value to select. <em>Default: 0</em></td>
+      <td>String. Initial value to select. <em>Default: min</em></td>
     </tr>
     <tr>
       <td>min</td>
