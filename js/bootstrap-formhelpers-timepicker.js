@@ -18,7 +18,7 @@
  * ========================================================== */
 
 
-!function ($) {
++function ($) {
 
   'use strict';
 
@@ -178,11 +178,11 @@
         $parent.data('hour', Number($parent.data('hour')) + 1);
       }
 
-      $parent.trigger('change.bfhtimepicker');
-
       $timePicker = $parent.data('bfhtimepicker');
       $timePicker.updatePopover();
       $parent.val(formatTime($parent.data('hour'), $parent.data('minute')));
+      
+      $parent.trigger('change.bfhtimepicker');
 
       return false;
     },
@@ -201,11 +201,11 @@
         $parent.data('minute', Number($parent.data('minute')) - 1);
       }
 
-      $parent.trigger('change.bfhtimepicker');
-
       $timePicker = $parent.data('bfhtimepicker');
       $timePicker.updatePopover();
       $parent.val(formatTime($parent.data('hour'), $parent.data('minute')));
+      
+      $parent.trigger('change.bfhtimepicker');
 
       return false;
     },
@@ -224,11 +224,11 @@
         $parent.data('minute', Number($parent.data('minute')) + 1);
       }
 
-      $parent.trigger('change.bfhtimepicker');
-
       $timePicker = $parent.data('bfhtimepicker');
       $timePicker.updatePopover();
       $parent.val(formatTime($parent.data('hour'), $parent.data('minute')));
+      
+      $parent.trigger('change.bfhtimepicker');
 
       return false;
     },

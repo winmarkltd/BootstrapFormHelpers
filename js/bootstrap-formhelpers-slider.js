@@ -95,9 +95,9 @@
         return true;
       }
       
-      this.$element.trigger('change.bfhslider');
-      
       this.$element.val(val);
+      
+      this.$element.trigger('change.bfhslider');
     },
     
     mouseDown: function() {

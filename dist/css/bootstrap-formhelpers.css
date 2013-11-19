@@ -2085,3 +2085,49 @@
 .bfh-slider.disabled .bfh-slider-value {
   color: #999999;
 }
+
+.bfh-colorpicker-popover {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1000;
+  display: none;
+  float: left;
+  min-width: 100px;
+  padding: 20px;
+  background-color: #ffffff;
+  border: 1px solid #cccccc;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+          box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+  background-clip: padding-box;
+}
+
+.bfh-colorpicker-popover > canvas {
+  width: 384px;
+  height: 256px;
+}
+
+.bfh-colorpicker {
+  position: relative;
+}
+
+.bfh-colorpicker-toggle {
+  *margin-bottom: -3px;
+}
+
+.bfh-colorpicker-toggle > input[readonly] {
+  cursor: inherit;
+  background-color: inherit;
+}
+
+.bfh-colorpicker-toggle .bfh-colorpicker-icon {
+  display: block;
+  width: 16px;
+  height: 16px;
+}
+
+.open > .bfh-colorpicker-popover {
+  display: block;
+}
