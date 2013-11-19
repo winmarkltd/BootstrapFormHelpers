@@ -2095,6 +2095,7 @@
   float: left;
   min-width: 100px;
   padding: 20px;
+  cursor: default;
   background-color: #ffffff;
   border: 1px solid #cccccc;
   border: 1px solid rgba(0, 0, 0, 0.15);
