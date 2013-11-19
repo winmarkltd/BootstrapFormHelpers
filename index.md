@@ -14,6 +14,7 @@ like Countries and States. The collection includes:
 
 * A custom select element
 * A slider
+* A color picker
 * A country picker
 * A state picker
 * A currency picker
@@ -49,6 +50,7 @@ you can contribute and make them better.
     <li data-target="#carousel-bfh" data-slide-to="10"></li>
     <li data-target="#carousel-bfh" data-slide-to="11"></li>
     <li data-target="#carousel-bfh" data-slide-to="12"></li>
+    <li data-target="#carousel-bfh" data-slide-to="13"></li>
   </ol>
 
   <!-- Wrapper for slides -->
@@ -60,6 +62,15 @@ you can contribute and make them better.
       <div class="carousel-caption">
         <h3>Select jQuery plugins</h3>
         <p>Extend Bootstrap with Bootstrap Form Helpers select jQuery plugins.</p>
+      </div>
+    </div>
+    <div class="item">
+      <div style="height:600px;overflow:hidden;">
+      <img src="{{ page.base_url }}assets/img/color-picker.png" alt="Color Picker jQuery plugins - Bootstrap Form Helpers">
+      </div>
+      <div class="carousel-caption">
+        <h3>Color Picker jQuery plugins</h3>
+        <p>Extend Bootstrap with Bootstrap Form Helpers color picker jQuery plugins.</p>
       </div>
     </div>
     <div class="item">
