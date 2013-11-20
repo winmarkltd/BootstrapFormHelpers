@@ -90,7 +90,7 @@ $(function () {
     var phoneHTML = '<input type="text" class="bfh-phone" data-format="+1 (ddd) ddd-dddd">',
       phone = $(phoneHTML).appendTo('#qunit-fixture').bfhphone({format: '+1 (ddd) ddd-dddd'});
       
-    phone.val('5555555555').change();
+    phone.val('5555555555').keyup();
     
     ok(phone.val() === '+1 (555) 555-5555', 'phone number is correctly formatted');
     

@@ -119,7 +119,7 @@
 
       setCursorPosition($this.$element[0], cursorPosition);
 
-      return false;
+      return true;
     }
 
   };
@@ -252,6 +252,6 @@
    * =================================== */
 
   $(document)
-    .on('propertychange.bfhphone.data-api change.bfhphone.data-api input.bfhphone.data-api keyup.bfhphone.data-api', '.bfh-phone', BFHPhone.prototype.change);
+    .on('propertychange.bfhphone.data-api input.bfhphone.data-api keyup.bfhphone.data-api', '.bfh-phone', BFHPhone.prototype.change);
 
 }(window.jQuery);
