@@ -5,9 +5,10 @@
     "keywords": [
         "form",
         "input",
-        "font"
+        "font",
+        "bootstrap"
     ],
-    "version": "2.1.0",
+    "version": "2.2.0",
     "author": {
         "name": "Vincent Lamanna",
         "url": "http://vincentlamanna.com"
@@ -20,7 +21,7 @@
     ],
     "bugs": "https://github.com/vlamanna/BootstrapFormHelpers/issues",
     "homepage": "http://bootstrapformhelpers.com",
-    "docs": "http://bootstrapformhelpers.com/font",
+    "docs": "http://bootstrapformhelpers.com/font/",
     "download": "https://github.com/vlamanna/BootstrapFormHelpers/archive/master.zip",
     "dependencies": {
         "jquery": ">=1.7"

@@ -1,7 +1,7 @@
 {
   "name": "bootstrap-formhelpers",
   "description": "A collection of jQuery plugins for Bootstrap.",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "keywords": [
     "bootstrap",
     "css"
