@@ -1,5 +1,5 @@
 /**
-* bootstrap-formhelpers.js v2.1.0 by @vincentlamanna
+* bootstrap-formhelpers.js v2.2.0 by @vincentlamanna
 * Copyright 2013 Vincent Lamanna
 * http://www.apache.org/licenses/LICENSE-2.0
 */
@@ -2131,4 +2131,12 @@
 
 .open > .bfh-colorpicker-popover {
   display: block;
+}
+
+.input-group > .bfh-number {
+  border-right: 0;
+}
+
+.input-group > .bfh-number-btn:hover {
+  background-color: #cccccc;
 }

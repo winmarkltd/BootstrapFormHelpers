@@ -27,6 +27,7 @@
 // Base Colours
 @gray-dark:                      lighten(#000, 20%);   // #333
 @gray-light:                     lighten(#000, 60%);   // #999
+@gray-lighter:                   lighten(#000, 80%);
 @component-active-color:         #fff;
 @component-active-bg:            @brand-primary;
 @component-hover-color:          darken(@gray-dark, 5%);
@@ -77,7 +78,10 @@
 @slider-border:                  rgba(0,0,0,.15);
 @slider-fallback-border:         #ccc;
 @slider-handle-bg:               #efefef;
-@slider-disabled-color:     @gray-light;
+@slider-disabled-color:          @gray-light;
+
+// Number Variables
+@number-button-hover-bg:         @gray-lighter;
 
 // Z-Indexes
 @zindex-select:                  1000;
