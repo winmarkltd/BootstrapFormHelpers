@@ -51,16 +51,20 @@
           countries;
 
       if (this.options.available) {
-        countries = [];
-
-        this.options.available = this.options.available.split(',');
-
-        for (country in BFHCountriesList) {
-          if (BFHCountriesList.hasOwnProperty(country)) {
-            if ($.inArray(country, this.options.available) >= 0) {
-              countries[country] = BFHCountriesList[country];
+        if (typeof this.options.available === 'string') {
+          countries = [];
+  
+          this.options.available = this.options.available.split(',');
+  
+          for (country in BFHCountriesList) {
+            if (BFHCountriesList.hasOwnProperty(country)) {
+              if ($.inArray(country, this.options.available) >= 0) {
+                countries[country] = BFHCountriesList[country];
+              }
             }
           }
+        } else {
+          countries = this.options.available;
         }
 
         return countries;
