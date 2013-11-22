@@ -19,6 +19,7 @@ like Countries and States. The collection includes:
 * A state picker
 * A currency picker
 * A phone input
+* A number input
 * A language picker
 * A timezone picker
 * A Google font picker
@@ -51,6 +52,7 @@ you can contribute and make them better.
     <li data-target="#carousel-bfh" data-slide-to="11"></li>
     <li data-target="#carousel-bfh" data-slide-to="12"></li>
     <li data-target="#carousel-bfh" data-slide-to="13"></li>
+    <li data-target="#carousel-bfh" data-slide-to="14"></li>
   </ol>
 
   <!-- Wrapper for slides -->
@@ -116,6 +118,15 @@ you can contribute and make them better.
       <div class="carousel-caption">
         <h3>Phone Input jQuery plugins</h3>
         <p>Extend Bootstrap with Bootstrap Form Helpers phone input jQuery plugins.</p>
+      </div>
+    </div>
+    <div class="item">
+      <div style="height:600px;overflow:hidden;">
+      <img src="{{ page.base_url }}assets/img/number-input.png" alt="Number Input jQuery plugins - Bootstrap Form Helpers">
+      </div>
+      <div class="carousel-caption">
+        <h3>Number Input jQuery plugins</h3>
+        <p>Extend Bootstrap with Bootstrap Form Helpers number input jQuery plugins.</p>
       </div>
     </div>
     <div class="item">
