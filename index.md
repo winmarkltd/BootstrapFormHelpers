@@ -58,8 +58,8 @@ you can contribute and make them better.
   <!-- Wrapper for slides -->
   <div class="carousel-inner">
     <div class="item active">
-      <div style="height:600px;overflow:hidden;">
-      <img src="{{ page.base_url }}assets/img/select.png" alt="Select jQuery plugins - Bootstrap Form Helpers">
+      <div style="height:400px;overflow:hidden;">
+      <img src="{{ page.base_url }}assets/img/select.jpg" alt="Select jQuery plugins - Bootstrap Form Helpers">
       </div>
       <div class="carousel-caption">
         <h3>Select jQuery plugins</h3>
@@ -67,8 +67,8 @@ you can contribute and make them better.
       </div>
     </div>
     <div class="item">
-      <div style="height:600px;overflow:hidden;">
-      <img src="{{ page.base_url }}assets/img/color-picker.png" alt="Color Picker jQuery plugins - Bootstrap Form Helpers">
+      <div style="height:400px;overflow:hidden;">
+      <img src="{{ page.base_url }}assets/img/color-picker.jpg" alt="Color Picker jQuery plugins - Bootstrap Form Helpers">
       </div>
       <div class="carousel-caption">
         <h3>Color Picker jQuery plugins</h3>
@@ -76,8 +76,8 @@ you can contribute and make them better.
       </div>
     </div>
     <div class="item">
-      <div style="height:600px;overflow:hidden;">
-      <img src="{{ page.base_url }}assets/img/slider.png" alt="Slider jQuery plugins - Bootstrap Form Helpers">
+      <div style="height:400px;overflow:hidden;">
+      <img src="{{ page.base_url }}assets/img/slider.jpg" alt="Slider jQuery plugins - Bootstrap Form Helpers">
       </div>
       <div class="carousel-caption">
         <h3>Slider jQuery plugins</h3>
@@ -85,8 +85,8 @@ you can contribute and make them better.
       </div>
     </div>
     <div class="item">
-      <div style="height:600px;overflow:hidden;">
-      <img src="{{ page.base_url }}assets/img/country-picker.png" alt="Country Picker jQuery plugins - Bootstrap Form Helpers">
+      <div style="height:400px;overflow:hidden;">
+      <img src="{{ page.base_url }}assets/img/country-picker.jpg" alt="Country Picker jQuery plugins - Bootstrap Form Helpers">
       </div>
       <div class="carousel-caption">
         <h3>Country Picker jQuery plugins</h3>
@@ -94,8 +94,8 @@ you can contribute and make them better.
       </div>
     </div>
     <div class="item">
-      <div style="height:600px;overflow:hidden;">
-      <img src="{{ page.base_url }}assets/img/state-picker.png" alt="State Picker jQuery plugins - Bootstrap Form Helpers">
+      <div style="height:400px;overflow:hidden;">
+      <img src="{{ page.base_url }}assets/img/state-picker.jpg" alt="State Picker jQuery plugins - Bootstrap Form Helpers">
       </div>
       <div class="carousel-caption">
         <h3>State Picker jQuery plugins</h3>
@@ -103,8 +103,8 @@ you can contribute and make them better.
       </div>
     </div>
     <div class="item">
-      <div style="height:600px;overflow:hidden;">
-      <img src="{{ page.base_url }}assets/img/currency-picker.png" alt="Currency Picker jQuery plugins - Bootstrap Form Helpers">
+      <div style="height:400px;overflow:hidden;">
+      <img src="{{ page.base_url }}assets/img/currency-picker.jpg" alt="Currency Picker jQuery plugins - Bootstrap Form Helpers">
       </div>
       <div class="carousel-caption">
         <h3>Currency Picker jQuery plugins</h3>
@@ -112,8 +112,8 @@ you can contribute and make them better.
       </div>
     </div>
     <div class="item">
-      <div style="height:600px;overflow:hidden;">
-      <img src="{{ page.base_url }}assets/img/phone-input.png" alt="Phone Input jQuery plugins - Bootstrap Form Helpers">
+      <div style="height:400px;overflow:hidden;">
+      <img src="{{ page.base_url }}assets/img/phone-input.jpg" alt="Phone Input jQuery plugins - Bootstrap Form Helpers">
       </div>
       <div class="carousel-caption">
         <h3>Phone Input jQuery plugins</h3>
@@ -121,8 +121,8 @@ you can contribute and make them better.
       </div>
     </div>
     <div class="item">
-      <div style="height:600px;overflow:hidden;">
-      <img src="{{ page.base_url }}assets/img/number-input.png" alt="Number Input jQuery plugins - Bootstrap Form Helpers">
+      <div style="height:400px;overflow:hidden;">
+      <img src="{{ page.base_url }}assets/img/number-input.jpg" alt="Number Input jQuery plugins - Bootstrap Form Helpers">
       </div>
       <div class="carousel-caption">
         <h3>Number Input jQuery plugins</h3>
@@ -130,8 +130,8 @@ you can contribute and make them better.
       </div>
     </div>
     <div class="item">
-      <div style="height:600px;overflow:hidden;">
-      <img src="{{ page.base_url }}assets/img/language-picker.png" alt="Language Picker jQuery plugins - Bootstrap Form Helpers">
+      <div style="height:400px;overflow:hidden;">
+      <img src="{{ page.base_url }}assets/img/language-picker.jpg" alt="Language Picker jQuery plugins - Bootstrap Form Helpers">
       </div>
       <div class="carousel-caption">
         <h3>Language Picker jQuery plugins</h3>
@@ -139,8 +139,8 @@ you can contribute and make them better.
       </div>
     </div>
     <div class="item">
-      <div style="height:600px;overflow:hidden;">
-      <img src="{{ page.base_url }}assets/img/timezone-picker.png" alt="Timezone Picker jQuery plugins - Bootstrap Form Helpers">
+      <div style="height:400px;overflow:hidden;">
+      <img src="{{ page.base_url }}assets/img/timezone-picker.jpg" alt="Timezone Picker jQuery plugins - Bootstrap Form Helpers">
       </div>
       <div class="carousel-caption">
         <h3>Timezone Picker jQuery plugins</h3>
@@ -148,8 +148,8 @@ you can contribute and make them better.
       </div>
     </div>
     <div class="item">
-      <div style="height:600px;overflow:hidden;">
-      <img src="{{ page.base_url }}assets/img/google-font-picker.png" alt="Google Font Picker jQuery plugins - Bootstrap Form Helpers">
+      <div style="height:400px;overflow:hidden;">
+      <img src="{{ page.base_url }}assets/img/google-font-picker.jpg" alt="Google Font Picker jQuery plugins - Bootstrap Form Helpers">
       </div>
       <div class="carousel-caption">
         <h3>Google Font Picker jQuery plugins</h3>
@@ -157,8 +157,8 @@ you can contribute and make them better.
       </div>
     </div>
     <div class="item">
-      <div style="height:600px;overflow:hidden;">
-      <img src="{{ page.base_url }}assets/img/date-picker.png" alt="Date Picker jQuery plugins - Bootstrap Form Helpers">
+      <div style="height:400px;overflow:hidden;">
+      <img src="{{ page.base_url }}assets/img/date-picker.jpg" alt="Date Picker jQuery plugins - Bootstrap Form Helpers">
       </div>
       <div class="carousel-caption">
         <h3>Date Picker jQuery plugins</h3>
@@ -166,8 +166,8 @@ you can contribute and make them better.
       </div>
     </div>
     <div class="item">
-      <div style="height:600px;overflow:hidden;">
-      <img src="{{ page.base_url }}assets/img/time-picker.png" alt="Time Picker jQuery plugins - Bootstrap Form Helpers">
+      <div style="height:400px;overflow:hidden;">
+      <img src="{{ page.base_url }}assets/img/time-picker.jpg" alt="Time Picker jQuery plugins - Bootstrap Form Helpers">
       </div>
       <div class="carousel-caption">
         <h3>Time Picker jQuery plugins</h3>
@@ -175,8 +175,8 @@ you can contribute and make them better.
       </div>
     </div>
     <div class="item">
-      <div style="height:600px;overflow:hidden;">
-      <img src="{{ page.base_url }}assets/img/font-picker.png" alt="Font Picker jQuery plugins - Bootstrap Form Helpers">
+      <div style="height:400px;overflow:hidden;">
+      <img src="{{ page.base_url }}assets/img/font-picker.jpg" alt="Font Picker jQuery plugins - Bootstrap Form Helpers">
       </div>
       <div class="carousel-caption">
         <h3>Font Picker jQuery plugins</h3>
@@ -184,8 +184,8 @@ you can contribute and make them better.
       </div>
     </div>
     <div class="item">
-      <div style="height:600px;overflow:hidden;">
-      <img src="{{ page.base_url }}assets/img/font-size-picker.png" alt="Font Size Picker jQuery plugins - Bootstrap Form Helpers">
+      <div style="height:400px;overflow:hidden;">
+      <img src="{{ page.base_url }}assets/img/font-size-picker.jpg" alt="Font Size Picker jQuery plugins - Bootstrap Form Helpers">
       </div>
       <div class="carousel-caption">
         <h3>Font Size Picker jQuery plugins</h3>
