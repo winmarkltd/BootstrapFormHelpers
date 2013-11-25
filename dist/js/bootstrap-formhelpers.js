@@ -14144,16 +14144,20 @@ var BFHTimezonesList = {
           countries;
 
       if (this.options.available) {
-        countries = [];
-
-        this.options.available = this.options.available.split(',');
-
-        for (country in BFHCountriesList) {
-          if (BFHCountriesList.hasOwnProperty(country)) {
-            if ($.inArray(country, this.options.available) >= 0) {
-              countries[country] = BFHCountriesList[country];
+        if (typeof this.options.available === 'string') {
+          countries = [];
+  
+          this.options.available = this.options.available.split(',');
+  
+          for (country in BFHCountriesList) {
+            if (BFHCountriesList.hasOwnProperty(country)) {
+              if ($.inArray(country, this.options.available) >= 0) {
+                countries[country] = BFHCountriesList[country];
+              }
             }
           }
+        } else {
+          countries = this.options.available;
         }
 
         return countries;
@@ -16265,9 +16269,7 @@ var BFHTimezonesList = {
 
       formattedNumber = formatNumber(this.options.format, this.$element.val());
 
-      this.$element.addClass('disabled');
       this.$element.val(formattedNumber);
-      this.$element.removeClass('disabled');
     },
 
     displayFormatter: function () {
@@ -16294,10 +16296,11 @@ var BFHTimezonesList = {
       $phone.loadFormatter();
     },
 
-    change: function() {
+    change: function(e) {
       var $this,
           cursorPosition,
-          cursorEnd;
+          cursorEnd,
+          formattedNumber;
 
       $this = $(this).data('bfhphone');
 
@@ -16311,8 +16314,18 @@ var BFHTimezonesList = {
       if (cursorPosition === $this.$element.val().length) {
         cursorEnd = true;
       }
+      
+      if (e.which === 8 && $this.options.format.charAt($this.$element.val().length) !== 'd') {
+        $this.$element.val(String($this.$element.val()).substring(0, $this.$element.val().length - 1));
+      }
 
-      $this.loadFormatter();
+      formattedNumber = formatNumber($this.options.format, $this.$element.val());
+      
+      if (formattedNumber === $this.$element.val()) {
+        return true;
+      }
+      
+      $this.$element.val(formattedNumber);
 
       if (cursorEnd) {
         cursorPosition = $this.$element.val().length;
@@ -16328,7 +16341,8 @@ var BFHTimezonesList = {
   function formatNumber(format, number) {
     var formattedNumber,
         indexFormat,
-        indexNumber;
+        indexNumber,
+        lastCharacter;
 
     formattedNumber = '';
     number = String(number).replace(/\D/g, '');
@@ -16353,6 +16367,11 @@ var BFHTimezonesList = {
           indexNumber = indexNumber + 1;
         }
       }
+    }
+    
+    lastCharacter = format.charAt(formattedNumber.length);
+    if (lastCharacter !== 'd') {
+      formattedNumber += lastCharacter;
     }
 
     return formattedNumber;
@@ -16453,7 +16472,7 @@ var BFHTimezonesList = {
    * =================================== */
 
   $(document)
-    .on('propertychange.bfhphone.data-api input.bfhphone.data-api keyup.bfhphone.data-api', '.bfh-phone', BFHPhone.prototype.change);
+    .on('keyup.bfhphone.data-api', '.bfh-phone', BFHPhone.prototype.change);
 
 }(window.jQuery);
 

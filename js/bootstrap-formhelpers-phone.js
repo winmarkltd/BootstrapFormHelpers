@@ -64,9 +64,7 @@
 
       formattedNumber = formatNumber(this.options.format, this.$element.val());
 
-      this.$element.addClass('disabled');
       this.$element.val(formattedNumber);
-      this.$element.removeClass('disabled');
     },
 
     displayFormatter: function () {
@@ -93,10 +91,11 @@
       $phone.loadFormatter();
     },
 
-    change: function() {
+    change: function(e) {
       var $this,
           cursorPosition,
-          cursorEnd;
+          cursorEnd,
+          formattedNumber;
 
       $this = $(this).data('bfhphone');
 
@@ -110,8 +109,18 @@
       if (cursorPosition === $this.$element.val().length) {
         cursorEnd = true;
       }
+      
+      if (e.which === 8 && $this.options.format.charAt($this.$element.val().length) !== 'd') {
+        $this.$element.val(String($this.$element.val()).substring(0, $this.$element.val().length - 1));
+      }
 
-      $this.loadFormatter();
+      formattedNumber = formatNumber($this.options.format, $this.$element.val());
+      
+      if (formattedNumber === $this.$element.val()) {
+        return true;
+      }
+      
+      $this.$element.val(formattedNumber);
 
       if (cursorEnd) {
         cursorPosition = $this.$element.val().length;
@@ -127,7 +136,8 @@
   function formatNumber(format, number) {
     var formattedNumber,
         indexFormat,
-        indexNumber;
+        indexNumber,
+        lastCharacter;
 
     formattedNumber = '';
     number = String(number).replace(/\D/g, '');
@@ -152,6 +162,11 @@
           indexNumber = indexNumber + 1;
         }
       }
+    }
+    
+    lastCharacter = format.charAt(formattedNumber.length);
+    if (lastCharacter !== 'd') {
+      formattedNumber += lastCharacter;
     }
 
     return formattedNumber;
@@ -252,6 +267,6 @@
    * =================================== */
 
   $(document)
-    .on('propertychange.bfhphone.data-api input.bfhphone.data-api keyup.bfhphone.data-api', '.bfh-phone', BFHPhone.prototype.change);
+    .on('keyup.bfhphone.data-api', '.bfh-phone', BFHPhone.prototype.change);
 
 }(window.jQuery);

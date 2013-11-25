@@ -41,7 +41,7 @@ $(function () {
     var phoneHTML = '<input type="text" class="bfh-phone" data-format="+1 (ddd) ddd-dddd">',
       phone = $(phoneHTML).bfhphone({format: '+1 (ddd) ddd-dddd'});
 
-    ok(phone.val() === '+1', 'phone number is correctly formatted');
+    ok(phone.val() === '+1 ', 'phone number is correctly formatted');
   });
   
   test('should display input with formatted phone number with predefined number', function() {
