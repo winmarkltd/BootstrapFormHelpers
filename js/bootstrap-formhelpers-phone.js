@@ -55,6 +55,8 @@
           this.options.format = BFHPhoneFormatList[this.options.country];
         }
       }
+      
+      this.$element.on('keyup.bfhphone.data-api', BFHPhone.prototype.change);
 
       this.loadFormatter();
     },
@@ -261,12 +263,5 @@
       $phone.bfhphone($phone.data());
     });
   });
-
-
-  /* APPLY TO STANDARD PHONE ELEMENTS
-   * =================================== */
-
-  $(document)
-    .on('keyup.bfhphone.data-api', '.bfh-phone', BFHPhone.prototype.change);
 
 }(window.jQuery);
