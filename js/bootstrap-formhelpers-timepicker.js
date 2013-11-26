@@ -91,15 +91,11 @@
         '<tbody>' +
         '<tr>' +
         '<td class="hour">' +
-        '<a class="next" href="#"><i class="glyphicon glyphicon-chevron-up"></i></a><br>' +
-        '<input type="text" readonly><br>' +
-        '<a class="previous" href="#"><i class="glyphicon glyphicon-chevron-down"></i></a>' +
+        '<input type="text" class="' + this.options.input + ' bfh-number"  data-min="0" data-max="23" data-zeros="true" data-wrap="true">' +
         '</td>' +
         '<td class="separator">:</td>' +
         '<td class="minute">' +
-        '<a class="next" href="#"><i class="glyphicon glyphicon-chevron-up"></i></a><br>' +
-        '<input type="text" readonly><br>' +
-        '<a class="previous" href="#"><i class="glyphicon glyphicon-chevron-down"></i></a>' +
+        '<input type="text" class="' + this.options.input + ' bfh-number"  data-min="0" data-max="59" data-zeros="true" data-wrap="true">' +
         '</td>' +
         '</tr>' +
         '</tbody>' +
@@ -109,12 +105,18 @@
 
       this.$element
         .on('click.bfhtimepicker.data-api touchstart.bfhtimepicker.data-api', toggle, BFHTimePicker.prototype.toggle)
-        .on('click.bfhtimepicker.data-api touchstart.bfhtimepicker.data-api', '.bfh-timepicker-popover > table .hour > .previous', BFHTimePicker.prototype.previousHour)
-        .on('click.bfhtimepicker.data-api touchstart.bfhtimepicker.data-api', '.bfh-timepicker-popover > table .hour > .next', BFHTimePicker.prototype.nextHour)
-        .on('click.bfhtimepicker.data-api touchstart.bfhtimepicker.data-api', '.bfh-timepicker-popover > table .minute > .previous', BFHTimePicker.prototype.previousMinute)
-        .on('click.bfhtimepicker.data-api touchstart.bfhtimepicker.data-api', '.bfh-timepicker-popover > table .minute > .next', BFHTimePicker.prototype.nextMinute)
         .on('click.bfhtimepicker.data-api touchstart.bfhtimepicker.data-api', '.bfh-timepicker-popover > table', function() { return false; });
 
+      this.$element.find('.bfh-number').each(function () {
+        var $number;
+
+        $number = $(this);
+
+        $number.bfhnumber($number.data());
+        
+        $number.on('change', BFHTimePicker.prototype.change);
+      });
+      
       this.setTime();
 
       this.updatePopover();
@@ -127,113 +129,30 @@
       hour = this.$element.data('hour');
       minute = this.$element.data('minute');
 
-      hour = String(hour);
-      if (hour.length === 1) {
-        hour = '0' + hour;
-      }
-
-      minute = String(minute);
-      if (minute.length === 1) {
-        minute = '0' + minute;
-      }
-
-      this.$element.find('.hour > input[type=text]').val(hour);
-      this.$element.find('.minute > input[type=text]').val(minute);
+      this.$element.find('.hour input[type=text]').val(hour).change();
+      this.$element.find('.minute input[type=text]').val(minute).change();
     },
-
-    previousHour: function () {
+    
+    change: function() {
       var $this,
           $parent,
           $timePicker;
 
       $this = $(this);
       $parent = getParent($this);
-
-      if (Number($parent.data('hour')) === 0) {
-        $parent.data('hour', 23);
-      } else {
-        $parent.data('hour', Number($parent.data('hour')) - 1);
-      }
-
-      $timePicker = $parent.data('bfhtimepicker');
-      $timePicker.updatePopover();
-      $parent.val(formatTime($parent.data('hour'), $parent.data('minute')));
-
-      $parent.trigger('change.bfhtimepicker');
-
-      return false;
-    },
-
-    nextHour: function () {
-      var $this,
-          $parent,
-          $timePicker;
-
-      $this = $(this);
-      $parent = getParent($this);
-
-      if (Number($parent.data('hour')) === 23) {
-        $parent.data('hour', 0);
-      } else {
-        $parent.data('hour', Number($parent.data('hour')) + 1);
-      }
-
-      $timePicker = $parent.data('bfhtimepicker');
-      $timePicker.updatePopover();
-      $parent.val(formatTime($parent.data('hour'), $parent.data('minute')));
       
-      $parent.trigger('change.bfhtimepicker');
+      $timePicker = $parent.data('bfhtimepicker');
+      
+      if ($timePicker && $timePicker !== 'undefined') {
+        $parent.val($parent.find('.hour input[type=text]').val() + ':' + $parent.find('.minute input[type=text]').val());
 
-      return false;
-    },
-
-    previousMinute: function () {
-      var $this,
-          $parent,
-          $timePicker;
-
-      $this = $(this);
-      $parent = getParent($this);
-
-      if (Number($parent.data('minute')) === 0) {
-        $parent.data('minute', 59);
-      } else {
-        $parent.data('minute', Number($parent.data('minute')) - 1);
+        $parent.trigger('change.bfhtimepicker');
       }
 
-      $timePicker = $parent.data('bfhtimepicker');
-      $timePicker.updatePopover();
-      $parent.val(formatTime($parent.data('hour'), $parent.data('minute')));
-      
-      $parent.trigger('change.bfhtimepicker');
-
       return false;
     },
 
-    nextMinute: function () {
-      var $this,
-          $parent,
-          $timePicker;
-
-      $this = $(this);
-      $parent = getParent($this);
-
-      if (Number($parent.data('minute')) === 59) {
-        $parent.data('minute', 0);
-      } else {
-        $parent.data('minute', Number($parent.data('minute')) + 1);
-      }
-
-      $timePicker = $parent.data('bfhtimepicker');
-      $timePicker.updatePopover();
-      $parent.val(formatTime($parent.data('hour'), $parent.data('minute')));
-      
-      $parent.trigger('change.bfhtimepicker');
-
-      return false;
-    },
-
-    toggle: function (e) {
+    toggle: function(e) {
       var $this,
           $parent,
           isActive;
@@ -280,7 +199,7 @@
 
     return hour + ':' + minute;
   }
-
+  
   function clearMenus() {
     var $parent;
 

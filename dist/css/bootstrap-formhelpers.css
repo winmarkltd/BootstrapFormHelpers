@@ -2010,14 +2010,12 @@
 .bfh-timepicker-popover > table > tbody > tr > td.separator {
   font-size: 20px;
   font-weight: bold;
-  line-height: 65px;
+  line-height: 28px;
 }
 
-.bfh-timepicker-popover > table > tbody > tr > td > input {
-  width: 60px;
-  margin: 0;
+.bfh-timepicker-popover > table > tbody > tr > td > div > input {
+  width: 42px !important;
   text-align: center;
-  cursor: default;
 }
 
 .bfh-timepicker {

@@ -132,9 +132,9 @@ $(function () {
       timepicker = $(timepickerHTML).appendTo('#qunit-fixture').bfhtimepicker({time: '00:10'});
     
     timepicker.find('[data-toggle="bfh-timepicker"]').click();
-    timepicker.find('.hour .previous').click();
+    timepicker.find('.hour .dec').mousedown().mouseup();
     
-    ok(timepicker.find('.hour > input[type=text]').val() === '23', 'previous hour displayed');
+    ok(timepicker.find('.hour input[type=text]').val() === '23', 'previous hour displayed');
     ok(timepicker.val() === '23:10', 'previous hour displayed');
     timepicker.remove();
   });
@@ -145,9 +145,9 @@ $(function () {
       timepicker = $(timepickerHTML).appendTo('#qunit-fixture').bfhtimepicker({time: '23:10'});
     
     timepicker.find('[data-toggle="bfh-timepicker"]').click();
-    timepicker.find('.hour .next').click();
+    timepicker.find('.hour .inc').mousedown().mouseup();
     
-    ok(timepicker.find('.hour > input[type=text]').val() === '00', 'next hour displayed');
+    ok(timepicker.find('.hour input[type=text]').val() === '00', 'next hour displayed');
     ok(timepicker.val() === '00:10', 'next hour displayed');
     timepicker.remove();
   });
@@ -158,9 +158,9 @@ $(function () {
       timepicker = $(timepickerHTML).appendTo('#qunit-fixture').bfhtimepicker({time: '05:00'});
     
     timepicker.find('[data-toggle="bfh-timepicker"]').click();
-    timepicker.find('.minute .previous').click();
+    timepicker.find('.minute .dec').mousedown().mouseup();
     
-    ok(timepicker.find('.minute > input[type=text]').val() === '59', 'previous minute displayed');
+    ok(timepicker.find('.minute input[type=text]').val() === '59', 'previous minute displayed');
     ok(timepicker.val() === '05:59', 'previous minute displayed');
     timepicker.remove();
   });
@@ -171,9 +171,9 @@ $(function () {
       timepicker = $(timepickerHTML).appendTo('#qunit-fixture').bfhtimepicker({time: '05:59'});
     
     timepicker.find('[data-toggle="bfh-timepicker"]').click();
-    timepicker.find('.minute .next').click();
+    timepicker.find('.minute .inc').mousedown().mouseup();
     
-    ok(timepicker.find('.minute > input[type=text]').val() === '00', 'next minute displayed');
+    ok(timepicker.find('.minute input[type=text]').val() === '00', 'next minute displayed');
     ok(timepicker.val() === '05:00', 'next minute displayed');
     timepicker.remove();
   });
@@ -236,7 +236,7 @@ $(function () {
       });
 
     timepicker.find('[data-toggle="bfh-timepicker"]').click();
-    timepicker.find('.minute .next').click();
+    timepicker.find('.minute .inc').mousedown().mouseup();
     
     timepicker.remove();
   });
