@@ -34,7 +34,7 @@ $(function () {
     var phoneHTML = '<span class="bfh-phone" data-country="US" data-number="5555555555"></span>',
       phone = $(phoneHTML).bfhphone({country: 'US', number: '5555555555'});
 
-    ok(phone.html() === '(555) 555-5555', 'phone number is correctly formatted');
+    ok(phone.html() === '+1 (555) 555-5555', 'phone number is correctly formatted');
   });
   
   test('should display input with formatted phone number', function() {
@@ -55,7 +55,7 @@ $(function () {
     var phoneHTML = '<input type="text" class="bfh-phone" value="5555555555" data-country="US">',
       phone = $(phoneHTML).bfhphone({country: 'US'});
 
-    ok(phone.val() === '(555) 555-5555', 'phone number is correctly formatted');
+    ok(phone.val() === '+1 (555) 555-5555', 'phone number is correctly formatted');
   });
   
   test('should display input with formatted phone number and work with bfhcountries', function() {
@@ -77,11 +77,11 @@ $(function () {
       first = phone.first().bfhcountries({country: 'US'}),
       last = phone.last().bfhphone({country: 'countries'});
     
-    ok(last.val() === '(555) 555-5555', 'phone number is correctly formatted');
+    ok(last.val() === '+1 (555) 555-5555', 'phone number is correctly formatted');
     
     first.val('GB').change();
     
-    ok(last.val() === '(555) 5555 555', 'phone number is correctly formatted');
+    ok(last.val() === '+44 (555) 5555 555', 'phone number is correctly formatted');
     
     $('#qunit-fixture').html('');
   });

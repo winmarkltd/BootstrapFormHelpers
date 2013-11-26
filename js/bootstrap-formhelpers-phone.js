@@ -88,6 +88,7 @@
       $this = $(this);
       $phone = e.data.phone;
 
+      $phone.$element.val(String($phone.$element.val()).replace(/\+\d*/g, ''));
       $phone.options.format = BFHPhoneFormatList[$this.val()];
 
       $phone.loadFormatter();
