@@ -25,6 +25,9 @@ look and feel you want using HTML and CSS.
   <li>
     <a href="#example3" data-toggle="tab">Example 3</a>
   </li>
+  <li>
+    <a href="#example4" data-toggle="tab">Example 4</a>
+  </li>
 </ul>
 <div id="example-content" class="tab-content">
   <div class="tab-pane fade in active" id="example1">
@@ -52,6 +55,15 @@ look and feel you want using HTML and CSS.
       </div>
     </form>
     <pre class="prettyprint">&lt;div class="bfh-timepicker" data-time="now"&gt;
+&lt;/div&gt;</pre>
+  </div>
+  <div class="tab-pane fade" id="example4">
+    <form class="example form-inline">
+      <p>Example showing how to switch to 12h mode.</p>
+      <div class="bfh-timepicker" data-mode="12h">
+      </div>
+    </form>
+    <pre class="prettyprint">&lt;div class="bfh-timepicker" data-mode="12h"&gt;
 &lt;/div&gt;</pre>
   </div>
 </div>
@@ -95,6 +107,10 @@ Not applicable.
     <tr>
       <td>time</td>
       <td>String. Initial time. <em>Default: 'now'</em></td>
+    </tr>
+    <tr>
+      <td>mode</td>
+      <td>String. To switch between '24h' and '12h' mode. <em>Default: '24h'</em></td>
     </tr>
   </tbody>
 </table>
