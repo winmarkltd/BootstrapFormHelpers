@@ -64,6 +64,20 @@
     },
 
     initPopover: function() {
+      var optionString = '',
+          regExpPattern = /^input(.+)$/,
+          me = this;
+
+      $.each(this.options, function(index, option) {
+        if (index === 'inputClass') {
+          // If the data attribute calls for additional class names, merge them
+          // with the existing ones, rather than replacing them.
+          me.options.input = me.options.input + ' ' + option;
+        } else if (regExpPattern.test(index)) {
+          optionString = optionString + index.replace('input','').toLowerCase() + '="' + option + '" ';
+        }
+      });
+
       var iconLeft,
           iconRight,
           iconAddon;
@@ -83,7 +97,7 @@
       this.$element.html(
         '<div class="' + iconAddon + ' bfh-timepicker-toggle" data-toggle="bfh-timepicker">' +
         iconLeft +
-        '<input type="text" name="' + this.options.name + '" class="' + this.options.input + '" placeholder="' + this.options.placeholder + '" readonly>' +
+        '<input type="text" name="' + this.options.name + '" class="' + this.options.input + '" placeholder="' + this.options.placeholder + '" readonly ' + optionString + '>' +
         iconRight +
         '</div>' +
         '<div class="bfh-timepicker-popover">' +

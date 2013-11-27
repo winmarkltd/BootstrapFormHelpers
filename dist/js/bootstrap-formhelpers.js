@@ -14609,10 +14609,10 @@ var BFHTimezonesList = {
           me = this;
 
       $.each(this.options, function(index, option) {
-        if (index == 'inputClass') {
+        if (index === 'inputClass') {
           // If the data attribute calls for additional class names, merge them
           // with the existing ones, rather than replacing them.
-          me.options.input = me.options.input + " " + option;
+          me.options.input = me.options.input + ' ' + option;
         } else if (regExpPattern.test(index)) {
           optionString = optionString + index.replace('input','').toLowerCase() + '="' + option + '" ';
         }
@@ -16535,16 +16535,16 @@ var BFHTimezonesList = {
 
       this.$element.html(
         '<input type="hidden" name="' + this.options.name + '" value="">' +
-    '<a class="bfh-selectbox-toggle ' + this.options.input + '" role="button" data-toggle="bfh-selectbox" href="#">' +
-    '<span class="bfh-selectbox-option"></span>' +
-    '<span class="' + this.options.icon + ' selectbox-caret"></span>' +
-    '</a>' +
-    '<div class="bfh-selectbox-options">' +
-    '<div role="listbox">' +
-    '<ul role="option">' +
-    '</ul>' +
-    '</div>' +
-    '</div>'
+		'<a class="bfh-selectbox-toggle ' + this.options.input + '" role="button" data-toggle="bfh-selectbox" href="#">' +
+		'<span class="bfh-selectbox-option"></span>' +
+		'<span class="' + this.options.icon + ' selectbox-caret"></span>' +
+		'</a>' +
+		'<div class="bfh-selectbox-options">' +
+		'<div role="listbox">' +
+		'<ul role="option">' +
+		'</ul>' +
+		'</div>' +
+		'</div>'
       );
 
       this.$element.find('[role=option]').html(options);
@@ -16557,11 +16557,11 @@ var BFHTimezonesList = {
 
       this.$element
         .on('click.bfhselectbox.data-api touchstart.bfhselectbox.data-api', toggle, BFHSelectBox.prototype.toggle)
-    .on('keydown.bfhselectbox.data-api', toggle + ', [role=option]' , BFHSelectBox.prototype.keydown)
-    .on('mouseenter.bfhselectbox.data-api', '[role=option] > li > a', BFHSelectBox.prototype.mouseenter)
-    .on('click.bfhselectbox.data-api', '[role=option] > li > a', BFHSelectBox.prototype.select)
-    .on('click.bfhselectbox.data-api', '.bfh-selectbox-filter', function () { return false; })
-    .on('propertychange.bfhselectbox.data-api change.bfhselectbox.data-api input.bfhselectbox.data-api paste.bfhselectbox.data-api', '.bfh-selectbox-filter', BFHSelectBox.prototype.filter);
+		.on('keydown.bfhselectbox.data-api', toggle + ', [role=option]' , BFHSelectBox.prototype.keydown)
+		.on('mouseenter.bfhselectbox.data-api', '[role=option] > li > a', BFHSelectBox.prototype.mouseenter)
+		.on('click.bfhselectbox.data-api', '[role=option] > li > a', BFHSelectBox.prototype.select)
+		.on('click.bfhselectbox.data-api', '.bfh-selectbox-filter', function () { return false; })
+		.on('propertychange.bfhselectbox.data-api change.bfhselectbox.data-api input.bfhselectbox.data-api paste.bfhselectbox.data-api', '.bfh-selectbox-filter', BFHSelectBox.prototype.filter);
     },
 
     toggle: function (e) {
@@ -17372,10 +17372,10 @@ var BFHTimezonesList = {
           me = this;
 
       $.each(this.options, function(index, option) {
-        if (index == 'inputClass') {
+        if (index === 'inputClass') {
           // If the data attribute calls for additional class names, merge them
           // with the existing ones, rather than replacing them.
-          me.options.input = me.options.input + " " + option;
+          me.options.input = me.options.input + ' ' + option;
         } else if (regExpPattern.test(index)) {
           optionString = optionString + index.replace('input','').toLowerCase() + '="' + option + '" ';
         }
