@@ -2,7 +2,7 @@
 	"name": "vlamanna/bootstrapformhelpers",
 	"description": "A collection of jQuery plugins for Bootstrap.",
 	"homepage": "http://bootstrapformhelpers.com",
-	"version": "2.2.0",
+	"version": "2.3.0",
 	"authors": [
 		{
 			"name": "Vincent Lamanna",

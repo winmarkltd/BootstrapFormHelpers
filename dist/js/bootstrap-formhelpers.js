@@ -1,5 +1,5 @@
 /**
-* bootstrap-formhelpers.js v2.2.0 by @vincentlamanna
+* bootstrap-formhelpers.js v2.3.0 by @vincentlamanna
 * Copyright 2013 Vincent Lamanna
 * http://www.apache.org/licenses/LICENSE-2.0
 */
@@ -7959,7 +7959,7 @@ var BFHPhoneFormatList = {
   'FJ': '+679 ddddddddd',
   'FI': '+358 ddddddddd',
   'MK': '+389 ddddddddd',
-  'FR': '+33 dd dd dd dd dd',
+  'FR': '+33 d dd dd dd dd',
   'GF': '+594 ddddddddd',
   'PF': '+689 ddddddddd',
   'TF': '+262 ddddddddd',

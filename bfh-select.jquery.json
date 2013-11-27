@@ -3,12 +3,14 @@
     "title": "Bootstrap Form Helpers Select",
     "description": "Select jQuery plugin for Bootstrap.",
     "keywords": [
+        "ui",
+        "jquery",
         "form",
         "input",
         "select",
         "bootstrap"
     ],
-    "version": "2.2.0",
+    "version": "2.3.0",
     "author": {
         "name": "Vincent Lamanna",
         "url": "http://vincentlamanna.com"

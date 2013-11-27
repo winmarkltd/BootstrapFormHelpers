@@ -3,12 +3,14 @@
     "title": "Bootstrap Form Helpers Date Picker",
     "description": "Date Picker jQuery plugin for Bootstrap.",
     "keywords": [
+        "ui",
+        "jquery",
         "form",
         "input",
         "datepicker",
         "bootstrap"
     ],
-    "version": "2.2.0",
+    "version": "2.3.0",
     "author": {
         "name": "Vincent Lamanna",
         "url": "http://vincentlamanna.com"

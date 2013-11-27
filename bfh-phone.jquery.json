@@ -3,12 +3,14 @@
     "title": "Bootstrap Form Helpers Phone Input",
     "description": "Phone Input jQuery plugin for Bootstrap.",
     "keywords": [
+        "ui",
+        "jquery",
         "form",
         "input",
         "phone",
         "bootstrap"
     ],
-    "version": "2.2.0",
+    "version": "2.3.0",
     "author": {
         "name": "Vincent Lamanna",
         "url": "http://vincentlamanna.com"
