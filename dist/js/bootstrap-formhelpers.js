@@ -12909,6 +12909,31 @@ var BFHStatesList = {
 };
 
 /* ==========================================================
+ * bootstrap-formhelpers-timepicker.en_US.js
+ * https://github.com/vlamanna/BootstrapFormHelpers
+ * ==========================================================
+ * Copyright 2012 Vincent Lamanna
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ * ========================================================== */
+ 
+var BFHTimePickerDelimiter = ':';
+
+var BFHTimePickerModes = {
+  'am': 'AM',
+  'pm': 'PM'
+};
+/* ==========================================================
  * bootstrap-formhelpers-timezones.en_US.js
  * https://github.com/vlamanna/BootstrapFormHelpers
  * ==========================================================
@@ -17330,32 +17355,68 @@ var BFHTimezonesList = {
     setTime: function() {
       var time,
           today,
-          timeParts;
+          timeParts,
+          hours,
+          minutes,
+          mode,
+          currentMode;
 
       time = this.options.time;
-
+      mode = '';
+      currentMode = '';
+      
       if (time === '' || time === 'now' || time === undefined) {
         today = new Date();
 
+        hours = today.getHours();
+        minutes = today.getMinutes();
+        
+        if (this.options.mode === '12h') {
+          if (hours > 12) {
+            hours = hours - 12;
+            mode = ' ' + BFHTimePickerModes.pm;
+            currentMode = 'pm';
+          } else {
+            mode = ' ' + BFHTimePickerModes.am;
+            currentMode = 'am';
+          }
+        }
+        
         if (time === 'now') {
-          this.$element.val(formatTime(today.getHours(), today.getMinutes()));
+          this.$element.find('.bfh-timepicker-toggle > input[type="text"]').val(formatTime(hours, minutes) + mode);
         }
 
-        this.$element.data('hour', today.getHours());
-        this.$element.data('minute', today.getMinutes());
+        this.$element.data('hour', hours);
+        this.$element.data('minute', minutes);
+        this.$element.data('mode', currentMode);
       } else {
-        timeParts = String(time).split(':');
-
-        this.$element.val(time);
-        this.$element.data('hour', timeParts[0]);
-        this.$element.data('minute', timeParts[1]);
+        timeParts = String(time).split(BFHTimePickerDelimiter);
+        hours = timeParts[0];
+        minutes = timeParts[1];
+        
+        if (this.options.mode === '12h') {
+          timeParts = String(minutes).split(' ');
+          minutes = timeParts[0];
+          if (timeParts[1] === BFHTimePickerModes.pm) {
+            currentMode = 'pm';
+          } else {
+            currentMode = 'am';
+          }
+        }
+        
+        this.$element.find('.bfh-timepicker-toggle > input[type="text"]').val(time);
+        this.$element.data('hour', hours);
+        this.$element.data('minute', minutes);
+        this.$element.data('mode', currentMode);
       }
     },
 
     initPopover: function() {
       var iconLeft,
           iconRight,
-          iconAddon;
+          iconAddon,
+          modeAddon,
+          modeMax;
 
       iconLeft = '';
       iconRight = '';
@@ -17367,6 +17428,17 @@ var BFHTimezonesList = {
           iconLeft = '<span class="input-group-addon"><i class="' + this.options.icon + '"></i></span>';
         }
         iconAddon = 'input-group';
+      }
+      
+      modeAddon = '';
+      modeMax = '23';
+      if (this.options.mode === '12h') {
+        modeAddon = '<td>' +
+          '<div class="bfh-selectbox" data-input="' + this.options.input + '" data-value="am">' +
+          '<div data-value="am">' + BFHTimePickerModes.am + '</div>' +
+          '<div data-value="pm">' + BFHTimePickerModes.pm + '</div>' +
+          '</div>';
+        modeMax = '11';
       }
 
       this.$element.html(
@@ -17380,12 +17452,13 @@ var BFHTimezonesList = {
         '<tbody>' +
         '<tr>' +
         '<td class="hour">' +
-        '<input type="text" class="' + this.options.input + ' bfh-number"  data-min="0" data-max="23" data-zeros="true" data-wrap="true">' +
+        '<input type="text" class="' + this.options.input + ' bfh-number"  data-min="0" data-max="' + modeMax + '" data-zeros="true" data-wrap="true">' +
         '</td>' +
-        '<td class="separator">:</td>' +
+        '<td class="separator">' + BFHTimePickerDelimiter + '</td>' +
         '<td class="minute">' +
         '<input type="text" class="' + this.options.input + ' bfh-number"  data-min="0" data-max="59" data-zeros="true" data-wrap="true">' +
         '</td>' +
+        modeAddon +
         '</tr>' +
         '</tbody>' +
         '</table>' +
@@ -17406,6 +17479,16 @@ var BFHTimezonesList = {
         $number.on('change', BFHTimePicker.prototype.change);
       });
       
+      this.$element.find('.bfh-selectbox').each(function() {
+        var $selectbox;
+
+        $selectbox = $(this);
+
+        $selectbox.bfhselectbox($selectbox.data());
+        
+        $selectbox.on('change.bfhselectbox', BFHTimePicker.prototype.change);
+      });
+      
       this.setTime();
 
       this.updatePopover();
@@ -17413,19 +17496,23 @@ var BFHTimezonesList = {
 
     updatePopover: function() {
       var hour,
-          minute;
+          minute,
+          mode;
 
       hour = this.$element.data('hour');
       minute = this.$element.data('minute');
+      mode = this.$element.data('mode');
 
       this.$element.find('.hour input[type=text]').val(hour).change();
       this.$element.find('.minute input[type=text]').val(minute).change();
+      this.$element.find('.bfh-selectbox').val(mode);
     },
     
     change: function() {
       var $this,
           $parent,
-          $timePicker;
+          $timePicker,
+          mode;
 
       $this = $(this);
       $parent = getParent($this);
@@ -17433,7 +17520,12 @@ var BFHTimezonesList = {
       $timePicker = $parent.data('bfhtimepicker');
       
       if ($timePicker && $timePicker !== 'undefined') {
-        $parent.val($parent.find('.hour input[type=text]').val() + ':' + $parent.find('.minute input[type=text]').val());
+        mode = '';
+        if ($timePicker.options.mode === '12h') {
+          mode = ' ' + BFHTimePickerModes[$parent.find('.bfh-selectbox').val()];
+        }
+        
+        $parent.find('.bfh-timepicker-toggle > input[type="text"]').val($parent.find('.hour input[type=text]').val() + BFHTimePickerDelimiter + $parent.find('.minute input[type=text]').val() + mode);
 
         $parent.trigger('change.bfhtimepicker');
       }
@@ -17486,7 +17578,7 @@ var BFHTimezonesList = {
       minute = '0' + minute;
     }
 
-    return hour + ':' + minute;
+    return hour + BFHTimePickerDelimiter + minute;
   }
   
   function clearMenus() {
@@ -17549,7 +17641,8 @@ var BFHTimezonesList = {
     input: 'form-control',
     placeholder: '',
     name: '',
-    time: 'now'
+    time: 'now',
+    mode: '24h'
   };
 
 
@@ -17578,8 +17671,12 @@ var BFHTimezonesList = {
       }
     },
     set: function(el, val) {
+      var $timepicker;
       if ($(el).hasClass('bfh-timepicker')) {
-        $(el).find('.bfh-timepicker-toggle > input[type="text"]').val(val);
+        $timepicker = $(el).data('bfhtimepicker');
+        $timepicker.options.time = val;
+        $timepicker.setTime();
+        $timepicker.updatePopover();
       } else if (origHook) {
         return origHook.set(el,val);
       }
