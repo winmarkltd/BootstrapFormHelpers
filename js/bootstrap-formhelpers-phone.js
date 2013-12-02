@@ -66,7 +66,7 @@
 
       formattedNumber = formatNumber(this.options.format, this.$element.val());
 
-      this.$element.val(formattedNumber);
+      if ('' !== formattedNumber.trim()) {this.$element.val(formattedNumber);}
     },
 
     displayFormatter: function () {
@@ -78,7 +78,7 @@
 
       formattedNumber = formatNumber(this.options.format, this.options.number);
 
-      this.$element.html(formattedNumber);
+      if ('' !== formattedNumber.trim()) {this.$element.val(formattedNumber);}
     },
 
     changeCountry: function (e) {
