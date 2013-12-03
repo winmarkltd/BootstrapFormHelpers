@@ -35,7 +35,7 @@ period can be extended by buying a new license.
     <tr>
       <td>Single Site</td>
       <td>For commercial purposes on 1 website.</td>
-      <td><span style="text-decoration:line-through">$59</span> <b>$29</b></td>
+      <td>$59</td>
       <td>
         <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
           <input type="hidden" name="cmd" value="_s-xclick">
@@ -48,7 +48,7 @@ period can be extended by buying a new license.
     <tr>
       <td>Multi Sites or Application</td>
       <td>For commercial purposes on multiple websites or web application.</td>
-      <td><span style="text-decoration:line-through">$599</span> <b>$299</b></td>
+      <td>$599</td>
       <td>
        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
          <input type="hidden" name="cmd" value="_s-xclick">
