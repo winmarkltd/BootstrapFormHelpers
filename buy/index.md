@@ -6,9 +6,6 @@ base_url: "../"
 seo_url: "/buy/"
 ---
 
-<div class="alert alert-success">
-<strong>Hurry up!</strong> One day left to get 50% off when you buy a commercial license!
-</div>
 
 If you intend to use Bootstrap Form Helpers for commercial purposes, you should consider
 buying a commercial license. Commercial licenses come with 1-year of support. The support
