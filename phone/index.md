@@ -62,7 +62,7 @@ in your **Bootstrap** form. This phone input can be used along with our [*countr
 	</form>
 	<pre class="prettyprint">&lt;select id="countries_phone1" class="form-control bfh-countries" data-country="US"&gt;&lt;/select&gt;
 &lt;br&gt;&lt;br&gt;
-&lt;input type="text" class="form-control bfh-phone" data-country="US"&gt;</pre>
+&lt;input type="text" class="form-control bfh-phone" data-country="countries_phone1"&gt;</pre>
   </div>
   <div class="tab-pane fade" id="example5">
 	<form class="example form-inline">
