@@ -198,20 +198,32 @@
       var $this,
           $parent,
           $timePicker,
-          mode;
+          mode,
+          $hour;
 
       $this = $(this);
       $parent = getParent($this);
       
       $timePicker = $parent.data('bfhtimepicker');
+      $hour = $parent.find('.hour input[type=text]');
       
       if ($timePicker && $timePicker !== 'undefined') {
         mode = '';
         if ($timePicker.options.mode === '12h') {
-          mode = ' ' + BFHTimePickerModes[$parent.find('.bfh-selectbox').val()];
+          var currentMode = $parent.find('.bfh-selectbox').val();
+          var number = $hour.data('bfhnumber');
+          if ('pm' === currentMode) {
+            number.options.max = 12;
+            number.options.min = 1;
+          }
+          else {
+            number.options.max = 11;
+            number.options.min = 0;
+          }
+          mode = ' ' + BFHTimePickerModes[currentMode];
         }
         
-        $parent.find('.bfh-timepicker-toggle > input[type="text"]').val($parent.find('.hour input[type=text]').val() + BFHTimePickerDelimiter + $parent.find('.minute input[type=text]').val() + mode);
+        $parent.find('.bfh-timepicker-toggle > input[type="text"]').val($hour.val() + BFHTimePickerDelimiter + $parent.find('.minute input[type=text]').val() + mode);
 
         $parent.trigger('change.bfhtimepicker');
       }
