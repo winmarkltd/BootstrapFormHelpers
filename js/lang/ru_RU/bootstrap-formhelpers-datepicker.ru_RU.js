@@ -1,8 +1,8 @@
 /* ==========================================================
- * bootstrap-formhelpers-datepicker.en_US.js
+ * bootstrap-formhelpers-datepicker.ru_RU.js
  * https://github.com/vlamanna/BootstrapFormHelpers
  * ==========================================================
- * Copyright 2012 Vincent Lamanna
+ * Copyright 2013 Yuri Mihaqlov
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
