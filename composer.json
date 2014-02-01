@@ -14,7 +14,7 @@
 		"issues": "https://github.com/vlamanna/BootstrapFormHelpers/issues"
 	},
 	"require": {
-		"jquery/jquery": "1.10.*",
+		"components/jquery": "1.10.*",
 		"twitter/bootstrap": "3.0.*"
 	}
 }
