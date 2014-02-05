@@ -1,6 +1,6 @@
 /**
 * bootstrap-formhelpers.js v2.3.0 by @vincentlamanna
-* Copyright 2013 Vincent Lamanna
+* Copyright 2014 Vincent Lamanna
 * http://www.apache.org/licenses/LICENSE-2.0
 */
 if (!jQuery) { throw new Error("Bootstrap Form Helpers requires jQuery"); }
@@ -7814,7 +7814,7 @@ var BFHLanguagesList = {
   'mk': 'македонски јазик',
   'mn': 'монгол',
   'ce': 'нохчийн мотт',
-  'ru': 'русский язык',
+  'ru': 'Русский язык',
   'sr': 'српски језик',
   'tt': 'татар теле',
   'tg': 'тоҷикӣ',
@@ -15982,8 +15982,8 @@ var BFHTimezonesList = {
       
       if (this.options.buttons === true) {
         this.$element.parent()
-          .on('mousedown.bfhnumber.data-api', '.inc', BFHNumber.prototype.btninc)
-          .on('mousedown.bfhnumber.data-api', '.dec', BFHNumber.prototype.btndec);
+          .on('touchstart.bfhnumber.data-api mousedown.bfhnumber.data-api', '.inc', BFHNumber.prototype.btninc)
+          .on('touchstart.bfhnumber.data-api mousedown.bfhnumber.data-api', '.dec', BFHNumber.prototype.btndec);
       }
       
       this.formatNumber();
@@ -16045,7 +16045,7 @@ var BFHTimezonesList = {
       }, 750);
       $this.$element.data('timer', timer);
       
-      $(document).one('mouseup', {btn: $this}, BFHNumber.prototype.mouseup);
+      $(document).one('touchend mouseup', {btn: $this}, BFHNumber.prototype.mouseup);
       
       return true;
     },
@@ -16071,7 +16071,7 @@ var BFHTimezonesList = {
       }, 750);
       $this.$element.data('timer', timer);
       
-      $(document).one('mouseup', {btn: $this}, BFHNumber.prototype.mouseup);
+      $(document).one('touchend mouseup', {btn: $this}, BFHNumber.prototype.mouseup);
       
       return true;
     },
