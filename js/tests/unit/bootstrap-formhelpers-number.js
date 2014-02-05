@@ -233,5 +233,48 @@ $(function () {
     
     number.remove();
   });
+    
+  test('should increment value with steps on click increment button', function() {
+    var numberHTML = '<input type="text" class="form-control bfh-number" value="5" data-steps="5">',
+      number = $(numberHTML).appendTo('#qunit-fixture').bfhnumber({steps: 5});
+
+    number.parent().find('.inc').mousedown().mouseup();
+    
+    ok(number.val() === '10', 'value is 10');
+    
+    number.remove();
+  });
+  
+  test('should decrement value with steps on click decrement button', function() {
+    var numberHTML = '<input type="text" class="form-control bfh-number" value="5" data-steps="2">',
+      number = $(numberHTML).appendTo('#qunit-fixture').bfhnumber({steps: 2});
+
+    number.parent().find('.dec').mousedown().mouseup();
+    
+    ok(number.val() === '3', 'value is 3');
+    
+    number.remove();
+  });
+
+  test('should not increment value over the max', function() {
+    var numberHTML = '<input type="text" class="form-control bfh-number" value="3" data-max="5" data-steps="3">',
+      number = $(numberHTML).appendTo('#qunit-fixture').bfhnumber({max: 5, steps: 3});
+
+    number.parent().find('.inc').mousedown().mouseup();
+    
+    ok(number.val() === '5', 'value is 5');
+    
+    number.remove();
+  });
+  
+  test('should not decrement value under the min', function() {
+    var numberHTML = '<input type="text" class="form-control bfh-number" data-steps="3">',
+      number = $(numberHTML).appendTo('#qunit-fixture').bfhnumber({steps: 3});
+
+    number.parent().find('.dec').mousedown().mouseup();
+    ok(number.val() === '0', 'value is 0');
+    
+    number.remove();
+  });
   
 });
