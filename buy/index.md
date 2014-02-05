@@ -39,11 +39,11 @@ period can be extended by buying a new license.
     <tr>
       <td>Single Site</td>
       <td>For commercial purposes on 1 website.</td>
-      <td><span style="text-decoration:line-through">$59</span> <b>$9</b></td>
+      <td><span style="text-decoration:line-through">$59</span> <b>$24/yr.</b></td>
       <td>
 <form target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post">
 <input type="hidden" name="cmd" value="_s-xclick">
-<input type="hidden" name="hosted_button_id" value="FBF3HK4UC9N4S">
+<input type="hidden" name="hosted_button_id" value="ZAWRNJ5WTB7W4">
 <input type="image" src="https://www.paypalobjects.com/en_GB/i/btn/btn_cart_LG.gif" border="0" name="submit" alt="PayPal – The safer, easier way to pay online.">
 <img alt="" border="0" src="https://www.paypalobjects.com/en_GB/i/scr/pixel.gif" width="1" height="1">
 </form>
@@ -52,14 +52,16 @@ period can be extended by buying a new license.
     <tr>
       <td>Multi Sites or Application</td>
       <td>For commercial purposes on multiple websites or web application.</td>
-      <td><span style="text-decoration:line-through">$599</span> <b>$99</b></td>
+      <td><span style="text-decoration:line-through">$599</span> <b>$99/yr.</b></td>
       <td>
-       <form target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post">
-      <input type="hidden" name="cmd" value="_s-xclick">
-      <input type="hidden" name="hosted_button_id" value="2UCCPC3LP7JY6">
-      <input type="image" src="https://www.paypalobjects.com/en_GB/i/btn/btn_cart_LG.gif" border="0" name="submit" alt="PayPal – The safer, easier way to pay online.">
+    <form target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post">
+    <input type="hidden" name="cmd" value="_s-xclick">
+    <input type="hidden" name="hosted_button_id" value="4KXNZZ3WH3JPW">
+    <input type="image" src="https://www.paypalobjects.com/en_GB/i/btn/btn_cart_LG.gif" border="0" name="submit" alt="PayPal – The safer, easier way to pay online.">
     <img alt="" border="0" src="https://www.paypalobjects.com/en_GB/i/scr/pixel.gif" width="1" height="1">
     </form>
+
+      
       </td>
     </tr>
   </tbody>
