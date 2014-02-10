@@ -1,6 +1,6 @@
 ---
 layout: premium
-title: Terms and Conditions
+title: Terms of Use
 base_url: "../"
 seo_url: "/terms/"
 ---
