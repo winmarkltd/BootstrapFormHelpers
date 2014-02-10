@@ -9,7 +9,7 @@ seo_url: "/freedownload/success"
 <center> <a href="http://bootstrapformhelpers.com/freedownload/bootstrapformhelpers.rar" target="_blank">
  <button type="button" class="btn btn-primary btn-lg btn-block">Click Here to Download the File</button>
  </a>
- </center?
+ </center>
 
 If you intend to use Bootstrap Form Helpers for commercial purposes, you should consider
 buying a commercial license. Commercial licenses come with 1-year of support. The support
