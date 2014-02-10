@@ -36,7 +36,7 @@ seo_url: "/freedownload/"
 </div>
 <div class="mc-field-group input-group">
     <strong>Terms </strong>
-    <ul><li><input type="checkbox" value="1" name="group[11057][1]" id="mce-group[11057]-11057-0"><label for="mce-group[11057]-11057-0">I agree to Terms and Conditions</label></li>
+    <ul><li><input type="checkbox" checked="checked" value="1" name="group[11057][1]" id="mce-group[11057]-11057-0"> <label for="mce-group[11057]-11057-0"> I Read and Agree to the <a href="http://bootstrapformhelpers.com/terms" target="_blank">Terms and Conditions</a></label></li>
 </ul>
 </div>
 	<div id="mce-responses" class="clear">
