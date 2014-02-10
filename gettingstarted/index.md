@@ -17,7 +17,7 @@ works below and you should be all set.
 
 Two quick start options are available:
 
-* [Download the latest release](https://github.com/vlamanna/BootstrapFormHelpers/archive/master.zip).
+<!--* [Download the latest release](https://github.com/vlamanna/BootstrapFormHelpers/archive/master.zip).-->
 * Clone the repo: `git clone git@github.com:vlamanna/BootstrapFormHelpers.git`
 
 It is also possible to install through [Bower](http://bower.io/) and
