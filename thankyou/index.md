@@ -6,7 +6,7 @@ base_url: "../"
 seo_url: "/buy/"
 ---
 
-Thank you for buying a commercial license of Bootstrap Form Helpers.
+Thank you for buying a commercial license of Bootstrap Form Helpers. <a href="https://github.com/vlamanna/BootstrapFormHelpers/archive/master.zip">Click here to download</a>
 
 <!-- Google Code for Sale Conversion Page -->
 <script type="text/javascript">
