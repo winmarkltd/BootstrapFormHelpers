@@ -36,7 +36,7 @@ seo_url: "/freedownload/"
 </div>
 <div class="mc-field-group input-group">
     <strong>Terms </strong>
-    <ul><li><input class="disabled" type="checkbox" checked="checked" value="1" name="group[11057][1]" id="mce-group[11057]-11057-0"> <label for="mce-group[11057]-11057-0"> By clicking submit button below, I hereby agree to the  <a href="http://bootstrapformhelpers.com/terms" target="_blank">Terms and Conditions</a></label></li>
+    <ul><li><input type="hidden" checked="checked" value="1" name="group[11057][1]" id="mce-group[11057]-11057-0"> <span class="glyphicon glyphicon-ok"></span> <label for="mce-group[11057]-11057-0"> By clicking submit button below, I hereby agree to the  <a href="http://bootstrapformhelpers.com/terms" target="_blank">Terms and Conditions</a></label></li>
 </ul>
 </div>
 	<div id="mce-responses" class="clear">
