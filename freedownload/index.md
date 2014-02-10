@@ -19,7 +19,7 @@ seo_url: "/freedownload/"
 </style>
 <div id="mc_embed_signup">
 <form action="http://izonetech-ph.us2.list-manage.com/subscribe/post?u=1dcb171e98322a1799932d5e6&amp;id=26542a11f3" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-	<h2>Subscribe to our mailing list</h2>
+	<h2>Get the Download Link</h2>
 <div class="indicates-required"><span class="asterisk">*</span> indicates required</div>
 <div class="mc-field-group">
 	<label for="mce-EMAIL">Email Address  <span class="asterisk">*</span>
