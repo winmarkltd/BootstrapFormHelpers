@@ -1,13 +1,13 @@
 ---
 layout: relay
-title: Success Download Page
+title: Success! Download Plugins Below
 description: Download the Free Version of Bootstrap Form helpers
 base_url: "../"
 seo_url: "/freedownload/success"
 ---
 
 <center> <a href="http://bootstrapformhelpers.com/freedownload/bootstrapformhelpers.rar" target="_blank">
- <button type="button" class="btn btn-primary btn-lg btn-block">Click Here to Download the File</button>
+ <button type="button" class="btn btn-primary btn-lg">Click Here to Download the File</button>
  </a>
  </center>
 
