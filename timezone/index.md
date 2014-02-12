@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: nitsefdefault
 title: Timezone Picker jQuery plugins
 description: Extend Bootstrap with Bootstrap Form Helpers timezone picker jQuery plugins.
 base_url: "../"
