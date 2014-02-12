@@ -1,5 +1,5 @@
 ---
-layout: default2
+layout: default
 title: Free Download
 description: Download the Free Version of Bootstrap Form helpers
 base_url: "../"
