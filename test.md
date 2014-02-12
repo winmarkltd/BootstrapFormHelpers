@@ -15,9 +15,9 @@ seo_url: "/test"
       <h1>Extend Bootstrap</h1>
       <h4>now with 15 custom jQuery plugins</h4>
       <p>
-        <button type="button" class="btn btn-success bootheader_buttons">BUY NOW</button>
+       <a onclick="ga('send', 'event', 'button', 'click', 'buy-small');" href="http://www.bootstrapformhelpers.com/buy"> <button type="button" class="btn btn-success bootheader_buttons">BUY NOW</button></a>
         or
-        <button type="button" class="btn btn-default bootheader_buttons">DOWNLOAD</button>
+        <a onclick="ga('send', 'event', 'button', 'click', 'buy-small');" href="http://www.bootstrapformhelpers.com/freedownload"><button type="button" class="btn btn-default bootheader_buttons">DOWNLOAD</button></a>
       </p>
       <small><em>Today Only! Huge savings when you buy a commercial license!</em></small></div>
     <!-- Col 4 Header -->

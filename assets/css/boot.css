@@ -8,6 +8,9 @@ body {
 .container {
 	max-width: 1000px;
 }
+.nav-bar{
+	max-height: 50px;
+	}
 .navbar-brand h3 {
 	margin: 0;
 }
@@ -25,7 +28,7 @@ body {
 	padding-top: 40px;
 	padding-bottom: 40px;
 	max-height: 400px;
-	margin-top:-5px;
+	margin-top:-11px;
 }
 .bootheader_buttons {
 	font-size: 18px;
