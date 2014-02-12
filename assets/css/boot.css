@@ -5,6 +5,9 @@ body {
 	padding-top: 50px;
 	font-family: 'PT Sans', sans-serif, Verdana, Arial, Tahoma;
 }
+p {
+margin: 10px 0;
+}
 .container {
 	max-width: 1000px;
 }
