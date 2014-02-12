@@ -1,50 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- Meta, title, CSS, favicons, etc. -->
-    {% include boot-header.html %}
-  </head>
-  <body>
-    <!-- Start Alexa Certify Javascript -->
-    <script type="text/javascript">
+<head>
+<!-- Meta, title, CSS, favicons, etc. -->
+{% include boot-header.html %}
+</head>
+<body>
+<!-- Start Alexa Certify Javascript --> 
+<script type="text/javascript">
     _atrk_opts = { atrk_acct:"uQnbh1acOh00wy", domain:"bootstrapformhelpers.com",dynamic: true};
     (function() { var as = document.createElement('script'); as.type = 'text/javascript'; as.async = true; as.src = "https://d31qbv1cthcecs.cloudfront.net/atrk.js"; var s = document.getElementsByTagName('script')[0];s.parentNode.insertBefore(as, s); })();
     </script>
-    <noscript><img src="https://d5nxst8fruw4z.cloudfront.net/atrk.gif?account=uQnbh1acOh00wy" style="display:none" height="1" width="1" alt="" /></noscript>
-    <!-- End Alexa Certify Javascript -->
-    
-    <!-- Boot Navigation -->
-    {% include boot-nav-main.html %}
-    
-    <div class="well bootheader row">
+<noscript>
+<img src="https://d5nxst8fruw4z.cloudfront.net/atrk.gif?account=uQnbh1acOh00wy" style="display:none" height="1" width="1" alt="" />
+</noscript>
+<!-- End Alexa Certify Javascript --> 
+
+<!-- Boot Navigation --> 
+{% include boot-nav-main.html %}
+<div class="well bootheader row">
   <div class="container">
-   <h1 style="color:#fff;">{{ page.title }}</h1>
+    <h1 style="color:#fff;">{{ page.title }}</h1>
   </div>
 </div>
 <!-- End of Header -->
 
-   <div class="container">
-       <div class="col-lg-8">   {{ content }}</div>
-       <div class="col-lg-4"><!-- Include the List -->
- {% include boot-plugin-list.html %}
- </div>
- <div class="clearfix"></div>
-   
-   </div>
+<div class="container">
+  <div class="col-lg-3"><!-- Include the List --> 
+    {% include nav-plugin.html %} </div>
+  <div class="col-lg-9"> {{ content }}</div>
+  <div class="clearfix"></div>
+</div>
 
-    <!-- The Footer -->
-    {% include footer.html %}
-
-
-
+<!-- The Footer --> 
+{% include footer.html %}
 <footer class="footer_well">
   <div class="container"> Designed and built by Wimmark LTD<br>
     Code licensed under the <a href="http://www.apache.org/licenses/LICENSE-2.0" target="_blank">Apache License v2.0</a>. Documentation licensed under <a href="http://creativecommons.org/licenses/by/3.0/" target="_blank">CC BY 3.0</a>.<br>
     Icons from <a href="http://glyphicons.com/" target="_blank">Glyphicons Free</a>, licensed under <a href="http://creativecommons.org/licenses/by/3.0/" target="_blank">CC BY 3.0</a>.<br>
     Flags from <a href="http://www.gosquared.com/" target="_blank">GoSquared</a>, licensed under <a href="http://bootstrapformhelpers.com/assets/img/bootstrap-formhelpers-countries.flags-LICENSE.txt" target="_blank">GoSquared</a>.</div>
 </footer>
-
-
-
-  </body>
+</body>
 </html>
