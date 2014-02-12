@@ -5,7 +5,7 @@ description: Extend Bootstrap with Bootstrap Form Helpers timezone picker jQuery
 base_url: "../"
 seo_url: "/timezone/"
 ---
-
+<div class="container">
 ### About *timezone picker*
 
 This **jQuery plugin** allows you to add a **timezone picker** to easily display a list
@@ -133,3 +133,5 @@ If using our select jQuery plugin, [refer to this documentation for a list of me
 ### Events
 
 If using our select jQuery plugin, [refer to this documentation for a list of events](../select/).
+
+</div>
