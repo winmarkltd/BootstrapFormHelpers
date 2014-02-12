@@ -8,7 +8,7 @@ body {
 .container {
 	max-width: 1000px;
 }
-.nav-bar{
+.navbar{
 	max-height: 50px !important;
 	}
 .navbar-brand h3 {
