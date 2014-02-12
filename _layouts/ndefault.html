@@ -23,9 +23,14 @@
 </div>
 <!-- End of Header -->
 
+   <div class="container">
+       <div class="col-lg-8">   {{ content }}</div>
+       <div class="col-lg-4"><!-- Include the List -->
+ {% include boot-plugin-list.html %}
+ </div>
+ <div class="clearfix"></div>
    
-          {{ content }}
-          
+   </div>
 
     <!-- The Footer -->
     {% include footer.html %}
