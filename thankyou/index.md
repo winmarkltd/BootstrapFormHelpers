@@ -5,8 +5,10 @@ description: Thank you for your purchase.
 base_url: "../"
 seo_url: "/buy/"
 ---
-
-Thank you for buying a commercial license of Bootstrap Form Helpers. <a href="https://github.com/vlamanna/BootstrapFormHelpers/archive/master.zip">Click here to download</a>
+<h2>Download the complete package below</h2>
+Thank you for buying a commercial license of Bootstrap Form Helpers. 
+<p class="text-center">
+<a class="btn btn-success bootheader_buttons btn-lg" href="https://github.com/vlamanna/BootstrapFormHelpers/archive/master.zip">Click here to download</a></p>
 
 <!-- Google Code for Sale Conversion Page -->
 <script type="text/javascript">
