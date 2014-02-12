@@ -1,0 +1,120 @@
+@charset "utf-8";
+/* CSS Document */
+
+body {
+	padding-top: 50px;
+	font-family: 'PT Sans', sans-serif, Verdana, Arial, Tahoma;
+}
+.container {
+	max-width: 1000px;
+}
+.navbar-brand h3 {
+	margin: 0;
+}
+.bootheader {
+	/* fallback */
+	background-color: #1a82f7;
+	background-repeat: repeat-y;
+	background: -webkit-gradient(linear, left top, right top, from(#151424), to(#57294e));
+	background: -webkit-linear-gradient(left, #151424, #57294e);
+	background: -moz-linear-gradient(left, #151424, #57294e);
+	background: -ms-linear-gradient(left, #151424, #57294e);
+	background: -o-linear-gradient(left, #151424, #57294e);
+	border-radius: 0;
+	color: #fff;
+	padding-top: 40px;
+	padding-bottom: 40px;
+	max-height: 400px;
+}
+.bootheader_buttons {
+	font-size: 18px;
+	text-transform: uppercase;
+}
+.bootheader p {
+	margin: 30px 0 20px;
+}
+.imac {
+	margin-top: -35px;
+}
+.flash{color:yellow;}
+.emptystar {
+	color: #4cae4c;
+}
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:hover, .navbar-default .navbar-nav>.active>a:focus {
+color: #fff;
+background-color: #57294e;
+text-transform: uppercase;
+}
+/* ================================
+					CONTENT
+==================================== */
+.pull-top {
+	margin-top: -70px;
+	margin-bottom: 10px;
+}
+.bottom_top {
+	margin: 15px 0;
+}
+.separate {
+	margin: 25px 0;
+}
+.code {
+	background-color: #1a82f7;
+	background-repeat: repeat-y;
+	background: -webkit-gradient(linear, left top, right top, from(#111111), to(#333333));
+	background: -webkit-linear-gradient(left, #111111, #333333);
+	background: -moz-linear-gradient(left, #111111, #333333);
+	background: -ms-linear-gradient(left, #111111, #333333);
+	background: -o-linear-gradient(left, #111111, #333333);
+	background-size: cover;
+	overflow: hidden;
+	padding: 0;
+}
+.boot_slider {
+	width: 931px;
+	height: 531px;
+	background: url(../img/boot_imacslider.png) no-repeat;
+	margin: 50px auto -18px;
+	padding: 41px;
+}
+/* ================================
+					FOOTER
+==================================== */
+
+.footer_well {
+	background: #111;
+	color: #fff;
+	border-radius: 0;
+	padding: 10px 0;
+}
+/* ================================
+					MEDIA QUERIES
+==================================== */
+@media only screen and (max-width: 1024px) {
+.imac {
+	max-width: 100%;
+	height: auto;
+	margin-top: 0;
+}
+.pull-top {
+	margin-top: -50px;
+	margin-bottom: 10px;
+}
+}
+@media only screen and (max-width: 768px) {
+.imac {
+	display: none;
+}
+.pull-top {
+	margin-top: -20px;
+	margin-bottom: 10px;
+}
+.boot_slider {
+	width: 90%;
+	height: auto;
+	background: none;
+	margin: 20px auto;
+	padding: 0;
+	max-width: 100%;
+}
+}
