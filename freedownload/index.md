@@ -21,7 +21,7 @@ seo_url: "/freedownload/"
 <form action="http://bootstrapformhelpers.us2.list-manage2.com/subscribe/post?u=1dcb171e98322a1799932d5e6&amp;id=26542a11f3" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
 	<h2>Complete form below to get download link</h2>
 	<div class="well well-sm separate text-center">* Free Download will give you the 7 free plugins. To get the complete package, 
-<a onclick="ga('send', 'event', 'button', 'click', 'buy-small');" href="/buy"> <button type="button" class="btn btn-success">Buy Now</button></a>
+<a onclick="ga('send', 'event', 'button', 'click', 'buy-small');" href="/buy"> <button type="button" class="btn btn-success">Buy a License Now</button></a>
 </div>
 	
 <div class="indicates-required"><span class="asterisk">*</span> indicates required</div>
