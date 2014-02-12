@@ -9,7 +9,7 @@ body {
 	max-width: 1000px;
 }
 .nav-bar{
-	max-height: 50px;
+	max-height: 50px !important;
 	}
 .navbar-brand h3 {
 	margin: 0;

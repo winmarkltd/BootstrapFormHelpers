@@ -57,9 +57,9 @@ seo_url: "/test"
       
       <!-- Wrapper for slides -->
       <div class="carousel-inner">
-        <div class="item active"> <img src="{{ page.base_url }}assets/img/boot_slide1.jpg" alt="..."> </div>
+        <div class="item active"><img src="{{ page.base_url }}assets/img/boot_slide1.jpg" alt="..."></div>
         <div class="item "> <img src="{{ page.base_url }}assets/img/boot_slide2.jpg" alt="..."> </div>
-        <div class="item "> <img src="{{ page.base_url }}assets/img/boot_slide3.jpg" alt="...">
+        <div class="item "> <img src="{{ page.base_url }}assets/img/boot_slide3.jpg" alt="..."></div>
         <div class="item "> <img src="{{ page.base_url }}assets/img/boot_slide4.jpg" alt="..."> </div>
       </div>
       
