@@ -9,8 +9,6 @@ seo_url: "/test"
 
  <!-- Boot Navigation -->
 {% include boot-nav-main.html %}
-
-
 <div class="well bootheader">
   <div class="container">
     <div class="col-lg-5 text-center row"> <img src="{{ page.base_url }}assets/img/boot_logo.png" alt="Logo" height="107" width="107">
