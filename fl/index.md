@@ -3,7 +3,7 @@ layout: default2
 title: Free Download
 description: Download the Free Version of Bootstrap Form helpers
 base_url: "../"
-seo_url: "/fl/"
+seo_url: "/flee/"
 ---
 
 <div class="alert alert-success">
