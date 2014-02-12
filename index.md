@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: relay
 title: jQuery plugins
 description: Extend Bootstrap's components with Bootstrap Form Helpers custom jQuery plugins.
 base_url: "./"
