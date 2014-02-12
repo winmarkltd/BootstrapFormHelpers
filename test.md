@@ -69,6 +69,7 @@ seo_url: "/test"
       <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev"> <span class="glyphicon glyphicon-chevron-left"></span> </a> <a class="right carousel-control" href="#carousel-example-generic" data-slide="next"> <span class="glyphicon glyphicon-chevron-right"></span> </a> </div>
   </div>
 </div>
+</div>
 <!-- Code -->
 
 <div class="container">
