@@ -84,6 +84,24 @@ text-transform: uppercase;
 	margin: 50px auto -18px;
 	padding: 41px;
 }
+.social-bar ul {
+margin-left: 0;
+margin-bottom: 0;
+padding-left: 0;
+list-style: none;
+}
+.social-bar ul>li {
+display: inline-block;
+padding: 5px 8px;
+line-height: 1;
+}
+.social-bar {
+padding: 15px 0;
+text-align: center;
+background-color: #f5f5f5;
+border-top: 1px solid #fff;
+border-bottom: 1px solid #ddd;
+}
 /* ================================
 					FOOTER
 ==================================== */
