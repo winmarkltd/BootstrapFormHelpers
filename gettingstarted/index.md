@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: relay
 title: Getting Started
 description: Getting started with Bootstrap Form Helpers
 base_url: "../"

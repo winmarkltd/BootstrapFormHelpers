@@ -1,5 +1,5 @@
 ---
-layout: premium
+layout: relay
 title: Support
 description: Get some help to use Bootstrap Form Helpers.
 base_url: "../"

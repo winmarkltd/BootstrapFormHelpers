@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: relay
 title: Font Size Picker jQuery plugins
 description: Extend Bootstrap with Bootstrap Form Helpers font size picker jQuery plugins.
 base_url: "../"

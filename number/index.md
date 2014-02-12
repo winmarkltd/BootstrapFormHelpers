@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: relay
 title: Number Input jQuery plugins
 description: Extend Bootstrap with Bootstrap Form Helpers number input jQuery plugins.
 base_url: "../"

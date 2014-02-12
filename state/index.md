@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: relay
 title: State Picker jQuery plugins
 description: Extend Bootstrap with Bootstrap Form Helpers state picker jQuery plugins.
 base_url: "../"

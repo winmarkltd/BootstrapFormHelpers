@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: relay
 title: Date Picker jQuery plugins
 description: Extend Bootstrap with Bootstrap Form Helpers date picker jQuery plugins.
 base_url: "../"

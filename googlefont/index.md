@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: relay
 title: Google Font Picker jQuery plugins
 description: Extend Bootstrap with Bootstrap Form Helpers Google font picker jQuery plugins.
 base_url: "../"

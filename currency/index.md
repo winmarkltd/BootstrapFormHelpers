@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: relay
 title: Currency Picker jQuery plugins
 description: Extend Bootstrap with Bootstrap Form Helpers currency picker jQuery plugins.
 base_url: "../"

@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: relay
 title: Language Picker jQuery plugins
 description: Extend Bootstrap with Bootstrap Form Helpers language picker jQuery plugins.
 base_url: "../"

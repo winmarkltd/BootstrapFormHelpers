@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: relay
 title: Phone Input jQuery plugins
 description: Extend Bootstrap with Bootstrap Form Helpers phone input jQuery plugins.
 base_url: "../"

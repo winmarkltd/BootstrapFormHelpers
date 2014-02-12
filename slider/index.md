@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: relay
 title: Slider jQuery plugins
 description: Extend Bootstrap with Bootstrap Form Helpers slider jQuery plugins.
 base_url: "../"
