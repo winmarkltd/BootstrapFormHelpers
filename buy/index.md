@@ -1,5 +1,5 @@
 ---
-layout: premium
+layout: relay
 title: Buy
 description: Get a commercial license of Bootstrap Form Helpers.
 base_url: "../"
