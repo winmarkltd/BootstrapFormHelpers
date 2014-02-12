@@ -1,5 +1,5 @@
 ---
-layout: premium
+layout: relay
 title: Thank you for your purchase
 description: Thank you for your purchase.
 base_url: "../"

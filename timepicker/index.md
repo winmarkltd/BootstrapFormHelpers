@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: relay
 title: Time Picker jQuery plugins
 description: Extend Bootstrap with Bootstrap Form Helpers time picker jQuery plugins.
 base_url: "../"

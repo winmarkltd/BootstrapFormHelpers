@@ -1,5 +1,5 @@
 ---
-layout: premium
+layout: relay
 title: Terms of Use
 base_url: "../"
 seo_url: "/terms/"
