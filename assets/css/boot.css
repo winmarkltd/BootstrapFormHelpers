@@ -36,6 +36,7 @@ margin: 10px 0;
 .bootheader_buttons {
 	font-size: 18px;
 	text-transform: uppercase;
+	width:40%;
 }
 .bootheader p {
 	margin: 30px 0 20px;
