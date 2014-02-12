@@ -85,7 +85,7 @@ period can be extended by buying a new license.
     <tr>
       <td>Single Site</td>
       <td>For commercial purposes on 1 website.</td>
-      <td><span style="text-decoration:line-through">$59</span> <b>$24/yr.</b></td>
+      <td><span style="text-decoration:line-through">$59</span> <b>$12/yr.</b></td>
       <td>
 <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
 <input type="hidden" name="cmd" value="_s-xclick">
