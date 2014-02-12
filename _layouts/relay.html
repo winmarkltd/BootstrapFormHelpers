@@ -18,19 +18,34 @@
     
     <div class="well bootheader row">
   <div class="container">
-    <h1 style="color:#fff;">{{ page.title }}</h1>
+    <h1>{{ page.title }}</h1>
   </div>
 </div>
 <!-- End of Header -->
 
-   <div class="container">
-         <div class="col-lg-3">
-         <ul class="nav side-bar">
+    <!-- Main content -->
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3">
+          <div class="hidden-print" role="complementary">
+            <ul class="nav side-bar">
               {% include nav-plugins.html %}
-          </ul>
+            </ul>
+            {% include ads-skyscraper.html %}
           </div>
-         <div class="col-lg-9"> {{ content }} </div>
-   </div>
+        </div>
+        <div class="col-md-9" role="main">
+          {% include title.html %}
+          <div style="height: 110px; padding-bottom: 20px; border-bottom: 1px solid #eee;" class="hidden-print" role="complementary">
+            {% include ads-leaderboard.html %}
+          </div>
+          {{ content }}
+          <div style="height: 130px; padding-bottom: 20px; border-bottom: 1px solid #eee; border-top: 1px solid #eee; padding-top: 20px;" class="hidden-print" role="complementary">
+            {% include ads-leaderboard.html %}
+          </div>
+        </div>
+      </div>
+    </div>
           
 
     <!-- The Footer -->
