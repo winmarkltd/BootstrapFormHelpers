@@ -15,9 +15,9 @@ seo_url: "/test"
       <h1>Extend Bootstrap</h1>
       <h4>now with 15 custom jQuery plugins</h4>
       <p>
-       <a onclick="ga('send', 'event', 'button', 'click', 'buy-small');" href="http://www.bootstrapformhelpers.com/buy"> <button type="button" class="btn btn-success bootheader_buttons">BUY NOW</button></a>
+       <a onclick="ga('send', 'event', 'button', 'click', 'buy-small');" href="/buy/"> <button type="button" class="btn btn-success bootheader_buttons">BUY NOW</button></a>
         or
-        <a onclick="ga('send', 'event', 'button', 'click', 'buy-small');" href="http://www.bootstrapformhelpers.com/freedownload"><button type="button" class="btn btn-default bootheader_buttons">DOWNLOAD</button></a>
+        <a onclick="ga('send', 'event', 'button', 'click', 'buy-small');" href="/freedownload"><button type="button" class="btn btn-default bootheader_buttons">DOWNLOAD</button></a>
       </p>
       <small><em>Today Only! Huge savings when you buy a commercial license!</em></small></div>
     <!-- Col 4 Header -->
@@ -40,7 +40,7 @@ seo_url: "/test"
  {% include boot-plugin-list.html %}
  
   <div class="well well-sm separate text-center">These jQuery plugins are based on Bootstrap &amp; are distributed for free. Commercial license is available for commercial purposes...
-   <a onclick="ga('send', 'event', 'button', 'click', 'buy-small');" href="http://www.bootstrapformhelpers.com/buy"> <button type="button" class="btn btn-success">Buy Now</button></a>
+   <a onclick="ga('send', 'event', 'button', 'click', 'buy-small');" href="/buy"> <button type="button" class="btn btn-success">Buy Now</button></a>
   </div>
 </div>
 <!-- Container-->
@@ -77,7 +77,7 @@ seo_url: "/test"
       Check out our Getting Started guide for all the information on getting setup with Bootstrap Form Helpers.<br>
       Be sure to checkout the Browser Support and Requirements below.
       <p class="separate">
-        <a href="http://bootstrapformhelpers.com/gettingstarted/#jquery-plugins"><button type="button" class="btn btn-success bootheader_buttons btn-lg">Click Here to Start</button></a>
+        <a href="/gettingstarted/#jquery-plugins"><button type="button" class="btn btn-success bootheader_buttons btn-lg">Click Here to Start</button></a>
       </p>
     </div>
   </div>
