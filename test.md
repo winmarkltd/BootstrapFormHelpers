@@ -44,7 +44,7 @@ buying a commercial license. </p><p class="text-center">Commercial licenses come
         <h4><strong><strong>Single Site</strong></strong></h4>
       </div>
       <div class="panel-body">
-        <p>For commercial purposes on 1 website.</p>
+        <strong><p>For commercial purposes on 1 website.</p></strong>
         <br>
       </div>
       <ul class="list-group">
@@ -74,7 +74,7 @@ buying a commercial license. </p><p class="text-center">Commercial licenses come
         <h4><strong>Multi Sites or Application</strong></h4>
       </div>
       <div class="panel-body">
-        <p>For commercial purposes on multiple websites or web application.</p>
+        <strong><p>For commercial purposes on multiple websites or web application.</p></strong>
       </div>
       <ul class="list-group">
         <li class="list-group-item"><span class="glyphicon glyphicon-check"></span> 15 Plugins</li>
