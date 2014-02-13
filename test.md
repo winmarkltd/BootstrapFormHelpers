@@ -12,7 +12,7 @@ seo_url: "/test"
  
 <p class="text-center">
 If you intend to use Bootstrap Form Helpers for commercial purposes, you should consider
-buying a commercial license. Commercial licenses come with 1-year of support. 
+buying a commercial license. </p><p class="text-center">Commercial licenses come with 1-year of support. 
 </p>
 <p class="text-center">The support period can be extended by buying a new license.
 </p>
