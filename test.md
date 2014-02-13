@@ -1,5 +1,5 @@
 ---
-layout: nitsef
+layout: bili
 title: Purchase License
 description: Extend Bootstrap's components with Bootstrap Form Helpers custom jQuery plugins.
 base_url: "./"
