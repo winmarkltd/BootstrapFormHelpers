@@ -25,7 +25,6 @@ buying a commercial license. </p><p class="text-center">Commercial licenses come
       </div>
       <div class="panel-body">
         <p>For personal or company internal purposes.</p>
-       
       </div>
       <ul class="list-group">
         <li class="list-group-item"><span class="glyphicon glyphicon-check"></span> 7 Plugins</li>
