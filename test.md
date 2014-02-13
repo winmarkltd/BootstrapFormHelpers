@@ -14,13 +14,14 @@ seo_url: "/test"
 If you intend to use Bootstrap Form Helpers for commercial purposes, you should consider
 buying a commercial license. Commercial licenses come with 1-year of support. The support
 period can be extended by buying a new license.
-
+</p>
+<p class="text-center">
 **Here is what you get when you buy a commercial licence:**
-
+</p>
+<p class="text-center">
 The right to use Bootstrap Form Helpers in your commercial project
 Dedicated support to help you integrate the library
 </p>
-
  <div class="col-lg-4 text-center">
     <div class="panel panel-default"> 
       <!-- Default panel contents -->
