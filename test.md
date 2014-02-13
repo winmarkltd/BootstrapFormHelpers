@@ -16,12 +16,12 @@ buying a commercial license. </p><p class="text-center">Commercial licenses come
 </p>
 <p class="text-center">The support period can be extended by buying a new license.
 </p>
-
+<hr>
  <div class="col-lg-4 text-center">
     <div class="panel panel-default"> 
       <!-- Default panel contents -->
       <div class="panel-heading">
-        <h3>Free</h3>
+        <h4>Free</h4>
       </div>
       <div class="panel-body">
         <p>For personal or company internal purposes.</p>
@@ -41,7 +41,7 @@ buying a commercial license. </p><p class="text-center">Commercial licenses come
     <div class="panel panel-info"> 
       <!-- Default panel contents -->
       <div class="panel-heading">
-        <h3><strong><strong>Single Site</strong></strong></h3>
+        <h4><strong><strong>Single Site</strong></strong></h4>
       </div>
       <div class="panel-body">
         <p>For commercial purposes on 1 website.</p>
@@ -71,7 +71,7 @@ buying a commercial license. </p><p class="text-center">Commercial licenses come
     <div class="panel panel-success"> 
       <!-- Default panel contents -->
       <div class="panel-heading">
-        <h3><strong>Multi Sites or Application</strong></h3>
+        <h4><strong>Multi Sites or Application</strong></h4>
       </div>
       <div class="panel-body">
         <p>For commercial purposes on multiple websites or web application.</p>
