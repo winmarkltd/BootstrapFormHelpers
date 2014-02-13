@@ -94,4 +94,4 @@ buying a commercial license. </p><p class="text-center">Commercial licenses come
 </p>
 <p class="text-center">The support period can be extended by buying a new license.
 </p>
-<p class="text-center">If you have any questions regarding the licenses, feel free to [reach out to us](https://bootstrapformhelpers.zendesk.com/hc/en-us/requests/new).</p>
+<p class="text-center">If you have any questions regarding the licenses, feel free to <a href="https://bootstrapformhelpers.zendesk.com/hc/en-us/requests/new">[reach out to us</a>.</p>
