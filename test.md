@@ -9,14 +9,6 @@ seo_url: "/test"
 <div class="alert alert-success text-center">
   <strong>Today Only!</strong> Huge savings when you buy a commercial license!
 </div>
- 
-<p class="text-center">
-If you intend to use Bootstrap Form Helpers for commercial purposes, you should consider
-buying a commercial license. </p><p class="text-center">Commercial licenses come with 1-year of support. 
-</p>
-<p class="text-center">The support period can be extended by buying a new license.
-</p>
-<hr>
  <div class="col-lg-4 text-center">
     <div class="panel panel-default"> 
       <!-- Default panel contents -->
@@ -94,3 +86,12 @@ buying a commercial license. </p><p class="text-center">Commercial licenses come
     </div>
   </div>
   <!-- Column 3 --> 
+
+ 
+<p class="text-center">
+If you intend to use Bootstrap Form Helpers for commercial purposes, you should consider
+buying a commercial license. </p><p class="text-center">Commercial licenses come with 1-year of support. 
+</p>
+<p class="text-center">The support period can be extended by buying a new license.
+</p>
+<hr>
