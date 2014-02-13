@@ -32,7 +32,7 @@ buying a commercial license. </p><p class="text-center">Commercial licenses come
         <li class="list-group-item"><span class="glyphicon glyphicon-remove"></span> Support</li>
         <li class="list-group-item"><span class="glyphicon glyphicon-remove"></span> Commercial Projects</li>
       </ul>
-      <div class="panel-footer"> <a onclick="ga('send', 'event', 'button', 'click', 'buy-small');" href="/freedownload"><button type="button" class="btn btn-default bootheader_buttons">DOWNLOAD</button></a></div>
+      <div class="panel-footer"> <a onclick="ga('send', 'event', 'button', 'click', 'download-small');" href="/freedownload"><button type="button" class="btn btn-default">DOWNLOAD</button></a></div>
     </div>
   </div>
   <!-- Column 1 -->
