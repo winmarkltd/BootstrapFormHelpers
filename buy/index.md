@@ -25,7 +25,7 @@ period can be extended by buying a new license.
     <tr>
       <th>License Type</th>
       <th>Description</th>
-      <th>Price</th>
+      <th style="width: 85px;">Price</th>
       <th>&nbsp;</th>
     </tr>
   </thead>
