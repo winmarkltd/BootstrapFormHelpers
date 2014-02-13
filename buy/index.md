@@ -1,6 +1,6 @@
 ---
 layout: bili
-title: Buy
+title: Purchase a License
 description: Get a commercial license of Bootstrap Form Helpers.
 base_url: "../"
 seo_url: "/buy/"
