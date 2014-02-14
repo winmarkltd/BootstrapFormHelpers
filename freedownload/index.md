@@ -18,12 +18,8 @@ seo_url: "/freedownload/"
 	   We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
 </style>
 <div id="mc_embed_signup">
-<form action="http://bootstrapformhelpers.us2.list-manage2.com/subscribe/post?u=1dcb171e98322a1799932d5e6&amp;id=26542a11f3" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+<form action="http://bootstrapformhelpers.us3.list-manage.com/subscribe/post?u=bd310880e2ddfdb9ecf24fbce&amp;id=6d174db635" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
 	<h2>Complete form below to get download link</h2>
-	<div class="well well-sm separate text-center">* Free Download will give you the 7 free plugins. To get the complete package, 
-<a onclick="ga('send', 'event', 'button', 'click', 'buy-small');" href="/buy"> <button type="button" class="btn btn-success">Buy a License Now</button></a>
-</div>
-	
 <div class="indicates-required"><span class="asterisk">*</span> indicates required</div>
 <div class="mc-field-group">
 	<label for="mce-EMAIL">Email Address  <span class="asterisk">*</span>
@@ -38,17 +34,16 @@ seo_url: "/freedownload/"
 	<label for="mce-LNAME">Last Name </label>
 	<input type="text" value="" name="LNAME" class="" id="mce-LNAME">
 </div>
-<div class="mc-field-group input-group">
-    <strong>Terms </strong>
-    <ul><li><input type="hidden" checked="checked" value="1" name="group[11057][1]" id="mce-group[11057]-11057-0"> <span class="glyphicon glyphicon-ok"></span> <label for="mce-group[11057]-11057-0"> By clicking submit button below, I hereby agree to the  <a href="http://bootstrapformhelpers.com/terms" target="_blank">Terms and Conditions</a></label></li>
-</ul>
+<div class="mc-field-group">
+	
+	<input type="hidden" name="MMERGE3" class="" id="mce-MMERGE3" value="I Agree"><span class="glyphicon glyphicon-ok"></span> By clicking submit button below, I hereby agree to the  <a href="http://bootstrapformhelpers.com/terms" target="_blank">Terms and Conditions</a>
 </div>
 	<div id="mce-responses" class="clear">
 		<div class="response" id="mce-error-response" style="display:none"></div>
 		<div class="response" id="mce-success-response" style="display:none"></div>
 	</div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-    <div style="position: absolute; left: -5000px;"><input type="text" name="b_1dcb171e98322a1799932d5e6_26542a11f3" value=""></div>
-	<div class="clear"><input type="submit" value="Submit" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+    <div style="position: absolute; left: -5000px;"><input type="text" name="b_bd310880e2ddfdb9ecf24fbce_6d174db635" value=""></div>
+	<div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
 </form>
 </div>
 
