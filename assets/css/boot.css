@@ -4,6 +4,7 @@
 body {
 	padding-top: 50px;
 	font-family: 'PT Sans', sans-serif, Verdana, Arial, Tahoma;
+	overflow-x:hidden;
 }
 p {
 margin: 10px 0;
