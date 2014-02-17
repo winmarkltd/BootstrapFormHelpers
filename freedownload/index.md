@@ -9,6 +9,7 @@ seo_url: "/freedownload/"
 <div class="alert alert-success">
   <strong>Today Only!</strong> Huge savings when you buy a commercial license!
 </div>
+<div class="well well-sm">Free download includes only 7 plugins. If you want to get the complete package, get a license.  <a onclick="ga('send', 'event', 'button', 'click', 'buy-small');" href="/buy"> <button type="button" class="btn btn-success">Buy Now!</button></a></div>
  
 <!-- Begin MailChimp Signup Form -->
 <link href="//cdn-images.mailchimp.com/embedcode/classic-081711.css" rel="stylesheet" type="text/css">
