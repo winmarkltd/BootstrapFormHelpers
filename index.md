@@ -39,7 +39,7 @@ seo_url: "/"
  {% include boot-plugin-list.html %}
  
  <div class="well well-sm separate text-center panel panel-danger">
- <div class="panel-heading"><h3 class="panel-title"><span class="glyphicon glyphicon-heart"></span> Russian Country list added</h3></div>
+ <div class="panel-heading"><h3 class="panel-title"><span class="glyphicon glyphicon-ok"></span> Russian Country list added</h3></div>
  </div>
   
   <div class="well well-sm separate text-center">These jQuery plugins are based on Bootstrap &amp; are distributed for free. Commercial license is available for commercial purposes...
