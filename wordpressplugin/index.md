@@ -11,7 +11,8 @@ seo_url: "/wordpressplugin/"
 </div>
 <center><img src="{{ page.base_url }}assets/img/wpheader.jpg" alt="WP Header" class="img-responsive"></center>
 
-Included only in Premium Version.<br/>
+<strong>Included only in Premium Version.</strong>
+<br/><br/>
 To make this Plugin work, your theme should be based on <strong>Bootstrap Framework</strong>.
 
 <ul>
