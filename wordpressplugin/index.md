@@ -11,6 +11,7 @@ seo_url: "/wordpressplugin/"
 </div>
 <center><img src="{{ page.base_url }}assets/img/wpheader.jpg" alt="WP Header" class="img-responsive"></center>
 
+Included only in Premium Version.<br/>
 To make this Plugin work, your theme should be based on <strong>Bootstrap Framework</strong>.
 
 <ul>
@@ -18,7 +19,7 @@ To make this Plugin work, your theme should be based on <strong>Bootstrap Framew
 <li>jQuery - v1.10.2</li>
 </ul>
 
-Why didn’t we included the bootstrap framework in this plugin? 
+Why didn’t we included the bootstrap framework in this plugin? <br>
 Adding the CSS and JS files from bootstrap may conflict with your own custom CSS and may break your site. The Bootstrap files are only added to the Admin’s dashboard to preview the forms that are being created.
 
 
@@ -29,9 +30,5 @@ Adding the CSS and JS files from bootstrap may conflict with your own custom CSS
 <li>Visit the 'BFH Custom Form' menu item in your admin sidebar</li>
 </ol>
 
-<strong>Requires:</strong>  Wordpress 3.6 or higher
-<strong>Compatible up to:</strong> 3.8.1
-
-
-<hr>
+<strong>Requires:</strong>  Wordpress 3.6 or higher<br>
 
