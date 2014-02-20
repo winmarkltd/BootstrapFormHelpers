@@ -176,3 +176,13 @@ seo_url: "/"
   </div>
   <!--Support--> 
 </div>
+<div class="text-center"><!-- Kontera(TM);-->
+<script type='text/javascript'>
+var dc_AdLinkColor = 'blue' ; 
+var dc_PublisherID = 235669 ; 
+ 
+</script>
+<script type='text/javascript' src='http://kona.kontera.com/javascript/lib/KonaLibInline.js'>
+</script>
+<!-- end Kontera(TM) -->
+</div>
