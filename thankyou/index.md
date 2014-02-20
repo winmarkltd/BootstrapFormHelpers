@@ -10,7 +10,7 @@ Thank you for buying a commercial license of Bootstrap Form Helpers.
 <p class="text-center">
 <a class="btn btn-success bootheader_buttons btn-lg" href="https://github.com/vlamanna/BootstrapFormHelpers/archive/master.zip">Click here to download</a></p>
 <p class="text-center">
-<a class="btn btn-success bootheader_buttons btn-lg" href="https://github.com/vlamanna/BootstrapFormHelpers/wordpressplugin/bfh_custom_form.zip">Click here to download WP Plugin BFH Custom Form</a></p>
+<a class="btn btn-success bootheader_buttons btn-lg" href="http://bootstrapformhelpers.com/wordpressplugin/bfh_custom_form.zip">WP Plugin BFH Custom Form</a></p>
 
 <!-- Google Code for Sale Conversion Page -->
 <script type="text/javascript">
