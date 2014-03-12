@@ -43,7 +43,7 @@ seo_url: "/buy/"
         <li class="list-group-item"><span class="glyphicon glyphicon-check"></span> Support</li>
         <li class="list-group-item"><span class="glyphicon glyphicon-check"></span> 1 Website</li>
         <li class="list-group-item">
-          <h3><span style="text-decoration:line-through;" class="text-muted">$59</span> <strong><span class="text-success">$12</span></strong></h3>
+          <h3><span style="text-decoration:line-through;" class="text-muted">$59</span> <strong><span class="text-success">$12/yr</span></strong></h3>
         </li>
         <li class="list-group-item list-group-item-info"><br>
           <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
@@ -72,7 +72,7 @@ seo_url: "/buy/"
         <li class="list-group-item"><span class="glyphicon glyphicon-check"></span> Support</li>
         <li class="list-group-item"><span class="glyphicon glyphicon-check"></span> Unlimited Sites</li>
         <li class="list-group-item">
-          <h3><span style="text-decoration:line-through;" class="text-muted">$599</span> <strong><span class="text-success">$99</span></strong></h3>
+          <h3><span style="text-decoration:line-through;" class="text-muted">$599</span> <strong><span class="text-success">$99 /yr</span></strong></h3>
         </li>
         <li class="list-group-item list-group-item-success"><br>
           <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
