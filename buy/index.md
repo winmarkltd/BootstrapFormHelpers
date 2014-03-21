@@ -51,13 +51,7 @@ seo_url: "/buy/"
             <input type="hidden" name="hosted_button_id" value="ZJVGLKPEDMDP8">
             <input type="image" src="https://www.paypalobjects.com/en_GB/i/btn/btn_cart_LG.gif" border="0" name="submit" alt="PayPal � The safer, easier way to pay online.">
             <img alt="" border="0" src="https://www.paypalobjects.com/en_GB/i/scr/pixel.gif" width="1" height="1">
-            <script language="javascript">
-            if(getCookie("source")){
-            	document.write('<input type="hidden" name="notify_url" value="http://download.bootstrapformhelpers.com/bootstrapformhelpers/approvePaypal.php?source='+getCookie("source")+'">');
-            }else{
-            	document.write('<input type="hidden" name="notify_url" value="http://download.bootstrapformhelpers.com/bootstrapformhelpers/approvePaypal.php">');
-            }
-            </script>
+
 
           </form>
         </li>
@@ -88,13 +82,7 @@ seo_url: "/buy/"
             <input type="hidden" name="hosted_button_id" value="JYNBZF223682S">
             <input type="image" src="https://www.paypalobjects.com/en_GB/i/btn/btn_cart_LG.gif" border="0" name="submit" alt="PayPal � The safer, easier way to pay online.">
             <img alt="" border="0" src="https://www.paypalobjects.com/en_GB/i/scr/pixel.gif" width="1" height="1">
-            <script language="javascript">
-            if(getCookie("source")){
-            	document.write('<input type="hidden" name="notify_url" value="http://download.bootstrapformhelpers.com/bootstrapformhelpers/approvePaypal.php?source='+getCookie("source")+'">');
-            }else{
-            	document.write('<input type="hidden" name="notify_url" value="http://download.bootstrapformhelpers.com/bootstrapformhelpers/approvePaypal.php">');
-            }
-            </script>          
+        
           
           </form>
         </li>
