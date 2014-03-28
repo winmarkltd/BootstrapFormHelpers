@@ -62,7 +62,7 @@ var BFHPhoneFormatList = {
   'CF': '+236 ddddddddd',
   'TD': '+235 ddddddddd',
   'CL': '+56 ddddddddd',
-  'CN': '+86 ddddddddd',
+  'CN': '+86 ddddddddddd',
   'CX': '+61 ddddddddd',
   'CC': '+61 ddddddddd',
   'CO': '+57 ddddddddd',
