@@ -192,7 +192,7 @@
         value = this.options.min;
       }
       
-      return parseInt(value);
+      return parseInt(value, 10);
     },
     
     formatNumber: function() {
