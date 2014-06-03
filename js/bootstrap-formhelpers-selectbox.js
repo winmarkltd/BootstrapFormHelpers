@@ -315,7 +315,7 @@
           html = '';
         }
 
-        $el.find('input[type="hidden"]').val(val);
+        $el.find('input[type="hidden"]').val(val).change();
         $el.find('.bfh-selectbox-option').html(html);
       } else if (origHook) {
         return origHook.set(el,val);

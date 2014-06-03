@@ -46,7 +46,7 @@
         '<div class="bfh-slider-handle"><div class="bfh-slider-value"></div></div>'
       );
       
-      this.$element.find('input[type="hidden"]').val(this.options.value);
+      this.$element.find('input[type="hidden"]').val(this.options.value).change();
       this.updateHandle(this.options.value);
       
       this.$element.on('mousedown.bfhslider.data-api', BFHSlider.prototype.mouseDown);
@@ -195,7 +195,7 @@
     },
     set: function(el, val) {
       if ($(el).hasClass('bfh-slider')) {
-        $(el).find('input[type="hidden"]').val(val);
+        $(el).find('input[type="hidden"]').val(val).change();
         $(el).data('bfhslider').updateHandle(val);
       } else if (origHook) {
         return origHook.set(el,val);
