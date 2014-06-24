@@ -3,7 +3,8 @@
   "version": "2.3.0-rv",
   "homepage": "http://bootstrapformhelpers.com",
   "authors": [
-    "Vincent Lamanna <v@cakemail.com>"
+    "Vincent Lamanna <v@cakemail.com>",
+    "Xiyang Chen <settinghead@gmail.com>"
   ],
   "description": "A collection of jQuery plugins for Bootstrap.",
   "dependencies": {
