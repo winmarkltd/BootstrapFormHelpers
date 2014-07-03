@@ -1,5 +1,5 @@
 /**
-* rv-bootstrap-formhelpers.js v2.3.0-rv by @vincentlamanna
+* rv-bootstrap-formhelpers.js v2.3.2-rv by @vincentlamanna
 * Copyright 2014 
 * http://www.apache.org/licenses/LICENSE-2.0
 */
@@ -1737,6 +1737,10 @@
   text-decoration: none;
 }
 
+.bfh-selectbox .bfh-selectbox-toggle:hover {
+  color: #333333;
+}
+
 .bfh-selectbox .bfh-selectbox-toggle:focus {
   outline: 0;
 }
@@ -1881,14 +1885,20 @@
   }
 }
 
-.bfh-googlefonts .bfh-selectbox-options a {
-  width: 230px;
+.bfh-googlefonts .bfh-selectbox-options a,
+.bfh-googlefontlist a {
   height: 30px;
+  /* width: 230px; */
+
   text-indent: -9999px;
   background-image: url(../img/bootstrap-formhelpers-googlefonts.png);
+  background-repeat: no-repeat;
+  /* Donna */
+
 }
 
-.bfh-googlefonts .bfh-selectbox-options a:focus {
+.bfh-googlefonts .bfh-selectbox-options a:focus,
+.bfh-googlefontlist a:focus {
   background-color: transparent;
   background-repeat: no-repeat;
   outline: none;
@@ -1904,6 +1914,19 @@
   filter: none;
 }
 
+/* Donna Start */
+
+.bfh-googlefontlist {
+  max-height: 400px;
+  overflow: auto;
+  cursor: pointer;
+}
+
+.bfh-googlefontlist a:hover {
+  background-color: transparent;
+}
+
+/* Donna End */
 .bfh-datepicker-calendar {
   position: absolute;
   top: 100%;
