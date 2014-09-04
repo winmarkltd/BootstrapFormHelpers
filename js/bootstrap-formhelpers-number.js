@@ -166,7 +166,10 @@
       
       value = this.getValue();
       
-      value = value + 1;
+      if(this.options.step == undefined)	
+        value = value + 1;
+      else // if use has specified 'data-step' attribute in <input> tag
+	value = value + this.options.step
       
       this.$element.val(value).change();
     },
@@ -176,7 +179,10 @@
       
       value = this.getValue();
       
-      value = value - 1;
+      if(this.options.step == undefined)	
+      	value = value - 1;
+      else // if use has specified 'data-step' attribute in <input> tag
+	value = value - this.options.step
       
       this.$element.val(value).change();
     },
