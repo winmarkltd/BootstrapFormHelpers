@@ -1,5 +1,5 @@
 /* ==========================================================
- * bootstrap-formhelpers-datepicker.en_US.js
+ * bootstrap-formhelpers-datepicker.fr_FR.js
  * https://github.com/vlamanna/BootstrapFormHelpers
  * ==========================================================
  * Copyright 2012 Vincent Lamanna
