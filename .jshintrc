@@ -4,7 +4,7 @@
 
     "maxerr"        : 50,       // {int} Maximum error before stopping
 
-    "-W100": true,
+    "-W100": false,
 
     // Custom Globals
     "globals"       : {}        // additional predefined global variables
