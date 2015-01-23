@@ -4,7 +4,7 @@
 
     "maxerr"        : 50,       // {int} Maximum error before stopping
 
-	"esnext"        : false,     // true: Allow ES.next (ES6) syntax (ex: `const`)
+    "-W100": true,
 
     // Custom Globals
     "globals"       : {}        // additional predefined global variables
