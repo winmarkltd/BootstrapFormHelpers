@@ -46,7 +46,7 @@
       $canvas = this.$element.find('canvas');
       context = $canvas[0].getContext('2d');
       
-      gradient = context.createLinearGradient(0, 0, $canvas.width(), 0);
+      gradient = context.createLinearGradient(0, 0, $canvas.width() || 384, 0);
       
       gradient.addColorStop(0,    'rgb(255, 255, 255)');
       gradient.addColorStop(0.1,  'rgb(255,   0,   0)');
@@ -60,7 +60,7 @@
       context.fillStyle = gradient;
       context.fillRect(0, 0, context.canvas.width, context.canvas.height);
       
-      gradient = context.createLinearGradient(0, 0, 0, $canvas.height());
+      gradient = context.createLinearGradient(0, 0, 0, $canvas.height() || 256);
       gradient.addColorStop(0,   'rgba(255, 255, 255, 1)');
       gradient.addColorStop(0.5, 'rgba(255, 255, 255, 0)');
       gradient.addColorStop(0.5, 'rgba(0,     0,   0, 0)');
