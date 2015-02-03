@@ -220,7 +220,7 @@ var BFHCountriesList = {
   'TZ': 'Tanzanie',
   'TD': 'Tchad',
   'TF': 'Terres australes et antarctiques françaises',
-  'IO': 'Territoire britannique de l'océan Indien',
+  'IO': 'Territoire britannique de l\'océan Indien',
   'TH': 'Thaïlande',
   'TP': 'Timor oriental',
   'TG': 'Togo',
