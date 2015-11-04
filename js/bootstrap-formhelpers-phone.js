@@ -265,4 +265,4 @@
     });
   });
 
-}(window.jQuery);
+}(jQuery);

@@ -217,4 +217,4 @@
     });
   });
 
-}(window.jQuery);
+}(jQuery);

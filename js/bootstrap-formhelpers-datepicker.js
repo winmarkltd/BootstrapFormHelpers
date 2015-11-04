@@ -581,4 +581,4 @@
   $(document)
     .on('click.bfhdatepicker.data-api', clearMenus);
 
-}(window.jQuery);
+}(jQuery);

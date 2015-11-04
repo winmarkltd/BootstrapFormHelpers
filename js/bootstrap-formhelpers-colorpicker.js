@@ -343,4 +343,4 @@
   $(document)
     .on('click.bfhcolorpicker.data-api', clearMenus);
 
-}(window.jQuery);
+}(jQuery);

@@ -201,4 +201,4 @@
     });
   });
 
-}(window.jQuery);
+}(jQuery);

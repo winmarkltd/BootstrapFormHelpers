@@ -211,4 +211,4 @@
     });
   });
 
-}(window.jQuery);
+}(jQuery);

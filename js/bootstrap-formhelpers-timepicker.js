@@ -392,4 +392,4 @@
   $(document)
     .on('click.bfhtimepicker.data-api', clearMenus);
 
-}(window.jQuery);
+}(jQuery);
