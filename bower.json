@@ -5,8 +5,9 @@
   "authors": [
     "Vincent Lamanna <v@cakemail.com>"
   ],
+  "main": "dist/js/bootstrap-formhelpers.min.js",
   "description": "A collection of jQuery plugins for Bootstrap.",
   "dependencies": {
-    "bootstrap": "3.0.0"
+    "bootstrap": "3.3.5"
   }
 }
