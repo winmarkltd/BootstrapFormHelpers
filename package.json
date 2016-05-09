@@ -9,7 +9,9 @@
   "homepage": "http://boostrapformhelpers.com",
   "author": "Vincent Lamanna",
   "scripts": {
-    "test": "grunt test"
+    "test": "grunt test",
+    "prepublish": "grunt dist",
+    "postpublish": "npm access grant read-write smc:smc-developers @smc/bootstrap-formhelpers & npm access grant read-only smc:smc-read-only @smc/bootstrap-formhelpers"
   },
   "repository": {
     "type": "git",
