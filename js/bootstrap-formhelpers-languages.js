@@ -223,8 +223,14 @@
   /* LANGUAGES HELPERS
    * ============== */
 
-  String.prototype.toProperCase = function () {
-    return this.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
-  };
+  Object.defineProperty(String.prototype, 'toProperCase', {
+    value: function toProperCase() {
+      return this.replace(/\w\S*/g, function (txt) {
+        return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+      });
+    },
+    configurable: false,
+    enumerable: false
+  });
 
 }(window.jQuery);

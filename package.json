@@ -1,7 +1,7 @@
 {
-  "name": "bootstrap-formhelpers",
+  "name": "@smc/bootstrap-formhelpers",
   "description": "A collection of jQuery plugins for Bootstrap.",
-  "version": "2.3.0",
+  "version": "2.3.0-issues-1-2.3.1",
   "keywords": [
     "bootstrap",
     "css"
@@ -13,7 +13,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/vlamanna/BootstrapFormHelpers.git"
+    "url": "https://github.com/FieldServer/BootstrapFormHelpers.git"
   },
   "licenses": [
     {
