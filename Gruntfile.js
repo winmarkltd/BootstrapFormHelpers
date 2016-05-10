@@ -9,7 +9,7 @@ module.exports = function(grunt) {
     // Metadata.
     pkg: grunt.file.readJSON('package.json'),
     banner: '/**\n' +
-              '* <%= pkg.name %>.js v<%= pkg.version %> by @vincentlamanna\n' +
+              '* bootstrap-formhelpers.js v<%= pkg.version %> by @vincentlamanna\n' +
               '* Copyright <%= grunt.template.today("yyyy") %> <%= pkg.author %>\n' +
               '* <%= _.pluck(pkg.licenses, "url").join(", ") %>\n' +
               '*/\n',
@@ -50,7 +50,7 @@ module.exports = function(grunt) {
           'js/lang/en_US/*.js',
           'js/*.js'
         ],
-        dest: 'dist/js/<%= pkg.name %>.js'
+        dest: 'dist/js/bootstrap-formhelpers.js'
       }
     },
 
@@ -60,7 +60,7 @@ module.exports = function(grunt) {
       },
       bootstrapformhelpers: {
         src: ['<%= concat.bootstrapformhelpers.dest %>'],
-        dest: 'dist/js/<%= pkg.name %>.min.js'
+        dest: 'dist/js/bootstrap-formhelpers.min.js'
       }
     },
     
@@ -71,14 +71,14 @@ module.exports = function(grunt) {
       },
       bootstrap: {
         src: ['less/bootstrap-formhelpers.less'],
-        dest: 'dist/css/<%= pkg.name %>.css'
+        dest: 'dist/css/bootstrap-formhelpers.css'
       },
       min: {
         options: {
           compress: true
         },
         src: ['less/bootstrap-formhelpers.less'],
-        dest: 'dist/css/<%= pkg.name %>.min.css'
+        dest: 'dist/css/bootstrap-formhelpers.min.css'
       }
     },
     

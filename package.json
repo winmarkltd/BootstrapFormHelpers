@@ -1,7 +1,7 @@
 {
-  "name": "bootstrap-formhelpers",
+  "name": "@smc/bootstrap-formhelpers",
   "description": "A collection of jQuery plugins for Bootstrap.",
-  "version": "2.3.0",
+  "version": "2.3.1",
   "keywords": [
     "bootstrap",
     "css"
@@ -9,11 +9,13 @@
   "homepage": "http://boostrapformhelpers.com",
   "author": "Vincent Lamanna",
   "scripts": {
-    "test": "grunt test"
+    "test": "grunt test",
+    "prepublish": "grunt dist",
+    "postpublish": "npm access grant read-write smc:smc-developers @smc/bootstrap-formhelpers & npm access grant read-only smc:smc-read-only @smc/bootstrap-formhelpers"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/vlamanna/BootstrapFormHelpers.git"
+    "url": "https://github.com/FieldServer/BootstrapFormHelpers.git"
   },
   "licenses": [
     {
@@ -22,6 +24,7 @@
     }
   ],
   "devDependencies": {
+    "coveralls": "~2.5.0",
     "grunt": "~0.4.1",
     "grunt-contrib-clean": "~0.5.0",
     "grunt-contrib-concat": "~0.3.0",
@@ -30,12 +33,15 @@
     "grunt-contrib-qunit": "~0.3.0",
     "grunt-contrib-uglify": "~0.2.4",
     "grunt-contrib-watch": "~0.5.3",
-    "grunt-recess": "~0.5.0",
     "grunt-karma": "~0.6.2",
+    "grunt-karma-coveralls": "~2.0.2",
+    "grunt-recess": "~0.5.0",
+    "istanbul": "^0.4.3",
     "karma": "~0.10.2",
-    "karma-qunit": "~0.1.1",
     "karma-coverage": "~0.1.0",
-    "coveralls": "~2.5.0",
-    "grunt-karma-coveralls": "~2.0.2"
+    "karma-jasmine": "^1.0.2",
+    "karma-phantomjs-launcher": "^1.0.0",
+    "karma-qunit": "~0.1.1",
+    "qunitjs": "^1.23.1"
   }
 }
