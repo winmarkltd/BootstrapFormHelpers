@@ -144,6 +144,7 @@
 
     formattedNumber = '';
     number = String(number).replace(/\D/g, '');
+    format = String(format);
 
     for (indexFormat = 0, indexNumber = 0; indexFormat < format.length; indexFormat = indexFormat + 1) {
       if (/\d/g.test(format.charAt(indexFormat))) {
