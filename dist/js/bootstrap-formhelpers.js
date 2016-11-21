@@ -1,6 +1,6 @@
 /**
 * bootstrap-formhelpers.js v2.3.0 by @vincentlamanna
-* Copyright 2013 Vincent Lamanna
+* Copyright 2016 Vincent Lamanna
 * http://www.apache.org/licenses/LICENSE-2.0
 */
 if (!jQuery) { throw new Error("Bootstrap Form Helpers requires jQuery"); }
@@ -7814,7 +7814,7 @@ var BFHLanguagesList = {
   'mk': 'македонски јазик',
   'mn': 'монгол',
   'ce': 'нохчийн мотт',
-  'ru': 'русский язык',
+  'ru': 'Русский язык',
   'sr': 'српски језик',
   'tt': 'татар теле',
   'tg': 'тоҷикӣ',
@@ -7989,7 +7989,7 @@ var BFHPhoneFormatList = {
   'IQ': '+964 ddddddddd',
   'IE': '+353 ddddddddd',
   'IL': '+972 ddddddddd',
-  'IT': '+39 ddddddddd',
+  'IT': '+39 ddddddddddd',
   'JM': '+1 (ddd) ddd-dddd',
   'JP': '+81 ddddddddd',
   'JO': '+962 ddddddddd',
@@ -8058,7 +8058,7 @@ var BFHPhoneFormatList = {
   'QA': '+974 ddddddddd',
   'RE': '+262 ddddddddd',
   'RO': '+40 ddddddddd',
-  'RU': '+7 ddddddddd',
+  'RU': '+7 dddddddddd',
   'RW': '+250 ddddddddd',
   'ST': '+239 ddddddddd',
   'SH': '+290 ddddddddd',
@@ -10669,21 +10669,21 @@ var BFHStatesList = {
     '27' : {'code':'ZBA','name':'Zomba'}
   },
   'MY':{
-    '1' : {'code':'Johor','name':'Johor'},
-    '2' : {'code':'Kedah','name':'Kedah'},
-    '3' : {'code':'Kelantan','name':'Kelantan'},
-    '4' : {'code':'Labuan','name':'Labuan'},
-    '5' : {'code':'Melaka','name':'Melaka'},
-    '6' : {'code':'Negeri Sembilan','name':'Negeri Sembilan'},
-    '7' : {'code':'Pahang','name':'Pahang'},
-    '8' : {'code':'Perak','name':'Perak'},
-    '9' : {'code':'Perlis','name':'Perlis'},
-    '10' : {'code':'Pulau Pinang','name':'Pulau Pinang'},
-    '11' : {'code':'Sabah','name':'Sabah'},
-    '12' : {'code':'Sarawak','name':'Sarawak'},
-    '13' : {'code':'Selangor','name':'Selangor'},
-    '14' : {'code':'Terengganu','name':'Terengganu'},
-    '15' : {'code':'Kuala Lumpur','name':'Kuala Lumpur'}
+    '1' : {'code':'JHR','name':'Johor'},
+    '2' : {'code':'KDH','name':'Kedah'},
+    '3' : {'code':'KTN','name':'Kelantan'},
+    '4' : {'code':'LBN','name':'Labuan'},
+    '5' : {'code':'MLK','name':'Melaka'},
+    '6' : {'code':'NSN','name':'Negeri Sembilan'},
+    '7' : {'code':'PHG','name':'Pahang'},
+    '8' : {'code':'PRK','name':'Perak'},
+    '9' : {'code':'PLS','name':'Perlis'},
+    '10' : {'code':'PNG','name':'Pulau Pinang'},
+    '11' : {'code':'SBH','name':'Sabah'},
+    '12' : {'code':'SWK','name':'Sarawak'},
+    '13' : {'code':'SGR','name':'Selangor'},
+    '14' : {'code':'TRG','name':'Terengganu'},
+    '15' : {'code':'KUL','name':'Kuala Lumpur'}
   },
   'MV':{
     '1' : {'code':'AAD','name':'Ari Atoll Dheknu'},
@@ -15702,6 +15702,7 @@ var BFHTimezonesList = {
  * ==========================================================
  * Copyright 2012 Vincent Lamanna
  * Contribution 2013 Tomasz Kuter
+ * Copyright 2016 GPC.solutions
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15759,7 +15760,7 @@ var BFHTimezonesList = {
           if (this.options.available.hasOwnProperty(language)) {
             if (this.options.available[language].indexOf('_') !== -1) {
               split = this.options.available[language].split('_');
-              languages[split[0]] = {name: BFHLanguagesList[split[0]], country: split[1]};
+              languages[this.options.available[language]] = {name: BFHLanguagesList[split[0]], country: split[1]};
             } else {
               languages[this.options.available[language]] = BFHLanguagesList[this.options.available[language]];
             }
@@ -15790,7 +15791,7 @@ var BFHTimezonesList = {
       for (language in languages) {
         if (languages.hasOwnProperty(language)) {
           if (languages[language].hasOwnProperty('name')) {
-            this.$element.append('<option value="' + language + '_' + languages[language].country + '">' + languages[language].name.toProperCase() + ' (' + BFHCountriesList[languages[language].country] + ')</option>');
+            this.$element.append('<option value="' + language + '">' + languages[language].name.toProperCase() + ' (' + BFHCountriesList[languages[language].country] + ')</option>');
           } else {
             this.$element.append('<option value="' + language + '">' + languages[language].toProperCase() + '</option>');
           }
@@ -15825,9 +15826,9 @@ var BFHTimezonesList = {
         if (languages.hasOwnProperty(language)) {
           if (languages[language].hasOwnProperty('name')) {
             if (this.options.flags === true) {
-              $options.append('<li><a tabindex="-1" href="#" data-option="' + language + '_' + languages[language].country + '"><i class="glyphicon bfh-flag-' + languages[language].country + '"></i>' + languages[language].name.toProperCase() + '</a></li>');
+              $options.append('<li><a tabindex="-1" href="#" data-option="' + language + '"><i class="glyphicon bfh-flag-' + languages[language].country + '"></i>' + languages[language].name.toProperCase() + '</a></li>');
             } else {
-              $options.append('<li><a tabindex="-1" href="#" data-option="' + language + '_' + languages[language].country + '">' + languages[language].name.toProperCase() + ' (' + BFHCountriesList[languages[language].country] + ')</a></li>');
+              $options.append('<li><a tabindex="-1" href="#" data-option="' + language + '">' + languages[language].name.toProperCase() + ' (' + BFHCountriesList[languages[language].country] + ')</a></li>');
             }
           } else {
             $options.append('<li><a tabindex="-1" href="#" data-option="' + language + '">' + languages[language] + '</a></li>');

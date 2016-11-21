@@ -4,6 +4,7 @@
  * ==========================================================
  * Copyright 2012 Vincent Lamanna
  * Contribution 2013 Tomasz Kuter
+ * Copyright 2016 GPC.solutions
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -61,7 +62,7 @@
           if (this.options.available.hasOwnProperty(language)) {
             if (this.options.available[language].indexOf('_') !== -1) {
               split = this.options.available[language].split('_');
-              languages[split[0]] = {name: BFHLanguagesList[split[0]], country: split[1]};
+              languages[this.options.available[language]] = {name: BFHLanguagesList[split[0]], country: split[1]};
             } else {
               languages[this.options.available[language]] = BFHLanguagesList[this.options.available[language]];
             }
@@ -92,7 +93,7 @@
       for (language in languages) {
         if (languages.hasOwnProperty(language)) {
           if (languages[language].hasOwnProperty('name')) {
-            this.$element.append('<option value="' + language + '_' + languages[language].country + '">' + languages[language].name.toProperCase() + ' (' + BFHCountriesList[languages[language].country] + ')</option>');
+            this.$element.append('<option value="' + language + '">' + languages[language].name.toProperCase() + ' (' + BFHCountriesList[languages[language].country] + ')</option>');
           } else {
             this.$element.append('<option value="' + language + '">' + languages[language].toProperCase() + '</option>');
           }
@@ -127,9 +128,9 @@
         if (languages.hasOwnProperty(language)) {
           if (languages[language].hasOwnProperty('name')) {
             if (this.options.flags === true) {
-              $options.append('<li><a tabindex="-1" href="#" data-option="' + language + '_' + languages[language].country + '"><i class="glyphicon bfh-flag-' + languages[language].country + '"></i>' + languages[language].name.toProperCase() + '</a></li>');
+              $options.append('<li><a tabindex="-1" href="#" data-option="' + language + '"><i class="glyphicon bfh-flag-' + languages[language].country + '"></i>' + languages[language].name.toProperCase() + '</a></li>');
             } else {
-              $options.append('<li><a tabindex="-1" href="#" data-option="' + language + '_' + languages[language].country + '">' + languages[language].name.toProperCase() + ' (' + BFHCountriesList[languages[language].country] + ')</a></li>');
+              $options.append('<li><a tabindex="-1" href="#" data-option="' + language + '">' + languages[language].name.toProperCase() + ' (' + BFHCountriesList[languages[language].country] + ')</a></li>');
             }
           } else {
             $options.append('<li><a tabindex="-1" href="#" data-option="' + language + '">' + languages[language] + '</a></li>');
