@@ -97,4 +97,12 @@ $(function () {
     phone.remove();
   });
   
+  test('should format the placeholder, if the value is blank (but not set the value)', function() {
+    var phoneHTML = '<input type="text" class="bfh-phone" placeholder="5555555555" data-format="+1 (ddd) ddd-dddd">',
+      phone = $(phoneHTML).bfhphone({format: '+1 (ddd) ddd-dddd'});
+
+    ok(phone.attr('placeholder') === '+1 (555) 555-5555', 'phone number (placeholder) is correctly formatted');
+
+    ok(phone.val()  === '', 'phone number (value) is correctly formatted');
+  });
 });

@@ -62,11 +62,20 @@
     },
 
     loadFormatter: function () {
-      var formattedNumber;
+      var formattedNumber, value, placeholder;
 
-      formattedNumber = formatNumber(this.options.format, this.$element.val());
+      value = this.$element.val();
+      placeholder = this.$element.attr('placeholder');
 
-      this.$element.val(formattedNumber);
+      // If there is no value, but there is a placeholder, format that instead.
+      if (value == '' && placeholder !== undefined) {
+        formattedNumber = formatNumber(this.options.format, placeholder);
+        this.$element.attr('placeholder', formattedNumber);
+      } else {
+        formattedNumber = formatNumber(this.options.format, value);
+        this.$element.val(formattedNumber);
+      }
+
     },
 
     displayFormatter: function () {
