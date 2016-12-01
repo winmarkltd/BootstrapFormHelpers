@@ -1,13 +1,16 @@
 {
-  "name": "bootstrap-formhelpers",
+  "name": "rv-bootstrap-formhelpers",
   "description": "A collection of jQuery plugins for Bootstrap.",
-  "version": "2.3.0",
+  "version": "2.3.2-rv",
   "keywords": [
     "bootstrap",
     "css"
   ],
   "homepage": "http://boostrapformhelpers.com",
-  "author": "Vincent Lamanna",
+  "contributors": [
+    "Vincent Lamanna",
+    "Xiyang Chen <settinghead@gmail.com>"
+  ],
   "scripts": {
     "test": "grunt test"
   },

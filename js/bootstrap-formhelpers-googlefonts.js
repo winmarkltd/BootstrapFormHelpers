@@ -107,6 +107,16 @@
         }
       }
 
+      //Donna Start
+      if (this.options.showCustom) {
+        this.$element.append('<option value="Custom">Use Custom Font</option>');
+      }
+
+      if (this.options.showMore) {
+        this.$element.append('<option value="Google">More Fonts...</option>');
+      }
+      //Donna End
+
       this.$element.val(value);
     },
 
@@ -135,6 +145,16 @@
           $options.append('<li><a tabindex="-1" href="#" style="background-position: 0 -' + ((fonts[font].index * 30) - 2) + 'px;" data-option="' + fonts[font].info.family + '">' + fonts[font].info.family + '</a></li>');
         }
       }
+
+      //Donna Start
+      if (this.options.showCustom) {
+        $options.append('<li><a tabindex="-1" href="#" style=\'font-family: Custom\' data-option="Use Custom Font">Use Custom Font</a></li>');
+      }
+
+      if (this.options.showMore) {
+        $options.append('<li><a tabindex="-1" href="#" style=\'font-family: Google\' data-option="More Fonts...">More Fonts...</a></li>');
+      }
+      //Donna End
 
       this.$element.val(value);
     }
@@ -202,3 +222,99 @@
   });
 
 }(window.jQuery);
+
+/* Donna Start */
+! function($) {
+
+  'use strict';
+
+  /* FONT LIST CLASS DEFINITION
+   * ====================== */
+
+  var BFHGoogleFontList = function(element, options) {
+    var i, f, font, allhave;
+
+    this.options = $.extend({}, $.fn.bfhgooglefontlist.defaults, options);
+    this.$element = $(element);
+    this.familyList = {};
+
+    for (i in BFHGoogleFontsList.items) {
+      if (BFHGoogleFontsList.items.hasOwnProperty(i)) {
+        font = BFHGoogleFontsList.items[i];
+        this.familyList[font.family] = {
+          'font' : BFHGoogleFontsList.items[i],
+          'i' : parseInt(i, 10)
+        };
+      }
+    }
+
+    this.addFonts();
+  };
+
+  BFHGoogleFontList.prototype = {
+
+    constructor : BFHGoogleFontList,
+
+    addFonts : function() {
+      var value, f, $item, entry, self = this;
+
+      value = this.options.family;
+
+      this.$element.html('');
+      var bindMe = function() {
+        self.$element.trigger('select', $(this).data('option'));
+      };
+      for (f in this.familyList) {
+        if (this.familyList.hasOwnProperty(f)) {
+          entry = this.familyList[f];
+          $item = $('<a href="#" class="list-group-item" style="background-position: 0 -' + ((entry.i * 30) - 2) + 'px;" data-option="' + entry.font.family + '">' + entry.font.family + '</a>');
+
+          $item.bind('click', bindMe);
+          this.$element.append($item);
+        }
+      }
+    }
+  };
+
+  /* FONT LIST PLUGIN DEFINITION
+   * ======================= */
+
+  $.fn.bfhgooglefontlist = function(option) {
+    return this.each(function() {
+      var $this, data, options;
+
+      $this = $(this);
+      data = $this.data('bfhgooglefontlist');
+      options = typeof option === 'object' && option;
+      this.type = 'bfhgooglefontlist';
+
+      if (!data) {
+        $this.data('bfhgooglefontlist', ( data = new BFHGoogleFontList(this, options)));
+      }
+      if ( typeof option === 'string') {
+        data[option]();
+      }
+    });
+  };
+
+  $.fn.bfhgooglefontlist.Constructor = BFHGoogleFontList;
+
+  $.fn.bfhgooglefontlist.defaults = {
+    family : ''
+  };
+
+  /* FONT LIST DATA-API
+   * ============== */
+
+  $(window).on('load', function() {
+    $('div.bfh-googlefontlist').each(function() {
+      var $googleFontList;
+
+      $googleFontList = $(this);
+
+      $googleFontList.bfhgooglefontlist($googleFontList.data());
+    });
+  });
+
+}(window.jQuery);
+/* Donna End */

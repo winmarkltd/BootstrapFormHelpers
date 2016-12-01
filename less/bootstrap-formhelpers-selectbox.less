@@ -4,16 +4,22 @@
 
 .bfh-selectbox {
   position: relative;
-  
+
   .bfh-selectbox-toggle {
     display: inline-block;
     text-decoration: none;
     padding: 6px 24px 6px 12px;
-  
+
+    /* Donna Start */
+    &:hover {
+      color: @select-link-color;
+    }
+    /* Donna End */
+
     &:focus {
       outline: 0;
     }
-    
+
     .bfh-selectbox-option {
       display: inline-block;
       float: left;
@@ -30,7 +36,7 @@
       margin-right: -16px;
     }
   }
-  
+
   .bfh-selectbox-options {
     position: absolute;
     top: 100%;
@@ -64,7 +70,7 @@
       width: 100%;
       padding: 5px;
     }
-    
+
     ul {
       list-style: none;
       max-height: @select-height-base;
@@ -86,7 +92,7 @@
         text-overflow:ellipsis;
         width: 100%;
         overflow-x: hidden;
-        
+
         &:hover,
         &:focus {
           text-decoration: none;
@@ -94,7 +100,7 @@
           background-color: @select-link-hover-bg;
         }
       }
-      
+
       .bfh-selectbox-options-header {
         display: block;
         padding: 3px 20px;
@@ -102,10 +108,10 @@
         line-height: @line-height-base;
         color: @select-header-color;
       }
-      
+
       .disabled > a {
         color: @select-link-disabled-color;
-      
+
         &:hover,
         &:focus {
           color: @select-link-disabled-color;
@@ -118,7 +124,7 @@
       }
     }
   }
-  
+
   &.open {
     > .bfh-selectbox-options {
       display: block;
@@ -134,7 +140,7 @@
   right: 0;
   left: auto;
 }
-      
+
 // Allow for select box to go bottom up
 //
 // Just add .bfh-selectbox-up after the standard .bfh-selectbox class and you're set, bro.

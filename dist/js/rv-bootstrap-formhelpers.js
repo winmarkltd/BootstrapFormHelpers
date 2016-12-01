@@ -1,6 +1,6 @@
 /**
-* bootstrap-formhelpers.js v2.3.0 by @vincentlamanna
-* Copyright 2013 Vincent Lamanna
+* rv-bootstrap-formhelpers.js v2.3.0-rv by @vincentlamanna
+* Copyright 2014 
 * http://www.apache.org/licenses/LICENSE-2.0
 */
 if (!jQuery) { throw new Error("Bootstrap Form Helpers requires jQuery"); }
@@ -569,33 +569,35 @@ var BFHFontsList = {
  * ==========================================================
  * Copyright 2012 Vincent Lamanna
  *
- * Licensed under the Apache License, Version 2.0 (the "License")
+ * Licensed under the Apache License, Version 2.0 (the 'License')
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
  * http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
+ * distributed under the License is distributed on an 'AS IS' BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
  * ========================================================== */
- 
+
+/* Donna - Modified font sizes. */
 var BFHFontSizesList = {
-  '8': '8px',
-  '9': '9px',
-  '10': '10px',
-  '11': '11px',
-  '12': '12px',
-  '14': '14px',
-  '16': '16px',
-  '18': '18px',
-  '20': '20px',
-  '24': '24px',
-  '28': '28px',
-  '36': '36px',
-  '48': '48px'
+	8: '8',
+	9: '9',
+	10: '10',
+	11: '11',
+	12: '12',
+	14: '14',
+	18: '18',
+	24: '24',
+	30: '30',
+	36: '36',
+	48: '48',
+	60: '60',
+	72: '72',
+	96: '96'
 };
 
 /* ==========================================================
@@ -7814,7 +7816,7 @@ var BFHLanguagesList = {
   'mk': 'македонски јазик',
   'mn': 'монгол',
   'ce': 'нохчийн мотт',
-  'ru': 'русский язык',
+  'ru': 'Русский язык',
   'sr': 'српски језик',
   'tt': 'татар теле',
   'tg': 'тоҷикӣ',
@@ -15213,6 +15215,16 @@ var BFHTimezonesList = {
         }
       }
 
+      //Donna Start
+      if (this.options.showCustom) {
+        this.$element.append('<option value="Custom">Use Custom Font</option>');
+      }
+
+      if (this.options.showMore) {
+        this.$element.append('<option value="Google">More Fonts...</option>');
+      }
+      //Donna End
+
       this.$element.val(value);
     },
 
@@ -15241,6 +15253,16 @@ var BFHTimezonesList = {
           $options.append('<li><a tabindex="-1" href="#" style=\'font-family: ' + fonts[font] + '\' data-option="' + font + '">' + font + '</a></li>');
         }
       }
+
+      //Donna Start
+      if (this.options.showCustom) {
+        $options.append('<li><a tabindex="-1" href="#" style=\'font-family: Custom\' data-option="Use Custom Font">Use Custom Font</a></li>');
+      }
+
+      if (this.options.showMore) {
+        $options.append('<li><a tabindex="-1" href="#" style=\'font-family: Google\' data-option="More Fonts...">More Fonts...</a></li>');
+      }
+      //Donna End
 
       this.$element.val(value);
     }
@@ -15277,7 +15299,9 @@ var BFHTimezonesList = {
   $.fn.bfhfonts.defaults = {
     font: '',
     available: '',
-    blank: true
+    blank: true,
+    showCustom : false, //Donna
+    showMore : false	//Donna
   };
 
 
@@ -15600,6 +15624,16 @@ var BFHTimezonesList = {
         }
       }
 
+      //Donna Start
+      if (this.options.showCustom) {
+        this.$element.append('<option value="Custom">Use Custom Font</option>');
+      }
+
+      if (this.options.showMore) {
+        this.$element.append('<option value="Google">More Fonts...</option>');
+      }
+      //Donna End
+
       this.$element.val(value);
     },
 
@@ -15628,6 +15662,16 @@ var BFHTimezonesList = {
           $options.append('<li><a tabindex="-1" href="#" style="background-position: 0 -' + ((fonts[font].index * 30) - 2) + 'px;" data-option="' + fonts[font].info.family + '">' + fonts[font].info.family + '</a></li>');
         }
       }
+
+      //Donna Start
+      if (this.options.showCustom) {
+        $options.append('<li><a tabindex="-1" href="#" style=\'font-family: Custom\' data-option="Use Custom Font">Use Custom Font</a></li>');
+      }
+
+      if (this.options.showMore) {
+        $options.append('<li><a tabindex="-1" href="#" style=\'font-family: Google\' data-option="More Fonts...">More Fonts...</a></li>');
+      }
+      //Donna End
 
       this.$element.val(value);
     }
@@ -15695,6 +15739,102 @@ var BFHTimezonesList = {
   });
 
 }(window.jQuery);
+
+/* Donna Start */
+! function($) {
+
+  'use strict';
+
+  /* FONT LIST CLASS DEFINITION
+   * ====================== */
+
+  var BFHGoogleFontList = function(element, options) {
+    var i, f, font, allhave;
+
+    this.options = $.extend({}, $.fn.bfhgooglefontlist.defaults, options);
+    this.$element = $(element);
+    this.familyList = {};
+
+    for (i in BFHGoogleFontsList.items) {
+      if (BFHGoogleFontsList.items.hasOwnProperty(i)) {
+        font = BFHGoogleFontsList.items[i];
+        this.familyList[font.family] = {
+          'font' : BFHGoogleFontsList.items[i],
+          'i' : parseInt(i, 10)
+        };
+      }
+    }
+
+    this.addFonts();
+  };
+
+  BFHGoogleFontList.prototype = {
+
+    constructor : BFHGoogleFontList,
+
+    addFonts : function() {
+      var value, f, $item, entry, self = this;
+
+      value = this.options.family;
+
+      this.$element.html('');
+      var bindMe = function() {
+        self.$element.trigger('select', $(this).data('option'));
+      };
+      for (f in this.familyList) {
+        if (this.familyList.hasOwnProperty(f)) {
+          entry = this.familyList[f];
+          $item = $('<a href="#" class="list-group-item" style="background-position: 0 -' + ((entry.i * 30) - 2) + 'px;" data-option="' + entry.font.family + '">' + entry.font.family + '</a>');
+
+          $item.bind('click', bindMe);
+          this.$element.append($item);
+        }
+      }
+    }
+  };
+
+  /* FONT LIST PLUGIN DEFINITION
+   * ======================= */
+
+  $.fn.bfhgooglefontlist = function(option) {
+    return this.each(function() {
+      var $this, data, options;
+
+      $this = $(this);
+      data = $this.data('bfhgooglefontlist');
+      options = typeof option === 'object' && option;
+      this.type = 'bfhgooglefontlist';
+
+      if (!data) {
+        $this.data('bfhgooglefontlist', ( data = new BFHGoogleFontList(this, options)));
+      }
+      if ( typeof option === 'string') {
+        data[option]();
+      }
+    });
+  };
+
+  $.fn.bfhgooglefontlist.Constructor = BFHGoogleFontList;
+
+  $.fn.bfhgooglefontlist.defaults = {
+    family : ''
+  };
+
+  /* FONT LIST DATA-API
+   * ============== */
+
+  $(window).on('load', function() {
+    $('div.bfh-googlefontlist').each(function() {
+      var $googleFontList;
+
+      $googleFontList = $(this);
+
+      $googleFontList.bfhgooglefontlist($googleFontList.data());
+    });
+  });
+
+}(window.jQuery);
+/* Donna End */
 
 /* ==========================================================
  * bootstrap-formhelpers-languages.js
@@ -16540,31 +16680,36 @@ var BFHTimezonesList = {
       var options;
 
       options = '';
-      this.$element.find('div').each(function() {
-        options = options + '<li><a tabindex="-1" href="#" data-option="' + $(this).data('value') + '">' + $(this).html() + '</a></li>';
-      });
 
-      this.$element.html(
-        '<input type="hidden" name="' + this.options.name + '" value="">' +
-		'<a class="bfh-selectbox-toggle ' + this.options.input + '" role="button" data-toggle="bfh-selectbox" href="#">' +
-		'<span class="bfh-selectbox-option"></span>' +
-		'<span class="' + this.options.icon + ' selectbox-caret"></span>' +
-		'</a>' +
-		'<div class="bfh-selectbox-options">' +
-		'<div role="listbox">' +
-		'<ul role="option">' +
-		'</ul>' +
-		'</div>' +
-		'</div>'
-      );
+      //This is a temporary hack: used for custom templates
+      if(this.$element.find('.bfh-selectbox-options').length === 0) { //Xiyang
+        this.$element.find('div').each(function() {
+          options = options + '<li><a tabindex="-1" href="#" data-option="' + $(this).data('value') + '">' + $(this).html() + '</a></li>';
+        });
 
-      this.$element.find('[role=option]').html(options);
+        this.$element.html(
+          '<input type="hidden" name="' + this.options.name + '" value="">' +
+        '<a class="bfh-selectbox-toggle ' + this.options.input + '" role="button" data-toggle="bfh-selectbox" href="#">' +
+        '<span class="bfh-selectbox-option"></span>' +
+        '<span class="' + this.options.icon + ' selectbox-caret"></span>' +
+        '</a>' +
+        '<div class="bfh-selectbox-options">' +
+        '<div role="listbox">' +
+        '<ul role="option">' +
+        '</ul>' +
+        '</div>' +
+        '</div>'
+        );
 
-      if (this.options.filter === true) {
-        this.$element.find('.bfh-selectbox-options').prepend('<div class="bfh-selectbox-filter-container"><input type="text" class="bfh-selectbox-filter form-control"></div>');
-      }
+        this.$element.find('[role=option]').html(options);
 
-      this.$element.val(this.options.value);
+        if (this.options.filter === true) {
+          this.$element.find('.bfh-selectbox-options').prepend('<div class="bfh-selectbox-filter-container"><input type="text" class="bfh-selectbox-filter form-control"></div>');
+        }
+
+        this.$element.val(this.options.value);
+
+      } //Xiyang
 
       this.$element
         .on('click.bfhselectbox.data-api touchstart.bfhselectbox.data-api', toggle, BFHSelectBox.prototype.toggle)

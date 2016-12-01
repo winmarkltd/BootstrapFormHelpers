@@ -86,6 +86,16 @@
         }
       }
 
+      //Donna Start
+      if (this.options.showCustom) {
+        this.$element.append('<option value="Custom">Use Custom Font</option>');
+      }
+
+      if (this.options.showMore) {
+        this.$element.append('<option value="Google">More Fonts...</option>');
+      }
+      //Donna End
+
       this.$element.val(value);
     },
 
@@ -114,6 +124,16 @@
           $options.append('<li><a tabindex="-1" href="#" style=\'font-family: ' + fonts[font] + '\' data-option="' + font + '">' + font + '</a></li>');
         }
       }
+
+      //Donna Start
+      if (this.options.showCustom) {
+        $options.append('<li><a tabindex="-1" href="#" style=\'font-family: Custom\' data-option="Use Custom Font">Use Custom Font</a></li>');
+      }
+
+      if (this.options.showMore) {
+        $options.append('<li><a tabindex="-1" href="#" style=\'font-family: Google\' data-option="More Fonts...">More Fonts...</a></li>');
+      }
+      //Donna End
 
       this.$element.val(value);
     }
@@ -150,7 +170,9 @@
   $.fn.bfhfonts.defaults = {
     font: '',
     available: '',
-    blank: true
+    blank: true,
+    showCustom : false, //Donna
+    showMore : false	//Donna
   };
 
 

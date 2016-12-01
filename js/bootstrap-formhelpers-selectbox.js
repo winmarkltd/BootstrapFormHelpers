@@ -41,31 +41,36 @@
       var options;
 
       options = '';
-      this.$element.find('div').each(function() {
-        options = options + '<li><a tabindex="-1" href="#" data-option="' + $(this).data('value') + '">' + $(this).html() + '</a></li>';
-      });
 
-      this.$element.html(
-        '<input type="hidden" name="' + this.options.name + '" value="">' +
-		'<a class="bfh-selectbox-toggle ' + this.options.input + '" role="button" data-toggle="bfh-selectbox" href="#">' +
-		'<span class="bfh-selectbox-option"></span>' +
-		'<span class="' + this.options.icon + ' selectbox-caret"></span>' +
-		'</a>' +
-		'<div class="bfh-selectbox-options">' +
-		'<div role="listbox">' +
-		'<ul role="option">' +
-		'</ul>' +
-		'</div>' +
-		'</div>'
-      );
+      //This is a temporary hack: used for custom templates
+      if(this.$element.find('.bfh-selectbox-options').length === 0) { //Xiyang
+        this.$element.find('div').each(function() {
+          options = options + '<li><a tabindex="-1" href="#" data-option="' + $(this).data('value') + '">' + $(this).html() + '</a></li>';
+        });
 
-      this.$element.find('[role=option]').html(options);
+        this.$element.html(
+          '<input type="hidden" name="' + this.options.name + '" value="">' +
+        '<a class="bfh-selectbox-toggle ' + this.options.input + '" role="button" data-toggle="bfh-selectbox" href="#">' +
+        '<span class="bfh-selectbox-option"></span>' +
+        '<span class="' + this.options.icon + ' selectbox-caret"></span>' +
+        '</a>' +
+        '<div class="bfh-selectbox-options">' +
+        '<div role="listbox">' +
+        '<ul role="option">' +
+        '</ul>' +
+        '</div>' +
+        '</div>'
+        );
 
-      if (this.options.filter === true) {
-        this.$element.find('.bfh-selectbox-options').prepend('<div class="bfh-selectbox-filter-container"><input type="text" class="bfh-selectbox-filter form-control"></div>');
-      }
+        this.$element.find('[role=option]').html(options);
 
-      this.$element.val(this.options.value);
+        if (this.options.filter === true) {
+          this.$element.find('.bfh-selectbox-options').prepend('<div class="bfh-selectbox-filter-container"><input type="text" class="bfh-selectbox-filter form-control"></div>');
+        }
+
+        this.$element.val(this.options.value);
+
+      } //Xiyang
 
       this.$element
         .on('click.bfhselectbox.data-api touchstart.bfhselectbox.data-api', toggle, BFHSelectBox.prototype.toggle)
