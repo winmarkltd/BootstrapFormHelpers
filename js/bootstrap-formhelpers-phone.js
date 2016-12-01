@@ -50,7 +50,7 @@
 
         if ($country.length !== 0) {
           this.options.format = BFHPhoneFormatList[$country.val()];
-          $country.on('change', {phone: this}, this.changeCountry);
+          $country.on('change, change.bfhselectbox', {phone: this}, this.changeCountry);
         } else {
           this.options.format = BFHPhoneFormatList[this.options.country];
         }
