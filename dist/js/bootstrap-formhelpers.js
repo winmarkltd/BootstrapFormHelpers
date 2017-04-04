@@ -8037,7 +8037,7 @@ var BFHPhoneFormatList = {
   'NZ': '+64 ddddddddd',
   'NI': '+505 ddddddddd',
   'NE': '+227 ddddddddd',
-  'NG': '+234 ddddddddd',
+  'NG': '+234 dddddddddd',
   'NU': '+683 ddddddddd',
   'NF': '+672 ddddddddd',
   'KP': '+850 ddddddddd',
