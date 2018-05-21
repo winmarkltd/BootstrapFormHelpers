@@ -9,7 +9,7 @@ seo_url: "/support/"
 
 Premium support for Bootstrap Form Helpers is only available to people who bought a commercial license.
 
-To request support, simply [fill a support request](https://bootstrapformhelpers.zendesk.com/hc/en-us/requests/new).
+To request support, simply email us at <a href="mailto:support@bootstrapformhelpers.com">support@bootstrapformhelpers.com</a>.
 Make sure to include the email address you used to purchase your commercial license. If
 you don't remember it, don't worry we are here to help!
 
