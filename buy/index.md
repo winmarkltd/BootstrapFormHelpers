@@ -45,16 +45,10 @@ seo_url: "/buy/"
         <li class="list-group-item">
           <h3><span style="text-decoration:line-through;" class="text-muted">$59</span> <strong><span class="text-success">$12/yr</span></strong></h3>
         </li>
-        <li class="list-group-item list-group-item-info"><br>
-          <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-            <input type="hidden" name="cmd" value="_s-xclick">
-            <input type="hidden" name="hosted_button_id" value="ZJVGLKPEDMDP8">
-            <input type="image" src="https://www.paypalobjects.com/en_GB/i/btn/btn_cart_LG.gif" border="0" name="submit" alt="PayPal � The safer, easier way to pay online.">
-            <img alt="" border="0" src="https://www.paypalobjects.com/en_GB/i/scr/pixel.gif" width="1" height="1">
-				<script language="javascript">document.write('<input type="hidden" name="notify_url" value="http://download.bootstrapformhelpers.com/bootstrapformhelpers/approvePaypal.php?source='+getCookie("source")+'">');</script>
-          </form>
-        </li>
       </ul>
+      <div class="panel-footer">
+			<button type="button" class="btn btn-default" onclick="window.location='https://secure.bootstrapformhelpers.com/?plan=single'">DOWNLOAD</button>
+      </div>
     </div>
   </div>
   <!-- Column 2 -->
@@ -75,16 +69,10 @@ seo_url: "/buy/"
         <li class="list-group-item">
           <h3><span style="text-decoration:line-through;" class="text-muted">$599</span> <strong><span class="text-success">$99 /yr</span></strong></h3>
         </li>
-        <li class="list-group-item list-group-item-success"><br>
-          <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-            <input type="hidden" name="cmd" value="_s-xclick">
-            <input type="hidden" name="hosted_button_id" value="JYNBZF223682S">
-            <input type="image" src="https://www.paypalobjects.com/en_GB/i/btn/btn_cart_LG.gif" border="0" name="submit" alt="PayPal � The safer, easier way to pay online.">
-            <img alt="" border="0" src="https://www.paypalobjects.com/en_GB/i/scr/pixel.gif" width="1" height="1">
-				<script language="javascript">document.write('<input type="hidden" name="notify_url" value="http://download.bootstrapformhelpers.com/bootstrapformhelpers/approvePaypal.php?source='+getCookie("source")+'">');</script>
-          </form>
-        </li>
       </ul>
+      <div class="panel-footer">
+			<button type="button" class="btn btn-default" onclick="window.location='https://secure.bootstrapformhelpers.com/?plan=multi'">DOWNLOAD</button>
+      </div>
     </div>
   </div>
   <!-- Column 3 --> 
@@ -96,4 +84,4 @@ buying a commercial license. </p><p class="text-center">Commercial licenses come
 </p>
 <p class="text-center">The support period can be extended by buying a new license.
 </p>
-<p class="text-center">If you have any questions regarding the licenses, feel free to <a href="https://bootstrapformhelpers.zendesk.com/hc/en-us/requests/new">reach out to us</a>.</p>
+<p class="text-center">If you have any questions regarding the licenses, feel free to reach out to us at <a href="mailto:support@bootstrapformhelpers.com">support@bootstrapformhelpers.com</a>.</p>
