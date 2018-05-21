@@ -83,12 +83,7 @@ period can be extended by buying a new license.
       <td>For commercial purposes on 1 website.</td>
       <td><span style="text-decoration:line-through">$59</span> <b>$12/yr.</b></td>
       <td>
-<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-<input type="hidden" name="cmd" value="_s-xclick">
-<input type="hidden" name="hosted_button_id" value="BE8Q3SPA37FRG">
-<input type="image" src="https://www.paypalobjects.com/en_GB/i/btn/btn_cart_LG.gif" border="0" name="submit" alt="PayPal – The safer, easier way to pay online.">
-<img alt="" border="0" src="https://www.paypalobjects.com/en_GB/i/scr/pixel.gif" width="1" height="1">
-</form>
+        <button type="button" class="btn btn-default" onclick="window.location='https://secure.bootstrapformhelpers.com/?plan=single'">DOWNLOAD</button>
       </td>
     </tr>
     <tr>
@@ -96,15 +91,10 @@ period can be extended by buying a new license.
       <td>For commercial purposes on multiple websites or web application.</td>
       <td><span style="text-decoration:line-through">$599</span> <b>$99/yr.</b></td>
       <td>
-<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-<input type="hidden" name="cmd" value="_s-xclick">
-<input type="hidden" name="hosted_button_id" value="5GYR8CJJE42S4">
-<input type="image" src="https://www.paypalobjects.com/en_GB/i/btn/btn_cart_LG.gif" border="0" name="submit" alt="PayPal – The safer, easier way to pay online.">
-<img alt="" border="0" src="https://www.paypalobjects.com/en_GB/i/scr/pixel.gif" width="1" height="1">
-</form>
+        <button type="button" class="btn btn-default" onclick="window.location='https://secure.bootstrapformhelpers.com/?plan=multi'">DOWNLOAD</button>
       </td>
     </tr>
   </tbody>
 </table>
 
-If you have any questions regarding the licenses, feel free to [reach out to us](https://bootstrapformhelpers.zendesk.com/hc/en-us/requests/new).
+If you have any questions regarding the licenses, feel free to reach out to us at <a href="mailto:support@bootstrapformhelpers.com">support@bootstrapformhelpers.com</a>.
