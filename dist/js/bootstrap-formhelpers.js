@@ -7983,7 +7983,7 @@ var BFHPhoneFormatList = {
   'HK': '+852 ddddddddd',
   'HU': '+36 ddddddddd',
   'IS': '+354 ddddddddd',
-  'IN': '+91 ddddddddd',
+  'IN': '+91 dddddddddd',
   'ID': '+62 ddddddddd',
   'IR': '+98 ddddddddd',
   'IQ': '+964 ddddddddd',
