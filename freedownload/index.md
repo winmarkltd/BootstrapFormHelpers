@@ -19,7 +19,7 @@ seo_url: "/freedownload/"
 	   We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
 </style>
 <div id="mc_embed_signup">
-<form action="http://bootstrapformhelpers.us3.list-manage.com/subscribe/post?u=bd310880e2ddfdb9ecf24fbce&amp;id=6d174db635" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+<form action="https://bootstrapformhelpers.us18.list-manage.com/subscribe/post?u=bc9398782cac4e8641beb476c&amp;id=7420d18b8d" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
 	<h2>Complete form below to get download link</h2>
 <div class="indicates-required"><span class="asterisk">*</span> indicates required</div>
 <div class="mc-field-group">
