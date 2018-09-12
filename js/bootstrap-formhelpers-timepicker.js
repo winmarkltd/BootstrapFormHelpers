@@ -151,9 +151,12 @@
         '</div>'
       );
 
+      // this.$element
+      //   .on('click.bfhtimepicker.data-api touchstart.bfhtimepicker.data-api', toggle, BFHTimePicker.prototype.toggle)
+      //   .on('click.bfhtimepicker.data-api touchstart.bfhtimepicker.data-api', '.bfh-timepicker-popover > table', function(e) { console.log(e); return false; });
       this.$element
-        .on('click.bfhtimepicker.data-api touchstart.bfhtimepicker.data-api', toggle, BFHTimePicker.prototype.toggle)
-        .on('click.bfhtimepicker.data-api touchstart.bfhtimepicker.data-api', '.bfh-timepicker-popover > table', function() { return false; });
+        .on('click.bfhtimepicker.data-api', toggle, BFHTimePicker.prototype.toggle)
+        .on('click.bfhtimepicker.data-api', '.bfh-timepicker-popover > table', function() { return false; });
 
       this.$element.find('.bfh-number').each(function () {
         var $number;
@@ -240,7 +243,7 @@
 
         if (e.isDefaultPrevented()) {
           return true;
-        }
+        } 
 
         $parent
           .toggleClass('open')

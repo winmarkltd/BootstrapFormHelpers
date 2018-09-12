@@ -93,10 +93,15 @@
         '</div>'
       );
 
+      // this.$element
+      //   .on('click.bfhcolorpicker.data-api touchstart.bfhcolorpicker.data-api', toggle, BFHColorPicker.prototype.toggle)
+      //   .on('mousedown.bfhcolorpicker.data-api', 'canvas', BFHColorPicker.prototype.mouseDown)
+      //   .on('click.bfhcolorpicker.data-api touchstart.bfhcolorpicker.data-api', '.bfh-colorpicker-popover', function() { return false; });
+      
       this.$element
-        .on('click.bfhcolorpicker.data-api touchstart.bfhcolorpicker.data-api', toggle, BFHColorPicker.prototype.toggle)
-        .on('mousedown.bfhcolorpicker.data-api', 'canvas', BFHColorPicker.prototype.mouseDown)
-        .on('click.bfhcolorpicker.data-api touchstart.bfhcolorpicker.data-api', '.bfh-colorpicker-popover', function() { return false; });
+      .on('click.bfhcolorpicker.data-api', toggle, BFHColorPicker.prototype.toggle)
+      .on('mousedown.bfhcolorpicker.data-api', 'canvas', BFHColorPicker.prototype.mouseDown)
+      .on('click.bfhcolorpicker.data-api', '.bfh-colorpicker-popover', function() { return false; });
 
       this.initPalette();
       

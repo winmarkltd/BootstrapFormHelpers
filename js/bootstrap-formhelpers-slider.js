@@ -49,7 +49,8 @@
       this.$element.find('input[type="hidden"]').val(this.options.value);
       this.updateHandle(this.options.value);
       
-      this.$element.on('mousedown.bfhslider.data-api', BFHSlider.prototype.mouseDown);
+      this.$element
+        .on('mousedown.bfhslider.data-api', BFHSlider.prototype.mouseDown);
     },
     
     updateHandle: function(val) {
@@ -111,7 +112,8 @@
       
       $(document)
         .on('mousemove.bfhslider.data-api', {slider: $this}, BFHSlider.prototype.mouseMove)
-        .one('mouseup.bfhslider.data-api', {slider: $this}, BFHSlider.prototype.mouseUp);
+        .on('touchmove', {slider: $this}, BFHSlider.prototype.mouseMove)
+        .one('mouseup.bfhslider.data-api touchend.bfhslider.data-api', {slider: $this}, BFHSlider.prototype.mouseUp);
     },
     
     mouseMove: function(e) {
@@ -119,7 +121,13 @@
       
       $this = e.data.slider;
       
-      $this.data('bfhslider').updateVal(e.pageX);
+      if (e.type == "touchend" || e.type == "touchmove") {
+        setTimeout(function() {
+          $this.data('bfhslider').updateVal(e.changedTouches[0].pageX);
+        }, 10);
+      } else {
+        $this.data('bfhslider').updateVal(e.pageX);
+      }
     },
     
     mouseUp: function(e) {
@@ -129,7 +137,7 @@
       
       $this.data('bfhslider').updateVal(e.pageX);
       
-      $(document).off('mousemove.bfhslider.data-api');
+      $(document).off('mousemove.bfhslider.data-api touchmove.bfhslider.data-api');
     }
   };
 
