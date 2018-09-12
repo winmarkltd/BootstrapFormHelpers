@@ -112,7 +112,6 @@
       
       $(document)
         .on('mousemove.bfhslider.data-api', {slider: $this}, BFHSlider.prototype.mouseMove)
-        .on('touchmove', {slider: $this}, BFHSlider.prototype.mouseMove)
         .one('mouseup.bfhslider.data-api touchend.bfhslider.data-api', {slider: $this}, BFHSlider.prototype.mouseUp);
     },
     
@@ -121,13 +120,7 @@
       
       $this = e.data.slider;
       
-      if (e.type == "touchend" || e.type == "touchmove") {
-        setTimeout(function() {
-          $this.data('bfhslider').updateVal(e.changedTouches[0].pageX);
-        }, 10);
-      } else {
-        $this.data('bfhslider').updateVal(e.pageX);
-      }
+      $this.data('bfhslider').updateVal(e.pageX);
     },
     
     mouseUp: function(e) {
