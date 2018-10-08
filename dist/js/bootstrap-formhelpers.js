@@ -7965,7 +7965,7 @@ var BFHPhoneFormatList = {
   'TF': '+262 ddddddddd',
   'GA': '+241 ddddddddd',
   'GE': '+995 ddddddddd',
-  'DE': '+49 ddddddddd',
+  'DE': '+49 dddddddddd',
   'GH': '+233 ddddddddd',
   'GI': '+350 ddddddddd',
   'GR': '+30 ddddddddd',
