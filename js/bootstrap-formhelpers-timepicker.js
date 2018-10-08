@@ -363,9 +363,11 @@
       var $timepicker;
       if ($(el).hasClass('bfh-timepicker')) {
         $timepicker = $(el).data('bfhtimepicker');
-        $timepicker.options.time = val;
-        $timepicker.setTime();
-        $timepicker.updatePopover();
+        if ($timepicker) {
+          $timepicker.options.time = val;
+          $timepicker.setTime();
+          $timepicker.updatePopover();
+        }
       } else if (origHook) {
         return origHook.set(el,val);
       }
@@ -393,4 +395,4 @@
   $(document)
     .on('click.bfhtimepicker.data-api', clearMenus);
 
-}(window.jQuery);
+}(jQuery);

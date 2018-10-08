@@ -344,4 +344,4 @@
   $(document)
     .on('click.bfhselectbox.data-api', clearMenus);
 
-}(window.jQuery);
+}(jQuery);

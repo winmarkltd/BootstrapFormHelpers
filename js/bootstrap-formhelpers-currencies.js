@@ -213,4 +213,4 @@
   });
 
 
-}(window.jQuery);
+}(jQuery);
