@@ -30,6 +30,20 @@
     this.$element = $(element);
 
     if (this.$element.is('input[type="text"]') || this.$element.is('input[type="tel"]')) {
+      var country = this.options.country;
+
+      var formObject = this.$element.closest('form');
+
+      if (country !== "") {
+        var countryObject = formObject.find('#' + country);
+
+        if (countryObject.length !== 0) {
+          this.options.format = BFHPhoneFormatList[countryObject.val()];
+        } else {
+          this.options.format = BFHPhoneFormatList[country];
+        }
+      }
+
       this.addFormatter();
     }
 
@@ -42,178 +56,95 @@
 
     constructor: BFHPhone,
 
-    addFormatter: function() {
-      var $country;
+    getFormattedNumber: function () {
+      var format = this.options.format;
+      var phoneNumber = this.options.number;
+      var formattedNumber = "";
 
-      if (this.options.country !== '') {
-        $country = $(document).find('#' + this.options.country);
-
-        if ($country.length !== 0) {
-          this.options.format = BFHPhoneFormatList[$country.val()];
-          $country.on('change', {phone: this}, this.changeCountry);
-        } else {
-          this.options.format = BFHPhoneFormatList[this.options.country];
+      var newNumber = "";
+      for (var i = 0; i < phoneNumber.length; i++) {
+        if (/[0-9]/.test(phoneNumber.charAt(i))) {
+          newNumber += phoneNumber.charAt(i);
         }
       }
-      
-      this.$element.on('keyup.bfhphone.data-api', BFHPhone.prototype.change);
+      phoneNumber = newNumber;
 
-      this.loadFormatter();
-    },
+      var j = 0;
+      for (var i = 0; i < format.length; i++) {
+        if (/[0-9]/.test(format.charAt(i))) {
+          if (format.charAt(i) == phoneNumber.charAt(j)) {
+            formattedNumber += phoneNumber.charAt(j);
+            j++;
+          } else {
+            formattedNumber += format.charAt(i);
+          }
+        } else if (format.charAt(i) !== 'd') {
+          if (phoneNumber.charAt(j) !== '' || format.charAt(i) === '+') {
+            formattedNumber += format.charAt(i);
+          }
+        } else {
+          if (phoneNumber.charAt(j) === "") {
+            formattedNumber += "";
+          } else {
+            formattedNumber += phoneNumber.charAt(j);
+            j++;
+          }
+        }
+      }
 
-    loadFormatter: function () {
-      var formattedNumber;
+      return formattedNumber;
+    }, 
 
-      formattedNumber = formatNumber(this.options.format, this.$element.val());
+    addFormatter: function() {
+      var formattedNumber = this.getFormattedNumber();
 
+      this.$element.addClass('disabled');
       this.$element.val(formattedNumber);
+      this.$element.removeClass('disabled');
     },
 
     displayFormatter: function () {
-      var formattedNumber;
-
-      if (this.options.country !== '') {
-        this.options.format = BFHPhoneFormatList[this.options.country];
-      }
-
-      formattedNumber = formatNumber(this.options.format, this.options.number);
+      var formattedNumber = this.getFormattedNumber();
 
       this.$element.html(formattedNumber);
-    },
+    }, 
 
     changeCountry: function (e) {
-      var $this,
-          $phone;
+      var $this = $(this);
+      var phoneObject = $(this).data('bfhphone');
 
-      $this = $(this);
-      $phone = e.data.phone;
+      phoneObject.options.format = BFHPhoneFormatList[$this.val()];
 
-      $phone.$element.val(String($phone.$element.val()).replace(/\+\d*/g, ''));
-      $phone.options.format = BFHPhoneFormatList[$this.val()];
-
-      $phone.loadFormatter();
+      phoneObject.addFormatter();
     },
 
     change: function(e) {
-      var $this,
-          cursorPosition,
-          cursorEnd,
-          formattedNumber;
+      var $this;
 
       $this = $(this).data('bfhphone');
 
-      if ($this.$element.is('.disabled') || $this.$element.attr('disabled') !== undefined) {
-        return true;
-      }
+      if ($this.$element.is('.disabled, :disabled')) return false;
 
-      cursorPosition = getCursorPosition($this.$element[0]);
-
-      cursorEnd = false;
-      if (cursorPosition === $this.$element.val().length) {
-        cursorEnd = true;
-      }
-      
-      if (e.which === 8 && $this.options.format.charAt($this.$element.val().length) !== 'd') {
-        $this.$element.val(String($this.$element.val()).substring(0, $this.$element.val().length - 1));
-      }
-
-      formattedNumber = formatNumber($this.options.format, $this.$element.val());
-      
-      if (formattedNumber === $this.$element.val()) {
-        return true;
-      }
-      
-      $this.$element.val(formattedNumber);
-
-      if (cursorEnd) {
-        cursorPosition = $this.$element.val().length;
-      }
-
-      setCursorPosition($this.$element[0], cursorPosition);
-
-      return true;
-    }
-
-  };
-
-  function formatNumber(format, number) {
-    var formattedNumber,
-        indexFormat,
-        indexNumber,
-        lastCharacter;
-
-    formattedNumber = '';
-    number = String(number).replace(/\D/g, '');
-
-    for (indexFormat = 0, indexNumber = 0; indexFormat < format.length; indexFormat = indexFormat + 1) {
-      if (/\d/g.test(format.charAt(indexFormat))) {
-        if (format.charAt(indexFormat) === number.charAt(indexNumber)) {
-          formattedNumber += number.charAt(indexNumber);
-          indexNumber = indexNumber + 1;
-        } else {
-          formattedNumber += format.charAt(indexFormat);
-        }
-      } else if (format.charAt(indexFormat) !== 'd') {
-        if (number.charAt(indexNumber) !== '' || format.charAt(indexFormat) === '+') {
-          formattedNumber += format.charAt(indexFormat);
-        }
-      } else {
-        if (number.charAt(indexNumber) === '') {
-          formattedNumber += '';
-        } else {
-          formattedNumber += number.charAt(indexNumber);
-          indexNumber = indexNumber + 1;
+      var number = $this.$element.val();
+      var newNumber = "";
+      for (var i = 0; i < number.length; i++) {
+        if (/[0-9]/.test(number.charAt(i))) {
+          newNumber += number.charAt(i);
         }
       }
-    }
-    
-    lastCharacter = format.charAt(formattedNumber.length);
-    if (lastCharacter !== 'd') {
-      formattedNumber += lastCharacter;
-    }
 
-    return formattedNumber;
-  }
+      $this.options.number = newNumber;
 
-  function getCursorPosition($element) {
-    var position = 0,
-        selection;
+      $this.addFormatter();
 
-    if (document.selection) {
-      // IE Support
-      $element.focus();
-      selection = document.selection.createRange();
-      selection.moveStart ('character', -$element.value.length);
-      position = selection.text.length;
-    } else if ($element.selectionStart || $element.selectionStart === 0) {
-      position = $element.selectionStart;
-    }
+      $this.$element.data('number', $this.options.number);
 
-    return position;
-  }
-
-  function setCursorPosition($element, position) {
-    var selection;
-
-    if (document.selection) {
-      // IE Support
-      $element.focus ();
-      selection = document.selection.createRange();
-      selection.moveStart ('character', -$element.value.length);
-      selection.moveStart ('character', position);
-      selection.moveEnd ('character', 0);
-      selection.select ();
-    } else if ($element.selectionStart || $element.selectionStart === 0) {
-      $element.selectionStart = position;
-      $element.selectionEnd = position;
-      $element.focus ();
+      return false;
     }
   }
 
   /* PHONE PLUGIN DEFINITION
    * ======================= */
-
-  var old = $.fn.bfhphone;
 
   $.fn.bfhphone = function (option) {
     return this.each(function () {
@@ -224,12 +155,11 @@
       $this = $(this);
       data = $this.data('bfhphone');
       options = typeof option === 'object' && option;
-
       if (!data) {
         $this.data('bfhphone', (data = new BFHPhone(this, options)));
       }
       if (typeof option === 'string') {
-        data[option].call($this);
+        data[option]();
       }
     });
   };
@@ -240,22 +170,13 @@
     format: '',
     number: '',
     country: ''
-  };
-
-
-  /* PHONE NO CONFLICT
-   * ========================== */
-
-  $.fn.bfhphone.noConflict = function () {
-    $.fn.bfhphone = old;
-    return this;
-  };
+  }
 
 
   /* PHONE DATA-API
    * ============== */
 
-  $(document).ready( function () {
+  $(window).on('load', function () {
     $('form input[type="text"].bfh-phone, form input[type="tel"].bfh-phone, span.bfh-phone').each(function () {
       var $phone;
 
@@ -264,5 +185,11 @@
       $phone.bfhphone($phone.data());
     });
   });
+
+  $(function () {
+    $('body')
+      .on('propertychange.bfhphone.data-api change.bfhphone.data-api input.bfhphone.data-api keyup.bfhphone.data-api paste.bfhphone.data-api', '.bfh-phone', BFHPhone.prototype.change)
+      .on('change.bfhphone.data-api', '.bfh-country', BFHPhone.prototype.changeCountry)
+  })
 
 }(window.jQuery);
