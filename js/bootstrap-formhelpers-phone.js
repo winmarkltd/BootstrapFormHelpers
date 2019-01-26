@@ -93,7 +93,7 @@
       }
 
       return formattedNumber;
-    }
+    }, 
 
     addFormatter: function() {
       var formattedNumber = this.getFormattedNumber();
@@ -107,7 +107,7 @@
       var formattedNumber = this.getFormattedNumber();
 
       this.$element.html(formattedNumber);
-    },
+    }, 
 
     changeCountry: function (e) {
       var $this = $(this);
