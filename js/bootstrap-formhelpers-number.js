@@ -166,7 +166,7 @@
       
       value = this.getValue();
       
-      value = value + 1;
+      value = value + this.options.steps;
       
       this.$element.val(value).change();
     },
@@ -176,7 +176,7 @@
       
       value = this.getValue();
       
-      value = value - 1;
+      value = value - this.options.steps;
       
       this.$element.val(value).change();
     },
@@ -185,14 +185,14 @@
       var value;
       
       value = this.$element.val();
-      if (value !== '-1') {
-        value = String(value).replace(/\D/g, '');
-      }
-      if (String(value).length === 0) {
+
+      if ($.isNumeric(value)) {
+        value = parseInt(value);
+      } else {
         value = this.options.min;
-      }
-      
-      return parseInt(value);
+      };
+
+      return value;
     },
     
     formatNumber: function() {
@@ -266,7 +266,8 @@
     zeros: false,
     keyboard: true,
     buttons: true,
-    wrap: false
+    wrap: false,
+    steps: 1,
   };
 
 
