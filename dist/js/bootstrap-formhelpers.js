@@ -8058,7 +8058,7 @@ var BFHPhoneFormatList = {
   'QA': '+974 ddddddddd',
   'RE': '+262 ddddddddd',
   'RO': '+40 ddddddddd',
-  'RU': '+7 dddddddddd',
+  'RU': '+7 (ddd) ddd dd dd',
   'RW': '+250 ddddddddd',
   'ST': '+239 ddddddddd',
   'SH': '+290 ddddddddd',
