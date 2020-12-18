@@ -50,24 +50,27 @@
       time = this.options.time;
       mode = '';
       currentMode = '';
-      
+
       if (time === '' || time === 'now' || time === undefined) {
         today = new Date();
 
         hours = today.getHours();
         minutes = today.getMinutes();
-        
+
         if (this.options.mode === '12h') {
           if (hours > 12) {
             hours = hours - 12;
             mode = ' ' + BFHTimePickerModes.pm;
             currentMode = 'pm';
           } else {
+            if (hours === 0) {
+              hours = hours + 12;
+            }
             mode = ' ' + BFHTimePickerModes.am;
             currentMode = 'am';
           }
         }
-        
+
         if (time === 'now') {
           this.$element.find('.bfh-timepicker-toggle > input[type="text"]').val(formatTime(hours, minutes) + mode);
         }
@@ -79,7 +82,7 @@
         timeParts = String(time).split(BFHTimePickerDelimiter);
         hours = timeParts[0];
         minutes = timeParts[1];
-        
+
         if (this.options.mode === '12h') {
           timeParts = String(minutes).split(' ');
           minutes = timeParts[0];
@@ -89,7 +92,7 @@
             currentMode = 'am';
           }
         }
-        
+
         this.$element.find('.bfh-timepicker-toggle > input[type="text"]').val(time);
         this.$element.data('hour', hours);
         this.$element.data('minute', minutes);
@@ -102,6 +105,7 @@
           iconRight,
           iconAddon,
           modeAddon,
+          modeMin;
           modeMax;
 
       iconLeft = '';
@@ -115,8 +119,9 @@
         }
         iconAddon = 'input-group';
       }
-      
+
       modeAddon = '';
+      modeMin = '0';
       modeMax = '23';
       if (this.options.mode === '12h') {
         modeAddon = '<td>' +
@@ -124,7 +129,8 @@
           '<div data-value="am">' + BFHTimePickerModes.am + '</div>' +
           '<div data-value="pm">' + BFHTimePickerModes.pm + '</div>' +
           '</div>';
-        modeMax = '11';
+        modeMin = '1';
+        modeMax = '12';
       }
 
       this.$element.html(
@@ -138,7 +144,7 @@
         '<tbody>' +
         '<tr>' +
         '<td class="hour">' +
-        '<input type="text" class="' + this.options.input + ' bfh-number"  data-min="0" data-max="' + modeMax + '" data-zeros="true" data-wrap="true">' +
+        '<input type="text" class="' + this.options.input + ' bfh-number"  data-min="' + modeMin + '" data-max="' + modeMax + '" data-zeros="true" data-wrap="true">' +
         '</td>' +
         '<td class="separator">' + BFHTimePickerDelimiter + '</td>' +
         '<td class="minute">' +
@@ -164,20 +170,20 @@
         $number = $(this);
 
         $number.bfhnumber($number.data());
-        
+
         $number.on('change', BFHTimePicker.prototype.change);
       });
-      
+
       this.$element.find('.bfh-selectbox').each(function() {
         var $selectbox;
 
         $selectbox = $(this);
 
         $selectbox.bfhselectbox($selectbox.data());
-        
+
         $selectbox.on('change.bfhselectbox', BFHTimePicker.prototype.change);
       });
-      
+
       this.setTime();
 
       this.updatePopover();
@@ -196,7 +202,7 @@
       this.$element.find('.minute input[type=text]').val(minute).change();
       this.$element.find('.bfh-selectbox').val(mode);
     },
-    
+
     change: function() {
       var $this,
           $parent,
@@ -205,15 +211,15 @@
 
       $this = $(this);
       $parent = getParent($this);
-      
+
       $timePicker = $parent.data('bfhtimepicker');
-      
+
       if ($timePicker && $timePicker !== 'undefined') {
         mode = '';
         if ($timePicker.options.mode === '12h') {
           mode = ' ' + BFHTimePickerModes[$parent.find('.bfh-selectbox').val()];
         }
-        
+
         $parent.find('.bfh-timepicker-toggle > input[type="text"]').val($parent.find('.hour input[type=text]').val() + BFHTimePickerDelimiter + $parent.find('.minute input[type=text]').val() + mode);
 
         $parent.trigger('change.bfhtimepicker');
@@ -269,7 +275,7 @@
 
     return hour + BFHTimePickerDelimiter + minute;
   }
-  
+
   function clearMenus() {
     var $parent;
 
