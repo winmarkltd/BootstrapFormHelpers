@@ -10,7 +10,7 @@ seo_url: "/privacy/"
   <div class="col-lg-12 col-md-12 col-sm-12">
    
     <p>
-    <h4><strong>PRIVACY POLICY</strong></h4>
+    <br><h4><strong>PRIVACY POLICY</strong></h4>
     </p>
 
     <p>
@@ -30,7 +30,7 @@ seo_url: "/privacy/"
     </p>
 
     <p>
-    <h4><strong>DEFINITIONS</strong></h4>
+    <br><h4><strong>DEFINITIONS</strong></h4>
     </p>
 
     <p>
@@ -62,7 +62,7 @@ seo_url: "/privacy/"
     </p>
 
     <p>
-    <h4><strong>INFORMATION WE COLLECT</strong></h4>
+    <br><h4><strong>INFORMATION WE COLLECT</strong></h4>
     </p>
 
     <p>
@@ -94,7 +94,7 @@ seo_url: "/privacy/"
     </p>
 
     <p>
-    <h4><strong>OUR USE OF COOKIES</strong></h4>
+    <br><h4><strong>OUR USE OF COOKIES</strong></h4>
     </p>
 
     <p>
@@ -222,7 +222,7 @@ seo_url: "/privacy/"
     </p>
 
     <p>
-    <h4><strong>HOW YOUR INFORMATION IS USED</strong></h4>
+    <br><h4><strong>HOW YOUR INFORMATION IS USED</strong></h4>
     </p>
 
     <p>
@@ -280,7 +280,7 @@ seo_url: "/privacy/"
     </p>
 
     <p>
-    <h4><strong>RETAINING AND DESTROYING YOUR (PII)</strong></h4>
+    <br><h4><strong>RETAINING AND DESTROYING YOUR (PII)</strong></h4>
     </p>
 
     <p>
@@ -288,7 +288,7 @@ seo_url: "/privacy/"
     </p>
 
     <p>
-    <h4><strong>UPDATING, REQUESTING, AND DELETING YOUR (PII)</strong></h4>
+    <br><h4><strong>UPDATING, REQUESTING, AND DELETING YOUR (PII)</strong></h4>
     </p>
 
     <p>
@@ -296,7 +296,7 @@ seo_url: "/privacy/"
     </p>
 
     <p>
-    <h4><strong>FILING A COMPLAINT WITH AUTHORITIES</strong></h4>
+    <br><h4><strong>FILING A COMPLAINT WITH AUTHORITIES</strong></h4>
     </p>
 
     <p>
@@ -304,7 +304,7 @@ seo_url: "/privacy/"
     </p>
 
     <p>
-    <h4><strong>REVOKING YOUR CONSENT AND OPTING OUT OF SHARING YOUR INFORMATION</strong></h4>
+    <br><h4><strong>REVOKING YOUR CONSENT AND OPTING OUT OF SHARING YOUR INFORMATION</strong></h4>
     </p>
 
     <p>
@@ -312,7 +312,7 @@ seo_url: "/privacy/"
     </p>
 
     <p>
-    <h4><strong>OBJECTING TO PROCESSING YOUR PII</strong></h4>
+    <br><h4><strong>OBJECTING TO PROCESSING YOUR PII</strong></h4>
     </p>
 
     <p>
@@ -320,7 +320,7 @@ seo_url: "/privacy/"
     </p>
 
     <p>
-    <h4><strong>PROTECTING THE PRIVACY RIGHTS OF THIRD PARTIES</strong></h4>
+    <br><h4><strong>PROTECTING THE PRIVACY RIGHTS OF THIRD PARTIES</strong></h4>
     </p>
 
     <p>
@@ -328,7 +328,7 @@ seo_url: "/privacy/"
     </p>
 
     <p>
-    <h4><strong>DO NOT TRACK SETTINGS</strong></h4>
+    <br><h4><strong>DO NOT TRACK SETTINGS</strong></h4>
     </p>
 
     <p>
@@ -336,7 +336,7 @@ seo_url: "/privacy/"
     </p>
 
     <p>
-    <h4><strong>LINKS TO OTHER WEBSITES</strong></h4>
+    <br><h4><strong>LINKS TO OTHER WEBSITES</strong></h4>
     </p>
 
     <p>
@@ -344,7 +344,7 @@ seo_url: "/privacy/"
     </p>
 
     <p>
-    <h4><strong>PROTECTING CHILDREN’S PRIVACY</strong></h4>
+    <br><h4><strong>PROTECTING CHILDREN’S PRIVACY</strong></h4>
     </p>
 
     <p>
@@ -352,7 +352,7 @@ seo_url: "/privacy/"
     </p>
 
     <p>
-    <h4><strong>OUR EMAIL POLICY</strong></h4>
+    <br><h4><strong>OUR EMAIL POLICY</strong></h4>
     </p>
 
     <p>
@@ -360,7 +360,7 @@ seo_url: "/privacy/"
     </p>
 
     <p>
-    <h4><strong>OUR SECURITY POLICY</strong></h4>
+    <br><h4><strong>OUR SECURITY POLICY</strong></h4>
     </p>
 
     <p>
@@ -372,7 +372,7 @@ seo_url: "/privacy/"
     </p>
 
     <p>
-    <h4><strong>USE OF YOUR CREDIT CARD</strong></h4>
+    <br><h4><strong>USE OF YOUR CREDIT CARD</strong></h4>
     </p>
 
     <p>
@@ -380,7 +380,7 @@ seo_url: "/privacy/"
     </p>
 
     <p>
-    <h4><strong>INTERNATIONAL DATA TRANSFERS</strong></h4>
+    <br><h4><strong>INTERNATIONAL DATA TRANSFERS</strong></h4>
     </p>
 
     <p>
@@ -388,7 +388,7 @@ seo_url: "/privacy/"
     </p>
 
     <p>
-    <h4><strong>CHANGES TO OUR PRIVACY POLICY</strong></h4>
+    <br><h4><strong>CHANGES TO OUR PRIVACY POLICY</strong></h4>
     </p>
 
     <p>
@@ -400,7 +400,7 @@ seo_url: "/privacy/"
     </p>
 
     <p>
-    If you have any questions about our privacy policy, please email us at: <img src="{{ page.base_url }}assets/img/bootstrapemail.jpg" alt="...">
+    If you have any questions about our privacy policy, please email us at: <img src="{{ page.base_url }}assets/img/bootstrapemail.jpg" alt="..." style="margin-top:1px;">
     </p>
 
 
