@@ -10,15 +10,15 @@ seo_url: "/privacy/"
   <div class="col-lg-12 col-md-12 col-sm-12">
    
     <p>
-    PRIVACY POLICY
+    <h4><strong>PRIVACY POLICY</strong></h4>
     </p>
 
     <p>
-      <img src="{{ page.base_url }}assets/img/bootstrapaddress.jpg" alt="...">
+      <img src="{{ page.base_url }}assets/img/bootstrapaddress.jpg" alt="..." style="max-width: 295px; margin-left: -5px;">
     </p>
 
     <p> 
-    Effective Date: January 1, 2021
+    <strong>Effective Date: January 1, 2021</strong>
     </p>
 
     <p>
@@ -30,7 +30,7 @@ seo_url: "/privacy/"
     </p>
 
     <p>
-    <h4>DEFINITIONS</h4>
+    <h4><strong>DEFINITIONS</strong></h4>
     </p>
 
     <p>
@@ -43,26 +43,26 @@ seo_url: "/privacy/"
 
     <p>
     • Information We Collect
-    • Our Use of Cookies
-    • How Your Information Is Used
-    • Retaining and Destroying Your PII
-    • Updating, Requesting, and Deleting Your PII
-    • Filing a Complaint With Authorities
-    • Revoking Your Consent and Opting Out of Sharing Your Information
-    • Objecting to Processing Your PII
-    • Protecting the Privacy Rights of Third Parties
-    • Do Not Track Settings
-    • Links to Other Websites
-    • Protecting Children’s Privacy
-    • Our Email Policy
-    • Our Security Policy
-    • Use of Your Credit Card
-    • International Data Transfers
-    • Changes to Our Privacy Policy
+    <br>• Our Use of Cookies
+    <br>• How Your Information Is Used
+    <br>• Retaining and Destroying Your PII
+    <br>• Updating, Requesting, and Deleting Your PII
+    <br>• Filing a Complaint With Authorities
+    <br>• Revoking Your Consent and Opting Out of Sharing Your Information
+    <br>• Objecting to Processing Your PII
+    <br>• Protecting the Privacy Rights of Third Parties
+    <br>• Do Not Track Settings
+    <br>• Links to Other Websites
+    <br>• Protecting Children’s Privacy
+    <br>• Our Email Policy
+    <br>• Our Security Policy
+    <br>• Use of Your Credit Card
+    <br>• International Data Transfers
+    <br>• Changes to Our Privacy Policy
     </p>
 
     <p>
-    <h4>INFORMATION WE COLLECT</h4>
+    <h4><strong>INFORMATION WE COLLECT</strong></h4>
     </p>
 
     <p>
@@ -94,7 +94,7 @@ seo_url: "/privacy/"
     </p>
 
     <p>
-    <h4>OUR USE OF COOKIES</h4>
+    <h4><strong>OUR USE OF COOKIES</strong></h4>
     </p>
 
     <p>
@@ -167,14 +167,14 @@ seo_url: "/privacy/"
 
     <p>    
     • Identifying the areas of our website that you have visited
-    • Personalizing content you see on our website
-    • Our website analytics
-    • Remarketing our products or services to you
-    • Remembering your preferences, settings, and login details
-    • Targeted advertising and serving ads relevant to your interests
-    • Affiliate marketing
-    • Allowing you to post comments
-    • Allowing you to share content with social networks
+    <br>• Personalizing content you see on our website
+    <br>• Our website analytics
+    <br>• Remarketing our products or services to you
+    <br>• Remembering your preferences, settings, and login details
+    <br>• Targeted advertising and serving ads relevant to your interests
+    <br>• Affiliate marketing
+    <br>• Allowing you to post comments
+    <br>• Allowing you to share content with social networks
     </p>
 
     <p>
@@ -222,7 +222,7 @@ seo_url: "/privacy/"
     </p>
 
     <p>
-    <h4>HOW YOUR INFORMATION IS USED</h4>
+    <h4><strong>HOW YOUR INFORMATION IS USED</strong></h4>
     </p>
 
     <p>
@@ -231,11 +231,11 @@ seo_url: "/privacy/"
 
     <p>
     • Provide our products and services
-    • Personalize and customize our content
-    • Make improvements to our website
-    • Contact you with updates to our website
-    • Resolve problems and disputes
-    • Contact you with marketing and advertising that we believe may be of interest to you
+    <br>• Personalize and customize our content
+    <br>• Make improvements to our website
+    <br>• Contact you with updates to our website
+    <br>• Resolve problems and disputes
+    <br>• Contact you with marketing and advertising that we believe may be of interest to you
     </p>
 
     <p>
@@ -280,7 +280,7 @@ seo_url: "/privacy/"
     </p>
 
     <p>
-    <h4>RETAINING AND DESTROYING YOUR (PII)</h4>
+    <h4><strong>RETAINING AND DESTROYING YOUR (PII)</strong></h4>
     </p>
 
     <p>
@@ -288,7 +288,7 @@ seo_url: "/privacy/"
     </p>
 
     <p>
-    <h4>UPDATING, REQUESTING, AND DELETING YOUR (PII)</h4>
+    <h4><strong>UPDATING, REQUESTING, AND DELETING YOUR (PII)</strong></h4>
     </p>
 
     <p>
@@ -296,7 +296,7 @@ seo_url: "/privacy/"
     </p>
 
     <p>
-    <h4>FILING A COMPLAINT WITH AUTHORITIES</h4>
+    <h4><strong>FILING A COMPLAINT WITH AUTHORITIES</strong></h4>
     </p>
 
     <p>
@@ -304,7 +304,7 @@ seo_url: "/privacy/"
     </p>
 
     <p>
-    <h4>REVOKING YOUR CONSENT AND OPTING OUT OF SHARING YOUR INFORMATION</h4>
+    <h4><strong>REVOKING YOUR CONSENT AND OPTING OUT OF SHARING YOUR INFORMATION</strong></h4>
     </p>
 
     <p>
@@ -312,7 +312,7 @@ seo_url: "/privacy/"
     </p>
 
     <p>
-    <h4>OBJECTING TO PROCESSING YOUR PII</h4>
+    <h4><strong>OBJECTING TO PROCESSING YOUR PII</strong></h4>
     </p>
 
     <p>
@@ -320,7 +320,7 @@ seo_url: "/privacy/"
     </p>
 
     <p>
-    <h4>PROTECTING THE PRIVACY RIGHTS OF THIRD PARTIES</h4>
+    <h4><strong>PROTECTING THE PRIVACY RIGHTS OF THIRD PARTIES</strong></h4>
     </p>
 
     <p>
@@ -328,7 +328,7 @@ seo_url: "/privacy/"
     </p>
 
     <p>
-    <h4>DO NOT TRACK SETTINGS</h4>
+    <h4><strong>DO NOT TRACK SETTINGS</strong></h4>
     </p>
 
     <p>
@@ -336,7 +336,7 @@ seo_url: "/privacy/"
     </p>
 
     <p>
-    <h4>LINKS TO OTHER WEBSITES</h4>
+    <h4><strong>LINKS TO OTHER WEBSITES</strong></h4>
     </p>
 
     <p>
@@ -344,7 +344,7 @@ seo_url: "/privacy/"
     </p>
 
     <p>
-    <h4>PROTECTING CHILDREN’S PRIVACY</h4>
+    <h4><strong>PROTECTING CHILDREN’S PRIVACY</strong></h4>
     </p>
 
     <p>
@@ -352,7 +352,7 @@ seo_url: "/privacy/"
     </p>
 
     <p>
-    <h4>OUR EMAIL POLICY</h4>
+    <h4><strong>OUR EMAIL POLICY</strong></h4>
     </p>
 
     <p>
@@ -360,7 +360,7 @@ seo_url: "/privacy/"
     </p>
 
     <p>
-    <h4>OUR SECURITY POLICY</h4>
+    <h4><strong>OUR SECURITY POLICY</strong></h4>
     </p>
 
     <p>
@@ -372,7 +372,7 @@ seo_url: "/privacy/"
     </p>
 
     <p>
-    <h4>USE OF YOUR CREDIT CARD</h4>
+    <h4><strong>USE OF YOUR CREDIT CARD</strong></h4>
     </p>
 
     <p>
@@ -380,7 +380,7 @@ seo_url: "/privacy/"
     </p>
 
     <p>
-    <h4>INTERNATIONAL DATA TRANSFERS</h4>
+    <h4><strong>INTERNATIONAL DATA TRANSFERS</strong></h4>
     </p>
 
     <p>
@@ -388,7 +388,7 @@ seo_url: "/privacy/"
     </p>
 
     <p>
-    <h4>CHANGES TO OUR PRIVACY POLICY</h4>
+    <h4><strong>CHANGES TO OUR PRIVACY POLICY</strong></h4>
     </p>
 
     <p>
