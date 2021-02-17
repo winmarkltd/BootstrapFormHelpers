@@ -400,7 +400,7 @@ seo_url: "/privacy/"
     </p>
 
     <p>
-    If you have any questions about our privacy policy, please email us at: <img src="{{ page.base_url }}assets/img/bootstrapemail.jpg" alt="..." style="margin-top:1px;">
+    If you have any questions about our privacy policy, please email us at: <img src="{{ page.base_url }}assets/img/bootstrapemail.jpg" alt="..." style="margin-top:-2px;">
     </p>
 
 
