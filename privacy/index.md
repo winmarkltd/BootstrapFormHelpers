@@ -243,7 +243,7 @@ seo_url: "/privacy/"
     </p>
 
     <p>
-    When we communicate with you about our website, we will use the email address you provided when you registered as a member or user. We may also send you emails with promotional information about our website or offers from us or our affiliates unless you have opted out of receiving such information. You can change your contact preferences at any time through your account or by sending us an email with your request to: 
+    When we communicate with you about our website, we will use the email address you provided when you registered as a member or user. We may also send you emails with promotional information about our website or offers from us or our affiliates unless you have opted out of receiving such information. You can change your contact preferences at any time through your account or by sending us an email with your request to: <img src="{{ page.base_url }}assets/img/bootstrapemail.jpg" alt="..." style="margin-top:-2px;">
     </p>
 
     <p>
@@ -292,7 +292,7 @@ seo_url: "/privacy/"
     </p>
 
     <p>
-    You can update your PII using services found on our website. If no such services exist, you can contact us using the contact information found at the top of this policy and we will help you. You have the right to request and access the type of PII we have collected from you that is stored in electronic or paper format by our company. You also have the right to request that we delete any PII we have about you. If you want access to your PII, are requesting to know what PII we have collected about you, or are requesting that we delete your PII, send us an email with your request to:  or contact us using our contact information at the top of this website and we will help you. However, we may keep your PII as needed to enforce our agreements and to comply with any legal obligations.
+    You can update your PII using services found on our website. If no such services exist, you can contact us using the contact information found at the top of this policy and we will help you. You have the right to request and access the type of PII we have collected from you that is stored in electronic or paper format by our company. You also have the right to request that we delete any PII we have about you. If you want access to your PII, are requesting to know what PII we have collected about you, or are requesting that we delete your PII, send us an email with your request to:  <img src="{{ page.base_url }}assets/img/bootstrapemail.jpg" alt="..." style="margin-top:-2px;"> or contact us using our contact information at the top of this website and we will help you. However, we may keep your PII as needed to enforce our agreements and to comply with any legal obligations.
     </p>
 
     <p>
